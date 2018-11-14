@@ -120,7 +120,7 @@
                   </div>
                   <div class="post-comment">
                     <img src="images/users/user-1.jpg" alt="" class="profile-photo-sm" />
-                    <input type="text" class="form-control" placeholder="Post a comment">
+                    <input type="text" class="form-control" placeholder="Postez un commentaire">
                   </div>
                 </div>
               </div>
@@ -160,7 +160,7 @@
                   </div>
                   <div class="post-comment">
                     <img src="images/users/user-1.jpg" alt="" class="profile-photo-sm" />
-                    <input type="text" class="form-control" placeholder="Post a comment">
+                    <input type="text" class="form-control" placeholder="Postez un commentaire">
                   </div>
                 </div>
               </div>
@@ -191,7 +191,7 @@
                   </div>
                   <div class="post-comment">
                     <img src="images/users/user-1.jpg" alt="" class="profile-photo-sm" />
-                    <input type="text" class="form-control" placeholder="Post a comment">
+                    <input type="text" class="form-control" placeholder="Postez un commentaire">
                   </div>
                 </div>
               </div>
@@ -227,7 +227,7 @@
                   </div>
                   <div class="post-comment">
                     <img src="images/users/user-1.jpg" alt="" class="profile-photo-sm" />
-                    <input type="text" class="form-control" placeholder="Post a comment">
+                    <input type="text" class="form-control" placeholder="Postez un commentaire">
                   </div>
                 </div>
               </div>
@@ -261,7 +261,7 @@
                   </div>
                   <div class="post-comment">
                     <img src="images/users/user-1.jpg" alt="" class="profile-photo-sm" />
-                    <input type="text" class="form-control" placeholder="Post a comment">
+                    <input type="text" class="form-control" placeholder="Postez un commentaire">
                   </div>
                 </div>
               </div>
@@ -293,7 +293,7 @@
                   </div>
                   <div class="post-comment">
                     <img src="images/users/user-1.jpg" alt="" class="profile-photo-sm" />
-                    <input type="text" class="form-control" placeholder="Post a comment">
+                    <input type="text" class="form-control" placeholder="Postez un commentaire">
                   </div>
                 </div>
               </div>
