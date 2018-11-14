@@ -100,7 +100,7 @@
               ================================================= -->
               <div class="edit-profile-container">
                 <div class="block-title">
-                  <h4 class="grey"><i class="icon ion-ios-book-outline"></i>My education</h4>
+                  <h4 class="grey"><i class="icon ion-ios-book-outline"></i>Mon éducation</h4>
                   <div class="line"></div>
                   <p>blabla blabla mettre un truc ici</p>
                   <div class="line"></div>
