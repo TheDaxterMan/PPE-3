@@ -20,8 +20,8 @@
       - Image Divider
       - Site Facts
       - Live Feed
-    - Landing Page | Register 
-    - Newsfeed 
+    - Landing Page | Register
+    - Newsfeed
       - Left Sidebar
       - Right Sidebar
       - Create Post Box
@@ -29,7 +29,7 @@
       - Nearby People
       - Friend List
       - Chat Room
-      - Media: image and video 
+      - Media: image and video
     - Timeline
       - Timeline Sidebar
       - Post Date
@@ -52,7 +52,7 @@ html, body {
 body{
 	font-family: 'Lato', sans-serif;
   line-height: 26px;
-	color: #6d6e71;
+	color: #fff;
 	font-size: 13px;
 }
 
@@ -73,7 +73,7 @@ body{
 h1, h2, h3, h4, h5, h6{color: #27aae1;}
 
 h1.grey, h2.grey, h3.grey, h4.grey, h5.grey, h6.grey{
-  color: #6d6e71;
+  color: #fff;
   margin: 0 auto 20px;
 }
 
@@ -150,7 +150,7 @@ section .wrapper{
 }
 
 .btn-primary{
-	background: #27aae1;
+	background: #b81717;
 	padding: 7px 25px;
 	border: none;
 	font-size: 14px;
@@ -163,7 +163,7 @@ section .wrapper{
 }
 
 .btn-primary:hover{
-  background: #149AC9;
+  background: #4edb34;
   transition: all 1s;
 }
 
@@ -309,7 +309,7 @@ textarea{
 .panel-default{
   border-color: #f1f2f2;
 }
-  
+
 .panel-default>.panel-heading{
   color: #333;
   background-color: #fff;
@@ -340,7 +340,7 @@ textarea{
   border-top-color: #f1f2f2;
 }
 
-.panel-group .panel-heading+.panel-collapse>.list-group, 
+.panel-group .panel-heading+.panel-collapse>.list-group,
 .panel-group .panel-heading+.panel-collapse>.panel-body{
   border-top: 1px solid #f1f2f2;
 }
@@ -475,7 +475,7 @@ textarea{
 
 #header-inverse .menu ul.main-menu li ul.dropdown-menu::before{
   content: "";
-	display: block;  
+	display: block;
 	position: absolute;
 	right: 20px;
 	bottom: 100%;
@@ -811,7 +811,7 @@ textarea{
 
 /*==================================================
   Landing Page: V2 | Register/Login
-  ==================================================*/  
+  ==================================================*/
 
 #lp-register{
   background: linear-gradient(to right, rgba(0,0,0, 0.7) , rgba(0,0,0, 0.7)), url(../images/bg/bg-3.jpg) fixed no-repeat;
@@ -946,8 +946,8 @@ textarea{
   border: none;
 }
 
-.reg-form-container .nav-tabs > li.active > a, 
-.reg-form-container .nav-tabs > li.active > a:focus, 
+.reg-form-container .nav-tabs > li.active > a,
+.reg-form-container .nav-tabs > li.active > a:focus,
 .reg-form-container .nav-tabs > li.active > a:hover{
   background: transparent;
   color: #fff;
@@ -961,7 +961,7 @@ textarea{
 #Login_form .form-group{
   margin-bottom: 10px;
 }
-  
+
 #registration_form .form-control,
 #Login_form .form-control{
   background: #fff;
@@ -986,17 +986,17 @@ textarea{
 }
 
 /*Social Links Bottom*/
- 
+
 #lp-register ul.social-icons{
   text-align: center;
   margin-top: 40px;
   z-index: 11;
 }
-  
+
 #lp-register ul.social-icons li{
   border: none;
-}  
-  
+}
+
 #lp-register ul.social-icons li a{
   color: #fff;
 }
@@ -1005,8 +1005,8 @@ textarea{
   color: #27aae1;
   transition: all .5s;
 }
-  
-  
+
+
 /*feed-block and ul.online-users css available below*/
 
 
@@ -1815,7 +1815,7 @@ ul.album-photos li img{
   Edit Profile
   ==================================================*/
 
-/* Edit Profile Menu */  
+/* Edit Profile Menu */
 
 ul.edit-menu{
   margin-top: 100px;
@@ -1984,7 +1984,7 @@ input:checked + .slider:before{
 }
 
 .contact-us{
-  background: #fff;
+  background: #a1a1a1;
   padding: 40px;
   margin-top: -140px;
   border-radius: 4px;
@@ -2039,7 +2039,7 @@ input:checked + .slider:before{
 }
 
 .contact-us ul.social-icons{
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 
@@ -2053,7 +2053,7 @@ input:checked + .slider:before{
   background-position: center;
   padding: 90px 0 110px;
   color: #fff;
-}  
+}
 
 .page-title-section.faq h1{
   color: #fff;
@@ -2119,8 +2119,8 @@ input:checked + .slider:before{
   transition: transform .5s;
 }
 
-.faq-cat-list.nav-tabs>li.active>a, 
-.faq-cat-list.nav-tabs>li.active>a:focus, 
+.faq-cat-list.nav-tabs>li.active>a,
+.faq-cat-list.nav-tabs>li.active>a:focus,
 .faq-cat-list.nav-tabs>li.active>a:hover{
   border: none;
   color: #fff;
@@ -2133,7 +2133,7 @@ input:checked + .slider:before{
   width: 1px;
   position: absolute;
   left: 0;
-  right: 0; 
+  right: 0;
   margin: auto;
   bottom: -20px;
 }
@@ -2204,7 +2204,7 @@ input:checked + .slider:before{
 .faq_contact .reach-out .method.by-email a{
   background: #29abe2;
 }
-  
+
 .faq_contact .reach-out .method.by-phone a{
   background: #93278f;
 }
@@ -2298,7 +2298,7 @@ ul.social-icons li{
 }
 
 ul.social-icons li a{
-  color: #6d6e71;
+  color: #fff;
   font-size: 15px;
   line-height: 30px;
 }
@@ -2355,19 +2355,19 @@ ul.contact li i{
 @media only screen and (max-width : 992px) {
 
   section h1.section-title{font-size: 175px; margin-bottom: -40px;}
-  
+
   #features .feature-item{margin-bottom: 20px;}
 
   #features .item{margin-bottom: 20px;}
 
   .timeline #page-contents{margin-top: 185px !important;}
-  
+
   ul.edit-menu{margin-top: 0; margin-bottom: 30px;}
-  
+
   .faq-cat-list.nav-tabs>li>a{min-width: 150px; padding: 30px 15px;}
-  
+
   .error-page .error-content form .form-group{width: 80%;}
-  
+
 }
 
 
@@ -2378,13 +2378,13 @@ ul.contact li i{
 @media only screen and (max-width : 768px) {
 
   .menu ul.main-menu li.dropdown ul.dropdown-menu li{background: #282425;}
-  
+
   #header-inverse nav.menu .navbar-collapse{background: rgba(0,0,0, 0.9);}
 
   .sign-up-form{left: 0; right: 0; margin: auto;}
 
   section h1.section-title{font-size: 90px !important; margin-bottom: 0 !important;}
-  
+
   #features .feature-item{margin-bottom: 20px;}
 
   #site-facts .circle{width: 100%; border-radius: 1000px;}
@@ -2398,37 +2398,37 @@ ul.contact li i{
   #footer .footer-wrapper ul{margin-bottom: 20px;}
 
   .contact-us .col-sm-7{margin-bottom: 20px !important;}
-  
+
   .intro-texts{transform: translateY(0); margin-bottom: 80px; text-align: center;}
-  
+
   .reg-form-container{padding: 30px !important; text-align: center;}
-  
+
   .reg-form-container .reg-options::before{background: linear-gradient(to bottom, rgba(255,255,255, 0.2) , rgba(255,255,255, 0.05)); height: 50px; width: 70%; left: 0; right: 0; margin: auto; top: -50px; transform: translateX(0) translateY(0);border-radius: 6px 6px 0 0;}
-  
+
   .reg-form-container .reg-options .nav-tabs{left: 50%; transform: translateY(0) translateX(-50%) rotate(0); top: -40px;}
-  
+
   .reg-form-container .reg-options .nav-tabs li{margin: 0;}
-  
+
   .reg-form-container .reg-options .nav-tabs li:after{right: 0;}
-  
+
   .reg-form-container::before{content: none;}
-  
+
   .reg-form-container::after{content: none;}
-  
+
   .reg-form-container .nav-tabs > li > a{padding-left: 10px; padding-right: 10px; min-width: 50px;}
-  
+
   .toggle-switch{text-align: left;}
-  
+
   .toggle-switch .switch{margin-top: 0;}
-  
+
   .faq-content{margin-bottom: 30px;}
-  
+
   .faq .page-search{max-width: 90%;}
-  
+
   .faq-cat-list.nav-tabs>li>a{width: 100px; min-width: initial; padding: 20px 10px; font-size: 16px;}
-  
+
   .faq-cat-list.nav-tabs>li>a>i{font-size: 20px;}
-  
+
   .error-page .error-content form .form-group{width: 100%;}
 
 }
@@ -2445,7 +2445,7 @@ ul.contact li i{
   #app-download ul.app-btn li button{margin-bottom: 20px;}
 
   .post-contents .post-container .post-detail .reaction{position: relative;}
-  
+
   .faq-cat-list.nav-tabs>li>a{width: 60px;}
 
 }
@@ -2678,7 +2678,7 @@ ul.contact li i{
   background: #333;
   padding: 10px 30px;
   position: fixed;
-  bottom: 30px; 
+  bottom: 30px;
   right: 30px;
   color: #82B541;
   font-weight: 700;
