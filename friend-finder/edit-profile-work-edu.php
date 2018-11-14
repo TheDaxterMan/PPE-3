@@ -49,14 +49,14 @@
               </div>
               <div class="col-md-9">
                 <ul class="list-inline profile-menu">
-                  <li><a href="timeline.html">Timeline</a></li>
-                  <li><a href="timeline-about.html" class="active">About</a></li>
+                  <li><a href="timeline.html">Publications</a></li>
+                  <li><a href="timeline-about.html" class="active">A propos</a></li>
                   <li><a href="timeline-album.html">Album</a></li>
-                  <li><a href="timeline-friends.html">Friends</a></li>
+                  <li><a href="timeline-friends.html">Amis</a></li>
                 </ul>
                 <ul class="follow-me list-inline">
-                  <li>1,299 people following her</li>
-                  <li><button class="btn-primary">Add Friend</button></li>
+                  <li>1,299 pecnots la suivent</li>
+                  <li><button class="btn-primary">Ajouter en ami</button></li>
                 </ul>
               </div>
             </div>
@@ -71,12 +71,12 @@
             </div>
             <div class="mobile-menu">
               <ul class="list-inline">
-                <li><a href="timline.html">Timeline</a></li>
-                <li><a href="timeline-about.html" class="active">About</a></li>
+                <li><a href="timline.html">Publications</a></li>
+                <li><a href="timeline-about.html" class="active">A propos</a></li>
                 <li><a href="timeline-album.html">Album</a></li>
-                <li><a href="timeline-friends.html">Friends</a></li>
+                <li><a href="timeline-friends.html">Amis</a></li>
               </ul>
-              <button class="btn-primary">Add Friend</button>
+              <button class="btn-primary">Ajouter en ami</button>
             </div>
           </div><!--Timeline Menu for Small Screens End-->
 
@@ -87,11 +87,11 @@
 
               <!--Edit Profile Menu-->
               <ul class="edit-menu">
-              	<li><i class="icon ion-ios-information-outline"></i><a href="edit-profile-basic.html">Basic Information</a></li>
-              	<li class="active"><i class="icon ion-ios-briefcase-outline"></i><a href="edit-profile-work-edu.html">Education and Work</a></li>
-              	<li><i class="icon ion-ios-heart-outline"></i><a href="edit-profile-interests.html">My Interests</a></li>
-                <li><i class="icon ion-ios-settings"></i><a href="edit-profile-settings.html">Account Settings</a></li>
-              	<li><i class="icon ion-ios-locked-outline"></i><a href="edit-profile-password.html">Change Password</a></li>
+              	<li><i class="icon ion-ios-information-outline"></i><a href="edit-profile-basic.html">Informations basiques</a></li>
+              	<li class="active"><i class="icon ion-ios-briefcase-outline"></i><a href="edit-profile-work-edu.html">Education et travail</a></li>
+              	<li><i class="icon ion-ios-heart-outline"></i><a href="edit-profile-interests.html">Centres d'intérêts</a></li>
+                <li><i class="icon ion-ios-settings"></i><a href="edit-profile-settings.html">Paramètres du compte</a></li>
+              	<li><i class="icon ion-ios-locked-outline"></i><a href="edit-profile-password.html">Changer de mot de passe</a></li>
               </ul>
             </div>
             <div class="col-md-7">
@@ -102,54 +102,54 @@
                 <div class="block-title">
                   <h4 class="grey"><i class="icon ion-ios-book-outline"></i>My education</h4>
                   <div class="line"></div>
-                  <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</p>
+                  <p>blabla blabla mettre un truc ici</p>
                   <div class="line"></div>
                 </div>
                 <div class="edit-block">
                   <form name="education" id="education" class="form-inline">
                     <div class="row">
                       <div class="form-group col-xs-12">
-                        <label for="school">My university</label>
-                        <input id="school" class="form-control input-group-lg" type="text" name="school" title="Enter School" placeholder="My School" value="Harvard Unversity" />
+                        <label for="school">Mon université</label>
+                        <input id="school" class="form-control input-group-lg" type="text" name="school" title="Entrez l'école" placeholder="Mon école" value="Harvard Unversity" />
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-6">
-                        <label for="date-from">From</label>
-                        <input id="date-from" class="form-control input-group-lg" type="text" name="date" title="Enter a Date" placeholder="from" value="2012" />
+                        <label for="date-from">De</label>
+                        <input id="date-from" class="form-control input-group-lg" type="text" name="date" title="Entrez une date" placeholder="de" value="2012" />
                       </div>
                       <div class="form-group col-xs-6">
-                        <label for="date-to" class="">To</label>
-                        <input id="date-to" class="form-control input-group-lg" type="text" name="date" title="Enter a Date" placeholder="to" value="2016" />
+                        <label for="date-to" class="">A</label>
+                        <input id="date-to" class="form-control input-group-lg" type="text" name="date" title="Entrez une date" placeholder="a" value="2016" />
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-12">
                         <label for="edu-description">Description</label>
-                        <textarea id="edu-description" name="description" class="form-control" placeholder="Some texts about my education" rows="4" cols="400">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</textarea>
+                        <textarea id="edu-description" name="description" class="form-control" placeholder="Racontez votre formation" rows="4" cols="400">Blablabla je raconte ma vie</textarea>
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-12">
-                        <label for="graduate">Graduated?:-</label>
-                        <input id="graduate" type="checkbox" name="graduate" value="graduate" checked> Yes!!
+                        <label for="graduate">Diplômé ? -</label>
+                        <input id="graduate" type="checkbox" name="graduate" value="graduate" checked> Oui!!
                       </div>
                     </div>
-                    <button class="btn btn-primary">Save Changes</button>
+                    <button class="btn btn-primary">Sauvegarder les modifications</button>
                   </form>
                 </div>
                 <div class="block-title">
-                  <h4 class="grey"><i class="icon ion-ios-briefcase-outline"></i>Work Experiences</h4>
+                  <h4 class="grey"><i class="icon ion-ios-briefcase-outline"></i>Experience professionelle</h4>
                   <div class="line"></div>
-                  <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</p>
+                  <p>Mon expérience pro</p>
                   <div class="line"></div>
                 </div>
                 <div class="edit-block">
                   <form name="work" id="work" class="form-inline">
                     <div class="row">
                       <div class="form-group col-xs-12">
-                        <label for="company">Company</label>
-                        <input id="company" class="form-control input-group-lg" type="text" name="company" title="Enter Company" placeholder="Company name" value="Envato Inc" />
+                        <label for="company">Entreprise</label>
+                        <input id="company" class="form-control input-group-lg" type="text" name="company" title="Entrez une entreprise" placeholder="Nom de l'entreprise" value="Envato Inc" />
                       </div>
                     </div>
                     <div class="row">
@@ -160,27 +160,27 @@
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-6">
-                        <label for="from-date">From</label>
-                        <input id="from-date" class="form-control input-group-lg" type="text" name="date" title="Enter a Date" placeholder="from" value="2016" />
+                        <label for="from-date">De</label>
+                        <input id="from-date" class="form-control input-group-lg" type="text" name="date" title="Entrez une date" placeholder="de" value="2016" />
                       </div>
                       <div class="form-group col-xs-6">
-                        <label for="to-date" class="">To</label>
-                        <input id="to-date" class="form-control input-group-lg" type="text" name="date" title="Enter a Date" placeholder="to" value="Present" />
+                        <label for="to-date" class="">A</label>
+                        <input id="to-date" class="form-control input-group-lg" type="text" name="date" title="Entrez une date" placeholder="a" value="Present" />
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-12">
-                        <label for="work-city">City/Town</label>
-                        <input id="work-city" class="form-control input-group-lg" type="text" name="city" title="Enter city" placeholder="Your city" value="Melbourne"/>
+                        <label for="work-city">Ville</label>
+                        <input id="work-city" class="form-control input-group-lg" type="text" name="city" title="Entrez une ville" placeholder="Ville" value="Melbourne"/>
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-12">
                         <label for="work-description">Description</label>
-                        <textarea id="work-description" name="description" class="form-control" placeholder="Some texts about my work" rows="4" cols="400">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</textarea>
+                        <textarea id="work-description" name="description" class="form-control" placeholder="Décrire votre travail" rows="4" cols="400">blabla mon travail</textarea>
                       </div>
                     </div>
-                    <button class="btn btn-primary">Save Changes</button>
+                    <button class="btn btn-primary">Sauvegarder les changements</button>
                   </form>
                 </div>
               </div>
