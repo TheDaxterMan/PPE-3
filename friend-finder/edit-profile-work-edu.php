@@ -49,10 +49,10 @@
               </div>
               <div class="col-md-9">
                 <ul class="list-inline profile-menu">
-                  <li><a href="timeline.html">Publications</a></li>
-                  <li><a href="timeline-about.html" class="active">A propos</a></li>
-                  <li><a href="timeline-album.html">Album</a></li>
-                  <li><a href="timeline-friends.html">Amis</a></li>
+                  <li><a href="timeline.php">Publications</a></li>
+                  <li><a href="timeline-about.php" class="active">A propos</a></li>
+                  <li><a href="timeline-album.php">Album</a></li>
+                  <li><a href="timeline-friends.php">Amis</a></li>
                 </ul>
                 <ul class="follow-me list-inline">
                   <li>1,299 pecnots la suivent</li>
@@ -71,9 +71,9 @@
             </div>
             <div class="mobile-menu">
               <ul class="list-inline">
-                <li><a href="timline.html">Publications</a></li>
-                <li><a href="timeline-about.html" class="active">A propos</a></li>
-                <li><a href="timeline-album.html">Album</a></li>
+                <li><a href="timeline.php">Publications</a></li>
+                <li><a href="timeline-about.php" class="active">A propos</a></li>
+                <li><a href="timeline-album.php">Album</a></li>
                 <li><a href="timeline-friends.html">Amis</a></li>
               </ul>
               <button class="btn-primary">Ajouter en ami</button>
@@ -87,11 +87,11 @@
 
               <!--Edit Profile Menu-->
               <ul class="edit-menu">
-              	<li><i class="icon ion-ios-information-outline"></i><a href="edit-profile-basic.html">Informations basiques</a></li>
-              	<li class="active"><i class="icon ion-ios-briefcase-outline"></i><a href="edit-profile-work-edu.html">Education et travail</a></li>
-              	<li><i class="icon ion-ios-heart-outline"></i><a href="edit-profile-interests.html">Centres d'intérêts</a></li>
-                <li><i class="icon ion-ios-settings"></i><a href="edit-profile-settings.html">Paramètres du compte</a></li>
-              	<li><i class="icon ion-ios-locked-outline"></i><a href="edit-profile-password.html">Changer de mot de passe</a></li>
+              	<li><i class="icon ion-ios-information-outline"></i><a href="edit-profile-basic.php">Informations basiques</a></li>
+              	<li class="active"><i class="icon ion-ios-briefcase-outline"></i><a href="edit-profile-work-edu.php">Education et travail</a></li>
+              	<li><i class="icon ion-ios-heart-outline"></i><a href="edit-profile-interests.php">Centres d'intérêts</a></li>
+                <li><i class="icon ion-ios-settings"></i><a href="edit-profile-settings.php">Paramètres du compte</a></li>
+              	<li><i class="icon ion-ios-locked-outline"></i><a href="edit-profile-password.php">Changer de mot de passe</a></li>
               </ul>
             </div>
             <div class="col-md-7">
