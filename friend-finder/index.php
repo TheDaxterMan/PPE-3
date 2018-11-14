@@ -37,9 +37,9 @@
         <div class="row">
         	<div class="col-sm-5">
             <div class="intro-texts">
-            	<h1 class="text-white">Make Cool Friends !!!</h1>
-            	<p>Friend Finder is a social network template that can be used to connect people. The template offers Landing pages, News Feed, Image/Video Feed, Chat Box, Timeline and lot more. <br /> <br />Why are you waiting for? Buy it now.</p>
-              <button class="btn btn-primary">Learn More</button>
+            	<h1 class="text-white">Faites vous des amis !!!</h1>
+            	<p>ViaBahuet est un réseau social permettant aux élèves, anciens élèves et entreprises de communiquer. <br> <br>Rejoignez dès maintenant</p>
+              <button class="btn btn-primary">En savoir plus</button>
             </div>
           </div>
         	<div class="col-sm-6 col-sm-offset-1">
@@ -48,47 +48,47 @@
               <!-- Register/Login Tabs-->
               <div class="reg-options">
                 <ul class="nav nav-tabs">
-                  <li class="active"><a href="#register" data-toggle="tab">Register</a></li>
-                  <li><a href="#login" data-toggle="tab">Login</a></li>
+                  <li class="active"><a href="#register" data-toggle="tab">S'enregistrer</a></li>
+                  <li><a href="#login" data-toggle="tab">Se connecter</a></li>
                 </ul><!--Tabs End-->
               </div>
 
               <!--Registration Form Contents-->
               <div class="tab-content">
                 <div class="tab-pane active" id="register">
-                  <h3>Register Now !!!</h3>
-                  <p class="text-muted">Be cool and join today. Meet millions</p>
+                  <h3>Enregistrez vous maintenant !!!</h3>
+                  <p class="text-muted">Veuillez remplir le formulaire ci-dessous</p>
 
                   <!--Register Form-->
                   <form name="registration_form" id='registration_form' class="form-inline">
                     <div class="row">
                       <div class="form-group col-xs-6">
-                        <label for="firstname" class="sr-only">First Name</label>
-                        <input id="firstname" class="form-control input-group-lg" type="text" name="firstname" title="Enter first name" placeholder="First name"/>
+                        <label for="firstname" class="sr-only">Prénom</label>
+                        <input id="firstname" class="form-control input-group-lg" type="text" name="firstname" title="Entrez votre prénom" placeholder="Prénom"/>
                       </div>
                       <div class="form-group col-xs-6">
-                        <label for="lastname" class="sr-only">Last Name</label>
-                        <input id="lastname" class="form-control input-group-lg" type="text" name="lastname" title="Enter last name" placeholder="Last name"/>
+                        <label for="lastname" class="sr-only">Nom</label>
+                        <input id="lastname" class="form-control input-group-lg" type="text" name="lastname" title="Entrez votre nom" placeholder="Nom"/>
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-12">
                         <label for="email" class="sr-only">Email</label>
-                        <input id="email" class="form-control input-group-lg" type="text" name="Email" title="Enter Email" placeholder="Your Email"/>
+                        <input id="email" class="form-control input-group-lg" type="text" name="Email" title="Entrez votre Email" placeholder="Votre Email"/>
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-12">
-                        <label for="password" class="sr-only">Password</label>
-                        <input id="password" class="form-control input-group-lg" type="password" name="password" title="Enter password" placeholder="Password"/>
+                        <label for="password" class="sr-only">Mot de passe</label>
+                        <input id="password" class="form-control input-group-lg" type="password" name="password" title="Entrez votre mot de passe" placeholder="Mot de passe"/>
                       </div>
                     </div>
                     <div class="row">
-                      <p class="birth"><strong>Date of Birth</strong></p>
+                      <p class="birth"><strong>Date de naissance</strong></p>
                       <div class="form-group col-sm-3 col-xs-6">
                         <label for="month" class="sr-only"></label>
                         <select class="form-control" id="day">
-                          <option value="Day" disabled selected>Day</option>
+                          <option value="Day" disabled selected>Jour</option>
                           <option>1</option>
                           <option>2</option>
                           <option>3</option>
@@ -125,7 +125,7 @@
                       <div class="form-group col-sm-3 col-xs-6">
                         <label for="month" class="sr-only"></label>
                         <select class="form-control" id="month">
-                          <option value="month" disabled selected>Month</option>
+                          <option value="month" disabled selected>Mois</option>
                           <option>Jan</option>
                           <option>Feb</option>
                           <option>Mar</option>
@@ -143,7 +143,7 @@
                       <div class="form-group col-sm-6 col-xs-12">
                         <label for="year" class="sr-only"></label>
                         <select class="form-control" id="year">
-                          <option value="year" disabled selected>Year</option>
+                          <option value="year" disabled selected>Année</option>
                           <option>2000</option>
                           <option>2001</option>
                           <option>2002</option>
@@ -161,16 +161,19 @@
                     </div>
                     <div class="form-group gender">
                       <label class="radio-inline">
-                        <input type="radio" name="optradio" checked>Male
+                        <input type="radio" name="optradio" checked>Homme
                       </label>
                       <label class="radio-inline">
-                        <input type="radio" name="optradio">Female
+                        <input type="radio" name="optradio">Femme
+                      </label>
+											<label class="radio-inline">
+                        <input type="radio" name="optradio">Autre
                       </label>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-6">
-                        <label for="city" class="sr-only">City</label>
-                        <input id="city" class="form-control input-group-lg reg_name" type="text" name="city" title="Enter city" placeholder="Your city"/>
+                        <label for="city" class="sr-only">Ville</label>
+                        <input id="city" class="form-control input-group-lg reg_name" type="text" name="city" title="Sélectionner votre ville" placeholder="Votre ville"/>
                       </div>
                       <div class="form-group col-xs-6">
                         <label for="country" class="sr-only"></label>
@@ -429,32 +432,32 @@
                       </div>
                     </div>
                   </form><!--Register Now Form Ends-->
-                  <p><a href="#">Already have an account?</a></p>
-                  <button class="btn btn-primary">Register Now</button>
+                  <p><a href="#login" data-toggle="tab">Déjà un compte ?</a></p>
+                  <button class="btn btn-primary">Enregistrez vous maintenant</button>
                 </div><!--Registration Form Contents Ends-->
 
                 <!--Login-->
                 <div class="tab-pane" id="login">
-                  <h3>Login</h3>
-                  <p class="text-muted">Log into your account</p>
+                  <h3>Se connecter</h3>
+                  <p class="text-muted">Connectez vous à votre compte</p>
 
                   <!--Login Form-->
                   <form name="Login_form" id='Login_form'>
                      <div class="row">
                       <div class="form-group col-xs-12">
                         <label for="my-email" class="sr-only">Email</label>
-                        <input id="my-email" class="form-control input-group-lg" type="text" name="Email" title="Enter Email" placeholder="Your Email"/>
+                        <input id="my-email" class="form-control input-group-lg" type="text" name="Email" title="Entrez votre Email" placeholder="Votre Email"/>
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-12">
-                        <label for="my-password" class="sr-only">Password</label>
-                        <input id="my-password" class="form-control input-group-lg" type="password" name="password" title="Enter password" placeholder="Password"/>
+                        <label for="my-password" class="sr-only">Mot de passe</label>
+                        <input id="my-password" class="form-control input-group-lg" type="password" name="password" title="Entrez votre mot de passe" placeholder="Mot de passe"/>
                       </div>
                     </div>
                   </form><!--Login Form Ends-->
-                  <p><a href="#">Forgot Password?</a></p>
-                  <button class="btn btn-primary">Login Now</button>
+                  <p><a href="#">Mot de passe oublié ?</a></p>
+                  <button class="btn btn-primary">Connectez vous</button>
                 </div>
               </div>
             </div>
