@@ -10,7 +10,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index-register.html"><img src="images/logo.png" alt="logo" /></a>
+        <a class="navbar-brand" href="index.php"><img src="images/logo.png" alt="logo" /></a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -23,21 +23,21 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profil <span><img src="images/down-arrow.png" alt="" /></span></a>
             <ul class="dropdown-menu login">
-              <li><a href="timeline.html">Profil</a></li>
-              <li><a href="timeline-about.html">A propos de moi</a></li>
-              <li><a href="timeline-friends.html">Amis</a></li>
-              <li><a href="edit-profile-basic.html">Modifier les Informations</a></li>
-              <li><a href="edit-profile-work-edu.html">Modifier son Travail</a></li>
-              <li><a href="edit-profile-interests.html">Modifier les centres d'intérêts</a></li>
-              <li><a href="edit-profile-settings.html">Paramètre du compte</a></li>
-              <li><a href="edit-profile-password.html">Changer de Mot de passe</a></li>
+              <li><a href="timeline.php">Profil</a></li>
+              <li><a href="timeline-about.php">A propos de moi</a></li>
+              <li><a href="timeline-friends.php">Amis</a></li>
+              <li><a href="edit-profile-basic.php">Modifier les Informations</a></li>
+              <li><a href="edit-profile-work-edu.php">Modifier son Travail</a></li>
+              <li><a href="edit-profile-interests.php">Modifier les centres d'intérêts</a></li>
+              <li><a href="edit-profile-settings.php">Paramètre du compte</a></li>
+              <li><a href="edit-profile-password.php">Changer de Mot de passe</a></li>
             </ul>
           </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle pages" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Toutes les Pages <span><img src="images/down-arrow.png" alt="" /></span></a>
             <ul class="dropdown-menu page-list">
-              <li><a href="faq.html">FAQ Page</a></li>
-              <li><a href="404.html">404 Not Found</a></li>
+              <li><a href="faq.php">FAQ Page</a></li>
+              <li><a href="404.php">404 Not Found</a></li>
             </ul>
           </li>
           <li class="dropdown"><a href="contact.php">Contact</a></li>
