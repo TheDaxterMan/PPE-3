@@ -36,12 +36,11 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle pages" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Toutes les Pages <span><img src="images/down-arrow.png" alt="" /></span></a>
             <ul class="dropdown-menu page-list">
-              <li><a href="contact.html">Contact Us</a></li>
               <li><a href="faq.html">FAQ Page</a></li>
               <li><a href="404.html">404 Not Found</a></li>
             </ul>
           </li>
-          <li class="dropdown"><a href="contact.html">Contact</a></li>
+          <li class="dropdown"><a href="contact.php">Contact</a></li>
         </ul>
         <form class="navbar-form navbar-right hidden-sm">
           <div class="form-group">
