@@ -1984,7 +1984,7 @@ input:checked + .slider:before{
 }
 
 .contact-us{
-  background: #a1a1a1;
+  background: #777;
   padding: 40px;
   margin-top: -140px;
   border-radius: 4px;
@@ -1999,7 +1999,7 @@ input:checked + .slider:before{
 }
 
 .contact-us form.contact-form .form-group i{
-  color: #f1f2f2;
+  color: #8DC63F;
   font-size: 16px;
   left: 10px;
   position: absolute;
@@ -2023,7 +2023,7 @@ input:checked + .slider:before{
 }
 
 .contact-us .reach span{
-  border: 1px solid #f1f2f2;
+  border: 1px solid #474343;
   position: absolute;
   color: #8DC63F;
   height: 40px;
@@ -2291,7 +2291,7 @@ ul.social-icons li{
   background: transparent;
   width: 30px;
   height: 30px;
-  border: 1px solid #f1f2f2;
+  border: 1px solid #474343;
   border-radius: 4px;
   margin: 3px;
   text-align: center;
