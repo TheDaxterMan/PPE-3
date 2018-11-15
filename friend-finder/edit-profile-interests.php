@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from thunder-team.com/friend-finder/edit-profile-interests.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 08 Nov 2018 14:00:55 GMT -->
+<!-- Mirrored from thunder-team.com/friend-finder/edit-profile-interests.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 08 Nov 2018 14:00:55 GMT -->
 <head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -49,10 +49,10 @@
               </div>
               <div class="col-md-9">
                 <ul class="list-inline profile-menu">
-                  <li><a href="timeline.html">Timeline</a></li>
-                  <li><a href="timeline-about.html" class="active">About</a></li>
-                  <li><a href="timeline-album.html">Album</a></li>
-                  <li><a href="timeline-friends.html">Friends</a></li>
+                  <li><a href="timeline.php">Timeline</a></li>
+                  <li><a href="timeline-about.php" class="active">About</a></li>
+                  <li><a href="timeline-album.php">Album</a></li>
+                  <li><a href="timeline-friends.php">Friends</a></li>
                 </ul>
                 <ul class="follow-me list-inline">
                   <li>1,299 people following her</li>
@@ -71,10 +71,10 @@
             </div>
             <div class="mobile-menu">
               <ul class="list-inline">
-                <li><a href="timline.html">Timeline</a></li>
-                <li><a href="timeline-about.html" class="active">About</a></li>
-                <li><a href="timeline-album.html">Album</a></li>
-                <li><a href="timeline-friends.html">Friends</a></li>
+                <li><a href="timline.php">Timeline</a></li>
+                <li><a href="timeline-about.php" class="active">About</a></li>
+                <li><a href="timeline-album.php">Album</a></li>
+                <li><a href="timeline-friends.php">Friends</a></li>
               </ul>
               <button class="btn-primary">Add Friend</button>
             </div>
@@ -87,11 +87,11 @@
 
               <!--Edit Profile Menu-->
               <ul class="edit-menu">
-              	<li><i class="icon ion-ios-information-outline"></i><a href="edit-profile-basic.html">Basic Information</a></li>
-              	<li><i class="icon ion-ios-briefcase-outline"></i><a href="edit-profile-work-edu.html">Education and Work</a></li>
-              	<li class="active"><i class="icon ion-ios-heart-outline"></i><a href="edit-profile-interests.html">My Interests</a></li>
-                <li><i class="icon ion-ios-settings"></i><a href="edit-profile-settings.html">Account Settings</a></li>
-              	<li><i class="icon ion-ios-locked-outline"></i><a href="edit-profile-password.html">Change Password</a></li>
+              	<li><i class="icon ion-ios-information-outline"></i><a href="edit-profile-basic.php">Basic Information</a></li>
+              	<li><i class="icon ion-ios-briefcase-outline"></i><a href="edit-profile-work-edu.php">Education and Work</a></li>
+              	<li class="active"><i class="icon ion-ios-heart-outline"></i><a href="edit-profile-interests.php">My Interests</a></li>
+                <li><i class="icon ion-ios-settings"></i><a href="edit-profile-settings.php">Account Settings</a></li>
+              	<li><i class="icon ion-ios-locked-outline"></i><a href="edit-profile-password.php">Change Password</a></li>
               </ul>
             </div>
             <div class="col-md-7">
@@ -211,5 +211,5 @@
 
   </body>
 
-<!-- Mirrored from thunder-team.com/friend-finder/edit-profile-interests.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 08 Nov 2018 14:00:55 GMT -->
+<!-- Mirrored from thunder-team.com/friend-finder/edit-profile-interests.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 08 Nov 2018 14:00:55 GMT -->
 </html>

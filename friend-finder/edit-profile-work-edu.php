@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from thunder-team.com/friend-finder/edit-profile-work-edu.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 08 Nov 2018 14:00:55 GMT -->
+<!-- Mirrored from thunder-team.com/friend-finder/edit-profile-work-edu.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 08 Nov 2018 14:00:55 GMT -->
 <head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -74,7 +74,7 @@
                 <li><a href="timeline.php">Publications</a></li>
                 <li><a href="timeline-about.php" class="active">A propos</a></li>
                 <li><a href="timeline-album.php">Album</a></li>
-                <li><a href="timeline-friends.html">Amis</a></li>
+                <li><a href="timeline-friends.php">Amis</a></li>
               </ul>
               <button class="btn-primary">Ajouter en ami</button>
             </div>
@@ -270,5 +270,5 @@
 
   </body>
 
-<!-- Mirrored from thunder-team.com/friend-finder/edit-profile-work-edu.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 08 Nov 2018 14:00:55 GMT -->
+<!-- Mirrored from thunder-team.com/friend-finder/edit-profile-work-edu.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 08 Nov 2018 14:00:55 GMT -->
 </html>
