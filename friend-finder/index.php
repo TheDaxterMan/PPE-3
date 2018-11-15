@@ -64,37 +64,37 @@
                   <p class="text-muted">Veuillez remplir le formulaire ci-dessous</p>
 
                   <!--Register Form-->
-                  <form name="registration_form" id='registration_form' class="form-inline">
+                  <form name="registration_form" id='registration_form' action="enregistrer.php" class="form-inline">
                     <div class="row">
                       <div class="form-group col-xs-6">
                         <label for="firstname" class="sr-only">Prénom</label>
-                        <input id="firstname" class="form-control input-group-lg" type="text" name="firstname" title="Entrez votre prénom" placeholder="Prénom"/>
+                        <input id="firstname" class="form-control input-group-lg" type="text" name="firstname" title="Entrez votre prénom" placeholder="Prénom" required/>
                       </div>
                       <div class="form-group col-xs-6">
                         <label for="lastname" class="sr-only">Nom</label>
-                        <input id="lastname" class="form-control input-group-lg" type="text" name="lastname" title="Entrez votre nom" placeholder="Nom"/>
+                        <input id="lastname" class="form-control input-group-lg" type="text" name="lastname" title="Entrez votre nom" placeholder="Nom" required/>
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-12">
                         <label for="email" class="sr-only">Email</label>
-                        <input id="email" class="form-control input-group-lg" type="text" name="Email" title="Entrez votre Email" placeholder="Votre Email"/>
+                        <input id="email" class="form-control input-group-lg" type="text" name="Email" title="Entrez votre Email" placeholder="Votre Email" required/>
                       </div>
                     </div>
                     <div class="row">
 											<div class="form-group col-xs-12">
                         <label for="ident" class="sr-only">Identifiant</label>
-                        <input id="ident" class="form-control input-group-lg" type="text" name="ident" title="Entrez votre identifiant" placeholder="Identifiant"/>
+                        <input id="ident" class="form-control input-group-lg" type="text" name="ident" title="Entrez votre identifiant" placeholder="Identifiant" required/>
                       </div>
                     </div>
 										<div class="row">
 											<div class="form-group col-xs-12">
 												<label for="password" class="sr-only">Mot de passe</label>
-												<input id="password" class="form-control input-group-lg" type="password" name="password" title="Entrez votre mot de passe" placeholder="Mot de passe"/>
+												<input id="password" class="form-control input-group-lg" type="password" name="password" title="Entrez votre mot de passe" placeholder="Mot de passe" required/>
 											</div>
 											<div class="form-group col-xs-12">
 												<label for="password2" class="sr-only">Mot de passe</label>
-												<input id="password2" class="form-control input-group-lg" type="password" name="password2" title="Confirmez votre mot de passe" placeholder="Confirmer Mot de passe"/>
+												<input id="password2" class="form-control input-group-lg" type="password" name="password2" title="Confirmez votre mot de passe" placeholder="Confirmer Mot de passe" required/>
 											</div>
 										</div>
                   </form><!--Register Now Form Ends-->
