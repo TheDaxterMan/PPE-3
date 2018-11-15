@@ -78,27 +78,20 @@
                       </div>
                     </div>
                     <div class="row">
-                      <div class="form-group col-xs-12">
+											<div class="form-group col-xs-6">
+                        <label for="ident" class="sr-only">Identifiant</label>
+                        <input id="ident" class="form-control input-group-lg" type="text" name="ident" title="Entrez votre identifiant" placeholder="Identifiant"/>
+                      </div>
+                      <div class="form-group col-xs-6">
                         <label for="password" class="sr-only">Mot de passe</label>
                         <input id="password" class="form-control input-group-lg" type="password" name="password" title="Entrez votre mot de passe" placeholder="Mot de passe"/>
                       </div>
                     </div>
-                    <div class="row">
+										<div class="row">
 											<div class="form-group col-xs-12">
-                        <label for="date" class="sr-only">Date de naissance</label>
-                        <input id="date" class="form-control input-group-lg" type="date" name="naissance" title="Entrez votre date de naissance"/>
+                        <label for="tel" class="sr-only">Téléphone</label>
+                        <input id="tel" class="form-control input-group-lg" type="text" name="tel" title="Entrez votre numéro de téléphone" placeholder="Numéro de téléphones"/>
                       </div>
-                    </div>
-                    <div class="form-group gender">
-                      <label class="radio-inline">
-                        <input type="radio" name="optradio">Homme
-                      </label>
-                      <label class="radio-inline">
-                        <input type="radio" name="optradio">Femme
-                      </label>
-											<label class="radio-inline">
-                        <input type="radio" name="optradio">Autre
-                      </label>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-6">
