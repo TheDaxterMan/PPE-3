@@ -93,9 +93,16 @@
 												<input id="password" class="form-control input-group-lg" type="password" name="mdp" title="Entrez votre mot de passe" placeholder="Mot de passe" required/>
 											</div>
 											<div class="form-group col-xs-12">
-												<label for="password2" class="sr-only">Mot de passe</label>
+												<label for="password2" class="sr-only">Confirmer Mot de passe</label>
 												<input id="password2" class="form-control input-group-lg" type="password" name="mdp2" title="Confirmez votre mot de passe" placeholder="Confirmer Mot de passe" required/>
 											</div>
+										</div>
+										<div class="form-group gender">
+											<label class="radio-inline">
+												<input type="radio" name="optradio">Elève
+											</label>
+											<label class="radio-inline">Entreprisee
+											</label>
 										</div>
 										<p><a href="#login" data-toggle="tab">Déjà un compte ?</a></p>
 										<input class="btn btn-primary" type="submit" name="enregistrer" value="Enregistrez vous maintenant">
