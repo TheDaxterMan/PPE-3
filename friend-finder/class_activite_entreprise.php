@@ -44,6 +44,6 @@ class activite_entreprise
     
   }
 
-  /* FIN class Entreprise */
+  /* FIN class activite_entreprise */
 
 ?>
