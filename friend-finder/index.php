@@ -64,7 +64,7 @@
                   <p class="text-muted">Veuillez remplir le formulaire ci-dessous</p>
 
                   <!--Register Form-->
-                  <form name="registration_form" id='registration_form' action="enregistrer.php" class="form-inline">
+                  <form name="registration_form" id='registration_form' action="enregistrer.php" method="post" class="form-inline">
                     <div class="row">
                       <div class="form-group col-xs-6">
                         <label for="prenom" class="sr-only">Prénom</label>

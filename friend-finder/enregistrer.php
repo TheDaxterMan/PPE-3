@@ -5,4 +5,5 @@ $email=$_POST['email'];
 $ident=$_POST['ident'];
 $mdp=$_POST['mdp'];
 $mdp2=$_POST['mdp2'];
+echo $prenom;
 ?>
