@@ -105,11 +105,6 @@
                         <label for="city" class="sr-only">Ville</label>
                         <input id="city" class="form-control input-group-lg reg_name" type="text" name="city" title="Sélectionner votre ville" placeholder="Votre ville"/>
                       </div>
-                      <div class="form-group col-xs-6">
-                        <label for="country" class="sr-only"></label>
-                        <select class="form-control" id="country">
-                        </select>
-                      </div>
                     </div>
                   </form><!--Register Now Form Ends-->
                   <p><a href="#login" data-toggle="tab">Déjà un compte ?</a></p>
