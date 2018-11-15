@@ -106,10 +106,21 @@
 											</label>
 										</div>
 										<div class="row">
-											<div class="form-group col-xs-12">
-												<label for="act" class="sr-only">Domaine d'activité</label>
-												<input id="act" class="form-control input-group-lg" type="text" name="act" title="Entrez votre domaine d'activité" placeholder="Entrez votre domaine d'activité" required/>
-											</div>
+                      <div>
+                        <select class="form-control" id="entreprise" name="entreprise">
+													<option value="entreprise" disabled selected>Domaine d'activitée</option>
+													<?php
+													$sql="SELECT * FROM activite_entreprise";
+													$req = $conn -> query($sql)or die($conn->errorInfo());
+													while ($res=$req->fetch())
+													{
+														?>
+															<option value="<?php echo $res['id_activite'] ?>"><?php echo $res['lib_activite']?></option>
+													<?php
+													}
+													?>
+                        </select>
+                      </div>
 										</div>
 										<p><a href="#login" data-toggle="tab">Déjà un compte ?</a></p>
 										<input class="btn btn-primary" type="submit" name="enregistrer" value="Enregistrez vous maintenant">
