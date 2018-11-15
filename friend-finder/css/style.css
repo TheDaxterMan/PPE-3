@@ -71,7 +71,7 @@ body{
     src: url("../fonts/agency-fb.ttf") /* TTF file for CSS3 browsers */
 }
 
-h1, h2, h3, h4, h5, h6{color: #27aae1;}
+h1, h2, h3, h4, h5, h6{color: #000000;}
 
 h1.grey, h2.grey, h3.grey, h4.grey, h5.grey, h6.grey{
   color: #fff;
@@ -382,7 +382,7 @@ textarea{
 .menu form .form-group i.icon{
   position: absolute;
   left: 15px;
-  top: 7px;
+  top: 3px;
   color: #20c039ad;
 }
 
@@ -409,17 +409,17 @@ textarea{
 }
 
 .menu ul.main-menu li.dropdown a:hover, .menu ul.main-menu li.dropdown a:active, .menu ul.main-menu li.dropdown a:focus{
-  color: #27aae1;
+  color: #b81717;
   background: none;
 }
 
 .menu ul.main-menu li.open a, .menu ul.main-menu li.open a:active, .menu ul.main-menu li.open a:focus{
   background: transparent;
-  color: #27aae1;
+  color: #b81717;
 }
 
 .menu ul.main-menu li ul.dropdown-menu{
-  background: #231F20;
+  background: #605f60;
   box-shadow: none;
   border: 0;
   padding: 0;
@@ -1224,7 +1224,7 @@ ul.online-users li span.online-dot{
 }
 
 .create-post .tools ul.publishing-tools li a:hover{
-  color: #27aae1;
+  color: #b81717;
 }
 
 
@@ -1597,11 +1597,11 @@ ul.online-users li span.online-dot{
 }
 
 .timeline-cover .timeline-nav-bar .profile-menu li a.active{
-  color: #27aae1;
+  color: #8DC63F;
 }
 
 .timeline-cover .timeline-nav-bar .profile-menu li a:hover{
-  color: #27aae1;
+  color: #8DC63F;
 }
 
 .timeline-cover .timeline-nav-bar ul.follow-me{
@@ -1612,7 +1612,7 @@ ul.online-users li span.online-dot{
 }
 
 .timeline-cover .timeline-nav-bar .follow-me li{
-  padding: 6px 15px;
+  padding: 6px 50px;
   color: #fff;
 }
 
