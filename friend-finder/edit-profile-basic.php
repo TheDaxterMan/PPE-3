@@ -109,26 +109,26 @@
                   <form name="basic-info" id="basic-info" class="form-inline">
                     <div class="row">
                       <div class="form-group col-xs-6">
-                        <label for="firstname">First name</label>
+                        <label for="firstname">Prenom</label>
                         <input id="firstname" class="form-control input-group-lg" type="text" name="firstname" title="Enter first name" placeholder="First name" value="John" />
                       </div>
                       <div class="form-group col-xs-6">
-                        <label for="lastname" class="">Last name</label>
+                        <label for="lastname" class="">Nom</label>
                         <input id="lastname" class="form-control input-group-lg" type="text" name="lastname" title="Enter last name" placeholder="Last name" value="Doe" />
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-12">
-                        <label for="email">My email</label>
+                        <label for="email">Email</label>
                         <input id="email" class="form-control input-group-lg" type="text" name="Email" title="Enter Email" placeholder="My Email" value="razor.venon@gmail.com" />
                       </div>
                     </div>
                     <div class="row">
-                      <p class="custom-label"><strong>Date of Birth</strong></p>
+                      <p class="custom-label"><strong>Date de naissance</strong></p>
                       <div class="form-group col-sm-3 col-xs-6">
                         <label for="month" class="sr-only"></label>
                         <select class="form-control" id="day">
-                          <option value="Day">Day</option>
+                          <option value="Day">Jour</option>
                           <option>1</option>
                           <option>2</option>
                           <option>3</option>
@@ -165,7 +165,7 @@
                       <div class="form-group col-sm-3 col-xs-6">
                         <label for="month" class="sr-only"></label>
                         <select class="form-control" id="month">
-                          <option value="month">Month</option>
+                          <option value="month">Mois</option>
                           <option>Jan</option>
                           <option>Feb</option>
                           <option>Mar</option>
@@ -183,7 +183,7 @@
                       <div class="form-group col-sm-6 col-xs-12">
                         <label for="year" class="sr-only"></label>
                         <select class="form-control" id="year">
-                          <option value="year">Year</option>
+                          <option value="year">Annee</option>
                           <option selected>2000</option>
                           <option>2001</option>
                           <option>2002</option>
