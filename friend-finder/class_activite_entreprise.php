@@ -1,24 +1,32 @@
 <?php
 
-/* DEBUT class activite_entreprise */
+  /* ---------------------- */
+  /* DEBUT class Activite_entreprise */
+  /* ---------------------- */
 
 class activite_entreprise
 	{
 
-		/* class Entreprise Variables */
+    /* ---------------------- */
+    /* class Activite_entreprise Variables */
+    /* ---------------------- */
 
 		Private $id_activite;
     Private $lib_activite;
 
-    /* class Entreprise Constructeur */
+    /* ---------------------- */
+    /* class Activite_entreprise Constructeur */
+    /* ---------------------- */
 
-    Public function  ( $id_act, $lib_act)
+    Public function ( $id_act, $lib_act)
     {
       $this -> id_activite = $id_act;
       $this -> lib_activite = $lib_act;
     }
 
-    /* class Entreprise GET */
+    /* ---------------------- */
+    /* class Activite_entreprise GET */
+    /* ---------------------- */
 
     Public function get_id_activite ()
     {
@@ -30,20 +38,24 @@ class activite_entreprise
       return $this-> lib_activite;
     }
 
-    /* class Entreprise SET */
+    /* ---------------------- */
+    /* class Activite_entreprise SET */
+    /* ---------------------- */
 
     Public function set_id_activite ($id_act)
     {
        $this-> lib_activite = $id_act;
     }
 
-    Public function set_id_lib_activite ($lib_act)
+    Public function set_lib_activite ($lib_act)
     {
        $this-> lib_activite = $lib_act;
     }
-    
+
   }
 
-  /* FIN class activite_entreprise */
+  /* ---------------------- */
+  /* FIN class Activite_entreprise */
+  /* ---------------------- */
 
 ?>

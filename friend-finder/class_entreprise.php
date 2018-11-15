@@ -1,13 +1,17 @@
 <?php
 
-/* DEBUT class Entreprise */
+	/* ---------------------- */
+	/* DEBUT class Entreprise */
+	/* ---------------------- */
 
 class entreprise
-	{
+{
 
+		/* ---------------------- */
 		/* class Entreprise Variables */
+		/* ---------------------- */
 
-		Private $id_entreprisePrimaire;
+		Private $id_entreprise;
 		Private $nom_entreprise;
 		Private $nom_responsable;
 		Private $prenom_responsable;
@@ -18,9 +22,11 @@ class entreprise
 		Private $login_entreprise;
 		Private $mdp_entreprise;
 
+		/* ---------------------- */
 		/* class Entreprise Constructeur */
+		/* ---------------------- */
 
-			Public function  ( $id_ent, $nom_ent, $nom_resp, $prenom_resp, $email_ent, $rue_ent, $ville_ent, $cp_ent, $login_ent, $mdp_ent)
+			Public function ( $id_ent, $nom_ent, $nom_resp, $prenom_resp, $email_ent, $rue_ent, $ville_ent, $cp_ent, $login_ent, $mdp_ent)
 			{
 				$this -> id_entreprise = $id_ent;
 				$this -> nom_entreprise = $nom_ent;
@@ -34,7 +40,9 @@ class entreprise
 				$this -> mdp_entreprise = $mdp_ent;
 			}
 
+			/* ---------------------- */
 			/* class Entreprise GET */
+			/* ---------------------- */
 
 			Public function get_id_entreprise ()
 			{
@@ -86,7 +94,9 @@ class entreprise
 				return $this-> mdp_entreprise;
 			}
 
+			/* ---------------------- */
 			/* class Entreprise SET */
+			/* ---------------------- */
 
 			Public function set_id_entreprise ($id_ent)
 			{
@@ -138,7 +148,10 @@ class entreprise
 				 $this-> mdp_entreprise = $mdp_ent;
 			}
 
-	}
-			/* FIN class Entreprise */
+}
+
+	/* ---------------------- */
+	/* FIN class Entreprise */
+	/* ---------------------- */
 
 ?>
