@@ -95,7 +95,20 @@
             ================================================= -->
             <div class="people-nearby">
               <div class="google-maps">
-                <div id="map" class="map"></div>
+
+								<div id="map"></div>
+								<script>
+								// Initialize and add the map
+								function initMap() {
+									// The location of Uluru
+									var uluru = {lat: -25.344, lng: 131.036};
+									// The map, centered at Uluru
+									var map = new google.maps.Map(
+										document.getElementById('map'), {zoom: 4, center: uluru});
+										// The marker, positioned at Uluru
+										var marker = new google.maps.Marker({position: uluru, map: map});
+									}
+								</script>
               </div>
               <div class="nearby-user">
                 <div class="row">
@@ -296,10 +309,16 @@
     	</div>
     </div>
 
+<<<<<<< HEAD
 		<?php
 		include "footer.php";
 		 ?>
 
+=======
+    <!-- Footer
+    ================================================= -->
+		<?php include "footer.php"; ?>
+>>>>>>> 0e58e7bd27e580fe834c8676899c5d965e005dc6
   </body>
 
 <!-- Mirrored from thunder-team.com/friend-finder/newsfeed-people-nearby.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 08 Nov 2018 14:00:02 GMT -->
