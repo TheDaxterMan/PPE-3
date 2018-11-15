@@ -78,7 +78,7 @@
                     <div class="row">
                       <div class="form-group col-xs-12">
                         <label for="email" class="sr-only">Email</label>
-                        <input id="email" class="form-control input-group-lg" type="text" name="email" title="Entrez votre Email" placeholder="Votre Email" required/>
+                        <input id="email" class="form-control input-group-lg" type="email" name="email" title="Entrez votre Email" placeholder="Votre Email" required/>
                       </div>
                     </div>
                     <div class="row">
