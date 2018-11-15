@@ -1991,7 +1991,7 @@ input:checked + .slider:before{
 }
 
 .contact-us{
-  background: #777;
+  background: #e1e1e147;
   padding: 40px;
   margin-top: -140px;
   border-radius: 4px;
