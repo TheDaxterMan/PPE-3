@@ -57,6 +57,7 @@ body{
 }
 
 
+
 /*==================================================
   Typography
   ==================================================*/
@@ -855,7 +856,7 @@ textarea{
 /*Registration Form Container*/
 
 .reg-form-container{
-  background: #777;
+  background: #fff;
   box-shadow: 0 0 35px rgba(0,0,0, .4);
   padding: 40px 40px 40px 60px;
   border-radius: 6px;
