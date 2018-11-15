@@ -262,9 +262,15 @@
     	</div>
     </div>
 
+<<<<<<< HEAD
+		<?php
+		include "footer.php";
+		 ?>
+=======
     <!-- Footer
     ================================================= -->
 		<?php include "footer.php"; ?>
+>>>>>>> 0e58e7bd27e580fe834c8676899c5d965e005dc6
 
   </body>
 

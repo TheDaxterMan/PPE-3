@@ -297,9 +297,16 @@
     	</div>
     </div>
 
+<<<<<<< HEAD
+		<?php
+		include "footer.php";
+		 ?>
+
+=======
     <!-- Footer
     ================================================= -->
 		<?php include "footer.php"; ?>
+>>>>>>> 0e58e7bd27e580fe834c8676899c5d965e005dc6
   </body>
 
 <!-- Mirrored from thunder-team.com/friend-finder/newsfeed-people-nearby.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 08 Nov 2018 14:00:02 GMT -->

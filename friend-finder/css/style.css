@@ -71,10 +71,10 @@ body{
     src: url("../fonts/agency-fb.ttf") /* TTF file for CSS3 browsers */
 }
 
-h1, h2, h3, h4, h5, h6{color: #000000;}
+h1, h2, h3, h4, h5, h6{color: #000;}
 
 h1.grey, h2.grey, h3.grey, h4.grey, h5.grey, h6.grey{
-  color: #fff;
+  color: #000;
   margin: 0 auto 20px;
 }
 
@@ -1991,7 +1991,7 @@ input:checked + .slider:before{
 }
 
 .contact-us{
-  background: #777;
+  background: #e1e1e147;
   padding: 40px;
   margin-top: -140px;
   border-radius: 4px;
