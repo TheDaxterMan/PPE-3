@@ -87,11 +87,11 @@
 
               <!--Edit Profile Menu-->
               <ul class="edit-menu">
-              	<li><i class="icon ion-ios-information-outline"></i><a href="edit-profile-basic.php">Basic Information</a></li>
-              	<li><i class="icon ion-ios-briefcase-outline"></i><a href="edit-profile-work-edu.php">Education and Work</a></li>
-              	<li class="active"><i class="icon ion-ios-heart-outline"></i><a href="edit-profile-interests.php">My Interests</a></li>
-                <li><i class="icon ion-ios-settings"></i><a href="edit-profile-settings.php">Account Settings</a></li>
-              	<li><i class="icon ion-ios-locked-outline"></i><a href="edit-profile-password.php">Change Password</a></li>
+              	<li><i class="icon ion-ios-information-outline"></i><a href="edit-profile-basic.php">Informations basiques</a></li>
+              	<li><i class="icon ion-ios-briefcase-outline"></i><a href="edit-profile-work-edu.php">Education et travail</a></li>
+              	<li class="active"><i class="icon ion-ios-heart-outline"></i><a href="edit-profile-interests.php">Centres d'intérêts</a></li>
+                <li><i class="icon ion-ios-settings"></i><a href="edit-profile-settings.php">Paramètres du Compte</a></li>
+              	<li><i class="icon ion-ios-locked-outline"></i><a href="edit-profile-password.php">Changer de Mot de passe</a></li>
               </ul>
             </div>
             <div class="col-md-7">
@@ -100,27 +100,27 @@
               ================================================= -->
               <div class="edit-profile-container">
                 <div class="block-title">
-                  <h4 class="grey"><i class="icon ion-ios-heart-outline"></i>My Interests</h4>
+                  <h4 class="grey"><i class="icon ion-ios-heart-outline"></i>Centres d'intérêts</h4>
                   <div class="line"></div>
-                  <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</p>
+                  <p>blabla écrire un truc ici</p>
                   <div class="line"></div>
                 </div>
                 <div class="edit-block">
                   <ul class="list-inline interests">
-                  	<li><a href="#"><i class="icon ion-android-bicycle"></i> Bycicle</a></li>
-                  	<li><a href="#"><i class="icon ion-ios-camera"></i> Photgraphy</a></li>
+                  	<li><a href="#"><i class="icon ion-android-bicycle"></i> Vélo</a></li>
+                  	<li><a href="#"><i class="icon ion-ios-camera"></i> Photography</a></li>
                   	<li><a href="#"><i class="icon ion-android-cart"></i> Shopping</a></li>
-                  	<li><a href="#"><i class="icon ion-android-plane"></i> Traveling</a></li>
-                  	<li><a href="#"><i class="icon ion-android-restaurant"></i> Eating</a></li>
+                  	<li><a href="#"><i class="icon ion-android-plane"></i> Voyages</a></li>
+                  	<li><a href="#"><i class="icon ion-android-restaurant"></i> Manger</a></li>
                   </ul>
                   <div class="line"></div>
                   <div class="row">
-                    <p class="custom-label"><strong>Add interests</strong></p>
+                    <p class="custom-label"><strong>Ajouter des intérêts</strong></p>
                     <div class="form-group col-sm-8">
-                      <input id="add-interest" class="form-control input-group-lg" type="text" name="interest" title="Choose Interest" placeholder="Interests. For example, photography"/>
+                      <input id="add-interest" class="form-control input-group-lg" type="text" name="interet" title="Choisir un intérêt" placeholder="Intérêts. Comme par exemple la photography"/>
                     </div>
                     <div class="form-group col-sm-4">
-                      <button class="btn btn-primary">Add</button>
+                      <button class="btn btn-primary">Ajouter</button>
                     </div>
                   </div>
                 </div>
