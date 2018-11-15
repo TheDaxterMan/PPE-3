@@ -91,7 +91,7 @@
               	<li><i class="icon ion-ios-briefcase-outline"></i><a href="edit-profile-work-edu.php">Education et Travail</a></li>
               	<li><i class="icon ion-ios-heart-outline"></i><a href="edit-profile-interests.php">Centres d'intérêts</a></li>
                 <li class="active"><i class="icon ion-ios-settings"></i><a href="edit-profile-settings.php">Paramètres du compte</a></li>
-              	<li><i class="icon ion-ios-locked-outline"></i><a href="edit-profile-password.php">Changer le Mot de passe</a></li>
+              	<li><i class="icon ion-ios-locked-outline"></i><a href="edit-profile-password.php">Changer de Mot de passe</a></li>
               </ul>
             </div>
             <div class="col-md-7">
@@ -102,7 +102,7 @@
                 <div class="block-title">
                   <h4 class="grey"><i class="icon ion-ios-settings"></i>Paramètres du compte</h4>
                   <div class="line"></div>
-                  <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</p>
+                  <p>Blabla expliquer les trucs ici</p>
                   <div class="line"></div>
                 </div>
                 <div class="edit-block">
@@ -110,8 +110,8 @@
                     <div class="row">
                       <div class="col-sm-9">
                         <div class="switch-description">
-                          <div><strong>Enable follow me</strong></div>
-                          <p>Enable this if you want people to follow you</p>
+                          <div><strong>Autoriser à me suivre</strong></div>
+                          <p>Activer ceci permettra aux personnes de vous suivre</p>
                         </div>
                       </div>
                       <div class="col-sm-3">
@@ -129,8 +129,8 @@
                     <div class="row">
                       <div class="col-sm-9">
                         <div class="switch-description">
-                          <div><strong>Send me notifications</strong></div>
-                          <p>Send me notification emails my friends like, share or message me</p>
+                          <div><strong>M'envoyer des notifications</strong></div>
+                          <p>Envoi des notifications quand vous recevez un message</p>
                         </div>
                       </div>
                       <div class="col-sm-3">
@@ -148,8 +148,8 @@
                     <div class="row">
                       <div class="col-sm-9">
                         <div class="switch-description">
-                          <div><strong>Text messages</strong></div>
-                          <p>Send me messages to my cell phone</p>
+                          <div><strong>Message privés</strong></div>
+                          <p>Envoi les messages sur votre portable</p>
                         </div>
                       </div>
                       <div class="col-sm-3">
@@ -167,8 +167,8 @@
                     <div class="row">
                       <div class="col-sm-9">
                         <div class="switch-description">
-                          <div><strong>Enable tagging</strong></div>
-                          <p>Enable my friends to tag me on their posts</p>
+                          <div><strong>Autoriser les tags</strong></div>
+                          <p>Autorise mes amis à me taguer</p>
                         </div>
                       </div>
                       <div class="col-sm-3">
@@ -186,8 +186,8 @@
                     <div class="row">
                       <div class="col-sm-9">
                         <div class="switch-description">
-                          <div><strong>Enable sound</strong></div>
-                          <p>You'll hear notification sound when someone sends you a private message</p>
+                          <div><strong>Autoriser les sons</strong></div>
+                          <p>Vous entendrez un son quand quelqu'un vous envoi un message privé</p>
                         </div>
                       </div>
                       <div class="col-sm-3">
