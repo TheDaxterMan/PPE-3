@@ -7,13 +7,21 @@ include "bdd.inc.php";
   $ident=$_POST['ident'];
   $mdp=$_POST['mdp'];
   $mdp2=$_POST['mdp2'];
+  $radio=$_POST['radio'];
 
 if ($mdp==$mdp2)
 {
-  $sql= "INSERT INTO utilisateur VALUES (NULL,'$nom','$prenom','-','$email','-','-','-','$ident','$mdp')";
-  $req = $conn -> query($sql)or die($conn->errorInfo());
-
-  echo $sql;
+  if ($radio=="Elève")
+  {
+    $sql= "INSERT INTO utilisateur VALUES (NULL,'$nom','$prenom','-','$email','-','-','-','$ident','$mdp')";
+    $req = $conn -> query($sql)or die($conn->errorInfo());
+  }
+  if ($radio=="Entreprise")
+  {
+    $sql= "INSERT INTO entreprise VALUES (NULL,'-','$nom','$prenom','$email','-','-','-','$ident','$mdp',NULL)";
+    $req = $conn -> query($sql)or die($conn->errorInfo());
+    echo $sql;
+  }
 }
 
 ?>

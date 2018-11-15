@@ -99,10 +99,19 @@
 										</div>
 										<div class="form-group gender">
 											<label class="radio-inline">
-												<input type="radio" name="optradio">Elève
+												<input type="radio" name="radio" value="Elève">Elève
 											</label>
-											<label class="radio-inline">Entreprisee
+											<label class="radio-inline">
+												<input type="radio" name="radio" value="Entreprise">Entreprise
 											</label>
+										</div>
+										<div class="row">
+                      <div>
+                        <select class="form-control" id="entreprise">
+                          <option value="entreprise" disabled selected>Domaine d'activitée</option>
+                          <option>1</option>
+                        </select>
+                      </div>
 										</div>
 										<p><a href="#login" data-toggle="tab">Déjà un compte ?</a></p>
 										<input class="btn btn-primary" type="submit" name="enregistrer" value="Enregistrez vous maintenant">
