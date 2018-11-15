@@ -52,6 +52,36 @@ class activite_entreprise
        $this-> lib_activite = $lib_act;
     }
 
+		/* ---------------------- */
+		/* class Activite_entreprise fonctions publiques */
+		/* ---------------------- */
+
+		Public function ajout_activite ($id_act, $lib_act, $conn)
+			{
+				$SQL = " INSERT INTO values ('NULL', '$lib_act', '$conn')";
+				$conn -> query ($SQL);
+			}
+
+			Public function modif_activite ($id_act, $lib_act)
+			{
+				$SQL = "UPDATE activite_entreprise SET id_activite = '$id_act', lib_activite = '$lib_act')";
+				$conn -> query ($SQL);
+			}
+
+			Public function affiche_activite ($lib_act)
+			{
+				$SQL = " SELECT * From activite_entreprise WHERE lib_activite = '$lib_act'";
+				$Req = $conn -> query ($SQL);
+				Return $Res = $Req -> fetch ();
+			}
+
+			Public function suppr_activite ($id_act, $lib_act)
+			{
+				$SQL = " DELETE FROM `activite_entreprise` WHERE lib_activite = '$lib_act'";
+				$conn -> query ($SQL);
+			}
+
+
   }
 
   /* ---------------------- */
