@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from thunder-team.com/friend-finder/edit-profile-interests.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 08 Nov 2018 14:00:55 GMT -->
+<!-- Mirrored from thunder-team.com/friend-finder/edit-profile-work-edu.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 08 Nov 2018 14:00:55 GMT -->
 <head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="This is social network html5 template available in themeforest......" />
 		<meta name="keywords" content="Social Network, Social Media, Make Friends, Newsfeed, Profile Page" />
 		<meta name="robots" content="index, follow" />
-		<title>Edit Profile | My Interests</title>
+		<title>Edit Profile | Work and Education</title>
 
     <!-- Stylesheets
     ================================================= -->
@@ -49,14 +49,14 @@
               </div>
               <div class="col-md-9">
                 <ul class="list-inline profile-menu">
-                  <li><a href="timeline.html">Timeline</a></li>
-                  <li><a href="timeline-about.html" class="active">About</a></li>
-                  <li><a href="timeline-album.html">Album</a></li>
-                  <li><a href="timeline-friends.html">Friends</a></li>
+                  <li><a href="timeline.php">Publications</a></li>
+                  <li><a href="timeline-about.php" class="active">A propos</a></li>
+                  <li><a href="timeline-album.php">Album</a></li>
+                  <li><a href="timeline-friends.php">Amis</a></li>
                 </ul>
                 <ul class="follow-me list-inline">
-                  <li>1,299 people following her</li>
-                  <li><button class="btn-primary">Add Friend</button></li>
+                  <li>1,299 pecnots la suivent</li>
+                  <li><button class="btn-primary">Ajouter en ami</button></li>
                 </ul>
               </div>
             </div>
@@ -71,12 +71,12 @@
             </div>
             <div class="mobile-menu">
               <ul class="list-inline">
-                <li><a href="timline.html">Timeline</a></li>
-                <li><a href="timeline-about.html" class="active">About</a></li>
-                <li><a href="timeline-album.html">Album</a></li>
-                <li><a href="timeline-friends.html">Friends</a></li>
+                <li><a href="timeline.php">Publications</a></li>
+                <li><a href="timeline-about.php" class="active">A propos</a></li>
+                <li><a href="timeline-album.php">Album</a></li>
+                <li><a href="timeline-friends.php">Amis</a></li>
               </ul>
-              <button class="btn-primary">Add Friend</button>
+              <button class="btn-primary">Ajouter en ami</button>
             </div>
           </div><!--Timeline Menu for Small Screens End-->
 
@@ -87,45 +87,104 @@
 
               <!--Edit Profile Menu-->
               <ul class="edit-menu">
-              	<li><i class="icon ion-ios-information-outline"></i><a href="edit-profile-basic.html">Basic Information</a></li>
-              	<li><i class="icon ion-ios-briefcase-outline"></i><a href="edit-profile-work-edu.html">Education and Work</a></li>
-              	<li class="active"><i class="icon ion-ios-heart-outline"></i><a href="edit-profile-interests.html">My Interests</a></li>
-                <li><i class="icon ion-ios-settings"></i><a href="edit-profile-settings.html">Account Settings</a></li>
-              	<li><i class="icon ion-ios-locked-outline"></i><a href="edit-profile-password.html">Change Password</a></li>
+              	<li><i class="icon ion-ios-information-outline"></i><a href="edit-profile-basic.php">Informations basiques</a></li>
+              	<li class="active"><i class="icon ion-ios-briefcase-outline"></i><a href="edit-profile-work-edu.php">Education et travail</a></li>
+              	<li><i class="icon ion-ios-heart-outline"></i><a href="edit-profile-interests.php">Centres d'intérêts</a></li>
+                <li><i class="icon ion-ios-settings"></i><a href="edit-profile-settings.php">Paramètres du compte</a></li>
+              	<li><i class="icon ion-ios-locked-outline"></i><a href="edit-profile-password.php">Changer de mot de passe</a></li>
               </ul>
             </div>
             <div class="col-md-7">
 
-              <!-- Edit Interests
+              <!-- Edit Work and Education
               ================================================= -->
               <div class="edit-profile-container">
                 <div class="block-title">
-                  <h4 class="grey"><i class="icon ion-ios-heart-outline"></i>My Interests</h4>
+                  <h4 class="grey"><i class="icon ion-ios-book-outline"></i>Mon éducation</h4>
                   <div class="line"></div>
-                  <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</p>
+                  <p>blabla blabla mettre un truc ici</p>
                   <div class="line"></div>
                 </div>
                 <div class="edit-block">
-                  <ul class="list-inline interests">
-                  	<li><a href="#"><i class="icon ion-android-bicycle"></i> Bycicle</a></li>
-                  	<li><a href="#"><i class="icon ion-ios-camera"></i> Photgraphy</a></li>
-                  	<li><a href="#"><i class="icon ion-android-cart"></i> Shopping</a></li>
-                  	<li><a href="#"><i class="icon ion-android-plane"></i> Traveling</a></li>
-                  	<li><a href="#"><i class="icon ion-android-restaurant"></i> Eating</a></li>
-                  </ul>
+                  <form name="education" id="education" class="form-inline">
+                    <div class="row">
+                      <div class="form-group col-xs-12">
+                        <label for="school">Mon université</label>
+                        <input id="school" class="form-control input-group-lg" type="text" name="school" title="Entrez l'école" placeholder="Mon école" value="Harvard Unversity" />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="form-group col-xs-6">
+                        <label for="date-from">De</label>
+                        <input id="date-from" class="form-control input-group-lg" type="text" name="date" title="Entrez une date" placeholder="de" value="2012" />
+                      </div>
+                      <div class="form-group col-xs-6">
+                        <label for="date-to" class="">A</label>
+                        <input id="date-to" class="form-control input-group-lg" type="text" name="date" title="Entrez une date" placeholder="a" value="2016" />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="form-group col-xs-12">
+                        <label for="edu-description">Description</label>
+                        <textarea id="edu-description" name="description" class="form-control" placeholder="Racontez votre formation" rows="4" cols="400">Blablabla je raconte ma vie</textarea>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="form-group col-xs-12">
+                        <label for="graduate">Diplômé ? -</label>
+                        <input id="graduate" type="checkbox" name="graduate" value="graduate" checked> Oui!!
+                      </div>
+                    </div>
+                    <button class="btn btn-primary">Sauvegarder les modifications</button>
+                  </form>
+                </div>
+                <div class="block-title">
+                  <h4 class="grey"><i class="icon ion-ios-briefcase-outline"></i>Experience professionelle</h4>
                   <div class="line"></div>
-                  <div class="row">
-                    <p class="custom-label"><strong>Add interests</strong></p>
-                    <div class="form-group col-sm-8">
-                      <input id="add-interest" class="form-control input-group-lg" type="text" name="interest" title="Choose Interest" placeholder="Interests. For example, photography"/>
+                  <p>Mon expérience pro</p>
+                  <div class="line"></div>
+                </div>
+                <div class="edit-block">
+                  <form name="work" id="work" class="form-inline">
+                    <div class="row">
+                      <div class="form-group col-xs-12">
+                        <label for="company">Entreprise</label>
+                        <input id="company" class="form-control input-group-lg" type="text" name="company" title="Entrez une entreprise" placeholder="Nom de l'entreprise" value="Envato Inc" />
+                      </div>
                     </div>
-                    <div class="form-group col-sm-4">
-                      <button class="btn btn-primary">Add</button>
+                    <div class="row">
+                      <div class="form-group col-xs-12">
+                        <label for="designation">Designation</label>
+                        <input id="designation" class="form-control input-group-lg" type="text" name="designation" title="Enter designation" placeholder="designation name" value="Exclusive Author" />
+                      </div>
                     </div>
-                  </div>
+                    <div class="row">
+                      <div class="form-group col-xs-6">
+                        <label for="from-date">De</label>
+                        <input id="from-date" class="form-control input-group-lg" type="text" name="date" title="Entrez une date" placeholder="de" value="2016" />
+                      </div>
+                      <div class="form-group col-xs-6">
+                        <label for="to-date" class="">A</label>
+                        <input id="to-date" class="form-control input-group-lg" type="text" name="date" title="Entrez une date" placeholder="a" value="Present" />
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="form-group col-xs-12">
+                        <label for="work-city">Ville</label>
+                        <input id="work-city" class="form-control input-group-lg" type="text" name="city" title="Entrez une ville" placeholder="Ville" value="Melbourne"/>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="form-group col-xs-12">
+                        <label for="work-description">Description</label>
+                        <textarea id="work-description" name="description" class="form-control" placeholder="Décrire votre travail" rows="4" cols="400">blabla mon travail</textarea>
+                      </div>
+                    </div>
+                    <button class="btn btn-primary">Sauvegarder les changements</button>
+                  </form>
                 </div>
               </div>
-	    </div>
+            </div>
           </div>
         </div>
       </div>
@@ -192,7 +251,7 @@
       	</div>
       </div>
       <div class="copyright">
-        <p>Thunder Team ?2016. All rights reserved</p>
+        <p>Thunder Team � 2016. All rights reserved</p>
       </div>
 		</footer>
 
@@ -211,5 +270,5 @@
 
   </body>
 
-<!-- Mirrored from thunder-team.com/friend-finder/edit-profile-interests.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 08 Nov 2018 14:00:55 GMT -->
+<!-- Mirrored from thunder-team.com/friend-finder/edit-profile-work-edu.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 08 Nov 2018 14:00:55 GMT -->
 </html>
