@@ -382,8 +382,8 @@ textarea{
 .menu form .form-group i.icon{
   position: absolute;
   left: 15px;
-  top: 3px;
-  color: #fff;
+  top: 7px;
+  color: #20c039ad;
 }
 
 .menu form .form-group input.form-control{
@@ -1027,15 +1027,16 @@ textarea{
   padding: 10px 20px;
   color: #fff;
   margin-bottom: 40px;
+  margin-left: -30;
 }
 
 .profile-card img.profile-photo{
   float: left;
   margin-right: 20px;
   position: relative;
-  top: 5px;
-  height: 70px;
-  width: 70px;
+  top: 7px;
+  height: 60px;
+  width: 60px;
   border-radius: 50%;
 }
 
@@ -1052,7 +1053,7 @@ textarea{
 ul.nav-news-feed{
   padding-left: 20px;
   padding-right: 20px;
-  margin: 0 0 40px 0;
+  margin: 0 0 30px 0;
 }
 
 ul.nav-news-feed li{
@@ -1114,6 +1115,7 @@ ul.nav-news-feed i.ion-ios-videocam{color: #9e1f63;}
   color: #fff;
   font-size: 14px;
   font-weight: 600;
+  margin-left: 3;
 }
 
 ul.online-users{
@@ -1121,6 +1123,8 @@ ul.online-users{
   padding-right: 20px;
   text-align: center;
   margin: 0;
+  margin-left: -50;
+  margin-top: 25;
 }
 
 ul.online-users li{
