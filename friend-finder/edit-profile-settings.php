@@ -87,11 +87,11 @@
 
               <!--Edit Profile Menu-->
               <ul class="edit-menu">
-              	<li><i class="icon ion-ios-information-outline"></i><a href="edit-profile-basic.php">Basic Information</a></li>
-              	<li><i class="icon ion-ios-briefcase-outline"></i><a href="edit-profile-work-edu.php">Education and Work</a></li>
-              	<li><i class="icon ion-ios-heart-outline"></i><a href="edit-profile-interests.php">My Interests</a></li>
-                <li class="active"><i class="icon ion-ios-settings"></i><a href="edit-profile-settings.php">Account Settings</a></li>
-              	<li><i class="icon ion-ios-locked-outline"></i><a href="edit-profile-password.php">Change Password</a></li>
+              	<li><i class="icon ion-ios-information-outline"></i><a href="edit-profile-basic.php">Informations basiques</a></li>
+              	<li><i class="icon ion-ios-briefcase-outline"></i><a href="edit-profile-work-edu.php">Education et Travail</a></li>
+              	<li><i class="icon ion-ios-heart-outline"></i><a href="edit-profile-interests.php">Centres d'intérêts</a></li>
+                <li class="active"><i class="icon ion-ios-settings"></i><a href="edit-profile-settings.php">Paramètres du compte</a></li>
+              	<li><i class="icon ion-ios-locked-outline"></i><a href="edit-profile-password.php">Changer le Mot de passe</a></li>
               </ul>
             </div>
             <div class="col-md-7">
@@ -100,7 +100,7 @@
               ================================================= -->
               <div class="edit-profile-container">
                 <div class="block-title">
-                  <h4 class="grey"><i class="icon ion-ios-settings"></i>Account Settings</h4>
+                  <h4 class="grey"><i class="icon ion-ios-settings"></i>Paramètres du compte</h4>
                   <div class="line"></div>
                   <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</p>
                   <div class="line"></div>
