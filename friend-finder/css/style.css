@@ -248,8 +248,8 @@ ul li{
 }
 
 .line{
-  background: #f1f2f2;
-  height: 1px;
+  background: #9fa2ab;
+  height: 3px;
   width: 100%;
   margin-bottom: 10px;
 }
@@ -1187,7 +1187,7 @@ ul.online-users li span.online-dot{
   min-height: 90px;
   padding: 20px;
   margin-bottom: 20px;
-  border-bottom: 1px solid #f1f2f2;
+  border-bottom: 3px solid #9fa2ab;
 }
 
 .create-post .form-group{
@@ -1749,7 +1749,7 @@ ul.online-users li span.online-dot{
 .about-profile .about-content-block{
   padding-top: 10px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #f1f2f2;
+  border-bottom: 3px solid #9fa2ab;
   line-height: 24px;
   margin-bottom: 10px;
 }
