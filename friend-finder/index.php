@@ -10,6 +10,10 @@
 		<meta name="robots" content="index, follow" />
 		<title>ViaBahuet | Le réseau social</title>
 
+		<?php
+		include "bdd.inc.php";
+		 ?>
+
     <!-- Stylesheets
     ================================================= -->
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
