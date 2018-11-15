@@ -8,7 +8,7 @@
 		<meta name="description" content="This is social network html5 template available in themeforest......" />
 		<meta name="keywords" content="Social Network, Social Media, Make Friends, Newsfeed, Profile Page" />
 		<meta name="robots" content="index, follow" />
-		<title>Edit Profile | Change My Password</title>
+		<title>Editer le Profil | Changer de Mot de passe</title>
 
     <!-- Stylesheets
     ================================================= -->
@@ -71,12 +71,12 @@
             </div>
             <div class="mobile-menu">
               <ul class="list-inline">
-                <li><a href="timline.php">Timeline</a></li>
-                <li><a href="timeline-about.php" class="active">About</a></li>
+                <li><a href="timline.php">Profil</a></li>
+                <li><a href="timeline-about.php" class="active">A propos</a></li>
                 <li><a href="timeline-album.php">Album</a></li>
-                <li><a href="timeline-friends.php">Friends</a></li>
+                <li><a href="timeline-friends.php">Amis</a></li>
               </ul>
-              <button class="btn-primary">Add Friend</button>
+              <button class="btn-primary">Ajouter en ami</button>
             </div>
           </div><!--Timeline Menu for Small Screens End-->
 
@@ -87,11 +87,11 @@
 
               <!--Edit Profile Menu-->
               <ul class="edit-menu">
-              	<li><i class="icon ion-ios-information-outline"></i><a href="edit-profile-basic.php">Basic Information</a></li>
-              	<li><i class="icon ion-ios-briefcase-outline"></i><a href="edit-profile-work-edu.php">Education and Work</a></li>
-              	<li><i class="icon ion-ios-heart-outline"></i><a href="edit-profile-interests.php">My Interests</a></li>
-                <li><i class="icon ion-ios-settings"></i><a href="edit-profile-settings.php">Account Settings</a></li>
-              	<li class="active"><i class="icon ion-ios-locked-outline"></i><a href="edit-profile-password.php">Change Password</a></li>
+              	<li><i class="icon ion-ios-information-outline"></i><a href="edit-profile-basic.php">Informations basiques</a></li>
+              	<li><i class="icon ion-ios-briefcase-outline"></i><a href="edit-profile-work-edu.php">Education et Travail</a></li>
+              	<li><i class="icon ion-ios-heart-outline"></i><a href="edit-profile-interests.php">Centres d'intérêts</a></li>
+                <li><i class="icon ion-ios-settings"></i><a href="edit-profile-settings.php">Paramètres du Compte</a></li>
+              	<li class="active"><i class="icon ion-ios-locked-outline"></i><a href="edit-profile-password.php">Changer de Mot de passe</a></li>
               </ul>
             </div>
             <div class="col-md-7">
@@ -100,31 +100,31 @@
               ================================================= -->
               <div class="edit-profile-container">
                 <div class="block-title">
-                  <h4 class="grey"><i class="icon ion-ios-locked-outline"></i>Change Password</h4>
+                  <h4 class="grey"><i class="icon ion-ios-locked-outline"></i>Changer de Mot de passe</h4>
                   <div class="line"></div>
-                  <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate</p>
+                  <p>blabla écrire un truc ici</p>
                   <div class="line"></div>
                 </div>
                 <div class="edit-block">
                   <form name="update-pass" id="education" class="form-inline">
                     <div class="row">
                       <div class="form-group col-xs-12">
-                        <label for="my-password">Old password</label>
-                        <input id="my-password" class="form-control input-group-lg" type="password" name="password" title="Enter password" placeholder="Old password"/>
+                        <label for="my-password">Ancien mot de passe</label>
+                        <input id="my-password" class="form-control input-group-lg" type="password" name="mdp" title="Entrez un mot de passe" placeholder="Ancien mot de passe"/>
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-6">
-                        <label>New password</label>
-                        <input class="form-control input-group-lg" type="password" name="password" title="Enter password" placeholder="New password"/>
+                        <label>Nouveau mot de passe</label>
+                        <input class="form-control input-group-lg" type="password" name="newmdp" title="Enter password" placeholder="Nouveau mot de passe"/>
                       </div>
                       <div class="form-group col-xs-6">
-                        <label>Confirm password</label>
-                        <input class="form-control input-group-lg" type="password" name="password" title="Enter password" placeholder="Confirm password"/>
+                        <label>Confirmez le mot de passe</label>
+                        <input class="form-control input-group-lg" type="password" name="newmdp2" title="Enter password" placeholder="Confirmez le mot de passe"/>
                       </div>
                     </div>
-                    <p><a href="#">Forgot Password?</a></p>
-                    <button class="btn btn-primary">Update Password</button>
+                    <p><a href="#">Mot de passe oublié ?</a></p>
+                    <button class="btn btn-primary">Mettre à jour le mot de passe</button>
                   </form>
                 </div>
               </div>
