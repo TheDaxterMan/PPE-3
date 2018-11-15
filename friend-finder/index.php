@@ -97,9 +97,9 @@
 												<input id="password2" class="form-control input-group-lg" type="password" name="password2" title="Confirmez votre mot de passe" placeholder="Confirmer Mot de passe" required/>
 											</div>
 										</div>
+										<p><a href="#login" data-toggle="tab">Déjà un compte ?</a></p>
+										<input class="btn btn-primary" type="submit" name="enregistrer" value="Enregistrez vous maintenant">
                   </form><!--Register Now Form Ends-->
-                  <p><a href="#login" data-toggle="tab">Déjà un compte ?</a></p>
-                  <button class="btn btn-primary">Enregistrez vous maintenant</button>
                 </div><!--Registration Form Contents Ends-->
 
                 <!--Login-->
