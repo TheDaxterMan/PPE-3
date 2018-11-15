@@ -8,6 +8,7 @@ include "bdd.inc.php";
   $mdp=$_POST['mdp'];
   $mdp2=$_POST['mdp2'];
   $radio=$_POST['radio'];
+  $act=$_POST['activite'];
 
 if ($mdp==$mdp2)
 {
@@ -18,7 +19,7 @@ if ($mdp==$mdp2)
   }
   if ($radio=="Entreprise")
   {
-    $sql= "INSERT INTO entreprise VALUES (NULL,'-','$nom','$prenom','$email','-','-','-','$ident','$mdp',NULL)";
+    $sql= "INSERT INTO entreprise VALUES (NULL,'-','$nom','$prenom','$email','-','-','-','$ident','$mdp','$act')";
     $req = $conn -> query($sql)or die($conn->errorInfo());
     echo $sql;
   }

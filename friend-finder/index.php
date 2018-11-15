@@ -106,12 +106,10 @@
 											</label>
 										</div>
 										<div class="row">
-                      <div>
-                        <select class="form-control" id="entreprise">
-                          <option value="entreprise" disabled selected>Domaine d'activitée</option>
-                          <option>1</option>
-                        </select>
-                      </div>
+											<div class="form-group col-xs-12">
+												<label for="act" class="sr-only">Domaine d'activité</label>
+												<input id="act" class="form-control input-group-lg" type="text" name="act" title="Entrez votre domaine d'activité" placeholder="Entrez votre domaine d'activité" required/>
+											</div>
 										</div>
 										<p><a href="#login" data-toggle="tab">Déjà un compte ?</a></p>
 										<input class="btn btn-primary" type="submit" name="enregistrer" value="Enregistrez vous maintenant">
