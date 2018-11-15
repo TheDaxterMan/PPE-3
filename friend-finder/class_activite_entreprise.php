@@ -32,13 +32,18 @@ class activite_entreprise
 
     /* class Entreprise SET */
 
-    Public function set_id_lib_activite ($id_act)
+    Public function set_id_activite ($id_act)
     {
        $this-> lib_activite = $id_act;
     }
 
-    Public function set_id_ ($lib_act)
+    Public function set_id_lib_activite ($lib_act)
     {
        $this-> lib_activite = $lib_act;
     }
+    
   }
+
+  /* FIN class Entreprise */
+
+?>
