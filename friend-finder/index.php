@@ -82,25 +82,39 @@
                       </div>
                     </div>
                     <div class="row">
-											<div class="form-group col-xs-6">
+											<div class="form-group col-xs-12">
                         <label for="ident" class="sr-only">Identifiant</label>
                         <input id="ident" class="form-control input-group-lg" type="text" name="ident" title="Entrez votre identifiant" placeholder="Identifiant"/>
-                      </div>
-                      <div class="form-group col-xs-6">
-                        <label for="password" class="sr-only">Mot de passe</label>
-                        <input id="password" class="form-control input-group-lg" type="password" name="password" title="Entrez votre mot de passe" placeholder="Mot de passe"/>
                       </div>
                     </div>
 										<div class="row">
 											<div class="form-group col-xs-12">
+												<label for="password" class="sr-only">Mot de passe</label>
+												<input id="password" class="form-control input-group-lg" type="password" name="password" title="Entrez votre mot de passe" placeholder="Mot de passe"/>
+											</div>
+											<div class="form-group col-xs-12">
+												<label for="password2" class="sr-only">Mot de passe</label>
+												<input id="password2" class="form-control input-group-lg" type="password" name="password2" title="Confirmez votre mot de passe" placeholder="Confirmer Mot de passe"/>
+											</div>
+										</div>
+										<div class="row">
+											<div class="form-group col-xs-12">
                         <label for="tel" class="sr-only">Téléphone</label>
-                        <input id="tel" class="form-control input-group-lg" type="text" name="tel" title="Entrez votre numéro de téléphone" placeholder="Numéro de téléphones"/>
+                        <input id="tel" class="form-control input-group-lg" type="text" name="tel" title="Entrez votre numéro de téléphone" placeholder="Numéro de téléphone"/>
                       </div>
                     </div>
                     <div class="row">
+											<div class="form-group col-xs-12">
+                        <label for="rue" class="sr-only">Adresse</label>
+                        <input id="rue" class="form-control input-group-lg" type="text" name="rue" title="Entrez votre adresse" placeholder="Votre adresse"/>
+                      </div>
                       <div class="form-group col-xs-6">
                         <label for="city" class="sr-only">Ville</label>
                         <input id="city" class="form-control input-group-lg reg_name" type="text" name="city" title="Sélectionner votre ville" placeholder="Votre ville"/>
+                      </div>
+											<div class="form-group col-xs-12">
+                        <label for="cp" class="sr-only">Code postal</label>
+                        <input id="cp" class="form-control input-group-lg" type="text" name="cp" title="Entrez votre code postal" placeholder="Votre code postal"/>
                       </div>
                     </div>
                   </form><!--Register Now Form Ends-->
