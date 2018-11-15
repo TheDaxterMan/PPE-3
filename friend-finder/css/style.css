@@ -52,7 +52,7 @@ html, body {
 body{
 	font-family: 'Lato', sans-serif;
   line-height: 26px;
-	color: #fff;
+	color: #000000;
 	font-size: 13px;
 }
 
@@ -829,7 +829,7 @@ textarea{
 }
 
 .intro-texts{
-  color: #fff;
+  color: #777;
   font-size: 14px;
   transform: translateY(100px);
 }
@@ -855,7 +855,7 @@ textarea{
 /*Registration Form Container*/
 
 .reg-form-container{
-  background: #fff;
+  background: #777;
   box-shadow: 0 0 35px rgba(0,0,0, .4);
   padding: 40px 40px 40px 60px;
   border-radius: 6px;
@@ -1569,7 +1569,6 @@ ul.online-users li span.online-dot{
   height: 200px;
   width: 200px;
   border-radius: 50%;
-  border: 10px solid #fff;
 }
 
 .timeline-cover .timeline-nav-bar ul.profile-menu{
@@ -2281,7 +2280,7 @@ input:checked + .slider:before{
 
 img.footer-logo{
   margin-bottom: 20px;
-} 
+}
 
 ul.social-icons{
   margin: 0;
