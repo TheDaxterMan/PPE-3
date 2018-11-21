@@ -142,8 +142,8 @@
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-12">
-                        <label for="my-password" class="sr-only">Mot de passe</label>
-                        <input id="my-password" class="form-control input-group-lg" type="password" name="password" title="Entrez votre mot de passe" placeholder="Mot de passe"/>
+                        <label for="mdp" class="sr-only">Mot de passe</label>
+                        <input id="mdp" class="form-control input-group-lg" type="password" name="mdp" title="Entrez votre mot de passe" placeholder="Mot de passe"/>
                       </div>
                     </div>
                   </form><!--Login Form Ends-->
