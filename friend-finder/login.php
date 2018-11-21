@@ -16,10 +16,10 @@
                         WHERE login='$nom'
                         AND mdp='$mdp';");
 //On vérifie que le si les conditions sont respectés//
-  //$result=$requete->fetch();
-    //if(!$result){
-      //echo "Votre pseudo ou votre mot de passe est incorrect.";
-    //header('Refresh: 5; URL=../login.html'); // rafraîchit la page au bout 5 de secondes //
+  $result=$requete->fetch();
+    if(!$result){
+      echo "Votre pseudo ou votre mot de passe est incorrect.";
+    header('Refresh: 5; URL=../login.html'); // rafraîchit la page au bout 5 de secondes //
   }
     else{
       // si le pseudo/mdp correct //
