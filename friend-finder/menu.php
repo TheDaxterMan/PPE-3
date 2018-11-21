@@ -31,7 +31,7 @@
           <li class="dropdown"><a href="contact.php">Contact</a></li>
 
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="images/users/user-1.jpg" alt="user" class="profile-photo-nav" /><span><img src="images/down-arrow.png" alt="" /></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="images/users/user-1.jpg" alt="user" class="profile-photo-nav" /></a>
             <ul class="dropdown-menu login">
               <li><a href="timeline.php">Profil</a></li>
               <li><a href="timeline-about.php">A propos de moi</a></li>
