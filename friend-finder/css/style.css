@@ -389,7 +389,7 @@ textarea{
 .menu form .form-group i.icon{
   position: absolute;
   left: 15px;
-  top: 3px;
+  top: 11px;
   color: #20c039ad;
 }
 
@@ -403,6 +403,7 @@ textarea{
   border-radius: 13px;
   font-size: 13px;
   padding-left: 30px;
+  margin-top: 4px;
 }
 
 .menu ul.main-menu li a{
