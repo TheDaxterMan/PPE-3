@@ -220,6 +220,13 @@ img.profile-photo-xs{
   border-radius: 50%;
 }
 
+/*nouvelle classe ici*/
+img.profile-photo-nav{
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+/*fin nouvelle classe ici*/
 .img-wrapper{
   position: relative;
 }

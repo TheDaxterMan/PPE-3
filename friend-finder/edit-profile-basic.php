@@ -71,12 +71,12 @@
             </div>
             <div class="mobile-menu">
               <ul class="list-inline">
-                <li><a href="timline.php">Timeline</a></li>
-                <li><a href="timeline-about.php" class="active">About</a></li>
-                <li><a href="timeline-album.php">Album</a></li>
-                <li><a href="timeline-friends.php">Friends</a></li>
+								<li><a href="timeline.php">Profil</a></li>
+								<li><a href="timeline-about.php" class="active">A propos</a></li>
+								<li><a href="timeline-album.php">Album</a></li>
+								<li><a href="timeline-friends.php">Amis</a></li>
               </ul>
-              <button class="btn-primary">Add Friend</button>
+              <button class="btn-primary">Ajouter en ami</button>
             </div>
           </div><!--Timeline Menu for Small Screens End-->
 
@@ -100,7 +100,7 @@
               ================================================= -->
               <div class="edit-profile-container">
                 <div class="block-title">
-                  <h4 class="grey"><i class="icon ion-android-checkmark-circle"></i>Edit basic information</h4>
+                  <h4 class="grey"><i class="icon ion-android-checkmark-circle"></i>Modifier les informations basiques</h4>
                   <div class="line"></div>
                   <p>Blablabla écrire un truc ici</p>
                   <div class="line"></div>

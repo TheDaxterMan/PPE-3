@@ -21,7 +21,17 @@
           <li class="dropdown"><a href="newsfeed.php">Fil d'actualité</a></li>
 
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profil <span><img src="images/down-arrow.png" alt="" /></span></a>
+            <a href="#" class="dropdown-toggle pages" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Toutes les Pages <span><img src="images/down-arrow.png" alt="" /></span></a>
+            <ul class="dropdown-menu page-list">
+              <li><a href="faq.php">FAQ Page</a></li>
+              <li><a href="404.php">404 Not Found</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown"><a href="contact.php">Contact</a></li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="images/users/user-1.jpg" alt="user" class="profile-photo-nav" /><span><img src="images/down-arrow.png" alt="" /></span></a>
             <ul class="dropdown-menu login">
               <li><a href="timeline.php">Profil</a></li>
               <li><a href="timeline-about.php">A propos de moi</a></li>
@@ -33,14 +43,6 @@
               <li><a href="edit-profile-password.php">Changer de Mot de passe</a></li>
             </ul>
           </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle pages" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Toutes les Pages <span><img src="images/down-arrow.png" alt="" /></span></a>
-            <ul class="dropdown-menu page-list">
-              <li><a href="faq.php">FAQ Page</a></li>
-              <li><a href="404.php">404 Not Found</a></li>
-            </ul>
-          </li>
-          <li class="dropdown"><a href="contact.php">Contact</a></li>
         </ul>
         <form class="navbar-form navbar-right hidden-sm">
           <div class="form-group">
