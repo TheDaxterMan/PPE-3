@@ -14,7 +14,7 @@ if ($mdp==$mdp2)
 {
   if ($radio=="Elève")
   {
-    $sql= "INSERT INTO utilisateur VALUES (NULL,'$nom','$prenom','-','$email','-','-','-','$ident','$mdp')";
+    $sql= "INSERT INTO utilisateur VALUES (NULL,'$nom','$prenom','','$email','','','','$ident','$mdp')";
     $req = $conn -> query($sql)or die($conn->errorInfo());
   }
   else
@@ -27,7 +27,7 @@ if ($mdp==$mdp2)
       }
       else
       {
-        $sql= "INSERT INTO entreprise VALUES (NULL,'-','$nom','$prenom','$email','-','-','-','$ident','$mdp','$act')";
+        $sql= "INSERT INTO entreprise VALUES (NULL,'','$nom','$prenom','$email','','','','$ident','$mdp','$act')";
         $req = $conn -> query($sql)or die($conn->errorInfo());
 
       }

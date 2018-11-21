@@ -1,3 +1,20 @@
+<?php include "bdd.inc.php";
+
+	$sql="SELECT * FROM utilisateur";
+	$req = $conn -> query($sql)or die($conn->errorInfo());
+	$res=$req->fetch();
+	$nom=$res['nom_utilisateur'];
+	$prenom=$res['prenom_utilisateur'];
+	$mail=$res['email_utilisateur'];
+	$tel=$res['tel_utilisateur'];
+	$rue=$res['rue_utilisateur'];
+	$ville=$res['ville_utilisateur'];
+	$cp=$res['cp_utilisateur'];
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -110,38 +127,38 @@
                     <div class="row">
                       <div class="form-group col-xs-6">
                         <label for="prenom">Prénom</label>
-                        <input id="prenom" class="form-control input-group-lg" type="text" name="prenom" title="Entrez votre prénom" placeholder="Prénom" value="" />
+                        <input id="prenom" class="form-control input-group-lg" type="text" name="prenom" title="Entrez votre prénom" placeholder="Prénom" value="<?php echo $prenom;  ?>" />
                       </div>
                       <div class="form-group col-xs-6">
                         <label for="nome" class="">Nom</label>
-                        <input id="nom" class="form-control input-group-lg" type="text" name="nom" title="Entrez votre nom de famille" placeholder="Nom de famille" value="" />
+                        <input id="nom" class="form-control input-group-lg" type="text" name="nom" title="Entrez votre nom de famille" placeholder="Nom de famille" value="<?php echo $nom; ?>" />
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-12">
                         <label for="email">Email</label>
-                        <input id="email" class="form-control input-group-lg" type="text" name="Email" title="Entrez votre Email" placeholder="Mon Email" value="" />
+                        <input id="email" class="form-control input-group-lg" type="text" name="Email" title="Entrez votre Email" placeholder="Mon Email" value="<?php echo $mail; ?>" />
                       </div>
                     </div>
 										<div class="row">
                       <div class="form-group col-xs-12">
                         <label for="tel">Téléphone</label>
-                        <input id="tel" class="form-control input-group-lg" type="text" name="tel" title="Entrez votre numéro de téléphone" placeholder="Mon téléphone" value="" />
+                        <input id="tel" class="form-control input-group-lg" type="text" name="tel" title="Entrez votre numéro de téléphone" placeholder="Mon téléphone" value="<?php echo $tel; ?>" />
                       </div>
                     </div>
 										<div class="row">
                       <p class="custom-label"><strong>Adresse</strong></p>
                       <div class="form-group col-sm-6 col-xs-12">
                         <label for="rue" class="sr-only">Rue</label>
-                        <input id="rue" class="form-control" type="text" name="rue" title="Entrez votre rue" placeholder="Ma rue" value="">
+                        <input id="rue" class="form-control" type="text" name="rue" title="Entrez votre rue" placeholder="Ma rue" value="<?php echo $rue;  ?>">
                       </div>
 											<div class="form-group col-sm-6 col-xs-12">
                         <label for="ville" class="sr-only">Ville</label>
-                        <input id="ville" class="form-control" type="text" name="ville" title="Entrez votre ville" placeholder="Ma ville" value="">
+                        <input id="ville" class="form-control" type="text" name="ville" title="Entrez votre ville" placeholder="Ma ville" value="<?php echo $ville;  ?>">
                       </div>
 											<div class="form-group col-sm-6 col-xs-12">
                         <label for="cp" class="sr-only">Code Postal</label>
-                        <input id="cp" class="form-control" type="text" name="cp" title="Entrez votre Code Postal" placeholder="Mon Code Postal" value="">
+                        <input id="cp" class="form-control" type="text" name="cp" title="Entrez votre Code Postal" placeholder="Mon Code Postal" value="<?php echo $cp; ?>">
                       </div>
                     </div>
                     <button class="btn btn-primary">Sauvegarder les modifications</button>
