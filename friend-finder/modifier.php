@@ -20,4 +20,6 @@ include "bdd.inc.php";
                                  WHERE id_utilisateur = $iduti";
   $req = $conn -> prepare($sql);
   $req -> execute();
+
+  header('Location: ./edit-profile-basic.php');
 ?>
