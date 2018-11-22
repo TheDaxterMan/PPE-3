@@ -1,3 +1,8 @@
+<?php
+	session_start();
+	include "bdd.inc.php";
+	include "login.inc.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -96,7 +101,7 @@
             <div class="people-nearby">
               <div class="google-maps">
                 <div id="map" class="map"></div>
-								
+
               </div>
               <div class="nearby-user">
                 <div class="row">
