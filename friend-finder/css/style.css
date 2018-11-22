@@ -162,6 +162,7 @@ section .wrapper{
   outline: none;
   border-radius: 30px;
   margin-right: -50px;
+  top: 15px;
 }
 
 .btn-primary:hover{
@@ -2646,7 +2647,7 @@ ul.contact li i{
 .spinner {
   width: 40px;
   height: 40px;
-  background-color: #27aae1;
+  background-color: #52e116;
   position: absolute;
   top: 48%;
   left: 48%;
@@ -2680,7 +2681,7 @@ ul.contact li i{
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #fff;
+  background-color: #f35d5d;
   z-index: 9999999;
 }
 
