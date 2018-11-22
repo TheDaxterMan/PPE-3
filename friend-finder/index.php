@@ -134,7 +134,7 @@
                   <p class="text-muted">Connectez vous à votre compte</p>
 
                   <!--Login Form-->
-                  <form name="Login_form" id='Login_form'>
+                  <form name="Login_form" id='Login_form' action="login.php" method="post">
                      <div class="row">
                       <div class="form-group col-xs-12">
                         <label for="login" class="sr-only">Identifiant</label>
@@ -147,9 +147,9 @@
                         <input id="mdp" class="form-control input-group-lg" type="password" name="mdp" title="Entrez votre mot de passe" placeholder="Mot de passe"/>
                       </div>
                     </div>
+										<input class="btn btn-primary" type="submit" name="connexion" value="Connectez vous">
                   </form><!--Login Form Ends-->
                   <p><a href="#">Mot de passe oublié ?</a></p>
-                  <button class="btn btn-primary">Connectez vous</button>
                 </div>
               </div>
             </div>
