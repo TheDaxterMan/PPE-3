@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <html>
 <head>
   <title>Connexion</title>
@@ -11,16 +10,14 @@ $sql="SELECT * FROM utilisateur
           WHERE login_utilisateur = '$user'
           AND mdp_utilisateur = '$mdp'";
 
-$res = $conn -> prepare($sql)or die($conn->errorInfo());
-$res -> execute();
-$data=$res->fetch();
-if ($data['n_matricule'] == $user || $data['mdp'] == $mdp)
+$req = $conn -> prepare($sql)or die($conn->errorInfo());
+$req -> execute();
+$res=$req->fetch();
+if ($res['n_matricule'] == $user || $res['mdp'] == $mdp)
 {
 // crée le cookie avec le nom d'utilisateur et la session
 session_start();
-$_SESSION['id_user'] = $data['id_user']; // cette ligne crée une variable de session, où l'on sauve l'id de notre utilisateur connecté
-$_SESSION['permission'] = $data['id_grp']; // pareil pour ses permissions
-$_SESSION['matricule'] = $data['n_matricule'];
+$_SESSION['id_user'] = $res['id_user']; // cette ligne crée une variable de session, où l'on sauve l'id de notre utilisateur connecté
+$_SESSION['permission'] = $res['id_grp']; // pareil pour ses permissions
+$_SESSION['matricule'] = $res['n_matricule'];
 ?>
-=======
->>>>>>> c21585f11f0b55f74ae88cc273ee384a3dac840a
