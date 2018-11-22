@@ -1,4 +1,8 @@
-<?php include "bdd.inc.php"; ?>
+<?php
+	session_start();
+	include "bdd.inc.php";
+	include "login.inc.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 

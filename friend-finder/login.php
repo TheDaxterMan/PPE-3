@@ -9,6 +9,7 @@
 
   $user = $_POST['login'];
   $mdp = $_POST['mdp'];
+
   $sql="SELECT * FROM utilisateur
             WHERE login_utilisateur = '$user'
             AND mdp_utilisateur = '$mdp'";
@@ -23,10 +24,9 @@
     $_SESSION['id_utilisateur'] = $res['id_utilisateur']; // cette ligne crée une variable de session, où l'on sauve l'id de notre utilisateur connecté
     //$_SESSION['login_utilisateur'] = $res['login_utilisateur'];
     header('Location: ./newsfeed.php');
-    exit();
   }
   else
   {
-    echo "ça marche pas";
+    header('Location: ./index.php');
   }
 ?>

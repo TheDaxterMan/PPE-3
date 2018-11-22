@@ -12,7 +12,6 @@
 
 		<?php
 		include "bdd.inc.php";
-		include "login.php";
 		 ?>
 
     <!-- Stylesheets
