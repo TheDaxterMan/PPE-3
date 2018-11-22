@@ -21,7 +21,11 @@ include "login.inc.php";
 		<meta name="robots" content="index, follow" />
 		<title>My Timeline | This is My Coolest Profile</title>
 
+<<<<<<< HEAD
 		<script src='https://www.google.com/recaptcha/api.js'></script>
+=======
+		<script src='https://www.google.com/recaptcha/api.js%27%3E'></script>
+>>>>>>> d4c0686ba212cdc2bf17ffc65da9e553a1053814
 
     <!-- Stylesheets
     ================================================= -->
@@ -72,6 +76,7 @@ include "login.inc.php";
                     </div>
 										<div class="g-recaptcha" data-sitekey="6LfQfnwUAAAAAMiTmuUcHcQdPNhcm3V__BFjO_hp">
 
+<<<<<<< HEAD
 										<?php
 
 										if(isset($_POST['submit']) && !empty($_POST['submit'])):
@@ -96,6 +101,32 @@ include "login.inc.php";
 										 	?>
 
 												</div>
+=======
+                                        <?php
+
+                                        if(isset($_POST['submit']) && !empty($_POST['submit'])):
+                                             if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])):
+                                                 //your site secret key
+                                                 $secret = '6LfQfnwUAAAAAEI6bxFRBuCP9xYB0lIUQnmg0Akw';
+                                                 //get verify response data
+                                                 $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$secret.'&response='.$_POST['g-recaptcha-response']);
+                                                 $responseData = json_decode($verifyResponse);
+                                                 if($responseData->success):
+                                                     //contact form submission code
+
+                                                        $errMsg = 'Robot verification failed, please try again.';
+                                                    endif;
+                                                else:
+                                                    $errMsg = 'Please click on the reCAPTCHA box.';
+                                                endif;
+                                            else:
+                                                $errMsg = '';
+                                                $succMsg = '';
+                                            endif;
+                                             ?>
+
+                    </div>
+>>>>>>> d4c0686ba212cdc2bf17ffc65da9e553a1053814
 										<input id="contactez-nous" name="boutoncontact" class="btn-primary" placeholder="Envoyer" type="submit" action="contactez-nous.php" value="Envoyer un mail" method="post"/>
                   </form>
 
