@@ -1,72 +1,92 @@
 <?php
 
+include "class_ami.php";
+include "class_diplome.php";
+include "class_emploi.php";
+include "class_entreprise.php";
+include "classe_stage.php";
+include "class_utilisateur.php";
+
   /* ---------------------- */
-  /* DEBUT class Diplome */
+  /* DEBUT class Ami */
   /* ---------------------- */
 
-class diplome
+class ami
 	{
     /* ---------------------- */
-    /* class Diplome Variables */
+    /* class Ami Variables */
     /* ---------------------- */
 
-		Private $id_diplome;
-		Private $nom_diplome;
-		Private $lib_diplome;
+		Private $id_utilisateur;
+		Private $id_utilisateur_ami;
 
     /* ---------------------- */
-    /* class Diplome Constructeur */
+    /* class Ami Constructeur */
     /* ---------------------- */
 
-    Public function ( $id_dip, $nom_dip, $desc_dip)
+
+    Public function ( $id_util, $id_util_ami)
     {
-      $this -> id_diplome = $id_dip;
-      $this -> nom_diplome = $nom_dip;
-      $this -> desc_diplome = $desc_dip;
+      $this -> id_utilisateur = $id_util;
+      $this -> id_utilisateur_ami = $id_util_ami;
     }
 
     /* ---------------------- */
-    /* class Diplome GET */
+    /* class Ami GET */
     /* ---------------------- */
 
-    Public function get_id_diplome ()
+    Public function get_id_utilisateur ()
     {
-      return $this-> id_diplome;
+      return $this-> id_utilisateur;
     }
 
-    Public function get_nom_diplome ()
+    Public function get_id_utilisateur_ami ()
     {
-      return $this-> nom_diplome;
-    }
-
-    Public function get_desc_diplome ()
-    {
-      return $this-> desc_diplome;
+      return $this-> id_utilisateur_ami;
     }
 
     /* ---------------------- */
-    /* class Diplome SET */
+    /* class Ami SET */
     /* ---------------------- */
 
-    Public function set_id_diplome ($id_dip)
+    Public function set_id_utilisateur ($id_util)
     {
-       $this-> id_diplome = $id_dip;
+       $this-> id_utilisateur = $id_util;
     }
 
-    Public function set_nom_diplome ($nom_dip)
+    Public function set_id_utilisateur_ami ($id_util_ami)
     {
-       $this-> nom_diplome = $nom_dip;
+       $this-> id_utilisateur_ami = $id_util_ami;
     }
 
-    Public function set__desc_diplome ($desc_dip)
-    {
-       $this-> desc_diplome = $desc_dip;
-    }
+		/* ---------------------- */
+ 	 /* class Ami fonctions publiques */
+ 	 /* ---------------------- */
 
-   }
-
+	 Public function ajout_ami ($id_util, $id_util_ami, $conn)
+		 {
+			 $SQL = " INSERT INTO values ('NULL', '$id_util_ami', '$conn')";
+			 $conn -> query ($SQL);
+		 }
+		 Public function modif_ami ($id_util, $id_util_ami)
+		 {
+			 $SQL = "UPDATE ami SET id_utilisateur = '$id_util', id_utilisateur_ami = '$id_util_ami')";
+			 $conn -> query ($SQL);
+		 }
+		 Public function affiche_ami ($id_util_ami)
+		 {
+			 $SQL = " SELECT * From ami WHERE id_utilisateur_ami = '$id_util_ami'";
+			 $Req = $conn -> query ($SQL);
+			 Return $Res = $Req -> fetch ();
+		 }
+		 Public function suppr_ami ($id_util, $id_util_ami)
+		 {
+			 $SQL = " DELETE FROM `ami` WHERE $id_util_ami = '$id_util_ami'";
+			 $conn -> query ($SQL);
+		 }
+}
    /* ---------------------- */
-   /* FIN class Diplome */
+   /* FIN class Ami */
    /* ---------------------- */
 
 ?>
