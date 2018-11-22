@@ -1,5 +1,5 @@
 <?php
-if (!isset($_SESSION['user']))
+if (!isset($_SESSION['id_user']))
 {
   header('Location: ./index.php');
   exit();
