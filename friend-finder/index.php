@@ -1,3 +1,8 @@
+<?php
+	session_start();
+	include "bdd.inc.php";
+	include "login.inc.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,7 +52,7 @@
 
 		<!-- Header
     ================================================= -->
-    <!--<?php include "menu.php" ?>;-->
+    <?php include "menu.php" ?>;
     <!--Header End-->
 
     <!-- Landing Page Contents

@@ -1,7 +1,13 @@
 <?php
+<<<<<<< HEAD
 session_start();
 include "bdd.inc.php";
 include "login.inc.php";
+=======
+	session_start();
+	include "bdd.inc.php";
+	include "login.inc.php";
+>>>>>>> 8f33f65a68d4f4f88751bd99a70888429a393a02
 ?>
 <!DOCTYPE html>
 <html lang="en">
