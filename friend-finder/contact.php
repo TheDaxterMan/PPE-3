@@ -57,8 +57,9 @@
                     <div class="form-group">
                       <textarea id="form-message" name="message" class="form-control" placeholder="Leave a message for us *" rows="4" required="required" data-error="Please,leave us a message."></textarea>
                     </div>
+										<input id="contactez-nous" name="boutoncontact" class="btn-primary" placeholder="Envoyer" type="submit" action="contactez-nous.php" value="Envoyer un mail" method="post"/>
                   </form>
-                  <button class="btn-primary">Send a Message</button>
+
                 </div>
             		<div class="col-md-4 col-sm-5">
                   <h4 class="grey">Reach Us</h4>

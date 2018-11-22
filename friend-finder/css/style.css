@@ -1999,7 +1999,7 @@ input:checked + .slider:before{
 }
 
 .contact-us{
-  background: #e1e1e147;
+  background: #ff3f3f;
   padding: 40px;
   margin-top: -140px;
   border-radius: 4px;
