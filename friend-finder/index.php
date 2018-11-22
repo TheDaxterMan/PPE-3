@@ -10,6 +10,22 @@
 		<meta name="robots" content="index, follow" />
 		<title>ViaBahuet | Le réseau social</title>
 
+<!---
+		<script>
+		function myFunction()
+		{
+    	var x = document.getElementById('entreprise');
+    	if (x.style.display === 'none')
+			{
+        x.style.display = 'block';
+    	}
+			else
+			{
+        x.style.display = 'none';
+    	}
+		}
+	</script>
+--->
 		<?php
 		include "bdd.inc.php";
 		 ?>
@@ -43,7 +59,6 @@
             <div class="intro-texts">
             	<h1 class="text-white">Faites vous des amis !!!</h1>
             	<p>ViaBahuet est un réseau social permettant aux élèves, anciens élèves et entreprises de communiquer. <br> <br>Rejoignez dès maintenant</p>
-              <button class="btn btn-primary">En savoir plus</button>
             </div>
           </div>
         	<div class="col-sm-6 col-sm-offset-1">
@@ -102,7 +117,7 @@
 												<input type="radio" name="radio" value="Elève">Elève
 											</label>
 											<label class="radio-inline">
-												<input type="radio" name="radio" value="Entreprise">Entreprise
+												<input type="radio" name="radio" value="Entreprise" onclick="myFunction()">Entreprise
 											</label>
 										</div>
 										<div class="row">
