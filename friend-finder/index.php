@@ -137,15 +137,23 @@
                      <div class="row">
                       <div class="form-group col-xs-12">
                         <label for="login" class="sr-only">Identifiant</label>
-                        <input id="login" class="form-control input-group-lg" type="text" name="login" title="Entrez votre identifiant" placeholder="Votre identifiant"/>
+                        <input id="login" class="form-control input-group-lg" type="text" name="login" title="Entrez votre identifiant" placeholder="Votre identifiant" required/>
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-12">
                         <label for="mdp" class="sr-only">Mot de passe</label>
-                        <input id="mdp" class="form-control input-group-lg" type="password" name="mdp" title="Entrez votre mot de passe" placeholder="Mot de passe"/>
+                        <input id="mdp" class="form-control input-group-lg" type="password" name="mdp" title="Entrez votre mot de passe" placeholder="Mot de passe" required/>
                       </div>
                     </div>
+										<div class="form-group gender">
+											<label class="radio-inline">
+												<input type="radio" name="radio" value="Elève" required>Elève
+											</label>
+											<label class="radio-inline">
+												<input type="radio" name="radio" value="Entreprise" required>Entreprise
+											</label>
+										</div>
 										<input class="btn btn-primary" type="submit" name="connexion" value="Connectez vous">
                   </form><!--Login Form Ends-->
                   <p><a href="#">Mot de passe oublié ?</a></p>
