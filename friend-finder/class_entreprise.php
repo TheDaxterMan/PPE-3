@@ -1,6 +1,11 @@
 <?php
 
-include "class_activite_entreprise.php";
+include "class_entreprise_entreprise.php";
+include "class_ami.php";
+include "class_diplome.php";
+include "class_emploi.php";
+include "classe_stage.php";
+include "class_utilisateur.php";
 
 	/* ---------------------- */
 	/* DEBUT class Entreprise */
@@ -149,6 +154,32 @@ class entreprise
 			{
 				 $this-> mdp_entreprise = $mdp_ent;
 			}
+
+			/* ---------------------- */
+			/* class Entreprise fonctions publiques */
+			/* ---------------------- */
+			Public function ajout_entreprise ($id_ent, $nom_ent, $nom_resp, $prenom_resp, $rue_ent, $ville_ent, $cp_ent, $login_ent, $mdp_ent, $conn)
+				{
+					$SQL = " INSERT INTO values ('NULL', '$nom_ent', $nom_resp', '$prenom_resp', '$rue_ent', '$ville_ent', '$cp_ent', '$login_ent', '$mdp_ent', '$conn')";
+					$conn -> query ($SQL);
+				}
+				Public function modif_entreprise ($id_ent, $nom_ent, $nom_resp, $prenom_resp, $email_ent, $rue_ent, $ville_ent, $cp_ent, $login_ent, $mdp_ent)
+				{
+					$SQL = "UPDATE entreprise SET id_entreprise = '$id_ent', nom_entreprise = '$nom_ent', nom_responsable = '$nom_resp', prenom_responsable = '$prenom_resp', email_entreprise = '$email_ent', rue_entreprise = '$rue_ent', ville_entreprise = '$ville_ent', cp_entreprise = '$cp_ent', login_entreprise = '', mdp_entreprise = '$mdp_ent')";
+					$conn -> query ($SQL);
+				}
+
+				Public function affiche_entreprise ($nom_ent, $nom_resp, $prenom_resp, $email_ent, $rue_ent, $ville_ent, $cp_ent)
+				{
+					$SQL = " SELECT nom_entreprise, nom_responsable, prenom_responsable, email_entreprise, rue_entreprise, ville_entreprise, cp_entreprise  From entreprise_entreprise WHERE lib_entreprise = '$lib_act'";
+					$Req = $conn -> query ($SQL);
+					Return $Res = $Req -> fetch ();
+				}
+				Public function suppr_entreprise ($id_ent, $nom_ent, $nom_resp, $prenom_resp, $rue_ent, $ville_ent, $cp_ent, $login_ent, $mdp_ent)
+				{
+					$SQL = " DELETE FROM `entreprise` WHERE nom_entreprise  = '$nom_ent' ";
+					$conn -> query ($SQL);
+				}
 
 }
 
