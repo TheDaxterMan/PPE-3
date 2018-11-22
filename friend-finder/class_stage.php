@@ -1,5 +1,12 @@
 <?php
 
+include "class_activite_entreprise.php";
+include "class_ami.php";
+include "class_diplome.php";
+include "class_stage.php";
+include "class_entreprise.php";
+include "class_utilisateur.php";
+
 	/* ---------------------- */
 	/* DEBUT class Stage */
 	/* ---------------------- */
@@ -88,7 +95,30 @@ class stage
 			{
 				 $this-> commentaire_stage = $comm_stage;
 			}
-
+      /* ---------------------- */
+      /* class Stage fonctions publiques */
+      /* ---------------------- */
+      Public function ajout_stage ($id_stage, $nom_stage, $desc_stage, $date_stage, $comm_stage, $conn)
+        {
+          $SQL = " INSERT INTO values ('NULL', '$nom_stage', '$desc_stage', '$date_stage', '$comm_stage')";
+          $conn -> query ($SQL);
+        }
+        Public function modif_stage ($id_stage, $nom_stage, $desc_stage, $date_stage, $comm_stage, $conn)
+        {
+          $SQL = "UPDATE stage SET id_stage = '$id_stage', nom_stage = '$nom_stage', desc_stage = '$desc_stage', date_stage = '$date_stage' , commentaire_stage = '$comm_stage')";
+          $conn -> query ($SQL);
+        }
+        Public function affiche_stage ($nom_stage, $desc_stage, $date_stage, $comm_stage)
+        {
+          $SQL = " SELECT * From stage WHERE nom_stage = '$nom_stage', desc_stage = '$desc_stage', date_stage = '$date_stage' , commentaire_stage = '$comm_stage'";
+          $Req = $conn -> query ($SQL);
+          Return $Res = $Req -> fetch ();
+        }
+        Public function suppr_stage ($id_stage, $nom_stage, $desc_stage, $date_stage, $comm_stage)
+        {
+          $SQL = " DELETE FROM `stage` WHERE nom_stage = '$nom_stage';
+          $conn -> query ($SQL);
+        }
  }
 
 	/* ---------------------- */

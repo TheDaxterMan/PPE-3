@@ -1,5 +1,12 @@
 <?php
 
+include "class_activite_utilisateur.php";
+include "class_ami.php";
+include "class_diplome.php";
+include "class_emploi.php";
+include "class_utilisateur.php";
+include "classe_stage.php";
+
 	/* ---------------------- */
 	/* DEBUT class Utilisateur */
 	/* ---------------------- */
@@ -147,6 +154,34 @@ class utilisateur
 			{
 				 $this-> mdp_utilisateur = $mdp_util;
 			}
+
+			/* ---------------------- */
+			/* class Utilisateur fonctions publiques */
+			/* ---------------------- */
+			Public function ajout_utilisateur ($idutil, $nom_util, $prenom_util, $tel_util, $email_util, $rue_util, $ville_util, $cp_util, $login_util, $mdp_util, $conn)
+				{
+					$SQL = " INSERT INTO values ('NULL', '$nom_util', '$prenom_util', '$tel_util', '$email_util', '$rue_util', '$ville_util', '$cp_util', '$login_util', '$mdp_util', '$conn')";
+					$conn -> query ($SQL);
+				}
+				Public function modif_utilisateur ($idutil, $nom_util, $prenom_util, $tel_util, $email_util, $rue_util, $ville_util, $cp_util, $login_util, $mdp_util, $conn)
+				{
+					$SQL = "UPDATE utilisateur SET id_utilisateur = '$idutil', nom_utilisateur = '$nom_util', prenom_utilisateur,  = '$prenom_util',
+					tel_utilisateur = '$tel_util', email_utilisateur = '$email_util', rue_utilisateur = '$rue_util', ville_utilisateur = '$ville_util',
+					cp_utilisateur = '$cp_util', login_utilisateur = '', mdp_utilisateur = '$mdp_util')";
+					$conn -> query ($SQL);
+				}
+
+				Public function affiche_utilisateur ($nom_util, $prenom_util, $tel_util, $email_util, $rue_util, $ville_util, $cp_util, $login_util, $mdp_util, $conn)
+				{
+					$SQL = " SELECT nom_utilisateur, prenom_utilisateur, tel_utilisateur, email_utilisateur, rue_utilisateur, ville_utilisateur, cp_utilisateur, login_utilisateur, mdp_utilisateur  From utilisateur WHERE nom_utilisateur = '$nom_util'";
+					$Req = $conn -> query ($SQL);
+					Return $Res = $Req -> fetch ();
+				}
+				Public function suppr_utilisateur ($idutil, $nom_util, $prenom_util, $tel_util, $email_util, $rue_util, $ville_util, $cp_util, $login_util, $mdp_util, $conn)
+				{
+					$SQL = " DELETE FROM `utilisateur` WHERE nom_utilisateur  = '$nom_util' ";
+					$conn -> query ($SQL);
+				}
 
 }
 

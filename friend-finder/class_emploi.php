@@ -1,5 +1,12 @@
 <?php
 
+include "class_activite_entreprise.php";
+include "class_ami.php";
+include "class_emploi.php";
+include "class_entreprise.php";
+include "classe_stage.php";
+include "class_utilisateur.php";
+
   /* ---------------------- */
   /* DEBUT class Emploi */
   /* ---------------------- */
@@ -63,8 +70,31 @@ class emploi
        $this-> desc_emploi = $desc_emp;
     }
 
-  }
-
+	/* ---------------------- */
+	/* class Emploi fonctions publiques */
+	/* ---------------------- */
+	Public function ajout_emploi ($id_emp, $lib_emp, $desc_emp, $conn)
+		{
+			$SQL = " INSERT INTO values ('NULL', '$lib_emp', '$desc_emp', '$conn')";
+			$conn -> query ($SQL);
+		}
+		Public function modif_emploi ($id_emp, $lib_emp, $desc_emp, $conn)
+		{
+			$SQL = "UPDATE emploi SET id_emploi = '$id_emp', lib_emploi = '$lib_emp', desc_emploi = '$desc_emp')";
+			$conn -> query ($SQL);
+		}
+		Public function affiche_emploi ($lib_emp, $desc_emp)
+		{
+			$SQL = " SELECT * From emploi WHERE lib_emploi = '$lib_emp'";
+			$Req = $conn -> query ($SQL);
+			Return $Res = $Req -> fetch ();
+		}
+		Public function suppr_emploi ($id_emp, $lib_emp, $desc_emp)
+		{
+			$SQL = " DELETE FROM `emploi` WHERE lib_emploi = '$lib_emp'";
+			$conn -> query ($SQL);
+		}
+}
   /* ---------------------- */
   /* FIN class Emploi */
   /* ---------------------- */
