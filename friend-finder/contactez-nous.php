@@ -2,54 +2,24 @@
 
 include "bdd.inc.php";
 
-// S'il y des données de postées
-if ($_SERVER['REQUEST_METHOD']=='POST') {
+$sql="SELECT nom_utilisateur,prenom_utilisateur FROM id_utilisateur
+      WHERE id_utilisateur = $_SESSION['id']";
 
-  // (1) Code PHP pour traiter l'envoi de l'email
+      $req = $conn -> prepare($sql)or die($conn->errorInfo());
+      $req -> execute();
+      $res=$req->fetch();
 
-  // Récupération des variables et sécurisation des données
-
-  $nom = htmlentities($_POST['nom']); // htmlentities() convertit des caractères "spéciaux" en équivalent HTML
-  $email = htmlentities($_POST['email']);
-  $telephone = htmlentities($_POST['phone']);
-  $message = htmlentities($_POST['message']);
-
-  // Variables concernant l'email
-
-  $destinataire = 'virlouvet.maxime@gmail.com';
-  $sujet = 'Titre du message';
-  $contenu = '<html><head><title>Titre du message</title></head><body>';
-  $contenu .= '<p>Bonjour, vous avez reçu un message à partir de votre site web.</p>';
-  $contenu .= '<p><strong>Nom</strong>: '.$nom.'</p>';
-  $contenu .= '<p><strong>Email</strong>: '.$email.'</p>';
-  $contenu .= '<p><strong>Email</strong>: '.$telephone.'</p>';
-  $contenu .= '<p><strong>Message</strong>: '.$message.'</p>';
-  $contenu .= '</body></html>'; // Contenu du message de l'email (en XHTML)
-
-  // Pour envoyer un email HTML, l'en-tête Content-type doit être défini
-  $headers = 'MIME-Version: 1.0'."\r\n";
-  $headers .= 'Content-type: text/html; charset=iso-8859-1'."\r\n";
-
-  // Envoyer l'email
-  mail($destinataire, $sujet, $contenu, $headers); // Fonction principale qui envoi l'email
-  echo '<h2>Message envoyé!</h2>'; // Afficher un message pour indiquer que le message a été envoyé
-  // (2) Fin du code pour traiter l'envoi de l'email
-}
-?>
-
-<?php
-
-$nom=$_POST['nom'];
-$matr=$_POST['matr'];
-$mail=$_POST['mail'];
+$nom=$res['nom_utilisateur'];
+$prenom=$res['prenom_utilisateur']
+$mail=$_POST['email'];
+$objet="Vous avez reçu un mail d'un(e) utilisateur(rice) de ViaBahuet";
 $objet=$_POST['objet'];
 $message=$_POST['message'];
 
 $header="MIME-Version: 1.0\r\n";
-$header.='From:"'.$nom.'"<support@lecta.com>'."\n";
+$header.='From:"'.$nom.'"<virlouvet.maxime@gmail.com>'."\n";
 $header.='Content-Type:text/html; charset="utf-8"'."\n";
 $header.='Content-Transfer-Encoding: 8bit';
-
 //début message pour user
 $truc='
 <!doctype html>
@@ -315,7 +285,8 @@ border-color: #34495e !important; } }
         <tr>
           <td>
             <p>Message : '.$message.'</p>
-            <p>Matricule : '.$matr.'</p>
+            <p>Nom : '.$nom.'</p>
+            <p>Prénom :'.$prenom.'</p>
             <p>Mail : '.$mail.'</p>
           </td>
         </tr>
@@ -353,6 +324,6 @@ border-color: #34495e !important; } }
 </html>
 ';
 
-mail("cykablyat24120@gmail.com", $objet, $truc, $header);
+mail("cykablyat24120@gmail.com", $objet, $nom, $prenom, $truc, $header);
 echo "Votre message a bien été envoyé";
 ?>
