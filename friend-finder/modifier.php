@@ -1,5 +1,7 @@
 <?php
 include "bdd.inc.php";
+
+
   $iduti= $_POST['id'];
   $nom = $_POST['nom'];
   $prenom = $_POST['prenom'];
