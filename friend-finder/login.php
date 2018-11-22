@@ -4,31 +4,20 @@
 </head>
 <body>
 <?php
+$user = $_POST['user'];
+$mdp = $_POST['mdp'];
+$sql="SELECT * FROM utilisateur
+          WHERE login_utilisateur = '$user'
+          AND mdp_utilisateur = '$mdp'";
 
-  //On fais la connexion à la base de données\\
-  if (isset ($_POST['submit']))
-    $sbh=new mysqli ("localhost", "root", "", "viabahuet");
-    //recupération des données de la base //
-    $nom=$_POST['login'];
-    $mdp=$_POST['mdp'];
-  //requete sql qui permet d'enregistré dans la base de données//
-  $requete=$dbh->query("SELECT login,mdp FROM utilisateur
-                        WHERE login='$nom'
-                        AND mdp='$mdp';");
-//On vérifie que le si les conditions sont respectés//
-  $result=$requete->fetch();
-    if(!$result){
-      echo "Votre pseudo ou votre mot de passe est incorrect.";
-    header('Refresh: 5; URL=../login.html'); // rafraîchit la page au bout 5 de secondes //
-  }
-    else{
-      // si le pseudo/mdp correct //
-      session_start(); // on démarre la session //
-      $_SESSION['id']=$result['id']; // on vérifie que l'id de la base est équivalent à l'id qu'on à reçu //
-      $_SESSION['login']=$result['login']; // on vérifie que le pseudo de la base est équivalent à l'id qu'on à reçu //
-      echo "Pseudo : ",$_SESSION['login'],"<br> ID : ",$_SESSION['id'];
-      echo "<br><br> Vous êtes connecté.";
-      echo "<br> Vous allez être redigé vers la page d'acceuil.";
-      header('Refresh: 4; URL=../Site_Cybernet.html');
-  }
+$res = $conn -> prepare($sql)or die($conn->errorInfo());
+$res -> execute();
+$data=$res->fetch();
+if ($data['n_matricule'] == $user || $data['mdp'] == $mdp)
+{
+// crée le cookie avec le nom d'utilisateur et la session
+session_start();
+$_SESSION['id_user'] = $data['id_user']; // cette ligne crée une variable de session, où l'on sauve l'id de notre utilisateur connecté
+$_SESSION['permission'] = $data['id_grp']; // pareil pour ses permissions
+$_SESSION['matricule'] = $data['n_matricule'];
 ?>
