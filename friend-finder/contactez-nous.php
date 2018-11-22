@@ -2,7 +2,6 @@
 
 include "bdd.inc.php";
 
-<<<<<<< HEAD
 $sql="SELECT nom_utilisateur,prenom_utilisateur FROM id_utilisateur
       WHERE id_utilisateur = $_SESSION['id']";
 
@@ -14,11 +13,6 @@ $nom=$res['nom_utilisateur'];
 $prenom=$res['prenom_utilisateur']
 $mail=$_POST['email'];
 $objet="Vous avez reçu un mail d'un(e) utilisateur(rice) de ViaBahuet";
-=======
-$nom=$_POST['nom'];
-$matr=$_POST['matr'];
-$mail=$_POST['mail'];
->>>>>>> a529c0c09cb37f9a68944c70f4a4efd4b85e4938
 $objet=$_POST['objet'];
 $message=$_POST['message'];
 
