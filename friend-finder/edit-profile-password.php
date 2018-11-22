@@ -1,3 +1,4 @@
+<?php include "bdd.inc.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -106,25 +107,26 @@
                   <div class="line"></div>
                 </div>
                 <div class="edit-block">
-                  <form name="update-pass" id="education" class="form-inline">
+                  <form name="update-pass" id="education" action="mdp.php" method="post" class="form-inline">
                     <div class="row">
                       <div class="form-group col-xs-12">
-                        <label for="my-password">Ancien mot de passe</label>
-                        <input id="my-password" class="form-control input-group-lg" type="password" name="mdp" title="Entrez un mot de passe" placeholder="Ancien mot de passe"/>
+                        <label for="mdp">Ancien mot de passe</label>
+                        <input id="mdp" class="form-control input-group-lg" type="password" name="mdp" title="Entrez un mot de passe" placeholder="Ancien mot de passe"/>
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-6">
                         <label>Nouveau mot de passe</label>
-                        <input class="form-control input-group-lg" type="password" name="newmdp" title="Enter password" placeholder="Nouveau mot de passe"/>
+                        <input class="form-control input-group-lg" type="password" name="newmdp" title="Entrez votre nouveau mot de passe" placeholder="Nouveau mot de passe"/>
                       </div>
                       <div class="form-group col-xs-6">
                         <label>Confirmez le mot de passe</label>
-                        <input class="form-control input-group-lg" type="password" name="newmdp2" title="Enter password" placeholder="Confirmez le mot de passe"/>
+                        <input class="form-control input-group-lg" type="password" name="newmdp2" title="Confirmez votre nouveau mot de passe" placeholder="Confirmez le mot de passe"/>
                       </div>
                     </div>
                     <p><a href="#">Mot de passe oublié ?</a></p>
-                    <button class="btn btn-primary">Mettre à jour le mot de passe</button>
+										<input type="hidden" name="id" value="1">
+										<input class="btn btn-primary" type="submit" name="modifmdp" value="Mettre à jour le mot de passe">
                   </form>
                 </div>
               </div>
