@@ -71,7 +71,7 @@
           <!--Timeline Menu for Small Screens-->
           <div class="navbar-mobile hidden-lg hidden-md">
             <div class="profile-info">
-              <img src="images/users/user-1.jpg" alt="" class="img-responsive profile-photo" />
+              <img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="img-responsive profile-photo" />
               <h4>Sarah Cruiz</h4>
               <p class="text-muted">Creative Director</p>
             </div>
@@ -128,7 +128,7 @@
 
                 <img src="images/post-images/12.jpg" alt="post-image" class="img-responsive post-image" />
                 <div class="post-container">
-                  <img src="images/users/user-1.jpg" alt="user" class="profile-photo-md pull-left" />
+                  <img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="user" class="profile-photo-md pull-left" />
                   <div class="post-detail">
                     <div class="user-info">
                       <h5><a href="timeline.html" class="profile-link">Sarah Cruiz</a> <span class="following">following</span></h5>
@@ -152,7 +152,7 @@
                       <p><a href="timeline.html" class="profile-link">John</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
                     </div>
                     <div class="post-comment">
-                      <img src="images/users/user-1.jpg" alt="" class="profile-photo-sm" />
+                      <img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm" />
                       <input type="text" class="form-control" placeholder="Post a comment">
                     </div>
                   </div>
@@ -171,7 +171,7 @@
 
                 <img src="images/post-images/13.jpg" alt="post-image" class="img-responsive post-image" />
                 <div class="post-container">
-                  <img src="images/users/user-1.jpg" alt="user" class="profile-photo-md pull-left" />
+                  <img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="user" class="profile-photo-md pull-left" />
                   <div class="post-detail">
                     <div class="user-info">
                       <h5><a href="timeline.html" class="profile-link">Sarah Cruiz</a> <span class="following">following</span></h5>
@@ -195,7 +195,7 @@
                       <p><a href="timeline.html" class="profile-link">John</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
                     </div>
                     <div class="post-comment">
-                      <img src="images/users/user-1.jpg" alt="" class="profile-photo-sm" />
+                      <img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm" />
                       <input type="text" class="form-control" placeholder="Post a comment">
                     </div>
                   </div>
@@ -213,7 +213,7 @@
                 </div><!--Post Date End-->
 
                 <div class="post-container">
-                  <img src="images/users/user-1.jpg" alt="user" class="profile-photo-md pull-left" />
+                  <img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="user" class="profile-photo-md pull-left" />
                   <div class="post-detail">
                     <div class="user-info">
                       <h5><a href="timeline.html" class="profile-link">Sarah Cruiz</a> <span class="following">following</span></h5>
@@ -237,7 +237,7 @@
                       <p><a href="timeline.html" class="profile-link">John</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
                     </div>
                     <div class="post-comment">
-                      <img src="images/users/user-1.jpg" alt="" class="profile-photo-sm" />
+                      <img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm" />
                       <input type="text" class="form-control" placeholder="Post a comment">
                     </div>
                   </div>
