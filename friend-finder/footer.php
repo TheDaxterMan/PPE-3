@@ -21,7 +21,7 @@
   </div>
   <div class="copyright">
     <p>Thunder Team © 2016. All rights reserved</p>
-    <p>Passemilla Web © 2018. All rights reserved</p>
+    <p>Passemilla Web © 2018-2019. All rights reserved</p>
   </div>
 </footer>
 

@@ -1,4 +1,6 @@
-<?php include "bdd.inc.php";
+<?php
+	include "bdd.inc.php";
+	//include "login.inc.php";
 
 	$sql="SELECT * FROM utilisateur";
 	$req = $conn -> query($sql)or die($conn->errorInfo());
@@ -11,10 +13,7 @@
 	$ville=$res['ville_utilisateur'];
 	$cp=$res['cp_utilisateur'];
 
-
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,7 +59,7 @@
               <div class="col-md-3">
                 <div class="profile-info">
                   <img src="images/users/user-1.jpg" alt="" class="img-responsive profile-photo" />
-                  <h3>Sarah Cruiz</h3>
+                  <h3><?php echo $prenom,' ',$nom; ?></h3>
                   <p class="text-muted">Creative Director</p>
                 </div>
               </div>
@@ -73,7 +72,7 @@
                 </ul>
                 <ul class="follow-me list-inline">
                   <li>1,299 people following her</li>
-                  <li><button class="btn-primary">Add Friend</button></li>
+                  <li><button class="btn-primary">Ajouter en Ami</button></li>
                 </ul>
               </div>
             </div>
@@ -83,7 +82,7 @@
           <div class="navbar-mobile hidden-lg hidden-md">
             <div class="profile-info">
               <img src="images/users/user-1.jpg" alt="" class="img-responsive profile-photo" />
-              <h4>Sarah Cruiz</h4>
+              <h4><?php echo $prenom,' ',$nom; ?></h4>
               <p class="text-muted">Creative Director</p>
             </div>
             <div class="mobile-menu">
@@ -123,7 +122,7 @@
                   <div class="line"></div>
                 </div>
                 <div class="edit-block">
-                  <form name="basic-info" id="basic-info" class="form-inline">
+                  <form name="basic-info" id="basic-info" action="modifier.php" method="post" class="form-inline">
                     <div class="row">
                       <div class="form-group col-xs-6">
                         <label for="prenom">Prénom</label>
@@ -137,7 +136,7 @@
                     <div class="row">
                       <div class="form-group col-xs-12">
                         <label for="email">Email</label>
-                        <input id="email" class="form-control input-group-lg" type="text" name="Email" title="Entrez votre Email" placeholder="Mon Email" value="<?php echo $mail; ?>" />
+                        <input id="email" class="form-control input-group-lg" type="text" name="mail" title="Entrez votre Email" placeholder="Mon Email" value="<?php echo $mail; ?>" />
                       </div>
                     </div>
 										<div class="row">
@@ -161,7 +160,8 @@
                         <input id="cp" class="form-control" type="text" name="cp" title="Entrez votre Code Postal" placeholder="Mon Code Postal" value="<?php echo $cp; ?>">
                       </div>
                     </div>
-                    <button class="btn btn-primary">Sauvegarder les modifications</button>
+										<input type="hidden" name="id" value="1">
+										<input class="btn btn-primary" type="submit" name="valider" value="Sauvegarder les modifications">
                   </form>
                 </div>
               </div>
