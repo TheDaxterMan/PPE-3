@@ -43,7 +43,7 @@
           ================================================= -->
     			<div class="col-md-3 static">
             <div class="profile-card">
-            	<img src="images/users/user-1.jpg" alt="user" class="profile-photo" />
+            	<img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="user" class="profile-photo" />
             	<h5><a href="timeline.html" class="text-white">Sarah Cruiz</a></h5>
             	<a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
             </div><!--profile card ends-->
@@ -78,7 +78,7 @@
             	<div class="row">
             		<div class="col-md-7 col-sm-7">
                   <div class="form-group">
-                    <img src="images/users/user-1.jpg" alt="" class="profile-photo-md" />
+                    <img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-md" />
                     <textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Write what you wish"></textarea>
                   </div>
                 </div>
@@ -302,16 +302,10 @@
     	</div>
     </div>
 
-<<<<<<< HEAD
-		<?php
-		include "footer.php";
-		 ?>
-
-=======
     <!-- Footer
     ================================================= -->
 		<?php include "footer.php"; ?>
->>>>>>> 0e58e7bd27e580fe834c8676899c5d965e005dc6
+
   </body>
 
 <!-- Mirrored from thunder-team.com/friend-finder/newsfeed-people-nearby.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 08 Nov 2018 14:00:02 GMT -->

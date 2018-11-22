@@ -45,7 +45,7 @@
           ================================================= -->
     			<div class="col-md-3 static">
             <div class="profile-card">
-            	<img src="images/users/user-1.jpg" alt="user" class="profile-photo" />
+            	<img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="user" class="profile-photo" />
             	<h5><a href="timeline.html" class="text-white">Sarah Cruiz</a></h5>
             	<a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
             </div><!--profile card ends-->
@@ -80,7 +80,7 @@
             	<div class="row">
             		<div class="col-md-7 col-sm-7">
                   <div class="form-group">
-                    <img src="images/users/user-1.jpg" alt="" class="profile-photo-md" />
+                    <img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-md" />
                     <textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Write what you wish"></textarea>
                   </div>
                 </div>
@@ -205,7 +205,7 @@
                             </div>
                       		</li>
                           <li class="right">
-                      			<img src="images/users/user-1.jpg" alt="" class="profile-photo-sm pull-right" />
+                      			<img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm pull-right" />
                       			<div class="chat-item">
                               <div class="chat-item-header">
                               	<h5>Sarah Cruiz</h5>
@@ -215,7 +215,7 @@
                             </div>
                       		</li>
                           <li class="right">
-                      			<img src="images/users/user-1.jpg" alt="" class="profile-photo-sm pull-right" />
+                      			<img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm pull-right" />
                       			<div class="chat-item">
                               <div class="chat-item-header">
                               	<h5>Sarah Cruiz</h5>
@@ -235,7 +235,7 @@
                             </div>
                       		</li>
                           <li class="right">
-                      			<img src="images/users/user-1.jpg" alt="" class="profile-photo-sm pull-right" />
+                      			<img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm pull-right" />
                       			<div class="chat-item">
                               <div class="chat-item-header">
                               	<h5>Sarah Cruiz</h5>
@@ -271,7 +271,7 @@
                             </div>
                       		</li>
                           <li class="right">
-                      			<img src="images/users/user-1.jpg" alt="" class="profile-photo-sm pull-right" />
+                      			<img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm pull-right" />
                       			<div class="chat-item">
                               <div class="chat-item-header">
                               	<h5>Sarah Cruiz</h5>
@@ -291,7 +291,7 @@
                             </div>
                       		</li>
                           <li class="right">
-                      			<img src="images/users/user-1.jpg" alt="" class="profile-photo-sm pull-right" />
+                      			<img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm pull-right" />
                       			<div class="chat-item">
                               <div class="chat-item-header">
                               	<h5>Sarah Cruiz</h5>
@@ -307,7 +307,7 @@
                       <div class="chat-body">
                       	<ul class="chat-message">
                       		<li class="right">
-                      			<img src="images/users/user-1.jpg" alt="" class="profile-photo-sm pull-right" />
+                      			<img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm pull-right" />
                       			<div class="chat-item">
                               <div class="chat-item-header">
                               	<h5>Sarah</h5>
@@ -327,7 +327,7 @@
                             </div>
                       		</li>
                           <li class="right">
-                      			<img src="images/users/user-1.jpg" alt="" class="profile-photo-sm pull-right" />
+                      			<img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm pull-right" />
                       			<div class="chat-item">
                               <div class="chat-item-header">
                               	<h5>Sarah  Cruiz</h5>
@@ -389,7 +389,7 @@
                             </div>
                       		</li>
                           <li class="right">
-                      			<img src="images/users/user-1.jpg" alt="" class="profile-photo-sm pull-right" />
+                      			<img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm pull-right" />
                       			<div class="chat-item">
                               <div class="chat-item-header">
                               	<h5>Sarah Cruiz</h5>
