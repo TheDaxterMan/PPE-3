@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <html>
 <head>
   <title>Connexion</title>
@@ -21,3 +22,5 @@ $_SESSION['id_user'] = $data['id_user']; // cette ligne crée une variable de se
 $_SESSION['permission'] = $data['id_grp']; // pareil pour ses permissions
 $_SESSION['matricule'] = $data['n_matricule'];
 ?>
+=======
+>>>>>>> c21585f11f0b55f74ae88cc273ee384a3dac840a

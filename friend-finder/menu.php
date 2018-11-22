@@ -36,9 +36,9 @@
               <li><a href="timeline.php">Profil</a></li>
               <li><a href="timeline-about.php">A propos de moi</a></li>
               <li><a href="timeline-friends.php">Amis</a></li>
-              <li><a href="edit-profile-basic.php">Modifier les Informations</a></li>
-              <li><a href="edit-profile-work-edu.php">Modifier son Travail</a></li>
-              <li><a href="edit-profile-interests.php">Modifier les centres d'intérêts</a></li>
+              <li><a href="edit-profile-basic.php">Modifier mes Informations</a></li>
+              <li><a href="edit-profile-work-edu.php">Modifier mon Travail</a></li>
+              <li><a href="edit-profile-interests.php">Modifier mes centres d'intérêts</a></li>
               <li><a href="edit-profile-settings.php">Paramètre du compte</a></li>
               <li><a href="edit-profile-password.php">Changer de Mot de passe</a></li>
             </ul>
