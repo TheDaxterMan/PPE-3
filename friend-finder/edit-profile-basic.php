@@ -109,6 +109,7 @@
               	<li><i class="icon ion-ios-heart-outline"></i><a href="edit-profile-interests.php">Centres d'intérêts</a></li>
                 <li><i class="icon ion-ios-settings"></i><a href="edit-profile-settings.php">Paramètres du Compte</a></li>
               	<li><i class="icon ion-ios-locked-outline"></i><a href="edit-profile-password.php">Changer de Mot de passe</a></li>
+								<li><i class="icon ion-ios-contact"></i><a href="edit-profile-image.php">Changer d'image de profil</a></li>
               </ul>
             </div>
             <div class="col-md-7">

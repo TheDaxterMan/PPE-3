@@ -28,7 +28,7 @@
       // crée le cookie avec le nom d'utilisateur et la session
       session_start();
       $_SESSION['id'] = $res['id_utilisateur']; // cette ligne crée une variable de session, où l'on sauve l'id de notre utilisateur connecté
-      //$_SESSION['login_utilisateur'] = $res['login_utilisateur'];
+      $_SESSION['photo'] = $res['photo_utilisateur'];
       header('Location: ./newsfeed.php');
     }
     else
@@ -53,7 +53,7 @@
       // crée le cookie avec le nom d'utilisateur et la session
       session_start();
       $_SESSION['id'] = $res['id_entreprise']; // cette ligne crée une variable de session, où l'on sauve l'id de notre utilisateur connecté
-      //$_SESSION['login_entreprise'] = $res['login_entreprise'];
+      $_SESSION['photo'] = $res['photo_entreprise'];
       header('Location: ./newsfeed.php');
     }
     else
