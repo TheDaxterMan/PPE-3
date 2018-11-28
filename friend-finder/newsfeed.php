@@ -106,6 +106,18 @@
 												?>
 													<img src="images/users/utilisateur/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-md" />
 													<textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Ecrivez quelque chose"></textarea>
+													<div class="col-md-5 col-sm-5">
+					                  <div class="tools">
+					                    <ul class="publishing-tools list-inline">
+					                      <li><a href="#"><i class="ion-compose"></i></a></li>
+					                      <li><a href="#"><i class="ion-images"></i></a></li>
+					                      <li><a href="#"><i class="ion-ios-videocam"></i></a></li>
+					                      <li><a href="#"><i class="ion-map"></i></a></li>
+					                    </ul>
+					                    <button class="btn btn-primary pull-right">Publier</button>
+					                  </div>
+					                </div>
+					            	</div>
 												<?php
 												}
 										///////////////////////////////////////////////////////////////////////////////
@@ -114,25 +126,12 @@
 												if ($_SESSION['profil']=="entreprise")
 												{
 												?>
-													<img src="images/users/entreprise/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-md" />
-													<textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="MDR T UNE ENTREPRISE"></textarea>
+
 												<?php
 												}
 										?>
                   </div>
                 </div>
-            		<div class="col-md-5 col-sm-5">
-                  <div class="tools">
-                    <ul class="publishing-tools list-inline">
-                      <li><a href="#"><i class="ion-compose"></i></a></li>
-                      <li><a href="#"><i class="ion-images"></i></a></li>
-                      <li><a href="#"><i class="ion-ios-videocam"></i></a></li>
-                      <li><a href="#"><i class="ion-map"></i></a></li>
-                    </ul>
-                    <button class="btn btn-primary pull-right">Publier</button>
-                  </div>
-                </div>
-            	</div>
             </div><!-- Post Create Box End-->
 
             <!-- Post Content
