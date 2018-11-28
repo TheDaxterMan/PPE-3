@@ -101,8 +101,6 @@
                 <div class="block-title">
                   <h4 class="grey"><i class="icon ion-android-checkmark-circle"></i>Créer une proposition de Stage/Emploi</h4>
                   <div class="line"></div>
-                  <p>Blablabla écrire un truc ici</p>
-                  <div class="line"></div>
                 </div>
                 <div class="edit-block">
                   <form name="stage" id="stage" action="traitement_stage.php" method="post" class="form-inline">
@@ -111,15 +109,22 @@
                       <div class="form-group col-xs-12">
                         <label for="fichier">Nouvelle Demande</label>
                       </div>
-											<input type="text" name="lib" placeholder="Libellé de la proposition">
-											<input type="textarea" name="desc" placeholder="Description de la proposition">
+
 											<div class="form-group gender">
 												<label class="radio-inline">
-													<input type="radio" name="radio" value="Elève" required>Elève
-												</label>
+													<input type="radio" name="radio" value="stage" required>Stage</label>
 												<label class="radio-inline">
-													<input type="radio" name="radio" value="Entreprise" required>Entreprise
-												</label>
+													<input type="radio" name="radio" value="emploi" required>Emploi</label>
+											</div>
+											<div class="row">
+												<div class="form-group col-xs-12">Libellé</label>
+													<input id="lib" class="form-control input-group-lg" type="text" name="lib" title="Libellé de la proposition" placeholder="Libellé de la proposition" required/>
+												</div>
+											</div>
+											<div class="row">
+												<div class="form-group col-xs-12">Description</label>
+													<textarea name="desc" id="desc" cols="30" rows="10" class="form-control input-group-lg" placeholder="Description de la proposition" required></textarea>
+												</div>
 											</div>
                     </div>
 

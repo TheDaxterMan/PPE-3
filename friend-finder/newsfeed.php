@@ -1,36 +1,10 @@
 <?php
 	session_start();
 	include "bdd.inc.php";
-<<<<<<< HEAD
 	include "login.inc.php";
-
-	///////////////////////////////////////////////////////////////////////////////
-	/*									        	E L E V E																			 */
-	///////////////////////////////////////////////////////////////////////////////
-			if ($_SESSION['profil']=="eleve")
-			{
-				$sql="SELECT * FROM utilisateur";
-				$req = $conn -> query($sql)or die($conn->errorInfo());
-				$res=$req->fetch();
-				$nom=$res['nom_utilisateur'];
-				$prenom=$res['prenom_utilisateur'];
-			}
-	///////////////////////////////////////////////////////////////////////////////
-	/*												E N T R E P R I S E																*/
-	///////////////////////////////////////////////////////////////////////////////
-			if ($_SESSION['profil']=="entreprise")
-			{
-				$sql="SELECT * FROM entreprise";
-				$req = $conn -> query($sql)or die($conn->errorInfo());
-				$res=$req->fetch();
-				$nom=$res['nom_responsable'];
-				$prenom=$res['prenom_responsable'];
-			}
-=======
 	include "info.php";
->>>>>>> 58724f46e67bcd5892123c0d2aea8026ee87ce6e
 ?>
-<!DOCTYPE php>
+<!DOCTYPE html>
 <html lang="en">
 
 <!-- Mirrored from thunder-team.com/friend-finder/newsfeed.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 08 Nov 2018 13:59:59 GMT -->
@@ -132,6 +106,19 @@
 												?>
 													<img src="images/users/utilisateur/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-md" />
 													<textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Ecrivez quelque chose"></textarea>
+													<div class="col-md-5 col-sm-5">
+														<div class="tools">
+															<ul class="publishing-tools list-inline">
+																<li><a href="#"><i class="ion-compose"></i></a></li>
+																<li><a href="#"><i class="ion-images"></i></a></li>
+																<li><a href="#"><i class="ion-ios-videocam"></i></a></li>
+																<li><a href="#"><i class="ion-map"></i></a></li>
+															</ul>
+															<button class="btn btn-primary pull-right">Publier</button>
+														</div>
+													</div>
+												</div>
+											</div><!-- Post Create Box End-->
 												<?php
 												}
 										///////////////////////////////////////////////////////////////////////////////
@@ -140,26 +127,12 @@
 												if ($_SESSION['profil']=="entreprise")
 												{
 												?>
-													<img src="images/users/entreprise/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-md" />
-													<textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="MDR T UNE ENTREPRISE"></textarea>
+
 												<?php
 												}
 										?>
                   </div>
                 </div>
-            		<div class="col-md-5 col-sm-5">
-                  <div class="tools">
-                    <ul class="publishing-tools list-inline">
-                      <li><a href="#"><i class="ion-compose"></i></a></li>
-                      <li><a href="#"><i class="ion-images"></i></a></li>
-                      <li><a href="#"><i class="ion-ios-videocam"></i></a></li>
-                      <li><a href="#"><i class="ion-map"></i></a></li>
-                    </ul>
-                    <button class="btn btn-primary pull-right">Publier</button>
-                  </div>
-                </div>
-            	</div>
-            </div><!-- Post Create Box End-->
 
             <!-- Post Content
             ================================================= -->
