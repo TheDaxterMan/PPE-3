@@ -1,11 +1,6 @@
 <?php
 
-include "class_activite_utilisateur.php";
-include "class_ami.php";
-include "class_diplome.php";
-include "class_emploi.php";
-include "class_utilisateur.php";
-include "classe_stage.php";
+include 'bdd.inc.php';
 
 	/* ---------------------- */
 	/* DEBUT class Utilisateur */
@@ -26,6 +21,7 @@ class utilisateur
 		Private $rue_utilisateur;
 		Private $ville_utilisateur;
 		Private $cp_utilisateur;
+		Private $photo_utilisateur;
 		Private $login_utilisateur;
 		Private $mdp_utilisateur;
 
@@ -33,7 +29,7 @@ class utilisateur
 		/* class Utilisateur Constructeur */
 		/* ---------------------- */
 
-			Public function ( $id_util, $nom_util, $prenom_util, $tel_util, $email_util, $rue_util, $ville_util, $cp_util, $login_util, $mdp_util)
+			Public function utilisateur ( $id_util, $nom_util, $prenom_util, $tel_util, $email_util, $rue_util, $ville_util, $cp_util, $photo_util, $login_util, $mdp_util)
 			{
 				$this -> id_utilisateur = $id_util;
 				$this -> nom_utilisateur = $nom_util;
@@ -43,8 +39,29 @@ class utilisateur
 				$this -> rue_utilisateur = $rue_util;
 				$this -> ville_utilisateur = $ville_util;
 				$this -> cp_utilisateur = $cp_util;
+				$this -> photo_utilisateur = $photo_util;
 				$this -> login_utilisateur = $login_util;
 				$this -> mdp_utilisateur = $mdp_util;
+			}
+
+			/* ---------------------- */
+			/* fonction Utilisateur getalldata */
+			/* ---------------------- */
+
+			public function getallutil()
+			{
+				$data = $this->id_utilisateur;
+				$data = $data.$this->nom_utilisateur;
+				$data = $data.$this->prenom_utilisateur;
+				$data = $data.$this->tel_utilisateur;
+				$data = $data.$this->email_utilisateur;
+				$data = $data.$this->rue_utilisateur;
+				$data = $data.$this->ville_utilisateur;
+				$data = $data.$this->cp_utilisateur;
+				$data = $data.$this->photo_utilisateur;
+				$data = $data.$this->login_utilisateur;
+				$data = $data.$this->mdp_utilisateur;
+				return $data;
 			}
 
 			/* ---------------------- */
@@ -89,6 +106,11 @@ class utilisateur
 			Public function  get_cp_utilisateur ()
 			{
 				return $this-> cp_utilisateur;
+			}
+
+			Public function  get_photo_utilisateur ()
+			{
+				return $this-> photo_utilisateur;
 			}
 
 			Public function  get_login_utilisateur ()
@@ -145,6 +167,11 @@ class utilisateur
 				 $this-> cp_utilisateur = $cp_util;
 			}
 
+			Public function set_photo_utilisateur ($photo_util)
+			{
+				 $this-> photo_utilisateur = $photo_util;
+			}
+
 			Public function set_login_utilisateur ($login_util)
 			{
 				 $this-> login_utilisateur = $login_util;
@@ -158,33 +185,80 @@ class utilisateur
 			/* ---------------------- */
 			/* class Utilisateur fonctions publiques */
 			/* ---------------------- */
-			Public function ajout_utilisateur ($idutil, $nom_util, $prenom_util, $tel_util, $email_util, $rue_util, $ville_util, $cp_util, $login_util, $mdp_util, $conn)
+			Public function ajout_utilisateur ($objet, $conn)
 				{
-					$SQL = " INSERT INTO values ('NULL', '$nom_util', '$prenom_util', '$tel_util', '$email_util', '$rue_util', '$ville_util', '$cp_util', '$login_util', '$mdp_util', '$conn')";
-					$conn -> query ($SQL);
-				}
-				Public function modif_utilisateur ($idutil, $nom_util, $prenom_util, $tel_util, $email_util, $rue_util, $ville_util, $cp_util, $login_util, $mdp_util, $conn)
-				{
-					$SQL = "UPDATE utilisateur SET id_utilisateur = '$idutil', nom_utilisateur = '$nom_util', prenom_utilisateur,  = '$prenom_util',
-					tel_utilisateur = '$tel_util', email_utilisateur = '$email_util', rue_utilisateur = '$rue_util', ville_utilisateur = '$ville_util',
-					cp_utilisateur = '$cp_util', login_utilisateur = '', mdp_utilisateur = '$mdp_util')";
-					$conn -> query ($SQL);
+					$id_util = $objet->get_id_utilisateur();
+					$nom_util = $objet->get_nom_utilisateur();
+					$prenom_util = $objet->get_prenom_utilisateur();
+					$tel_util = $objet->get_tel_utilisateur();
+					$email_util = $objet->get_email_utilisateur();
+					$rue_util = $objet->get_rue_utilisateur();
+					$ville_util = $objet->get_ville_utilisateur();
+					$cp_util = $objet->get_cp_utilisateur();
+					$photo_util = $objet->get_photo_utilisateur();
+					$login_util = $objet->get_login_utilisateur();
+					$mdp_util = $objet->get_mdp_utilisateur();
+
+					print $SQL = " INSERT INTO utilisateur values (NULL, '$nom_util', '$prenom_util', '$tel_util', '$email_util', '$rue_util', '$ville_util', '$cp_util', '$photo_util', '$login_util', '$mdp_util')";
+					$Req = $conn -> query ($SQL) or die (' Erreur ajout utilisateur ');
 				}
 
-				Public function affiche_utilisateur ($nom_util, $prenom_util, $tel_util, $email_util, $rue_util, $ville_util, $cp_util, $login_util, $mdp_util, $conn)
+				Public function modif_utilisateur ($objet, $conn)
 				{
-					$SQL = " SELECT nom_utilisateur, prenom_utilisateur, tel_utilisateur, email_utilisateur, rue_utilisateur, ville_utilisateur, cp_utilisateur, login_utilisateur, mdp_utilisateur  From utilisateur WHERE nom_utilisateur = '$nom_util'";
-					$Req = $conn -> query ($SQL);
+					$id_util = $objet->get_id_utilisateur();
+					$nom_util = $objet->get_nom_utilisateur();
+					$prenom_util = $objet->get_prenom_utilisateur();
+					$tel_util = $objet->get_tel_utilisateur();
+					$email_util = $objet->get_email_utilisateur();
+					$rue_util = $objet->get_rue_utilisateur();
+					$ville_util = $objet->get_ville_utilisateur();
+					$cp_util = $objet->get_cp_utilisateur();
+					$login_util = $objet->get_login_utilisateur();
+					$mdp_util = $objet->get_mdp_utilisateur();
+
+					print $SQL = "UPDATE utilisateur SET nom_utilisateur = 'quentin', prenom_utilisateur  = '$prenom_util',
+					tel_utilisateur = '$tel_util', email_utilisateur = '$email_util', rue_utilisateur = '$rue_util', ville_utilisateur = '$ville_util',
+					cp_utilisateur = '$cp_util', mdp_utilisateur = '$mdp_util' WHERE id_utilisateur = '$id_util'";
+				 	$Req = $conn -> query ($SQL) or die (' Erreur modification utilisateur ');
+				}
+
+				Public function affiche_utilisateur ($objet, $conn)
+				{
+
+					$id_util = $objet->get_id_utilisateur();
+					$nom_util = $objet->get_nom_utilisateur();
+					$prenom_util = $objet->get_prenom_utilisateur();
+					$tel_util = $objet->get_tel_utilisateur();
+					$email_util = $objet->get_email_utilisateur();
+					$rue_util = $objet->get_rue_utilisateur();
+					$ville_util = $objet->get_ville_utilisateur();
+					$cp_util = $objet->get_cp_utilisateur();
+					$login_util = $objet->get_login_utilisateur();
+					$mdp_util = $objet->get_mdp_utilisateur();
+
+					print $SQL = " SELECT *  From utilisateur WHERE id_utilisateur = '$id_util'";
+					$Req = $conn -> query ($SQL) or die (' Erreur affichage utilisateur ');
 					Return $Res = $Req -> fetch ();
 				}
-				Public function suppr_utilisateur ($idutil, $nom_util, $prenom_util, $tel_util, $email_util, $rue_util, $ville_util, $cp_util, $login_util, $mdp_util, $conn)
+
+				Public function suppr_utilisateur ($objet, $conn)
 				{
-					$SQL = " DELETE FROM `utilisateur` WHERE nom_utilisateur  = '$nom_util' ";
-					$conn -> query ($SQL);
+					$id_util = $objet->get_id_utilisateur();
+					$nom_util = $objet->get_nom_utilisateur();
+					$prenom_util = $objet->get_prenom_utilisateur();
+					$tel_util = $objet->get_tel_utilisateur();
+					$email_util = $objet->get_email_utilisateur();
+					$rue_util = $objet->get_rue_utilisateur();
+					$ville_util = $objet->get_ville_utilisateur();
+					$cp_util = $objet->get_cp_utilisateur();
+					$login_util = $objet->get_login_utilisateur();
+					$mdp_util = $objet->get_mdp_utilisateur();
+
+					print $SQL = " DELETE FROM `utilisateur` WHERE id_utilisateur ='$id_util'";
+					$Req = $conn -> query ($SQL) or die (' Erreur suppression utilisateur ');
 				}
 
 }
-
 	/* ---------------------- */
 	/* FIN class Utilisateur */
 	/* ---------------------- */
