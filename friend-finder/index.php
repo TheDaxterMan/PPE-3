@@ -51,7 +51,6 @@
 
 		<!-- Header
     ================================================= -->
-    <?php include "menu.php" ?>;
     <!--Header End-->
 
     <!-- Landing Page Contents
