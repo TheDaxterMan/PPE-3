@@ -1,36 +1,10 @@
 <?php
 	session_start();
 	include "bdd.inc.php";
-<<<<<<< HEAD
-	include "login.inc.php";
-
-	///////////////////////////////////////////////////////////////////////////////
-	/*									        	E L E V E																			 */
-	///////////////////////////////////////////////////////////////////////////////
-			if ($_SESSION['profil']=="eleve")
-			{
-				$sql="SELECT * FROM utilisateur";
-				$req = $conn -> query($sql)or die($conn->errorInfo());
-				$res=$req->fetch();
-				$nom=$res['nom_utilisateur'];
-				$prenom=$res['prenom_utilisateur'];
-			}
-	///////////////////////////////////////////////////////////////////////////////
-	/*												E N T R E P R I S E																*/
-	///////////////////////////////////////////////////////////////////////////////
-			if ($_SESSION['profil']=="entreprise")
-			{
-				$sql="SELECT * FROM entreprise";
-				$req = $conn -> query($sql)or die($conn->errorInfo());
-				$res=$req->fetch();
-				$nom=$res['nom_responsable'];
-				$prenom=$res['prenom_responsable'];
-			}
-=======
 	include "info.php";
->>>>>>> 58724f46e67bcd5892123c0d2aea8026ee87ce6e
+
 ?>
-<!DOCTYPE php>
+<!DOCTYPE HTML>
 <html lang="en">
 
 <!-- Mirrored from thunder-team.com/friend-finder/newsfeed.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 08 Nov 2018 13:59:59 GMT -->
