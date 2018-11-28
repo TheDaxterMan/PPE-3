@@ -1,7 +1,6 @@
 <?php
 	session_start();
 	include "bdd.inc.php";
-	include "login.inc.php";
 	include "info.php";
 ?>
 <!DOCTYPE html>
