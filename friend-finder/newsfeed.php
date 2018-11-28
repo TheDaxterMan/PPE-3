@@ -3,11 +3,28 @@
 	include "bdd.inc.php";
 	include "login.inc.php";
 
-	$sql="SELECT * FROM utilisateur";
-	$req = $conn -> query($sql)or die($conn->errorInfo());
-	$res=$req->fetch();
-	$nom=$res['nom_utilisateur'];
-	$prenom=$res['prenom_utilisateur'];
+	///////////////////////////////////////////////////////////////////////////////
+	/*									        	E L E V E																			 */
+	///////////////////////////////////////////////////////////////////////////////
+			if ($_SESSION['profil']=="eleve")
+			{
+				$sql="SELECT * FROM utilisateur";
+				$req = $conn -> query($sql)or die($conn->errorInfo());
+				$res=$req->fetch();
+				$nom=$res['nom_utilisateur'];
+				$prenom=$res['prenom_utilisateur'];
+			}
+	///////////////////////////////////////////////////////////////////////////////
+	/*												E N T R E P R I S E																*/
+	///////////////////////////////////////////////////////////////////////////////
+			if ($_SESSION['profil']=="entreprise")
+			{
+				$sql="SELECT * FROM entreprise";
+				$req = $conn -> query($sql)or die($conn->errorInfo());
+				$res=$req->fetch();
+				$nom=$res['nom_responsable'];
+				$prenom=$res['prenom_responsable'];
+			}
 ?>
 <!DOCTYPE php>
 <html lang="en">
