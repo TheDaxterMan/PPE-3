@@ -13,12 +13,11 @@
 		<meta name="description" content="This is social network html5 template available in themeforest......" />
 		<meta name="keywords" content="Social Network, Social Media, Make Friends, Newsfeed, Profile Page" />
 		<meta name="robots" content="index, follow" />
-		<title>My Timeline | This is My Coolest Profile</title>
+		<title>Mon fil d'actualité</title>
 
 		<script src='https://www.google.com/recaptcha/api.js'></script>
 
-    <!-- Stylesheets
-    ================================================= -->
+    <!-- Stylesheets ================================================= -->
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
 		<link rel="stylesheet" href="css/style.css" />
 		<link rel="stylesheet" href="css/ionicons.min.css" />
