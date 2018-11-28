@@ -2,6 +2,12 @@
 	session_start();
 	include "bdd.inc.php";
 	include "login.inc.php";
+
+	$sql="SELECT * FROM utilisateur";
+	$req = $conn -> query($sql)or die($conn->errorInfo());
+	$res=$req->fetch();
+	$nom=$res['nom_utilisateur'];
+	$prenom=$res['prenom_utilisateur'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,7 +55,7 @@
               <div class="col-md-3">
                 <div class="profile-info">
                   <img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="img-responsive profile-photo" />
-                  <h3>Sarah Cruiz</h3>
+                  <h3><?php echo $prenom,' ',$nom; ?></h3>
                   <p class="text-muted">Creative Director</p>
                 </div>
               </div>
@@ -72,7 +78,7 @@
           <div class="navbar-mobile hidden-lg hidden-md">
             <div class="profile-info">
               <img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="img-responsive profile-photo" />
-              <h4>Sarah Cruiz</h4>
+              <h4><?php echo $prenom,' ',$nom; ?></h4>
               <p class="text-muted">Creative Director</p>
             </div>
             <div class="mobile-menu">
@@ -131,7 +137,7 @@
                   <img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="user" class="profile-photo-md pull-left" />
                   <div class="post-detail">
                     <div class="user-info">
-                      <h5><a href="timeline.html" class="profile-link">Sarah Cruiz</a> <span class="following">following</span></h5>
+                      <h5><a href="timeline.html" class="profile-link"><?php echo $prenom,' ',$nom; ?></a> <span class="following">following</span></h5>
                       <p class="text-muted">Published a photo about 15 mins ago</p>
                     </div>
                     <div class="reaction">
@@ -174,7 +180,7 @@
                   <img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="user" class="profile-photo-md pull-left" />
                   <div class="post-detail">
                     <div class="user-info">
-                      <h5><a href="timeline.html" class="profile-link">Sarah Cruiz</a> <span class="following">following</span></h5>
+                      <h5><a href="timeline.html" class="profile-link"><?php echo $prenom,' ',$nom; ?></a> <span class="following">following</span></h5>
                       <p class="text-muted">Yesterday</p>
                     </div>
                     <div class="reaction">
@@ -216,7 +222,7 @@
                   <img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="user" class="profile-photo-md pull-left" />
                   <div class="post-detail">
                     <div class="user-info">
-                      <h5><a href="timeline.html" class="profile-link">Sarah Cruiz</a> <span class="following">following</span></h5>
+                      <h5><a href="timeline.html" class="profile-link"><?php echo $prenom,' ',$nom; ?></a> <span class="following">following</span></h5>
                       <p class="text-muted">2 days ago</p>
                     </div>
                     <div class="reaction">

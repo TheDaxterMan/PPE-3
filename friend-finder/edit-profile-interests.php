@@ -47,7 +47,26 @@
             <div class="row">
               <div class="col-md-3">
                 <div class="profile-info">
-                  <img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="img-responsive profile-photo" />
+									<?php
+									///////////////////////////////////////////////////////////////////////////////
+									/*									        	E L E V E																			 */
+									///////////////////////////////////////////////////////////////////////////////
+											if ($_SESSION['profil']=="eleve")
+											{
+											?>
+												<img src="images/users/utilisateur/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="img-responsive profile-photo" />
+											<?php
+											}
+									///////////////////////////////////////////////////////////////////////////////
+									/*												E N T R E P R I S E																*/
+									///////////////////////////////////////////////////////////////////////////////
+											if ($_SESSION['profil']=="entreprise")
+											{
+											?>
+												<img src="images/users/entreprise/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="img-responsive profile-photo" />
+											<?php
+											}
+									?>
                   <h3>Sarah Cruiz</h3>
                   <p class="text-muted">Creative Director</p>
                 </div>
@@ -70,7 +89,26 @@
           <!--Timeline Menu for Small Screens-->
           <div class="navbar-mobile hidden-lg hidden-md">
             <div class="profile-info">
-              <img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="img-responsive profile-photo" />
+							<?php
+							///////////////////////////////////////////////////////////////////////////////
+							/*									        	E L E V E																			 */
+							///////////////////////////////////////////////////////////////////////////////
+							    if ($_SESSION['profil']=="eleve")
+							    {
+							    ?>
+									<img src="images/users/utilisateur/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="img-responsive profile-photo" />
+							    <?php
+							    }
+						///////////////////////////////////////////////////////////////////////////////
+						/*												E N T R E P R I S E																*/
+						///////////////////////////////////////////////////////////////////////////////
+									if ($_SESSION['profil']=="entreprise")
+									{
+									?>
+									<img src="images/users/entreprise/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="img-responsive profile-photo" />
+									<?php
+								  }
+									?>
               <h4>Sarah Cruiz</h4>
               <p class="text-muted">Creative Director</p>
             </div>

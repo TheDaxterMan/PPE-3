@@ -110,7 +110,7 @@
                 <div class="post-detail">
                   <div class="user-info">
                     <h5><a href="timeline.php" class="profile-link">Personne random</a> <span class="following">Suivre</span></h5>
-                    <p class="text-muted">A publié une photo il y a 3 minutes</p>
+                    <p class="text-muted">A publié une photo il y a - minutes</p>
                   </div>
                   <div class="reaction">
                     <a class="btn text-green"><i class="icon ion-thumbsup"></i> 13</a>
@@ -118,16 +118,16 @@
                   </div>
                   <div class="line-divider"></div>
                   <div class="post-text">
-                    <p>Blablabla nique ta mère PD<i class="em em-fu"></i> <i class="em em-anguished"></i> <i class="em em-anguished"></i></p>
+                    <p>Blablabla<i class="em em-fu"></i> <i class="em em-anguished"></i> <i class="em em-anguished"></i></p>
                   </div>
                   <div class="line-divider"></div>
                   <div class="post-comment">
                     <img src="images/users/user-11.jpg" alt="" class="profile-photo-sm" />
-                    <p><a href="timeline.php" class="profile-link">Diana </a><i class="em em-laughing"></i> Je suis trop mdr lol xptdr, je suis une déglingosse </p>
+                    <p><a href="timeline.php" class="profile-link">Personne random 2</a><i class="em em-laughing"></i>Blablabla</p>
                   </div>
                   <div class="post-comment">
                     <img src="images/users/user-4.jpg" alt="" class="profile-photo-sm" />
-                    <p><a href="timeline.php" class="profile-link">John</a> Salut moi c'est John, tu baises ? </p>
+                    <p><a href="timeline.php" class="profile-link">Personne random 3</a>Blablabla</p>
                   </div>
                   <div class="post-comment">
                     <img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm" />

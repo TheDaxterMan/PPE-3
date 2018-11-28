@@ -29,6 +29,7 @@
       session_start();
       $_SESSION['id'] = $res['id_utilisateur']; // cette ligne crée une variable de session, où l'on sauve l'id de notre utilisateur connecté
       $_SESSION['photo'] = $res['photo_utilisateur'];
+      $_SESSION['profil'] = "eleve";
       header('Location: ./newsfeed.php');
     }
     else
@@ -54,6 +55,7 @@
       session_start();
       $_SESSION['id'] = $res['id_entreprise']; // cette ligne crée une variable de session, où l'on sauve l'id de notre utilisateur connecté
       $_SESSION['photo'] = $res['photo_entreprise'];
+      $_SESSION['profil'] = "entreprise";
       header('Location: ./newsfeed.php');
     }
     else

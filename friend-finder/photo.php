@@ -20,16 +20,37 @@
 
     $nomphoto='user-'.$id;
     $type = ".".pathinfo($nphoto, PATHINFO_EXTENSION);
-    $chemin = "./images/users";
-    $pj = $chemin . "/" .$nomphoto.$type;
+///////////////////////////////////////////////////////////////////////////////
+/*									        	E L E V E																			 */
+///////////////////////////////////////////////////////////////////////////////
+		if ($_SESSION['profil']=="eleve")
+		{
+			$chemin = "./images/users/utilisateur";
+			$pj = $chemin . "/" .$nomphoto.$type;
 
-    move_uploaded_file($tmpphoto,$pj);
+			move_uploaded_file($tmpphoto,$pj);
 
-    $sql = "UPDATE utilisateur SET photo_utilisateur = '$type'
-                                   WHERE id_utilisateur = $id";
-    $req = $conn -> prepare($sql);
-    $req -> execute();
+			$sql = "UPDATE utilisateur SET photo_utilisateur = '$type'
+	                                   WHERE id_utilisateur = $id";
+	    $req = $conn -> prepare($sql);
+	    $req -> execute();
+		}
+///////////////////////////////////////////////////////////////////////////////
+/*												E N T R E P R I S E																*/
+///////////////////////////////////////////////////////////////////////////////
+		if ($_SESSION['profil']=="entreprise")
+		{
+			$chemin = "./images/users/entreprise";
+			$pj = $chemin . "/" .$nomphoto.$type;
 
+			move_uploaded_file($tmpphoto,$pj);
+
+			$sql = "UPDATE utilisateur SET photo_utilisateur = '$type'
+	                                   WHERE id_utilisateur = $id";
+	    $req = $conn -> prepare($sql);
+	    $req -> execute();
+		}
+		
     $_SESSION['photo'] = $type;
   }
   header('Location: ./timeline.php');

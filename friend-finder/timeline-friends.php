@@ -47,7 +47,7 @@
               <div class="col-md-3">
                 <div class="profile-info">
                   <img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="img-responsive profile-photo" />
-                  <h3>Sarah Cruiz</h3>
+                  <h3><?php echo $prenom,' ',$nom; ?></h3>
                   <p class="text-muted">Creative Director</p>
                 </div>
               </div>
@@ -70,7 +70,7 @@
           <div class="navbar-mobile hidden-lg hidden-md">
             <div class="profile-info">
               <img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="img-responsive profile-photo" />
-              <h4>Sarah Cruiz</h4>
+              <h4><?php echo $prenom,' ',$nom; ?></h4>
               <p class="text-muted">Creative Director</p>
             </div>
             <div class="mobile-menu">

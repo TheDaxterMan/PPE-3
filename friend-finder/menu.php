@@ -31,7 +31,27 @@
           <li class="dropdown"><a href="contact.php">Contact</a></li>
 
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="user" class="profile-photo-nav" /></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <?php
+            ///////////////////////////////////////////////////////////////////////////////
+            /*									        	E L E V E																			 */
+            ///////////////////////////////////////////////////////////////////////////////
+                if ($_SESSION['profil']=="eleve")
+                {
+                ?>
+                  <img src="images/users/utilisateur/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="user" class="profile-photo-nav" /></a>
+                <?php
+                }
+            ///////////////////////////////////////////////////////////////////////////////
+            /*												E N T R E P R I S E																*/
+            ///////////////////////////////////////////////////////////////////////////////
+                if ($_SESSION['profil']=="entreprise")
+                {
+                ?>
+                  <img src="images/users/entreprise/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="user" class="profile-photo-nav" /></a>
+                <?php
+                }
+            ?>
             <ul class="dropdown-menu login">
               <li><a href="timeline.php">Profil</a></li>
               <li><a href="timeline-about.php">A propos de moi</a></li>

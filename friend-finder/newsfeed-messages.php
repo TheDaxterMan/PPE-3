@@ -2,6 +2,12 @@
 	session_start();
 	include "bdd.inc.php";
 	include "login.inc.php";
+
+	$sql="SELECT * FROM utilisateur";
+	$req = $conn -> query($sql)or die($conn->errorInfo());
+	$res=$req->fetch();
+	$nom=$res['nom_utilisateur'];
+	$prenom=$res['prenom_utilisateur'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +52,7 @@
     			<div class="col-md-3 static">
             <div class="profile-card">
             	<img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="user" class="profile-photo" />
-            	<h5><a href="timeline.html" class="text-white">Sarah Cruiz</a></h5>
+            	<h5><a href="timeline.html" class="text-white"><?php echo $prenom,' ',$nom; ?></a></h5>
             	<a href="#" class="text-white"><i class="ion ion-android-person-add"></i> 1,299 followers</a>
             </div><!--profile card ends-->
             <ul class="nav-news-feed">
