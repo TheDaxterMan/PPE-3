@@ -1,10 +1,6 @@
 <?php
 
-include "class_activite_entreprise.php";
-include "class_ami.php";
-include "class_emploi.php";
 include "class_entreprise.php";
-include "classe_stage.php";
 include "class_utilisateur.php";
 
   /* ---------------------- */
@@ -25,12 +21,24 @@ class emploi
     /* class Emploi Constructeur */
     /* ---------------------- */
 
-    Public function ( $id_emp, $lib_emp, $desc_emp)
+    Public function emploi ( $id_emp, $lib_emp, $desc_emp)
     {
       $this -> id_emploi = $id_emp;
       $this -> lib_emploi = $lib_emp;
       $this -> desc_emploi = $desc_emp;
     }
+
+		/* ---------------------- */
+		/* fonction Emploi getalldata */
+		/* ---------------------- */
+
+		public function getallemploi()
+		{
+			$data = $this->$id_emp;
+			$data = $data.$this->$lib_emp;
+			$data = $data.$this->$desc_emp;
+			return $data;
+		}
 
     /* ---------------------- */
     /* class Emploi GET */
@@ -73,26 +81,47 @@ class emploi
 	/* ---------------------- */
 	/* class Emploi fonctions publiques */
 	/* ---------------------- */
-	Public function ajout_emploi ($id_emp, $lib_emp, $desc_emp, $conn)
+	Public function ajout_emploi ($objet, $conn)
 		{
-			$SQL = " INSERT INTO values ('NULL', '$lib_emp', '$desc_emp', '$conn')";
-			$conn -> query ($SQL);
+			$id_emp = $objet->get_id_emploi();
+			$lib_emp = $objet->get_lib_emploi();
+			$desc_emp = $objet->get_desc_emploi();
+
+			print $SQL = " INSERT INTO emploi values (NULL, '$lib_emp', '$desc_emp')";
+			$Req = $conn -> query ($SQL) or die (' Erreur ajout emploi ');
 		}
-		Public function modif_emploi ($id_emp, $lib_emp, $desc_emp, $conn)
+
+		Public function modif_emploi ($objet, $conn)
 		{
-			$SQL = "UPDATE emploi SET id_emploi = '$id_emp', lib_emploi = '$lib_emp', desc_emploi = '$desc_emp')";
-			$conn -> query ($SQL);
+			$id_emp = $objet->get_id_emploi();
+			$lib_emp = $objet->get_lib_emploi();
+			$desc_emp = $objet->get_desc_emploi();
+
+			print $SQL = "UPDATE emploi SET lib_emploi = '$lib_emp', desc_emploi = '$desc_emp',
+			WHERE id_emploi = '$id_emp'";
+			$Req = $conn -> query ($SQL) or die (' Erreur modification emploi ');
 		}
-		Public function affiche_emploi ($lib_emp, $desc_emp)
+
+		Public function affiche_emploi ($objet, $conn)
 		{
-			$SQL = " SELECT * From emploi WHERE lib_emploi = '$lib_emp'";
-			$Req = $conn -> query ($SQL);
+
+			$id_emp = $objet->get_id_emploi();
+			$lib_emp = $objet->get_lib_emploi();
+			$desc_emp = $objet->get_desc_emploi();
+
+			print $SQL = " SELECT *  From emploi WHERE id_emploi = '$id_emp'";
+			$Req = $conn -> query ($SQL) or die (' Erreur affichage emploi ');
 			Return $Res = $Req -> fetch ();
 		}
-		Public function suppr_emploi ($id_emp, $lib_emp, $desc_emp)
+
+		Public function suppr_emploi ($objet, $conn)
 		{
-			$SQL = " DELETE FROM `emploi` WHERE lib_emploi = '$lib_emp'";
-			$conn -> query ($SQL);
+			$id_emp = $objet->get_id_emploi();
+			$lib_emp = $objet->get_lib_emploi();
+			$desc_emp = $objet->get_desc_emploi();
+
+			print $SQL = " DELETE FROM `emploi` WHERE id_emploi = '$id_emp'";
+			$Req = $conn -> query ($SQL) or die (' Erreur suppression emploi ');
 		}
 }
   /* ---------------------- */
