@@ -4,6 +4,12 @@
 	include "login.inc.php";
 	include "info.php";
 
+
+	///////////////////////////////////////////////////////////////////////////////
+	/*												E N T R E P R I S E																*/
+	///////////////////////////////////////////////////////////////////////////////
+			if ($_SESSION['profil']=="entreprise")
+			{
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,17 +56,7 @@
             <div class="row">
               <div class="col-md-3">
                 <div class="profile-info">
-									<?php
-									///////////////////////////////////////////////////////////////////////////////
-									/*												E N T R E P R I S E																*/
-									///////////////////////////////////////////////////////////////////////////////
-											if ($_SESSION['profil']=="entreprise")
-											{
-											?>
-												<img src="images/users/entreprise/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="img-responsive profile-photo" />
-											<?php
-											}
-									?>
+									<img src="images/users/entreprise/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="img-responsive profile-photo" />
                   <h3><?php echo $prenom,' ',$nom; ?></h3>
                   <p class="text-muted">Creative Director</p>
                 </div>
@@ -71,17 +67,7 @@
           <!--Timeline Menu for Small Screens-->
           <div class="navbar-mobile hidden-lg hidden-md">
             <div class="profile-info">
-							<?php
-							///////////////////////////////////////////////////////////////////////////////
-							/*												E N T R E P R I S E																*/
-							///////////////////////////////////////////////////////////////////////////////
-									if ($_SESSION['profil']=="entreprise")
-									{
-									?>
-										<img src="images/users/entreprise/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="img-responsive profile-photo" />
-									<?php
-									}
-							?>
+							<img src="images/users/entreprise/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="img-responsive profile-photo" />
               <h4><?php echo $prenom,' ',$nom; ?></h4>
               <p class="text-muted">Creative Director</p>
             </div>
@@ -148,3 +134,6 @@ include "footer.php";
 
 <!-- Mirrored from thunder-team.com/friend-finder/edit-profile-basic.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 08 Nov 2018 14:00:55 GMT -->
 </html>
+<?php
+	}
+?>
