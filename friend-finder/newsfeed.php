@@ -51,7 +51,26 @@
           ================================================= -->
     			<div class="col-md-3 static">
             <div class="profile-card">
-            	<img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="user" class="profile-photo" />
+							<?php
+							///////////////////////////////////////////////////////////////////////////////
+							/*									        	E L E V E																			 */
+							///////////////////////////////////////////////////////////////////////////////
+									if ($_SESSION['profil']=="eleve")
+									{
+									?>
+										<img src="images/users/utilisateur/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="user" class="profile-photo" />
+									<?php
+									}
+							///////////////////////////////////////////////////////////////////////////////
+							/*												E N T R E P R I S E																*/
+							///////////////////////////////////////////////////////////////////////////////
+									if ($_SESSION['profil']=="entreprise")
+									{
+									?>
+										<img src="images/users/entreprise/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="user" class="profile-photo" />
+									<?php
+									}
+							?>
             	<h5><a href="timeline.php" class="text-white"><?php echo $prenom,' ',$nom; ?></a></h5>
             	<a href="#" class="text-white"><i class="ion ion-android-person-add"></i> NOMBRE followers</a>
             </div><!--profile card ends-->
@@ -83,8 +102,28 @@
             	<div class="row">
             		<div class="col-md-7 col-sm-7">
                   <div class="form-group">
-                    <img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-md" />
-                    <textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Ecrivez quelque chose"></textarea>
+										<?php
+										///////////////////////////////////////////////////////////////////////////////
+										/*									        	E L E V E																			 */
+										///////////////////////////////////////////////////////////////////////////////
+												if ($_SESSION['profil']=="eleve")
+												{
+												?>
+													<img src="images/users/utilisateur/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-md" />
+													<textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Ecrivez quelque chose"></textarea>
+												<?php
+												}
+										///////////////////////////////////////////////////////////////////////////////
+										/*												E N T R E P R I S E																*/
+										///////////////////////////////////////////////////////////////////////////////
+												if ($_SESSION['profil']=="entreprise")
+												{
+												?>
+													<img src="images/users/entreprise/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-md" />
+													<textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="MDR T UNE ENTREPRISE"></textarea>
+												<?php
+												}
+										?>
                   </div>
                 </div>
             		<div class="col-md-5 col-sm-5">
@@ -130,7 +169,26 @@
                     <p><a href="timeline.php" class="profile-link">Personne random 3</a>Blablabla</p>
                   </div>
                   <div class="post-comment">
-                    <img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm" />
+										<?php
+										///////////////////////////////////////////////////////////////////////////////
+										/*									        	E L E V E																			 */
+										///////////////////////////////////////////////////////////////////////////////
+												if ($_SESSION['profil']=="eleve")
+												{
+												?>
+													<img src="images/users/utilisateur/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm" />
+												<?php
+												}
+										///////////////////////////////////////////////////////////////////////////////
+										/*												E N T R E P R I S E																*/
+										///////////////////////////////////////////////////////////////////////////////
+												if ($_SESSION['profil']=="entreprise")
+												{
+												?>
+													<img src="images/users/entreprise/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm" />
+												<?php
+												}
+										?>
                     <input type="text" class="form-control" placeholder="Postez un commentaire">
                   </div>
                 </div>
@@ -170,7 +228,26 @@
                     <p><a href="timeline.php" class="profile-link">Linda</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                   </div>
                   <div class="post-comment">
-                    <img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm" />
+										<?php
+										///////////////////////////////////////////////////////////////////////////////
+										/*									        	E L E V E																			 */
+										///////////////////////////////////////////////////////////////////////////////
+												if ($_SESSION['profil']=="eleve")
+												{
+												?>
+													<img src="images/users/utilisateur/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm" />
+												<?php
+												}
+										///////////////////////////////////////////////////////////////////////////////
+										/*												E N T R E P R I S E																*/
+										///////////////////////////////////////////////////////////////////////////////
+												if ($_SESSION['profil']=="entreprise")
+												{
+												?>
+													<img src="images/users/entreprise/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm" />
+												<?php
+												}
+										?>
                     <input type="text" class="form-control" placeholder="Postez un commentaire">
                   </div>
                 </div>
@@ -201,7 +278,26 @@
                     <p><a href="timeline.php" class="profile-link">Cris </a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam <i class="em em-muscle"></i></p>
                   </div>
                   <div class="post-comment">
-                    <img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm" />
+										<?php
+										///////////////////////////////////////////////////////////////////////////////
+										/*									        	E L E V E																			 */
+										///////////////////////////////////////////////////////////////////////////////
+												if ($_SESSION['profil']=="eleve")
+												{
+												?>
+													<img src="images/users/utilisateur/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm" />
+												<?php
+												}
+										///////////////////////////////////////////////////////////////////////////////
+										/*												E N T R E P R I S E																*/
+										///////////////////////////////////////////////////////////////////////////////
+												if ($_SESSION['profil']=="entreprise")
+												{
+												?>
+													<img src="images/users/entreprise/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm" />
+												<?php
+												}
+										?>
                     <input type="text" class="form-control" placeholder="Postez un commentaire">
                   </div>
                 </div>
@@ -237,7 +333,26 @@
                     <p><a href="timeline.php" class="profile-link">Richard</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                   </div>
                   <div class="post-comment">
-                    <img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm" />
+										<?php
+										///////////////////////////////////////////////////////////////////////////////
+										/*									        	E L E V E																			 */
+										///////////////////////////////////////////////////////////////////////////////
+												if ($_SESSION['profil']=="eleve")
+												{
+												?>
+													<img src="images/users/utilisateur/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm" />
+												<?php
+												}
+										///////////////////////////////////////////////////////////////////////////////
+										/*												E N T R E P R I S E																*/
+										///////////////////////////////////////////////////////////////////////////////
+												if ($_SESSION['profil']=="entreprise")
+												{
+												?>
+													<img src="images/users/entreprise/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm" />
+												<?php
+												}
+										?>
                     <input type="text" class="form-control" placeholder="Postez un commentaire">
                   </div>
                 </div>
@@ -267,11 +382,49 @@
                   </div>
                   <div class="line-divider"></div>
                   <div class="post-comment">
-                    <img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm" />
+										<?php
+										///////////////////////////////////////////////////////////////////////////////
+										/*									        	E L E V E																			 */
+										///////////////////////////////////////////////////////////////////////////////
+												if ($_SESSION['profil']=="eleve")
+												{
+												?>
+													<img src="images/users/utilisateur/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm" />
+												<?php
+												}
+										///////////////////////////////////////////////////////////////////////////////
+										/*												E N T R E P R I S E																*/
+										///////////////////////////////////////////////////////////////////////////////
+												if ($_SESSION['profil']=="entreprise")
+												{
+												?>
+													<img src="images/users/entreprise/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm" />
+												<?php
+												}
+										?>
                     <p><a href="timeline.php" class="profile-link">Sarah </a>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. <i class="em em-blush"></i> <i class="em em-blush"></i> </p>
                   </div>
                   <div class="post-comment">
-                    <img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm" />
+										<?php
+										///////////////////////////////////////////////////////////////////////////////
+										/*									        	E L E V E																			 */
+										///////////////////////////////////////////////////////////////////////////////
+												if ($_SESSION['profil']=="eleve")
+												{
+												?>
+													<img src="images/users/utilisateur/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm" />
+												<?php
+												}
+										///////////////////////////////////////////////////////////////////////////////
+										/*												E N T R E P R I S E																*/
+										///////////////////////////////////////////////////////////////////////////////
+												if ($_SESSION['profil']=="entreprise")
+												{
+												?>
+													<img src="images/users/entreprise/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm" />
+												<?php
+												}
+										?>
                     <input type="text" class="form-control" placeholder="Postez un commentaire">
                   </div>
                 </div>
@@ -303,7 +456,26 @@
                     <p><a href="timeline.php" class="profile-link">Julia </a>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
                   </div>
                   <div class="post-comment">
-                    <img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm" />
+										<?php
+										///////////////////////////////////////////////////////////////////////////////
+										/*									        	E L E V E																			 */
+										///////////////////////////////////////////////////////////////////////////////
+												if ($_SESSION['profil']=="eleve")
+												{
+												?>
+													<img src="images/users/utilisateur/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm" />
+												<?php
+												}
+										///////////////////////////////////////////////////////////////////////////////
+										/*												E N T R E P R I S E																*/
+										///////////////////////////////////////////////////////////////////////////////
+												if ($_SESSION['profil']=="entreprise")
+												{
+												?>
+													<img src="images/users/entreprise/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm" />
+												<?php
+												}
+										?>
                     <input type="text" class="form-control" placeholder="Postez un commentaire">
                   </div>
                 </div>
