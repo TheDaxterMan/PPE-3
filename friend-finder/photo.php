@@ -25,6 +25,8 @@
 ///////////////////////////////////////////////////////////////////////////////
 		if ($_SESSION['profil']=="eleve")
 		{
+			echo "eleve";
+			die();
 			$chemin = "./images/users/utilisateur";
 			$pj = $chemin . "/" .$nomphoto.$type;
 
@@ -45,12 +47,12 @@
 
 			move_uploaded_file($tmpphoto,$pj);
 
-			$sql = "UPDATE utilisateur SET photo_utilisateur = '$type'
-	                                   WHERE id_utilisateur = $id";
+			$sql = "UPDATE entreprise SET photo_entreprise = '$type'
+	                                   WHERE id_entreprise = $id";
 	    $req = $conn -> prepare($sql);
 	    $req -> execute();
 		}
-		
+
     $_SESSION['photo'] = $type;
   }
   header('Location: ./timeline.php');
