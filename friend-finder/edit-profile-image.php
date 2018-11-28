@@ -2,7 +2,7 @@
 	session_start();
 	include "bdd.inc.php";
 	include "login.inc.php";
-
+	include "info.php";
 	$sql="SELECT * FROM utilisateur";
 	$req = $conn -> query($sql)or die($conn->errorInfo());
 	$res=$req->fetch();

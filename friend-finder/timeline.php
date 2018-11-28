@@ -2,12 +2,7 @@
 	session_start();
 	include "bdd.inc.php";
 	include "login.inc.php";
-
-	$sql="SELECT * FROM utilisateur";
-	$req = $conn -> query($sql)or die($conn->errorInfo());
-	$res=$req->fetch();
-	$nom=$res['nom_utilisateur'];
-	$prenom=$res['prenom_utilisateur'];
+	include "info.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
