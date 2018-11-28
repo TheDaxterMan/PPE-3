@@ -2,6 +2,7 @@
   /* ---------------------- */
   /* DEBUT class Activite_entreprise */
   /* ---------------------- */
+
 class activite_entreprise
 	{
     /* ---------------------- */
@@ -12,11 +13,23 @@ class activite_entreprise
     /* ---------------------- */
     /* class Activite_entreprise Constructeur */
     /* ---------------------- */
-    Public function ( $id_act, $lib_act)
+    Public function activite_entreprise ( $id_act, $lib_act)
     {
       $this -> id_activite = $id_act;
       $this -> lib_activite = $lib_act;
     }
+
+		/* ---------------------- */
+		/* fonction Activite_entreprise getalldata */
+		/* ---------------------- */
+
+		public function getallact()
+		{
+			$data = $this->$id_act;
+			$data = $data.$this->$lib_act;
+			return $data;
+		}
+
     /* ---------------------- */
     /* class Activite_entreprise GET */
     /* ---------------------- */
@@ -42,26 +55,43 @@ class activite_entreprise
 		/* ---------------------- */
 		/* class Activite_entreprise fonctions publiques */
 		/* ---------------------- */
-		Public function ajout_activite ($id_act, $lib_act, $conn)
+		Public function ajout_activite ($objet, $conn)
 			{
-				$SQL = " INSERT INTO values ('NULL', '$lib_act', '$conn')";
-				$conn -> query ($SQL);
+				$id_act = $objet->get_id_activite();
+				$lib_act = $objet->get_lib_activite();
+
+				print $SQL = " INSERT INTO activite values (NULL, '$lib_act')";
+				$Req = $conn -> query ($SQL) or die (' Erreur ajout activite ');
 			}
-			Public function modif_activite ($id_act, $lib_act)
+
+			Public function modif_activite ($objet, $conn)
 			{
-				$SQL = "UPDATE activite_entreprise SET id_activite = '$id_act', lib_activite = '$lib_act')";
-				$conn -> query ($SQL);
+				$id_act = $objet->get_id_activite();
+				$lib_act = $objet->get_lib_activite();
+
+				print $SQL = "UPDATE activite SET lib_activite = '$lib_act'
+				WHERE id_activite = '$id_act'";
+				$Req = $conn -> query ($SQL) or die (' Erreur modification activite ');
 			}
-			Public function affiche_activite ($lib_act)
+
+			Public function affiche_activite ($objet, $conn)
 			{
-				$SQL = " SELECT * From activite_entreprise WHERE lib_activite = '$lib_act'";
-				$Req = $conn -> query ($SQL);
+
+				$id_act = $objet->get_id_activite();
+				$lib_act = $objet->get_lib_activite();
+
+				print $SQL = " SELECT *  From activite WHERE id_activite = '$id_act'";
+				$Req = $conn -> query ($SQL) or die (' Erreur affichage activite ');
 				Return $Res = $Req -> fetch ();
 			}
-			Public function suppr_activite ($id_act, $lib_act)
+
+			Public function suppr_activite ($objet, $conn)
 			{
-				$SQL = " DELETE FROM `activite_entreprise` WHERE lib_activite = '$lib_act'";
-				$conn -> query ($SQL);
+				$id_act = $objet->get_id_activite();
+				$lib_act = $objet->get_lib_activite();
+
+				print $SQL = " DELETE FROM `activite` WHERE id_activite = '$id_act'";
+				$Req = $conn -> query ($SQL) or die (' Erreur suppression activite ');
 			}
   }
   /* ---------------------- */
