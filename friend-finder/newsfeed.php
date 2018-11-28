@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	include "bdd.inc.php";
+<<<<<<< HEAD
 	include "login.inc.php";
 
 	///////////////////////////////////////////////////////////////////////////////
@@ -25,6 +26,9 @@
 				$nom=$res['nom_responsable'];
 				$prenom=$res['prenom_responsable'];
 			}
+=======
+	include "info.php";
+>>>>>>> 58724f46e67bcd5892123c0d2aea8026ee87ce6e
 ?>
 <!DOCTYPE php>
 <html lang="en">
