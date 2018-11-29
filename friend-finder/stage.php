@@ -97,7 +97,7 @@
                   <div class="line"></div>
                 </div>
                 <div class="edit-block">
-                  <form name="stage" id="stage" action="traitement_stage.php" method="post" class="form-inline">
+                  <form name="stage" id="stage" action="crea_stage.php" method="post" class="form-inline">
 
                     <div class="row">
                       <div class="form-group col-xs-12">
@@ -112,10 +112,10 @@
 											</div>
 											<div class="date">
 												<div class="form-group col-xs-12">Date début</label>
-													<input id="date" class="form-control input-group-lg" type="date" name="dated" title="Date début stage" placeholder="Date début stage" required/>
+													<input id="date" class="form-control input-group-lg" type="date" name="dated" title="Date début stage" placeholder="Date début stage"/>
 												</div>
 												<div class="form-group col-xs-12">Date fin</label>
-													<input id="date" class="form-control input-group-lg" type="date" name="datef" title="Date fin stage" placeholder="Date fin stage" required/>
+													<input id="date" class="form-control input-group-lg" type="date" name="datef" title="Date fin stage" placeholder="Date fin stage"/>
 												</div>
 											</div>
 											<div class="row">
