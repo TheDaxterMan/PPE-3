@@ -23,7 +23,14 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle pages" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Toutes les Pages <span><img src="images/down-arrow.png" alt="" /></span></a>
             <ul class="dropdown-menu page-list">
-              <li><a href="stage.php">Création de stages/emplois</a></li>
+              <?php
+              if ($_SESSION['profil']=="entreprise")
+              {
+                ?>
+                <li><a href="stage.php">Création de stages/emplois</a></li>
+                <?php
+              }
+              ?>
               <li><a href="faq.php">FAQ Page</a></li>
               <li><a href="404.php">404 Not Found</a></li>
             </ul>
