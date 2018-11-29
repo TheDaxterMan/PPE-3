@@ -22,6 +22,7 @@ class entreprise
 		Private $rue_entreprise;
 		Private $ville_entreprise;
 		Private $cp_entreprise;
+		Private $photo_entreprise;
 		Private $login_entreprise;
 		Private $mdp_entreprise;
 
@@ -29,7 +30,7 @@ class entreprise
 		/* class Entreprise Constructeur */
 		/* ---------------------- */
 
-			Public function entreprise ( $id_ent, $nom_ent, $nom_resp, $prenom_resp, $email_ent, $rue_ent, $ville_ent, $cp_ent, $login_ent, $mdp_ent)
+			Public function entreprise ( $id_ent, $nom_ent, $nom_resp, $prenom_resp, $email_ent, $rue_ent, $ville_ent, $cp_ent, $photo_ent, $login_ent, $mdp_ent)
 			{
 				$this -> id_entreprise = $id_ent;
 				$this -> nom_entreprise = $nom_ent;
@@ -39,6 +40,7 @@ class entreprise
 				$this -> rue_entreprise = $rue_ent;
 				$this -> ville_entreprise = $ville_ent;
 				$this -> cp_entreprise = $cp_ent;
+				$this -> photo_entreprise = $photo_ent;
 				$this -> login_entreprise = $login_ent;
 				$this -> mdp_entreprise = $mdp_ent;
 			}
@@ -57,6 +59,7 @@ class entreprise
 				$data = $data.$this->$rue_entreprise;
 				$data = $data.$this->$ville_entreprise;
 				$data = $data.$this->$cp_entreprise;
+				$data = $date.$this->$photo_entreprise;
 				$data = $data.$this->$login_entreprise;
 				$data = $data.$this->$mdp_entreprise;
 				return $data;
@@ -104,6 +107,11 @@ class entreprise
 			Public function  get_cp_entreprise ()
 			{
 				return $this-> cp_entreprise;
+			}
+
+			Public function  get_photo_entreprise ()
+			{
+				return $this-> photo_entreprise;
 			}
 
 			Public function  get_login_entreprise ()
@@ -160,6 +168,11 @@ class entreprise
 				 $this-> cp_entreprise = $cp_ent;
 			}
 
+			Public function set_photo_entreprise ($photo_ent)
+			{
+				 $this-> photo_entreprise = $photo_ent;
+			}
+
 			Public function set_login_entreprise ($login_ent)
 			{
 				 $this-> login_entreprise = $login_ent;
@@ -177,16 +190,17 @@ class entreprise
 				{
 					$id_ent = $objet->get_id_entreprise();
 					$nom_ent = $objet->get_nom_entreprise();
-					$prenom_ent = $objet->get_nom_responsable();
-					$tel_ent = $objet->get_prenom_responsable();
+					$nom_resp = $objet->get_nom_responsable();
+					$prenom_resp = $objet->get_prenom_responsable();
 					$email_ent = $objet->get_email_entreprise();
 					$rue_ent = $objet->get_rue_entreprise();
 					$ville_ent = $objet->get_ville_entreprise();
 					$cp_ent = $objet->get_cp_entreprise();
+					$photo_ent = $objet->get_photo_entreprise();
 					$login_ent = $objet->get_login_entreprise();
 					$mdp_ent = $objet->get_mdp_entreprise();
 
-					print $SQL = " INSERT INTO entreprise values (NULL, '$nom_ent', '$nom_resp', '$prenom_resp', '$email_ent', '$rue_ent', '$ville_ent', '$cp_ent', '$login_ent', '$mdp_ent')";
+					print $SQL = " INSERT INTO entreprise values (NULL, '$nom_ent', '$nom_resp', '$prenom_resp', '$email_ent', '$rue_ent', '$ville_ent', '$cp_ent', '$photo_ent', '$login_ent', '$mdp_ent','1')";
 					$Req = $conn -> query ($SQL) or die (' Erreur ajout entreprise ');
 				}
 
@@ -194,18 +208,19 @@ class entreprise
 				{
 					$id_ent = $objet->get_id_entreprise();
 					$nom_ent = $objet->get_nom_entreprise();
-					$prenom_ent = $objet->get_nom_responsable();
-					$tel_ent = $objet->get_prenom_responsable();
+					$nom_resp = $objet->get_nom_responsable();
+					$prenom_resp = $objet->get_prenom_responsable();
 					$email_ent = $objet->get_email_entreprise();
 					$rue_ent = $objet->get_rue_entreprise();
 					$ville_ent = $objet->get_ville_entreprise();
 					$cp_ent = $objet->get_cp_entreprise();
+					$photo_ent = $objet->get_photo_entreprise();
 					$login_ent = $objet->get_login_entreprise();
 					$mdp_ent = $objet->get_mdp_entreprise();
 
-					print $SQL = "UPDATE entreprise SET nom_entreprise = '$nom_ent', nom_responsable  = '$nom_resp',
+					print $SQL = "UPDATE entreprise SET nom_entreprise = '$nom_ent', nom_responsable  = 'maxime',
 					prenom_responsable = '$prenom_resp', email_entreprise = '$email_ent', rue_entreprise = '$rue_ent', ville_entreprise = '$ville_ent',
-					cp_entreprise = '$cp_ent', mdp_entreprise = '$mdp_ent' WHERE id_utilisateur = '$id_util'";
+					cp_entreprise = '$cp_ent', photo_entreprise = '$photo_ent', mdp_entreprise = '$mdp_ent' WHERE id_entreprise = '$id_ent'";
 				 	$Req = $conn -> query ($SQL) or die (' Erreur modification entreprise ');
 				}
 
@@ -214,16 +229,17 @@ class entreprise
 
 					$id_ent = $objet->get_id_entreprise();
 					$nom_ent = $objet->get_nom_entreprise();
-					$prenom_ent = $objet->get_nom_responsable();
-					$tel_ent = $objet->get_prenom_responsable();
+					$nom_resp = $objet->get_nom_responsable();
+					$prenom_resp = $objet->get_prenom_responsable();
 					$email_ent = $objet->get_email_entreprise();
 					$rue_ent = $objet->get_rue_entreprise();
 					$ville_ent = $objet->get_ville_entreprise();
 					$cp_ent = $objet->get_cp_entreprise();
+					$photo_ent = $objet->get_photo_entreprise();
 					$login_ent = $objet->get_login_entreprise();
 					$mdp_ent = $objet->get_mdp_entreprise();
 
-					print $SQL = " SELECT *  From entreprise WHERE id_utilisateur = '$id_ent'";
+					print $SQL = " SELECT *  From entreprise WHERE id_entreprise = '$id_ent'";
 					$Req = $conn -> query ($SQL) or die (' Erreur affichage entreprise ');
 					Return $Res = $Req -> fetch ();
 				}
@@ -232,16 +248,17 @@ class entreprise
 				{
 					$id_ent = $objet->get_id_entreprise();
 					$nom_ent = $objet->get_nom_entreprise();
-					$prenom_ent = $objet->get_nom_responsable();
-					$tel_ent = $objet->get_prenom_responsable();
+					$nom_resp = $objet->get_nom_responsable();
+					$prenom_resp = $objet->get_prenom_responsable();
 					$email_ent = $objet->get_email_entreprise();
 					$rue_ent = $objet->get_rue_entreprise();
 					$ville_ent = $objet->get_ville_entreprise();
 					$cp_ent = $objet->get_cp_entreprise();
+					$photo_ent = $objet->get_photo_entreprise();
 					$login_ent = $objet->get_login_entreprise();
 					$mdp_ent = $objet->get_mdp_entreprise();
 
-					print $SQL = " DELETE FROM `entreprise` WHERE id_utilisateur  = '$id_util' ";
+					print $SQL = " DELETE FROM `entreprise` WHERE id_entreprise  = '$id_ent'";
 					$Req = $conn -> query ($SQL) or die (' Erreur suppression entreprise ');
 				}
 
