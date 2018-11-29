@@ -8,14 +8,24 @@ include "bdd.inc.php";
   $mdp=$_POST['mdp'];
   $mdp2=$_POST['mdp2'];
   $radio=$_POST['radio'];
-  $act=$_POST['entreprise'];
+  if ($radio=="Entreprise")
+  {
+    $act=$_POST['entreprise'];
+  }
 
 if ($mdp==$mdp2)
 {
   if ($radio=="Elève")
   {
-    $sql= "INSERT INTO utilisateur VALUES (NULL,'$nom','$prenom','','$email','','','','$ident','$mdp')";
+    $sql= "INSERT INTO utilisateur VALUES (NULL,'$nom','$prenom','','$email','','','','','$ident','$mdp')";
     $req = $conn -> query($sql)or die($conn->errorInfo());
+    $req -> execute();
+    // crée le cookie avec le nom d'utilisateur et la session
+    session_start();
+    $_SESSION['id'] = mysqli_insert_id($conn); // cette ligne crée une variable de session, où l'on sauve l'id de notre utilisateur connecté
+    $_SESSION['photo'] = $res['photo_utilisateur'];
+    $_SESSION['profil'] = "eleve";
+    header('Location: ./newsfeed.php');
   }
   else
   {

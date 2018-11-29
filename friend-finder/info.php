@@ -1,10 +1,12 @@
 <?php
+$id=$_SESSION['id'];
 ///////////////////////////////////////////////////////////////////////////////
 /*									        	E L E V E																			 */
 ///////////////////////////////////////////////////////////////////////////////
     if ($_SESSION['profil']=="eleve")
     {
-      $sql="SELECT * FROM utilisateur";
+      $sql="SELECT * FROM utilisateur
+            WHERE id_utilisateur=$id";
       $req = $conn -> query($sql)or die($conn->errorInfo());
       $res=$req->fetch();
       $nom=$res['nom_utilisateur'];
@@ -20,7 +22,8 @@
 ///////////////////////////////////////////////////////////////////////////////
     if ($_SESSION['profil']=="entreprise")
     {
-      $sql="SELECT * FROM entreprise";
+      $sql="SELECT * FROM entreprise
+            WHERE id_entreprise=$id";
       $req = $conn -> query($sql)or die($conn->errorInfo());
       $res=$req->fetch();
       $entreprise=$res['nom_entreprise'];
