@@ -34,7 +34,10 @@
     }
     else
     {
-      header('Location: ./index.php');
+      echo"<script language=\"javascript\">";
+      echo"alert('Votre identifiant où votre mot de passe est incorrect, veuillez réessayer !')";
+      echo"</script>";
+      header('Refresh: 1; URL=./index.php');
     }
   }
 //////////////////////////////////////////////////////////////////////////
@@ -58,9 +61,12 @@
       $_SESSION['profil'] = "entreprise";
       header('Location: ./newsfeed.php');
     }
-    else
-    {
-      header('Location: ./index.php');
+
+    else {
+        echo"<script language=\"javascript\">";
+        echo"alert('Votre identifiant où votre mot de passe est incorrect, veuillez réessayer !')";
+        echo"</script>";
+        header('Refresh: 1; URL=./index.php');
     }
   }
 ?>
