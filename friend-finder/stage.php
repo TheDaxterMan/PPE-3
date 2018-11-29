@@ -124,13 +124,13 @@
 										   	}
 										 	}
 
-											</script>
+										  </script>
 
 											<div class="form-group gender">
 												<label class="radio-inline">
 													<input type="radio" name="prop" value="stage" onclick="cacherDate()" required>Stage</label>
 												<label class="radio-inline">
-													<input type="radio" name="prop" value="emploi" onlick="afficherDate()" required>Emploi</label>
+													<input type="radio" name="prop" value="emploi" onlick="runEffect()" required>Emploi</label>
 											</div>
 											<div class="date" id="date">
 												<div class="form-group col-xs-12">Date début</label>
