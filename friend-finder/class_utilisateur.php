@@ -8,7 +8,6 @@ include 'bdd.inc.php';
 
 class utilisateur
 {
-
 		/* ---------------------- */
 		/* class Utilisateur Variables */
 		/* ---------------------- */
@@ -216,7 +215,7 @@ class utilisateur
 					$login_util = $objet->get_login_utilisateur();
 					$mdp_util = $objet->get_mdp_utilisateur();
 
-					print $SQL = "UPDATE utilisateur SET nom_utilisateur = 'quentin', prenom_utilisateur  = '$prenom_util',
+					print $SQL = "UPDATE utilisateur SET nom_utilisateur = '$nom_util', prenom_utilisateur  = '$prenom_util',
 					tel_utilisateur = '$tel_util', email_utilisateur = '$email_util', rue_utilisateur = '$rue_util', ville_utilisateur = '$ville_util',
 					cp_utilisateur = '$cp_util', mdp_utilisateur = '$mdp_util' WHERE id_utilisateur = '$id_util'";
 				 	$Req = $conn -> query ($SQL) or die (' Erreur modification utilisateur ');
