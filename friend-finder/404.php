@@ -1,3 +1,9 @@
+<?php
+	session_start();
+	include "bdd.inc.php";
+	include "info.php";
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
