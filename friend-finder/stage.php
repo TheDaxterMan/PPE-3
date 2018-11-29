@@ -104,18 +104,40 @@
                         <label for="fichier">Nouvelle Demande</label>
                       </div>
 
+											<script>
+											function cacherDate() {
+
+										   	var x = document.getElementById("date");
+										   	if (x.style.display === "none") {
+										       	x.style.display = "block";
+										   	} else {
+										       	x.style.display = "none";
+										   	}
+										 	}
+
+											function afficherDate() {
+												var x = document.getElementById("date");
+										   	if (x.style.display === "none") {
+										       	x.style.display = "block";
+										   	} else {
+										       	x.style.display = "none";
+										   	}
+										 	}
+
+											</script>
+
 											<div class="form-group gender">
 												<label class="radio-inline">
-													<input type="radio" name="prop" value="stage" required>Stage</label>
+													<input type="radio" name="prop" value="stage" onclick="cacherDate()" required>Stage</label>
 												<label class="radio-inline">
-													<input type="radio" name="prop" value="emploi" required>Emploi</label>
+													<input type="radio" name="prop" value="emploi" onlick="afficherDate()" required>Emploi</label>
 											</div>
-											<div class="date">
+											<div class="date" id="date">
 												<div class="form-group col-xs-12">Date début</label>
-													<input id="date" class="form-control input-group-lg" type="date" name="dated" title="Date début stage" placeholder="Date début stage"/>
+													<input id="date1" class="form-control input-group-lg" type="date" name="dated" title="Date début stage" placeholder="Date début stage"/>
 												</div>
 												<div class="form-group col-xs-12">Date fin</label>
-													<input id="date" class="form-control input-group-lg" type="date" name="datef" title="Date fin stage" placeholder="Date fin stage"/>
+													<input id="date2" class="form-control input-group-lg" type="date" name="datef" title="Date fin stage" placeholder="Date fin stage"/>
 												</div>
 											</div>
 											<div class="row">
