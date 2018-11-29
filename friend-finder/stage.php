@@ -111,13 +111,30 @@
 													<input type="radio" name="prop" value="emploi" required>Emploi</label>
 											</div>
 											<div class="row">
-												<div class="form-group col-xs-12">Libellé</label>
-													<input id="lib" class="form-control input-group-lg" type="text" name="lib" title="Libellé de la proposition" placeholder="Libellé de la proposition" required/>
+												<div class="form-group col-xs-12">Date</label>
+													<input id="date" class="form-control input-group-lg" type="date" name="date" title="Date stage" placeholder="Date stage" required/>
 												</div>
 											</div>
 											<div class="row">
-												<div class="form-group col-xs-12">Date</label>
-													<input id="date" class="form-control input-group-lg" type="date" name="date" title="Date stage" placeholder="Date stage" required/>
+												<div class="form-group col-xs-12">Filière</label>
+													<select class="form-control input-group-lg" id="filiere" name="filiere">
+														<option value="filiere" disabled selected>Filières</option>
+														<?php
+														$sql="SELECT * FROM filiere";
+														$req = $conn -> query($sql)or die($conn->errorInfo());
+														while ($res=$req->fetch())
+														{
+															?>
+																<option value="<?php echo $res['id_filiere'] ?>"><?php echo $res['lib_filiere']?></option>
+														<?php
+														}
+														?>
+													</select>
+												</div>
+											</div>
+											<div class="row">
+												<div class="form-group col-xs-12">Libellé</label>
+													<input id="lib" class="form-control input-group-lg" type="text" name="lib" title="Libellé de la proposition" placeholder="Libellé de la proposition" required/>
 												</div>
 											</div>
 											<div class="row">
@@ -125,8 +142,6 @@
 													<textarea name="desc" id="desc" cols="30" rows="10" class="form-control input-group-lg" placeholder="Description de la proposition" required></textarea>
 												</div>
 											</div>
-                    </div>
-
 										<input type="hidden" name="id" value="1">
 										<input class="btn btn-primary" type="submit" name="valider" value="Envoyer la proposition">
                   </form>
