@@ -4,7 +4,6 @@
 	include "login.inc.php";
 	include "info.php";
 
-
 	///////////////////////////////////////////////////////////////////////////////
 	/*												E N T R E P R I S E																*/
 	///////////////////////////////////////////////////////////////////////////////
@@ -149,5 +148,9 @@ include "footer.php";
 <!-- Mirrored from thunder-team.com/friend-finder/edit-profile-basic.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 08 Nov 2018 14:00:55 GMT -->
 </html>
 <?php
+	}
+	else
+	{
+		header('Location: ./newsfeed.php');
 	}
 ?>
