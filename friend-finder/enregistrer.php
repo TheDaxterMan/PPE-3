@@ -10,6 +10,14 @@ include "bdd.inc.php";
   $radio=$_POST['radio'];
   $act=$_POST['entreprise'];
 
+if ($mdp!=$mdp2)
+{
+  echo"<script language=\"javascript\">";
+      echo"alert('Vos mots de passe ne sont pas les mêmes, veuillez réessayer !')";
+      echo"</script>";
+      header('Refresh: 1; URL=./index.php');
+}
+
 if ($mdp==$mdp2)
 {
   if ($radio=="Elève")
@@ -19,11 +27,12 @@ if ($mdp==$mdp2)
   }
   else
   {
+
     if ($radio=="Entreprise")
     {
       if ($act=="entreprise")
       {
-        echo "veuillez choisir un domaine d'activité";
+        echo "Veuillez choisir un domaine d'activité";
       }
       else
       {

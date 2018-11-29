@@ -61,7 +61,7 @@
         	<div class="col-sm-5">
             <div class="intro-texts">
             	<h1 class="text-white">Faites vous des amis !!!</h1>
-            	<p>ViaBahuet est un réseau social permettant aux élèves, anciens élèves et entreprises de communiquer. <br> <br>Rejoignez dès maintenant</p>
+            	<p>ViaBahuet est un réseau social permettant aux élèves, anciens élèves et entreprises de communiquer entre eux. <br> <br>Rejoignez nous dès maintenant !</p>
             </div>
           </div>
         	<div class="col-sm-6 col-sm-offset-1">
