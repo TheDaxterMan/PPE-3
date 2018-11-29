@@ -21,7 +21,7 @@
 		<meta name="description" content="This is social network html5 template available in themeforest......" />
 		<meta name="keywords" content="Social Network, Social Media, Make Friends, Newsfeed, Profile Page" />
 		<meta name="robots" content="index, follow" />
-		<title>Edit Profile | Edit Profile Page</title>
+		<title>Créer une proposition</title>
 
     <!-- Stylesheets
     ================================================= -->
@@ -35,6 +35,15 @@
 
     <!--Favicon-->
     <link rel="shortcut icon" type="image/png" href="images/fav.png"/>
+
+		<script>
+		function show1(){
+		  document.getElementById('salaire').style.display ='none';
+		}
+		function show2(){
+		  document.getElementById('salaire').style.display = 'block';
+		}
+		</script>
 
 	</head>
   <body>
@@ -98,13 +107,18 @@
 
 											<div class="form-group gender">
 												<label class="radio-inline">
-													<input type="radio" name="radio" value="stage" required>Stage</label>
+													<input type="radio" name="prop" value="stage" required>Stage</label>
 												<label class="radio-inline">
-													<input type="radio" name="radio" value="emploi" required>Emploi</label>
+													<input type="radio" name="prop" value="emploi" required>Emploi</label>
 											</div>
 											<div class="row">
 												<div class="form-group col-xs-12">Libellé</label>
 													<input id="lib" class="form-control input-group-lg" type="text" name="lib" title="Libellé de la proposition" placeholder="Libellé de la proposition" required/>
+												</div>
+											</div>
+											<div class="row">
+												<div class="form-group col-xs-12">Date</label>
+													<input id="date" class="form-control input-group-lg" type="date" name="date" title="Date stage" placeholder="Date stage" required/>
 												</div>
 											</div>
 											<div class="row">

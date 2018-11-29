@@ -25,8 +25,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 		if ($_SESSION['profil']=="eleve")
 		{
-			echo "eleve";
-			die();
 			$chemin = "./images/users/utilisateur";
 			$pj = $chemin . "/" .$nomphoto.$type;
 

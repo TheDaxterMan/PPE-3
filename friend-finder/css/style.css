@@ -2686,52 +2686,6 @@ ul.contact li i{
   z-index: 9999999;
 }
 
-
-/*==================================================
-  Buy Now Button
-==================================================*/
-
-.btn-buy{
-  background: #333;
-  padding: 10px 30px;
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  color: #82B541;
-  font-weight: 700;
-  font-style: italic;
-  box-shadow: 0 5px 20px rgba(0,0,0, .2);
-  z-index: 999;
-}
-
-.btn-buy:hover,
-.btn-buy:active,
-.btn-buy:focus{
-  color: #fff;
-  box-shadow: 0 0 20px rgba(0,0,0, .3);
-  transition: all 1s;
-}
-
-.btn-buy .italy{
-  font-size: 13px;
-  font-style: italic;
-  margin-right: 5px;
-  color: #fff;
-}
-
-.btn-buy .price{
-  position: relative;
-  margin-left: 15px;
-  color: #82B541;
-}
-
-.btn-buy .price::before{
-  content: "";
-  background: rgba(255,255,255, .9);
-  height: 15px;
-  width: 1px;
-  position: absolute;
-  left: -7px;
-  top: 50%;
-  transform: translateY(-50%);
+.hide {
+  display: none;
 }
