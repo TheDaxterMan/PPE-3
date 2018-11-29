@@ -54,7 +54,7 @@ else
         }
         else
         {
-          $uneentreprise = new entreprise (NULL,$nom, '', '',$prenom,$email,'','','','',$login,$mdp,$act);
+          $uneentreprise = new entreprise (NULL,'', $nom,$prenom,$email,'','','','',$login,$mdp,$act);
 
           $uneentreprise -> ajout_entreprise($uneentreprise, $conn);
 
