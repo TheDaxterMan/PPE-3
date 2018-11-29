@@ -110,9 +110,12 @@
 												<label class="radio-inline">
 													<input type="radio" name="prop" value="emploi" required>Emploi</label>
 											</div>
-											<div class="row">
-												<div class="form-group col-xs-12">Date</label>
-													<input id="date" class="form-control input-group-lg" type="date" name="date" title="Date stage" placeholder="Date stage" required/>
+											<div class="date">
+												<div class="form-group col-xs-12">Date début</label>
+													<input id="date" class="form-control input-group-lg" type="date" name="dated" title="Date début stage" placeholder="Date début stage" required/>
+												</div>
+												<div class="form-group col-xs-12">Date fin</label>
+													<input id="date" class="form-control input-group-lg" type="date" name="datef" title="Date fin stage" placeholder="Date fin stage" required/>
 												</div>
 											</div>
 											<div class="row">
@@ -142,7 +145,7 @@
 													<textarea name="desc" id="desc" cols="30" rows="10" class="form-control input-group-lg" placeholder="Description de la proposition" required></textarea>
 												</div>
 											</div>
-										<input type="hidden" name="id" value="1">
+										<input type="hidden" name="id" value="<?php $_SESSION['id']; ?>">
 										<input class="btn btn-primary" type="submit" name="valider" value="Envoyer la proposition">
                   </form>
                 </div>
