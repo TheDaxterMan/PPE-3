@@ -1,4 +1,5 @@
 <?php
+include "bdd.inc.php";
 $id=$_SESSION['id'];
 ///////////////////////////////////////////////////////////////////////////////
 /*									        	E L E V E																			 */
@@ -8,6 +9,7 @@ $id=$_SESSION['id'];
       $sql="SELECT * FROM utilisateur
             WHERE id_utilisateur=$id";
       $req = $conn -> query($sql)or die($conn->errorInfo());
+      $req -> execute();
       $res=$req->fetch();
       $nom=$res['nom_utilisateur'];
       $prenom=$res['prenom_utilisateur'];
@@ -25,11 +27,11 @@ $id=$_SESSION['id'];
       $sql="SELECT * FROM entreprise
             WHERE id_entreprise=$id";
       $req = $conn -> query($sql)or die($conn->errorInfo());
+      $req -> execute();
       $res=$req->fetch();
       $entreprise=$res['nom_entreprise'];
       $nom=$res['nom_responsable'];
       $prenom=$res['prenom_responsable'];
-      $mail=$res['email_entreprise'];
       $rue=$res['rue_entreprise'];
       $ville=$res['ville_entreprise'];
       $cp=$res['cp_entreprise'];

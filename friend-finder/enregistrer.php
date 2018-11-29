@@ -7,7 +7,8 @@ include "bdd.inc.php";
   $ident=$_POST['ident'];
   $mdp=$_POST['mdp'];
   $mdp2=$_POST['mdp2'];
-  $radio=$_POST['radio'];
+  $radio=$_POST['radio1'];
+
   if ($radio=="Entreprise")
   {
     $act=$_POST['entreprise'];
@@ -20,39 +21,47 @@ if ($mdp!=$mdp2)
       echo"</script>";
       header('Refresh: 1; URL=./index.php');
 }
-
-if ($mdp==$mdp2)
+else
 {
-  if ($radio=="Elève")
+  if ($mdp==$mdp2)
   {
-    $sql= "INSERT INTO utilisateur VALUES (NULL,'$nom','$prenom','','$email','','','','','$ident','$mdp')";
-    $req = $conn -> query($sql)or die($conn->errorInfo());
-    $req -> execute();
-    // crée le cookie avec le nom d'utilisateur et la session
-    session_start();
-    $_SESSION['id'] = mysqli_insert_id($conn); // cette ligne crée une variable de session, où l'on sauve l'id de notre utilisateur connecté
-    $_SESSION['photo'] = $res['photo_utilisateur'];
-    $_SESSION['profil'] = "eleve";
-    header('Location: ./newsfeed.php');
-  }
-  else
-  {
-
-    if ($radio=="Entreprise")
+    if ($radio=="Elève")
     {
-      if ($act=="entreprise")
+      $sql= "INSERT INTO utilisateur VALUES (NULL,'$nom','$prenom','','$email','','','','','$ident','$mdp')";
+      $req = $conn -> query($sql)or die($conn->errorInfo());
+      $req -> execute();
+      // crée le cookie avec le nom d'utilisateur et la session
+      session_start();
+      $_SESSION['id'] = $conn -> lastInsertId(); // cette ligne crée une variable de session, où l'on sauve l'id de notre utilisateur connecté
+      $_SESSION['photo'] = $res['photo_utilisateur'];
+      $_SESSION['profil'] = "eleve";
+      header('Location: ./newsfeed.php');
+    }
+    else
+    {
+
+      if ($radio=="Entreprise")
       {
-        echo "Veuillez choisir un domaine d'activité";
-      }
-      else
-      {
-        $sql= "INSERT INTO entreprise VALUES (NULL,'','$nom','$prenom','$email','','','','$ident','$mdp','$act')";
-        $req = $conn -> query($sql)or die($conn->errorInfo());
+        if ($act=="entreprise")
+        {
+          echo "Veuillez choisir un domaine d'activité";
+        }
+        else
+        {
+          $sql= "INSERT INTO entreprise VALUES (NULL,'','$nom','$prenom','$email','','','','','$ident','$mdp','$act')";
+          $req = $conn -> query($sql)or die($conn->errorInfo());
+          $req -> execute();
+          // crée le cookie avec le nom d'utilisateur et la session
+          session_start();
+          $_SESSION['id'] =$conn -> lastInsertId();  // cette ligne crée une variable de session, où l'on sauve l'id de notre utilisateur connecté
+          $_SESSION['photo'] = $res['photo_entreprise'];
+          $_SESSION['profil'] = "entreprise";
+          header('Location: ./newsfeed.php');
+        }
 
       }
-
     }
   }
-}
 
+}
 ?>
