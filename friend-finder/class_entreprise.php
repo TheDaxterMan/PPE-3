@@ -1,8 +1,5 @@
 <?php
 
-include "class_activite_entreprise.php";
-
-
 	/* ---------------------- */
 	/* DEBUT class Entreprise */
 	/* ---------------------- */
