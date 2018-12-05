@@ -3,6 +3,7 @@
 	require_once('login.inc.php');
 	include "bdd.inc.php";
 	include "login.inc.php";
+	include "info.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -68,7 +69,7 @@
 											<?php
 											}
 									?>
-                  <h3>Sarah Cruiz</h3>
+									<h3><?php echo $prenom,' ',$nom; ?></h3>
                   <p class="text-muted">Creative Director</p>
                 </div>
               </div>
