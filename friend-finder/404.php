@@ -1,3 +1,9 @@
+<?php
+	session_start();
+	include "bdd.inc.php";
+	include "info.php";
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -121,8 +127,6 @@
       <div class="spinner"></div>
     </div>
 
-    <!--Buy button-->
-    <a href="https://themeforest.net/cart/add_items?item_ids=18711273&amp;ref=thunder-team" target="_blank" class="btn btn-buy"><span class="italy">Buy with:</span><img src="images/envato_logo.png" alt="" /><span class="price">Only $20!</span></a>
 
     <!-- Scripts
     ================================================= -->
