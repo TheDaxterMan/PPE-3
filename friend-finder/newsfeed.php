@@ -3,7 +3,7 @@
 	include "bdd.inc.php";
 	include "info.php";
 
-	$sql="SELECT * FROM stage";
+	$sql="SELECT * FROM stage, entreprise";
 	$req = $conn -> query($sql)or die($conn->errorInfo());
 	$req -> execute();
 
@@ -149,11 +149,11 @@
 						================================================= -->
 						<div class="post-content">
 							<div class="post-container">
-								<img src="images/users/entreprise/user-2.jpg" alt="user" class="profile-photo-md pull-left" />
+								<img src="images/users/entreprise/user-<?php echo $res['id_entreprise'];?>.jpg" alt="user" class="profile-photo-md pull-left" />
 								<div class="post-detail">
 									<div class="user-info">
-										<h5><a href="timeline.php" class="profile-link"><?php echo "METTRE UN NOM VIA PHP ICI"; ?></a></h5>
-										<p class="text-muted"><?php echo "Mettre la date+heure via php ici"; ?></p>
+										<h5><a href="timeline.php" class="profile-link"><?php echo $res['nom_entreprise'];?></a></h5>
+										<p class="text-muted"><?php echo $res['lib_stage'];?></p>
 									</div>
 									<!---<div class="reaction">
 										<a class="btn text-green"><i class="icon ion-thumbsup"></i> 23</a>
@@ -161,7 +161,7 @@
 									</div>--->
 									<div class="line-divider"></div>
 									<div class="post-text">
-										<p><?php echo "parler du stage/emploi ICI"; ?></p>
+										<p><?php echo $res['desc_stage'];?></p>
 									</div>
 									<div class="line-divider"></div>
 									<div class="post-comment">
