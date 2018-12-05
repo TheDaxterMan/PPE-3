@@ -20,8 +20,8 @@
       - Image Divider
       - Site Facts
       - Live Feed
-    - Landing Page | Register 
-    - Newsfeed 
+    - Landing Page | Register
+    - Newsfeed
       - Left Sidebar
       - Right Sidebar
       - Create Post Box
@@ -29,7 +29,7 @@
       - Nearby People
       - Friend List
       - Chat Room
-      - Media: image and video 
+      - Media: image and video
     - Timeline
       - Timeline Sidebar
       - Post Date
@@ -52,9 +52,10 @@ html, body {
 body{
 	font-family: 'Lato', sans-serif;
   line-height: 26px;
-	color: #6d6e71;
+	color: #000000;
 	font-size: 13px;
 }
+
 
 
 /*==================================================
@@ -70,10 +71,10 @@ body{
     src: url("../fonts/agency-fb.ttf") /* TTF file for CSS3 browsers */
 }
 
-h1, h2, h3, h4, h5, h6{color: #27aae1;}
+h1, h2, h3, h4, h5, h6{color: #000;}
 
 h1.grey, h2.grey, h3.grey, h4.grey, h5.grey, h6.grey{
-  color: #6d6e71;
+  color: #000;
   margin: 0 auto 20px;
 }
 
@@ -150,8 +151,8 @@ section .wrapper{
 }
 
 .btn-primary{
-	background: #27aae1;
-	padding: 7px 25px;
+	background: #b81717;
+	padding: 7px 15px;
 	border: none;
 	font-size: 14px;
 	border-radius: 4px;
@@ -160,10 +161,13 @@ section .wrapper{
   font-weight: 600;
   outline: none;
   border-radius: 30px;
+  margin-right: -50px;
 }
 
+
+
 .btn-primary:hover{
-  background: #149AC9;
+  background: #4edb34;
   transition: all 1s;
 }
 
@@ -218,6 +222,13 @@ img.profile-photo-xs{
   border-radius: 50%;
 }
 
+/*nouvelle classe ici*/
+img.profile-photo-nav{
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+/*fin nouvelle classe ici*/
 .img-wrapper{
   position: relative;
 }
@@ -246,8 +257,8 @@ ul li{
 }
 
 .line{
-  background: #f1f2f2;
-  height: 1px;
+  background: #9fa2ab;
+  height: 3px;
   width: 100%;
   margin-bottom: 10px;
 }
@@ -262,7 +273,7 @@ ul li{
 }
 
 .map{
-  width: 100%;
+  width: 0%;
   height: auto;
   border: none;
 }
@@ -309,7 +320,7 @@ textarea{
 .panel-default{
   border-color: #f1f2f2;
 }
-  
+
 .panel-default>.panel-heading{
   color: #333;
   background-color: #fff;
@@ -340,7 +351,7 @@ textarea{
   border-top-color: #f1f2f2;
 }
 
-.panel-group .panel-heading+.panel-collapse>.list-group, 
+.panel-group .panel-heading+.panel-collapse>.list-group,
 .panel-group .panel-heading+.panel-collapse>.panel-body{
   border-top: 1px solid #f1f2f2;
 }
@@ -380,8 +391,8 @@ textarea{
 .menu form .form-group i.icon{
   position: absolute;
   left: 15px;
-  top: 3px;
-  color: #fff;
+  top: 5px;
+  color: #20c039ad;
 }
 
 .menu form .form-group input.form-control{
@@ -394,6 +405,7 @@ textarea{
   border-radius: 13px;
   font-size: 13px;
   padding-left: 30px;
+  margin-top: 4px;
 }
 
 .menu ul.main-menu li a{
@@ -407,17 +419,17 @@ textarea{
 }
 
 .menu ul.main-menu li.dropdown a:hover, .menu ul.main-menu li.dropdown a:active, .menu ul.main-menu li.dropdown a:focus{
-  color: #27aae1;
+  color: #b81717;
   background: none;
 }
 
 .menu ul.main-menu li.open a, .menu ul.main-menu li.open a:active, .menu ul.main-menu li.open a:focus{
   background: transparent;
-  color: #27aae1;
+  color: #b81717;
 }
 
 .menu ul.main-menu li ul.dropdown-menu{
-  background: #231F20;
+  background: #605f60;
   box-shadow: none;
   border: 0;
   padding: 0;
@@ -475,7 +487,7 @@ textarea{
 
 #header-inverse .menu ul.main-menu li ul.dropdown-menu::before{
   content: "";
-	display: block;  
+	display: block;
 	position: absolute;
 	right: 20px;
 	bottom: 100%;
@@ -811,7 +823,7 @@ textarea{
 
 /*==================================================
   Landing Page: V2 | Register/Login
-  ==================================================*/  
+  ==================================================*/
 
 #lp-register{
   background: linear-gradient(to right, rgba(0,0,0, 0.7) , rgba(0,0,0, 0.7)), url(../images/bg/bg-3.jpg) fixed no-repeat;
@@ -829,7 +841,7 @@ textarea{
 }
 
 .intro-texts{
-  color: #fff;
+  color: #777;
   font-size: 14px;
   transform: translateY(100px);
 }
@@ -946,8 +958,8 @@ textarea{
   border: none;
 }
 
-.reg-form-container .nav-tabs > li.active > a, 
-.reg-form-container .nav-tabs > li.active > a:focus, 
+.reg-form-container .nav-tabs > li.active > a,
+.reg-form-container .nav-tabs > li.active > a:focus,
 .reg-form-container .nav-tabs > li.active > a:hover{
   background: transparent;
   color: #fff;
@@ -961,7 +973,7 @@ textarea{
 #Login_form .form-group{
   margin-bottom: 10px;
 }
-  
+
 #registration_form .form-control,
 #Login_form .form-control{
   background: #fff;
@@ -986,17 +998,17 @@ textarea{
 }
 
 /*Social Links Bottom*/
- 
+
 #lp-register ul.social-icons{
   text-align: center;
   margin-top: 40px;
   z-index: 11;
 }
-  
+
 #lp-register ul.social-icons li{
   border: none;
-}  
-  
+}
+
 #lp-register ul.social-icons li a{
   color: #fff;
 }
@@ -1005,8 +1017,8 @@ textarea{
   color: #27aae1;
   transition: all .5s;
 }
-  
-  
+
+
 /*feed-block and ul.online-users css available below*/
 
 
@@ -1017,24 +1029,24 @@ textarea{
 /*Profile Card CSS*/
 
 .profile-card{
-  background: linear-gradient(to bottom, rgba(39,170,225,.8), rgba(28,117,188,.8)), url(../images/covers/1.jpg) no-repeat;
+  background: linear-gradient(to bottom, rgba(137,137,137,0.8), rgba(94,254,92,0.8)), url(../images/covers/1.jpg) no-repeat;
   background-size: cover;
-  width: 100%;
+  width: 123%;
   min-height: 90px;
   border-radius: 4px;
   padding: 10px 20px;
   color: #fff;
   margin-bottom: 40px;
+  margin-left: -30;
 }
 
 .profile-card img.profile-photo{
-  border: 7px solid #fff;
   float: left;
   margin-right: 20px;
   position: relative;
-  top: -30px;
-  height: 70px;
-  width: 70px;
+  top: 7px;
+  height: 60px;
+  width: 60px;
   border-radius: 50%;
 }
 
@@ -1051,7 +1063,7 @@ textarea{
 ul.nav-news-feed{
   padding-left: 20px;
   padding-right: 20px;
-  margin: 0 0 40px 0;
+  margin: 0 0 30px 0;
 }
 
 ul.nav-news-feed li{
@@ -1113,6 +1125,7 @@ ul.nav-news-feed i.ion-ios-videocam{color: #9e1f63;}
   color: #fff;
   font-size: 14px;
   font-weight: 600;
+  margin-left: 3;
 }
 
 ul.online-users{
@@ -1120,6 +1133,8 @@ ul.online-users{
   padding-right: 20px;
   text-align: center;
   margin: 0;
+  margin-left: -50;
+  margin-top: 25;
 }
 
 ul.online-users li{
@@ -1182,7 +1197,7 @@ ul.online-users li span.online-dot{
   min-height: 90px;
   padding: 20px;
   margin-bottom: 20px;
-  border-bottom: 1px solid #f1f2f2;
+  border-bottom: 3px solid #9fa2ab;
 }
 
 .create-post .form-group{
@@ -1193,6 +1208,8 @@ ul.online-users li span.online-dot{
 .create-post .form-group .form-control{
   border: 1px solid #ccc;
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  margin-right: -40;
+  margin-left: 10;
 }
 
 .create-post .form-group img.profile-photo-md{
@@ -1208,6 +1225,7 @@ ul.online-users li span.online-dot{
   text-align:left;
   margin: 0;
   padding:5px 0;
+  margin-left: 15;
 }
 
 .create-post .tools ul.publishing-tools li a{
@@ -1216,7 +1234,7 @@ ul.online-users li span.online-dot{
 }
 
 .create-post .tools ul.publishing-tools li a:hover{
-  color: #27aae1;
+  color: #b81717;
 }
 
 
@@ -1540,7 +1558,7 @@ ul.online-users li span.online-dot{
   ==================================================*/
 
 .timeline-cover{
-  background: url("../images/covers/1.jpg") no-repeat;
+  background: url("../images/covers/9.jpg") no-repeat;
   background-position: center;
   background-size: cover;
   min-height: 360px;
@@ -1569,7 +1587,6 @@ ul.online-users li span.online-dot{
   height: 200px;
   width: 200px;
   border-radius: 50%;
-  border: 10px solid #fff;
 }
 
 .timeline-cover .timeline-nav-bar ul.profile-menu{
@@ -1590,11 +1607,11 @@ ul.online-users li span.online-dot{
 }
 
 .timeline-cover .timeline-nav-bar .profile-menu li a.active{
-  color: #27aae1;
+  color: #8DC63F;
 }
 
 .timeline-cover .timeline-nav-bar .profile-menu li a:hover{
-  color: #27aae1;
+  color: #8DC63F;
 }
 
 .timeline-cover .timeline-nav-bar ul.follow-me{
@@ -1605,7 +1622,7 @@ ul.online-users li span.online-dot{
 }
 
 .timeline-cover .timeline-nav-bar .follow-me li{
-  padding: 6px 15px;
+  padding: 6px 50px;
   color: #fff;
 }
 
@@ -1742,7 +1759,7 @@ ul.online-users li span.online-dot{
 .about-profile .about-content-block{
   padding-top: 10px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #f1f2f2;
+  border-bottom: 3px solid #9fa2ab;
   line-height: 24px;
   margin-bottom: 10px;
 }
@@ -1815,7 +1832,7 @@ ul.album-photos li img{
   Edit Profile
   ==================================================*/
 
-/* Edit Profile Menu */  
+/* Edit Profile Menu */
 
 ul.edit-menu{
   margin-top: 100px;
@@ -1980,11 +1997,11 @@ input:checked + .slider:before{
   ==================================================*/
 
 .contact-map{
-  height: 250px;
+  height: 200px;
 }
 
 .contact-us{
-  background: #fff;
+  background: #ff3f3f;
   padding: 40px;
   margin-top: -140px;
   border-radius: 4px;
@@ -1999,7 +2016,7 @@ input:checked + .slider:before{
 }
 
 .contact-us form.contact-form .form-group i{
-  color: #f1f2f2;
+  color: #8DC63F;
   font-size: 16px;
   left: 10px;
   position: absolute;
@@ -2023,7 +2040,7 @@ input:checked + .slider:before{
 }
 
 .contact-us .reach span{
-  border: 1px solid #f1f2f2;
+  border: 1px solid #474343;
   position: absolute;
   color: #8DC63F;
   height: 40px;
@@ -2039,7 +2056,7 @@ input:checked + .slider:before{
 }
 
 .contact-us ul.social-icons{
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 
@@ -2053,7 +2070,7 @@ input:checked + .slider:before{
   background-position: center;
   padding: 90px 0 110px;
   color: #fff;
-}  
+}
 
 .page-title-section.faq h1{
   color: #fff;
@@ -2119,8 +2136,8 @@ input:checked + .slider:before{
   transition: transform .5s;
 }
 
-.faq-cat-list.nav-tabs>li.active>a, 
-.faq-cat-list.nav-tabs>li.active>a:focus, 
+.faq-cat-list.nav-tabs>li.active>a,
+.faq-cat-list.nav-tabs>li.active>a:focus,
 .faq-cat-list.nav-tabs>li.active>a:hover{
   border: none;
   color: #fff;
@@ -2133,7 +2150,7 @@ input:checked + .slider:before{
   width: 1px;
   position: absolute;
   left: 0;
-  right: 0; 
+  right: 0;
   margin: auto;
   bottom: -20px;
 }
@@ -2204,7 +2221,7 @@ input:checked + .slider:before{
 .faq_contact .reach-out .method.by-email a{
   background: #29abe2;
 }
-  
+
 .faq_contact .reach-out .method.by-phone a{
   background: #93278f;
 }
@@ -2267,7 +2284,7 @@ input:checked + .slider:before{
 
 #footer::before{
   content: "";
-  background: linear-gradient(to right, #ffffff 0%,#53cbf1 50%,#ffffff 100%);
+  background: linear-gradient(to right, #ffffff 0%,#ff3f3f 50%,#ffffff 100%);
   height: 5px;
   width: 100%;
   position: absolute;
@@ -2291,14 +2308,14 @@ ul.social-icons li{
   background: transparent;
   width: 30px;
   height: 30px;
-  border: 1px solid #f1f2f2;
+  border: 1px solid #474343;
   border-radius: 4px;
   margin: 3px;
   text-align: center;
 }
 
 ul.social-icons li a{
-  color: #6d6e71;
+  color: #fff;
   font-size: 15px;
   line-height: 30px;
 }
@@ -2355,19 +2372,19 @@ ul.contact li i{
 @media only screen and (max-width : 992px) {
 
   section h1.section-title{font-size: 175px; margin-bottom: -40px;}
-  
+
   #features .feature-item{margin-bottom: 20px;}
 
   #features .item{margin-bottom: 20px;}
 
   .timeline #page-contents{margin-top: 185px !important;}
-  
+
   ul.edit-menu{margin-top: 0; margin-bottom: 30px;}
-  
+
   .faq-cat-list.nav-tabs>li>a{min-width: 150px; padding: 30px 15px;}
-  
+
   .error-page .error-content form .form-group{width: 80%;}
-  
+
 }
 
 
@@ -2378,13 +2395,13 @@ ul.contact li i{
 @media only screen and (max-width : 768px) {
 
   .menu ul.main-menu li.dropdown ul.dropdown-menu li{background: #282425;}
-  
+
   #header-inverse nav.menu .navbar-collapse{background: rgba(0,0,0, 0.9);}
 
   .sign-up-form{left: 0; right: 0; margin: auto;}
 
   section h1.section-title{font-size: 90px !important; margin-bottom: 0 !important;}
-  
+
   #features .feature-item{margin-bottom: 20px;}
 
   #site-facts .circle{width: 100%; border-radius: 1000px;}
@@ -2398,37 +2415,37 @@ ul.contact li i{
   #footer .footer-wrapper ul{margin-bottom: 20px;}
 
   .contact-us .col-sm-7{margin-bottom: 20px !important;}
-  
+
   .intro-texts{transform: translateY(0); margin-bottom: 80px; text-align: center;}
-  
+
   .reg-form-container{padding: 30px !important; text-align: center;}
-  
+
   .reg-form-container .reg-options::before{background: linear-gradient(to bottom, rgba(255,255,255, 0.2) , rgba(255,255,255, 0.05)); height: 50px; width: 70%; left: 0; right: 0; margin: auto; top: -50px; transform: translateX(0) translateY(0);border-radius: 6px 6px 0 0;}
-  
+
   .reg-form-container .reg-options .nav-tabs{left: 50%; transform: translateY(0) translateX(-50%) rotate(0); top: -40px;}
-  
+
   .reg-form-container .reg-options .nav-tabs li{margin: 0;}
-  
+
   .reg-form-container .reg-options .nav-tabs li:after{right: 0;}
-  
+
   .reg-form-container::before{content: none;}
-  
+
   .reg-form-container::after{content: none;}
-  
+
   .reg-form-container .nav-tabs > li > a{padding-left: 10px; padding-right: 10px; min-width: 50px;}
-  
+
   .toggle-switch{text-align: left;}
-  
+
   .toggle-switch .switch{margin-top: 0;}
-  
+
   .faq-content{margin-bottom: 30px;}
-  
+
   .faq .page-search{max-width: 90%;}
-  
+
   .faq-cat-list.nav-tabs>li>a{width: 100px; min-width: initial; padding: 20px 10px; font-size: 16px;}
-  
+
   .faq-cat-list.nav-tabs>li>a>i{font-size: 20px;}
-  
+
   .error-page .error-content form .form-group{width: 100%;}
 
 }
@@ -2445,7 +2462,7 @@ ul.contact li i{
   #app-download ul.app-btn li button{margin-bottom: 20px;}
 
   .post-contents .post-container .post-detail .reaction{position: relative;}
-  
+
   .faq-cat-list.nav-tabs>li>a{width: 60px;}
 
 }
@@ -2631,7 +2648,7 @@ ul.contact li i{
 .spinner {
   width: 40px;
   height: 40px;
-  background-color: #27aae1;
+  background-color: #52e116;
   position: absolute;
   top: 48%;
   left: 48%;
@@ -2665,56 +2682,10 @@ ul.contact li i{
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #fff;
+  background-color: #f35d5d;
   z-index: 9999999;
 }
 
-
-/*==================================================
-  Buy Now Button
-==================================================*/
-
-.btn-buy{
-  background: #333;
-  padding: 10px 30px;
-  position: fixed;
-  bottom: 30px; 
-  right: 30px;
-  color: #82B541;
-  font-weight: 700;
-  font-style: italic;
-  box-shadow: 0 5px 20px rgba(0,0,0, .2);
-  z-index: 999;
-}
-
-.btn-buy:hover,
-.btn-buy:active,
-.btn-buy:focus{
-  color: #fff;
-  box-shadow: 0 0 20px rgba(0,0,0, .3);
-  transition: all 1s;
-}
-
-.btn-buy .italy{
-  font-size: 13px;
-  font-style: italic;
-  margin-right: 5px;
-  color: #fff;
-}
-
-.btn-buy .price{
-  position: relative;
-  margin-left: 15px;
-  color: #82B541;
-}
-
-.btn-buy .price::before{
-  content: "";
-  background: rgba(255,255,255, .9);
-  height: 15px;
-  width: 1px;
-  position: absolute;
-  left: -7px;
-  top: 50%;
-  transform: translateY(-50%);
+.hide {
+  display: none;
 }
