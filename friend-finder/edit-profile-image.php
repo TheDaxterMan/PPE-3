@@ -1,9 +1,10 @@
 <?php
 	session_start();
+	require_once('login.inc.php');
 	include "bdd.inc.php";
 	include "login.inc.php";
 	include "info.php";
-	
+
 
 ?>
 <!DOCTYPE html>
