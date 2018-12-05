@@ -209,59 +209,6 @@
 						?>
             >
 
-
-            <!-- Post Content
-            ================================================= -->
-            <div class="post-content">
-              <img src="images/post-images/11.jpg" alt="" class="img-responsive post-image" />
-              <div class="post-container">
-                <img src="images/users/user-9.jpg" alt="user" class="profile-photo-md pull-left" />
-                <div class="post-detail">
-                  <div class="user-info">
-                    <h5><a href="timeline.php" class="profile-link">Anna Young</a> <span class="following">following</span></h5>
-                    <p class="text-muted">Published a photo about 4 hour ago</p>
-                  </div>
-                  <div class="reaction">
-                    <a class="btn text-green"><i class="icon ion-thumbsup"></i> 2</a>
-                    <a class="btn text-red"><i class="fa fa-thumbs-down"></i> 0</a>
-                  </div>
-                  <div class="line-divider"></div>
-                  <div class="post-text">
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
-                  </div>
-                  <div class="line-divider"></div>
-                  <div class="post-comment">
-                    <img src="images/users/user-10.jpg" alt="" class="profile-photo-sm" />
-                    <p><a href="timeline.php" class="profile-link">Julia </a>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-                  </div>
-                  <div class="post-comment">
-										<?php
-										///////////////////////////////////////////////////////////////////////////////
-										/*									        	E L E V E																			 */
-										///////////////////////////////////////////////////////////////////////////////
-												if ($_SESSION['profil']=="eleve")
-												{
-												?>
-													<img src="images/users/utilisateur/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm" />
-												<?php
-												}
-										///////////////////////////////////////////////////////////////////////////////
-										/*												E N T R E P R I S E																*/
-										///////////////////////////////////////////////////////////////////////////////
-												if ($_SESSION['profil']=="entreprise")
-												{
-												?>
-													<img src="images/users/entreprise/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm" />
-												<?php
-												}
-										?>
-                    <input type="text" class="form-control" placeholder="Postez un commentaire">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
           <!-- Newsfeed Common Side Bar Right
           ================================================= -->
           <?php include "recommendation.php" ?>
