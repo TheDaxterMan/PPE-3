@@ -1,3 +1,13 @@
+<?php
+    if(isset($_GET['deconnexion']))
+    {
+       if($_GET['deconnexion']==true)
+       {
+          session_unset();
+          header("location:index.php");
+       }
+    }
+?>
 <header id="header">
   <nav class="navbar navbar-default navbar-fixed-top menu">
     <div class="container">
@@ -16,7 +26,7 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right main-menu">
-          <li class="dropdown"><a href="index.php">Accueil</a></li>
+
 
           <li class="dropdown"><a href="newsfeed.php">Fil d'actualité</a></li>
 
@@ -70,6 +80,7 @@
               <li><a href="edit-profile-settings.php">Paramètre du compte</a></li>
               <li><a href="edit-profile-password.php">Changer de Mot de passe</a></li>
               <li><a href="edit-profile-image.php">Changer de photo de profil</a></li>
+              <li><a href="newsfeed.php?deconnexion=true">Déconnexion</a></li>
             </ul>
           </li>
         </ul>
