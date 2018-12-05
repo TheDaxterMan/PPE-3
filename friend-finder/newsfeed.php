@@ -3,7 +3,9 @@
 	include "bdd.inc.php";
 	include "info.php";
 
-	$sql="SELECT * FROM stage, entreprise";
+	$sql="SELECT * FROM stage, entreprise, utilisateur
+				WHERE entreprise.id_entreprise=stage.id_entreprise
+				ORDER BY date_debut_stage ASC";
 	$req = $conn -> query($sql)or die($conn->errorInfo());
 	$req -> execute();
 
@@ -144,6 +146,12 @@
 						<?php
 						while ($res=$req->fetch())
 						{
+							$dated =date("d-m-Y", strtotime($res['date_debut_stage']));
+							$datef =date("d-m-Y", strtotime($res['date_fin_stage']));
+							$date=date("d-m-Y");
+							$filiere=$res['id_filiere'];
+							if ($dated>=$date)
+							{
 						?>
 						<!-- Post Content
 						================================================= -->
@@ -154,6 +162,7 @@
 									<div class="user-info">
 										<h5><a href="timeline.php" class="profile-link"><?php echo $res['nom_entreprise'];?></a></h5>
 										<p class="text-muted"><?php echo $res['lib_stage'];?></p>
+										<p class="text-muted"><?php echo "Il y a tant de minutes / heures";?></p>
 									</div>
 									<!---<div class="reaction">
 										<a class="btn text-green"><i class="icon ion-thumbsup"></i> 23</a>
@@ -161,13 +170,21 @@
 									</div>--->
 									<div class="line-divider"></div>
 									<div class="post-text">
+										<p><?php echo 'Du ',$dated,' au ',$datef;?></p>
 										<p><?php echo $res['desc_stage'];?></p>
 									</div>
 									<div class="line-divider"></div>
-									<div class="post-comment">
-										<img src="images/users/utilisateur/user-<?php echo $res['id_entreprise']; ?>" alt="" class="profile-photo-sm" />
-										<p><a href="timeline.php" class="profile-link"><?php echo "nom personne via php ici"; ?> </a><?php $res['commentaire'] ?></i></p>
-									</div>
+									<?php
+									if ($res['id_utilisateur'] != 1)
+									{
+									?>
+										<div class="post-comment">
+											<img src="images/users/utilisateur/user-<?php echo $res['id_utilisateur']; ?>" alt="" class="profile-photo-sm" />
+											<p><a href="timeline.php" class="profile-link"><?php echo $res['prenom_utilisateur'],' ',$res['nom_utilisateur']; ?> </a><?php echo $res['commentaire'] ?></i></p>
+										</div>
+									<?php
+									}
+									?>
 									<div class="post-comment">
 										<?php
 										///////////////////////////////////////////////////////////////////////////////
@@ -186,6 +203,7 @@
 							</div>
 						</div
 						<?php
+							}
 						}
 						?>
             >

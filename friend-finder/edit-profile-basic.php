@@ -2,17 +2,8 @@
 	session_start();
 	include "bdd.inc.php";
 	include "login.inc.php";
+	include "info.php";
 
-	$sql="SELECT * FROM utilisateur";
-	$req = $conn -> query($sql)or die($conn->errorInfo());
-	$res=$req->fetch();
-	$nom=$res['nom_utilisateur'];
-	$prenom=$res['prenom_utilisateur'];
-	$mail=$res['email_utilisateur'];
-	$tel=$res['tel_utilisateur'];
-	$rue=$res['rue_utilisateur'];
-	$ville=$res['ville_utilisateur'];
-	$cp=$res['cp_utilisateur'];
 
 ?>
 <!DOCTYPE html>
@@ -179,12 +170,36 @@
                         <input id="email" class="form-control input-group-lg" type="text" name="mail" title="Entrez votre Email" placeholder="Mon Email" value="<?php echo $mail; ?>" />
                       </div>
                     </div>
-										<div class="row">
-                      <div class="form-group col-xs-12">
-                        <label for="tel">Téléphone</label>
-                        <input id="tel" class="form-control input-group-lg" type="text" name="tel" title="Entrez votre numéro de téléphone" placeholder="Mon téléphone" value="<?php echo $tel; ?>" />
-                      </div>
-                    </div>
+										<?php
+										///////////////////////////////////////////////////////////////////////////////
+										/*									        	E L E V E																			 */
+										///////////////////////////////////////////////////////////////////////////////
+												if ($_SESSION['profil']=="eleve")
+												{
+												?>
+												<div class="row">
+													<div class="form-group col-xs-12">
+														<label for="tel">Téléphone</label>
+														<input id="tel" class="form-control input-group-lg" type="text" name="tel" title="Entrez votre numéro de téléphone" placeholder="Mon téléphone" value="<?php echo $tel; ?>" />
+													</div>
+												</div>
+												<?php
+												}
+										///////////////////////////////////////////////////////////////////////////////
+										/*												E N T R E P R I S E																*/
+										///////////////////////////////////////////////////////////////////////////////
+												if ($_SESSION['profil']=="entreprise")
+												{
+												?>
+												<div class="row">
+													<div class="form-group col-xs-12">
+														<label for="entreprise">Nom Entreprise</label>
+														<input id="entreprise" class="form-control input-group-lg" type="text" name="entreprise" title="Entrez le nom de l'entreprise" placeholder="Nom de l'entreprise" value="<?php echo $entreprise; ?>" />
+													</div>
+												</div>
+												<?php
+												}
+										?>
 										<div class="row">
                       <p class="custom-label"><strong>Adresse</strong></p>
                       <div class="form-group col-sm-6 col-xs-12">
@@ -200,7 +215,7 @@
                         <input id="cp" class="form-control" type="text" name="cp" title="Entrez votre Code Postal" placeholder="Mon Code Postal" value="<?php echo $cp; ?>">
                       </div>
                     </div>
-										<input type="hidden" name="id" value="1">
+										<input type="hidden" name="id" value="<?php echo $_SESSION['id']; ?>">
 										<input class="btn btn-primary" type="submit" name="valider" value="Sauvegarder les modifications">
                   </form>
                 </div>
