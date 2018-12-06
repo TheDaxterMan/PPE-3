@@ -1,92 +1,125 @@
 <?php
 
-include "class_ami.php";
-include "class_diplome.php";
+include "class_dip.php";
+include "class_dip.php";
 include "class_emploi.php";
 include "class_entreprise.php";
 include "classe_stage.php";
-include "class_utilisateur.php";
+include "class_diplome.php";
 
   /* ---------------------- */
-  /* DEBUT class Ami */
+  /* DEBUT class Diplome */
   /* ---------------------- */
 
-class ami
+class diplome
 	{
     /* ---------------------- */
-    /* class Ami Variables */
+    /* class Diplome Variables */
     /* ---------------------- */
 
-		Private $id_utilisateur;
-		Private $id_utilisateur_ami;
+		Private $id_dip;
+		Private $nom_dip;
+		Private $lib_dip;
 
     /* ---------------------- */
-    /* class Ami Constructeur */
+    /* class Diplome Constructeur */
     /* ---------------------- */
 
 
-    Public function ( $id_util, $id_util_ami)
+    Public function ( $id_dip, $nom_dip, $lib_dip)
     {
-      $this -> id_utilisateur = $id_util;
-      $this -> id_utilisateur_ami = $id_util_ami;
+      $this -> id_diplome = $id_dip;
+      $this -> nom_diplome = $nom_dip;
+			$this -> lib_diplome = $lib_dip;
+    }
+
+		public function getalldip()
+		{
+			$data = $this->id_diplome;
+			$data = $data.$this->nom_diplome;
+			$data = $data.$this->lib_diplome;
+			return $data;
+		}
+    /* ---------------------- */
+    /* class Diplome GET */
+    /* ---------------------- */
+
+    Public function get_id_diplome ()
+    {
+      return $this-> id_diplome;
+    }
+
+    Public function get_nom_diplome ()
+    {
+      return $this-> nom_diplome;
+    }
+
+		Public function get_lib_diplome ()
+    {
+      return $this-> lib_diplome;
     }
 
     /* ---------------------- */
-    /* class Ami GET */
+    /* class Diplome SET */
     /* ---------------------- */
 
-    Public function get_id_utilisateur ()
+    Public function set_nom_diplome ($nom_dip)
     {
-      return $this-> id_utilisateur;
+       $this-> id_nom_diplome = $nom_dip;
     }
 
-    Public function get_id_utilisateur_ami ()
+    Public function set_lib_diplome ($lib_dip)
     {
-      return $this-> id_utilisateur_ami;
-    }
-
-    /* ---------------------- */
-    /* class Ami SET */
-    /* ---------------------- */
-
-    Public function set_id_utilisateur ($id_util)
-    {
-       $this-> id_utilisateur = $id_util;
-    }
-
-    Public function set_id_utilisateur_ami ($id_util_ami)
-    {
-       $this-> id_utilisateur_ami = $id_util_ami;
+       $this-> lib_diplome = $lib_dip;
     }
 
 		/* ---------------------- */
- 	 /* class Ami fonctions publiques */
+ 	 /* class Diplome fonctions publiques */
  	 /* ---------------------- */
 
-	 Public function ajout_ami ($id_util, $id_util_ami, $conn)
+	 Public function ajout_diplome ($objet, $conn)
 		 {
-			 $SQL = " INSERT INTO values ('NULL', '$id_util_ami', '$conn')";
+			 $id_dip = $objet->get_id_diplome();
+			 $nom_dip = $objet->get_nom_diplome();
+			 $lib_dip = $objet->get_lib_diplome();
+
+			 $SQL = " INSERT INTO diplome values ('NULL', '$nom_dip', '$lib_dip', '$conn')";
 			 $conn -> query ($SQL);
 		 }
-		 Public function modif_ami ($id_util, $id_util_ami)
+
+		 Public function modif_diplome ($objet, $conn)
 		 {
-			 $SQL = "UPDATE ami SET id_utilisateur = '$id_util', id_utilisateur_ami = '$id_util_ami')";
+			 $id_dip = $objet->get_id_diplome();
+			 $nom_dip = $objet->get_nom_diplome();
+			 $lib_dip = $objet->get_lib_diplome();
+
+			 $SQL = "UPDATE diplome SET id_diplome = '$id_dip', id_diplome = '$id_dip')";
 			 $conn -> query ($SQL);
 		 }
-		 Public function affiche_ami ($id_util_ami)
+
+		 Public function affiche_diplome ($objet, $conn)
 		 {
-			 $SQL = " SELECT * From ami WHERE id_utilisateur_ami = '$id_util_ami'";
+			 $id_dip = $objet->get_id_diplome();
+		   $nom_dip = $objet->get_nom_diplome();
+			 $lib_dip = $objet->get_lib_diplome();
+
+			 $SQL = " SELECT * From diplome WHERE id_diplome = '$id_dip'";
 			 $Req = $conn -> query ($SQL);
 			 Return $Res = $Req -> fetch ();
 		 }
-		 Public function suppr_ami ($id_util, $id_util_ami)
+
+		 Public function suppr_diplome ($objet, $conn)
 		 {
-			 $SQL = " DELETE FROM `ami` WHERE $id_util_ami = '$id_util_ami'";
+			 $id_dip = $objet->get_id_diplome();
+		   $nom_dip = $objet->get_nom_diplome();
+			 $lib_dip = $objet->get_lib_diplome();
+			 
+			 $SQL = " DELETE FROM diplome WHERE id_diplome = '$id_dip'";
 			 $conn -> query ($SQL);
 		 }
 }
    /* ---------------------- */
-   /* FIN class Ami */
+   /* FIN class Diplome */
    /* ---------------------- */
 
 ?>
