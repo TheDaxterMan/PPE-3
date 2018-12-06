@@ -49,11 +49,6 @@ class ami
     /* class Ami SET */
     /* ---------------------- */
 
-    Public function set_id_utilisateur ($id_util)
-    {
-       $this-> id_utilisateur = $id_util;
-    }
-
     Public function set_id_utilisateur_ami ($id_util_ami)
     {
        $this-> id_utilisateur_ami = $id_util_ami;
@@ -81,7 +76,7 @@ class ami
 		 }
 		 Public function suppr_ami ($id_util, $id_util_ami)
 		 {
-			 $SQL = " DELETE FROM `ami` WHERE $id_util_ami = '$id_util_ami'";
+			 $SQL = " DELETE FROM ami WHERE $id_util_ami = '$id_util_ami'";
 			 $conn -> query ($SQL);
 		 }
 }

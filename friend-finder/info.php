@@ -30,10 +30,11 @@ $id=$_SESSION['id'];
       $req -> execute();
       $res=$req->fetch();
       $entreprise=$res['nom_entreprise'];
-      $nom=$res['nom_responsable'];
-      $prenom=$res['prenom_responsable'];
-      $rue=$res['rue_entreprise'];
-      $ville=$res['ville_entreprise'];
-      $cp=$res['cp_entreprise'];
+  		$nom=$res['nom_responsable'];
+  		$prenom=$res['prenom_responsable'];
+  		$mail=$res['mail_entreprise'];
+  		$rue=$res['rue_entreprise'];
+  		$ville=$res['ville_entreprise'];
+  		$cp=$res['cp_entreprise'];
     }
 ?>

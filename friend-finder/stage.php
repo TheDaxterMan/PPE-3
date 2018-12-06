@@ -1,14 +1,10 @@
 <?php
 	session_start();
+	require_once('login.inc.php');
 	include "bdd.inc.php";
 	include "login.inc.php";
 	include "info.php";
 
-	///////////////////////////////////////////////////////////////////////////////
-	/*												E N T R E P R I S E																*/
-	///////////////////////////////////////////////////////////////////////////////
-			if ($_SESSION['profil']=="entreprise")
-			{
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,7 +38,18 @@
 		function show2(){
 		  document.getElementById('salaire').style.display = 'block';
 		}
+
+		function cacherDate() {
+
+			var x = document.getElementById("date");
+			if (x.style.display === "none") {
+					x.style.display = "block";
+			} else {
+					x.style.display = "none";
+			}
+		}
 		</script>
+
 
 	</head>
   <body>
@@ -64,7 +71,26 @@
             <div class="row">
               <div class="col-md-3">
                 <div class="profile-info">
-									<img src="images/users/entreprise/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="img-responsive profile-photo" />
+									<?php
+									///////////////////////////////////////////////////////////////////////////////
+									/*									        	E L E V E																			 */
+									///////////////////////////////////////////////////////////////////////////////
+											if ($_SESSION['profil']=="eleve")
+											{
+											?>
+												<img src="images/users/utilisateur/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="img-responsive profile-photo" />
+											<?php
+											}
+									///////////////////////////////////////////////////////////////////////////////
+									/*												E N T R E P R I S E																*/
+									///////////////////////////////////////////////////////////////////////////////
+											if ($_SESSION['profil']=="entreprise")
+											{
+											?>
+												<img src="images/users/entreprise/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="img-responsive profile-photo" />
+											<?php
+											}
+									?>
                   <h3><?php echo $prenom,' ',$nom; ?></h3>
                   <p class="text-muted">Creative Director</p>
                 </div>
@@ -75,7 +101,26 @@
           <!--Timeline Menu for Small Screens-->
           <div class="navbar-mobile hidden-lg hidden-md">
             <div class="profile-info">
-							<img src="images/users/entreprise/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="img-responsive profile-photo" />
+							<?php
+							///////////////////////////////////////////////////////////////////////////////
+							/*									        	E L E V E																			 */
+							///////////////////////////////////////////////////////////////////////////////
+									if ($_SESSION['profil']=="eleve")
+									{
+									?>
+										<img src="images/users/utilisateur/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="img-responsive profile-photo" />
+									<?php
+									}
+							///////////////////////////////////////////////////////////////////////////////
+							/*												E N T R E P R I S E																*/
+							///////////////////////////////////////////////////////////////////////////////
+									if ($_SESSION['profil']=="entreprise")
+									{
+									?>
+										<img src="images/users/entreprise/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="img-responsive profile-photo" />
+									<?php
+									}
+							?>
               <h4><?php echo $prenom,' ',$nom; ?></h4>
               <p class="text-muted">Creative Director</p>
             </div>
@@ -98,11 +143,11 @@
                 </div>
                 <div class="edit-block">
                   <form name="stage" id="stage" action="crea_stage.php" method="post" class="form-inline">
-
                     <div class="row">
                       <div class="form-group col-xs-12">
                         <label for="fichier">Nouvelle Demande</label>
                       </div>
+<<<<<<< HEAD
 
 											<script>
 
@@ -118,6 +163,8 @@
 
 										  </script>
 
+=======
+>>>>>>> 60a793fed840577b6ef4f489ac3f9b0d32da3763
 											<div class="form-group gender">
 												<label class="radio-inline">
 													<input type="radio" name="prop" value="emploi" onclick="cacherDate()" required>Emploi</label>
@@ -179,10 +226,3 @@ include "footer.php";
 
 <!-- Mirrored from thunder-team.com/friend-finder/edit-profile-basic.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 08 Nov 2018 14:00:55 GMT -->
 </html>
-<?php
-	}
-	else
-	{
-		header('Location: ./newsfeed.php');
-	}
-?>

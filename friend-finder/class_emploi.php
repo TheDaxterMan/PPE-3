@@ -63,11 +63,6 @@ class emploi
     /* class Emploi SET */
     /* ---------------------- */
 
-    Public function set_id_emploi ($id_emp)
-    {
-       $this-> id_emploi = $id_emp;
-    }
-
     Public function set_lib_emploi ($lib_emp)
     {
        $this-> lib_emploi = $lib_emp;
@@ -120,7 +115,7 @@ class emploi
 			$lib_emp = $objet->get_lib_emploi();
 			$desc_emp = $objet->get_desc_emploi();
 
-			print $SQL = " DELETE FROM `emploi` WHERE id_emploi = '$id_emp'";
+			print $SQL = " DELETE FROM emploi WHERE id_emploi = '$id_emp'";
 			$Req = $conn -> query ($SQL) or die (' Erreur suppression emploi ');
 		}
 }
