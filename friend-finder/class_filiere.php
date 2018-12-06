@@ -96,7 +96,7 @@ class filiere
 			$id_fil = $objet->get_id_filiere();
 			$lib_fil = $objet->get_lib_filiere();
 
-			print $SQL = " DELETE FROM `filiere` WHERE id_filiere = '$id_fil'";
+			print $SQL = " DELETE FROM filiere WHERE id_filiere = '$id_fil'";
 			$Req = $conn -> query ($SQL) or die (' Erreur suppression filiere ');
 		}
 }
