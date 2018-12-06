@@ -52,11 +52,6 @@ class filiere
     /* class Filiere SET */
     /* ---------------------- */
 
-    Public function set_id_filiere ($id_fil)
-    {
-       $this-> id_filiere = $id_fil;
-    }
-
     Public function set_lib_filiere ($lib_fil)
     {
        $this-> lib_filiere = $lib_fil;
