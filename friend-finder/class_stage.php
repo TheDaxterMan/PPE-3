@@ -152,7 +152,7 @@ class stage
 					$comm_sta = $objet->get_comm_stage();
 
 
-					print $SQL = " DELETE FROM `stage` WHERE id_stage = '$id_sta'";
+					print $SQL = " DELETE FROM stage WHERE id_stage = '$id_sta'";
           $Req = $conn -> query ($SQL) or die (' Erreur affichage stage ');
 				}
  }
