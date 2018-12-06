@@ -112,6 +112,24 @@
                         <select class="form-control" id="entreprise" name="entreprise">
 													<option value="entreprise" disabled selected>Domaine d'activitée</option>
 													<?php
+
+
+													?>
+													<script>
+
+													function cacherDomaine() {
+
+													  var x = document.getElementById("Elève");
+													  if (x.style.display === "none") {
+													      x.style.display = "block";
+													  } else {
+													      x.style.display = "none";
+													  }
+													}
+
+													</script>
+
+													<?php
 													$sql="SELECT * FROM activite_entreprise";
 													$req = $conn -> query($sql)or die($conn->errorInfo());
 													while ($res=$req->fetch())

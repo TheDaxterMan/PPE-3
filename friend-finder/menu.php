@@ -76,7 +76,7 @@
         <form class="navbar-form navbar-right hidden-sm">
           <div class="form-group">
             <i class="icon ion-android-search"></i>
-            <input type="text" class="form-control" placeholder="Rechercher des amis">
+            <input name="recherche" type="text" class="form-control" placeholder="Rechercher des amis">
           </div>
         </form>
       </div><!-- /.navbar-collapse -->

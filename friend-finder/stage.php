@@ -105,20 +105,12 @@
                       </div>
 
 											<script>
+
 											function cacherDate() {
 
 										   	var x = document.getElementById("date");
 										   	if (x.style.display === "none") {
-										       	x.style.display = "block";
-										   	} else {
-										       	x.style.display = "none";
-										   	}
-										 	}
-
-											function afficherDate() {
-												var x = document.getElementById("date");
-										   	if (x.style.display === "none") {
-										       	x.style.display = "block";
+										      	x.style.display = "block";
 										   	} else {
 										       	x.style.display = "none";
 										   	}
@@ -128,9 +120,9 @@
 
 											<div class="form-group gender">
 												<label class="radio-inline">
-													<input type="radio" name="prop" value="stage" onclick="cacherDate()" required>Stage</label>
+													<input type="radio" name="prop" value="emploi" onclick="cacherDate()" required>Emploi</label>
 												<label class="radio-inline">
-													<input type="radio" name="prop" value="emploi" onlick="runEffect()" required>Emploi</label>
+													<input type="radio" name="prop" value="stage" onclick="cacherDate()" required>Stage</label>
 											</div>
 											<div class="date" id="date">
 												<div class="form-group col-xs-12">Date début</label>
