@@ -90,7 +90,7 @@ class activite_entreprise
 				$id_act = $objet->get_id_activite();
 				$lib_act = $objet->get_lib_activite();
 
-				print $SQL = " DELETE FROM `activite_entreprise` WHERE id_activite = '$id_act'";
+				print $SQL = " DELETE FROM activite_entreprise WHERE id_activite = '$id_act'";
 				$req = $conn -> query ($SQL) or die (' Erreur suppression activite ');
 			}
 
