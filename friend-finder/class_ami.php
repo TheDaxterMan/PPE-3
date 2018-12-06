@@ -49,11 +49,6 @@ class ami
     /* class Ami SET */
     /* ---------------------- */
 
-    Public function set_id_utilisateur ($id_util)
-    {
-       $this-> id_utilisateur = $id_util;
-    }
-
     Public function set_id_utilisateur_ami ($id_util_ami)
     {
        $this-> id_utilisateur_ami = $id_util_ami;
