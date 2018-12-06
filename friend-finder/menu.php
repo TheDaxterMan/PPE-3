@@ -80,11 +80,7 @@
         <form class="navbar-form navbar-right hidden-sm">
           <div class="form-group">
             <i class="icon ion-android-search"></i>
-<<<<<<< HEAD
             <input id="recherche" type="text" class="form-control" placeholder="Rechercher des amis">
-=======
-            <input name="recherche" type="text" class="form-control" placeholder="Rechercher des amis">
->>>>>>> abb7b6ffd1691e814db1b43e2351e6f0eeb59c3b
           </div>
         </form>
       </div><!-- /.navbar-collapse -->
