@@ -147,7 +147,6 @@
                       <div class="form-group col-xs-12">
                         <label for="fichier">Nouvelle Demande</label>
                       </div>
-<<<<<<< HEAD
 
 											<script>
 
@@ -163,8 +162,6 @@
 
 										  </script>
 
-=======
->>>>>>> 60a793fed840577b6ef4f489ac3f9b0d32da3763
 											<div class="form-group gender">
 												<label class="radio-inline">
 													<input type="radio" name="prop" value="emploi" onclick="cacherDate()" required>Emploi</label>
