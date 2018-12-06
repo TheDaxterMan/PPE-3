@@ -27,5 +27,4 @@ else
     header('Location: ./newsfeed.php');
   }
 }
-
 ?>

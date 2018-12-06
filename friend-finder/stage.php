@@ -43,7 +43,18 @@
 		function show2(){
 		  document.getElementById('salaire').style.display = 'block';
 		}
+
+		function cacherDate() {
+
+			var x = document.getElementById("date");
+			if (x.style.display === "none") {
+					x.style.display = "block";
+			} else {
+					x.style.display = "none";
+			}
+		}
 		</script>
+
 
 	</head>
   <body>
@@ -99,34 +110,10 @@
                 </div>
                 <div class="edit-block">
                   <form name="stage" id="stage" action="crea_stage.php" method="post" class="form-inline">
-
                     <div class="row">
                       <div class="form-group col-xs-12">
                         <label for="fichier">Nouvelle Demande</label>
                       </div>
-
-											<script>
-											function cacherDate() {
-
-										   	var x = document.getElementById("date");
-										   	if (x.style.display === "none") {
-										       	x.style.display = "block";
-										   	} else {
-										       	x.style.display = "none";
-										   	}
-										 	}
-
-											function afficherDate() {
-												var x = document.getElementById("date");
-										   	if (x.style.display === "none") {
-										       	x.style.display = "block";
-										   	} else {
-										       	x.style.display = "none";
-										   	}
-										 	}
-
-										  </script>
-
 											<div class="form-group gender">
 												<label class="radio-inline">
 													<input type="radio" name="prop" value="stage" onclick="cacherDate()" required>Stage</label>

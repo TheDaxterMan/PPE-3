@@ -176,7 +176,7 @@
 									</div>
 									<div class="line-divider"></div>
 									<?php
-									if ($res['id_utilisateur'] != 1)
+									if ($res['id_utilisateur'] != 0)
 									{
 									?>
 										<div class="post-comment">
@@ -195,7 +195,14 @@
 												{
 												?>
 													<img src="images/users/utilisateur/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm" />
-													<textarea class="form-control" name="commentaire" rows="8" cols="80" placeholder="Postez un commentaire"></textarea>
+													<form action="commentaire.php" method="post">
+														<textarea class="form-control" name="commentaire" rows="8" cols="80" placeholder="Postez un commentaire"></textarea>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+														<input type="hidden" name="stage" value="<?php echo $res['id_stage']; ?>">
+														<input type="submit" class="btn-primary" name="envoi" value="Envoyer">
+													</form>
 												<?php
 												}
 										?>
