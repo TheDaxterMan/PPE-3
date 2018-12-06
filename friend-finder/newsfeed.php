@@ -176,7 +176,7 @@
 									</div>
 									<div class="line-divider"></div>
 									<?php
-									if ($res['id_utilisateur'] != 0)
+									if ($res['id_utilisateur'] != 1)
 									{
 									?>
 										<div class="post-comment">

@@ -14,7 +14,7 @@ if ($radio=="stage")
   $datef=$_POST['datef'];
   $sql= "INSERT INTO stage VALUES (NULL,'$lib','$desc','$dated','$datef','','$id','1','$filiere')";
   $req = $conn -> query($sql)or die($conn->errorInfo());
-	$req -> execute();
+	$res=$req->fetch();
   header('Location: ./newsfeed.php');
 }
 else
@@ -23,8 +23,9 @@ else
   {
     $sql= "INSERT INTO emploi VALUES (NULL,'$lib','$desc','$id','1','$filiere')";
     $req = $conn -> query($sql)or die($conn->errorInfo());
-    $req -> execute();
+    $res=$req->fetch();
     header('Location: ./newsfeed.php');
   }
 }
+
 ?>
