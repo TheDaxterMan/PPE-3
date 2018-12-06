@@ -84,10 +84,10 @@
               </div>
               <div class="col-md-9">
                 <ul class="list-inline profile-menu">
-                  <li><a href="timeline.html" class="active">Chronologie</a></li>
-                  <li><a href="timeline-about.html">A propos</a></li>
-                  <li><a href="timeline-album.html">Album</a></li>
-                  <li><a href="timeline-friends.html">Amis</a></li>
+                  <li><a href="timeline.php" class="active">Chronologie</a></li>
+                  <li><a href="timeline-about.php">A propos</a></li>
+                  <li><a href="timeline-album.php">Album</a></li>
+                  <li><a href="timeline-friends.php">Amis</a></li>
                 </ul>
                 <ul class="follow-me list-inline">
                   <li>1,299 pecnots</li>
@@ -106,12 +106,12 @@
             </div>
             <div class="mobile-menu">
               <ul class="list-inline">
-                <li><a href="timline.html" class="active">Timeline</a></li>
-                <li><a href="timeline-about.html">About</a></li>
-                <li><a href="timeline-album.html">Album</a></li>
-                <li><a href="timeline-friends.html">Friends</a></li>
+                <li><a href="timline.php" class="active">Chronologie</a></li>
+                <li><a href="timeline-about.php">A propos</a></li>
+                <li><a href="timeline-album.php">Album</a></li>
+                <li><a href="timeline-friends.php">Amis</a></li>
               </ul>
-              <button class="btn-primary">Add Friend</button>
+              <button class="btn-primary">Ajouter en ami</button>
             </div>
           </div><!--Timeline Menu for Small Screens End-->
 
