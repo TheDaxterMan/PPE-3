@@ -76,7 +76,7 @@ class ami
 		 }
 		 Public function suppr_ami ($id_util, $id_util_ami)
 		 {
-			 $SQL = " DELETE FROM `ami` WHERE $id_util_ami = '$id_util_ami'";
+			 $SQL = " DELETE FROM ami WHERE $id_util_ami = '$id_util_ami'";
 			 $conn -> query ($SQL);
 		 }
 }
