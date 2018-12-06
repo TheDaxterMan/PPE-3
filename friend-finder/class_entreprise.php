@@ -1,5 +1,7 @@
 <?php
 
+include 'bdd.inc.php';
+include 'activite_entreprise.php';
 	/* ---------------------- */
 	/* DEBUT class Entreprise */
 	/* ---------------------- */
@@ -124,11 +126,6 @@ class entreprise
 			/* ---------------------- */
 			/* class Entreprise SET */
 			/* ---------------------- */
-
-			Public function set_id_entreprise ($id_ent)
-			{
-				 $this-> id_entreprise = $id_ent;
-			}
 
 			Public function set_nom_entreprise ($nom_ent)
 			{
