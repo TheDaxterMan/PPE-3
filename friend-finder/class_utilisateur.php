@@ -286,7 +286,7 @@ class utilisateur
 					$login_util = $objet->get_login_utilisateur();
 					$mdp_util = $objet->get_mdp_utilisateur();
 
-					print $SQL = " DELETE FROM `utilisateur` WHERE id_utilisateur ='$id_util'";
+					print $SQL = " DELETE FROM utilisateur WHERE id_utilisateur ='$id_util'";
 					$Req = $conn -> query ($SQL) or die (' Erreur suppression utilisateur ');
 				}
 
