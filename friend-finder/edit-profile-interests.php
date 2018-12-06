@@ -141,6 +141,8 @@
             </div>
             <div class="col-md-7">
 
+		    <form name="edit-interest_form" id='registration_form' action="interests.php" method="post">
+
               <!-- Edit Interests
               ================================================= -->
               <div class="edit-profile-container">
