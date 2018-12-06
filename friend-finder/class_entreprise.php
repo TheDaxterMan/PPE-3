@@ -252,7 +252,7 @@ class entreprise
 					$login_ent = $objet->get_login_entreprise();
 					$mdp_ent = $objet->get_mdp_entreprise();
 
-					print $SQL = " DELETE FROM `entreprise` WHERE id_entreprise  = '$id_ent'";
+					print $SQL = " DELETE FROM entreprise WHERE id_entreprise  = '$id_ent'";
 					$Req = $conn -> query ($SQL) or die (' Erreur suppression entreprise ');
 				}
 
