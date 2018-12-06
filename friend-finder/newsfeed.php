@@ -6,7 +6,7 @@
 
 	$sql="SELECT * FROM stage, entreprise, utilisateur
 				WHERE entreprise.id_entreprise=stage.id_entreprise
-				ORDER BY date_debut_stage ASC";
+				ORDER BY date_debut_stage, date_fin_stage ASC";
 	$req = $conn -> query($sql)or die($conn->errorInfo());
 	$req -> execute();
 
@@ -195,7 +195,7 @@
 												{
 												?>
 													<img src="images/users/utilisateur/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm" />
-													<input type="text" class="form-control" placeholder="Postez un commentaire">
+													<textarea class="form-control" name="commentaire" rows="8" cols="80" placeholder="Postez un commentaire"></textarea>
 												<?php
 												}
 										?>
