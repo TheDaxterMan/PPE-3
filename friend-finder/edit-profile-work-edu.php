@@ -75,13 +75,13 @@
               </div>
               <div class="col-md-9">
                 <ul class="list-inline profile-menu">
-                  <li><a href="timeline.php">Publications</a></li>
+                  <li><a href="timeline.php">Chronologie</a></li>
                   <li><a href="timeline-about.php" class="active">A propos</a></li>
                   <li><a href="timeline-album.php">Album</a></li>
                   <li><a href="timeline-friends.php">Amis</a></li>
                 </ul>
                 <ul class="follow-me list-inline">
-                  <li>1,299 pecnots la suivent</li>
+                  <li>1,299 pecnots</li>
                   <li><button class="btn-primary">Ajouter en ami</button></li>
                 </ul>
               </div>

@@ -1,0 +1,13 @@
+<script>
+
+function cacherDate() {
+
+  var x = document.getElementById("date");
+  if (x.style.display === "none") {
+      x.style.display = "block";
+  } else {
+      x.style.display = "none";
+  }
+}
+
+</script>

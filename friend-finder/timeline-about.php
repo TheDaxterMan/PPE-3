@@ -75,14 +75,14 @@
               </div>
               <div class="col-md-9">
                 <ul class="list-inline profile-menu">
-                  <li><a href="timeline.html">Timeline</a></li>
-                  <li><a href="timeline-about.html" class="active">About</a></li>
-                  <li><a href="timeline-album.html">Album</a></li>
-                  <li><a href="timeline-friends.html">Friends</a></li>
+                  <li><a href="timeline.php">Chronologie</a></li>
+                  <li><a href="timeline-about.php" class="active">A propos</a></li>
+                  <li><a href="timeline-album.php">Album</a></li>
+                  <li><a href="timeline-friends.php">Amis</a></li>
                 </ul>
                 <ul class="follow-me list-inline">
                   <li>1,299 people following her</li>
-                  <li><button class="btn-primary">Add Friend</button></li>
+                  <li><button class="btn-primary">Ajouter en ami</button></li>
                 </ul>
               </div>
             </div>
@@ -97,12 +97,12 @@
             </div>
             <div class="mobile-menu">
               <ul class="list-inline">
-                <li><a href="timline.html">Timeline</a></li>
-                <li><a href="timeline-about.html" class="active">About</a></li>
-                <li><a href="timeline-album.html">Album</a></li>
-                <li><a href="timeline-friends.html">Friends</a></li>
+                <li><a href="timline.php">Chronologie</a></li>
+                <li><a href="timeline-about.php" class="active">A propos</a></li>
+                <li><a href="timeline-album.php">Album</a></li>
+                <li><a href="timeline-friends.php">Amis</a></li>
               </ul>
-              <button class="btn-primary">Add Friend</button>
+              <button class="btn-primary">Ajouter en ami</button>
             </div>
           </div><!--Timeline Menu for Small Screens End-->
 

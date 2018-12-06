@@ -4,6 +4,14 @@
 	include "bdd.inc.php";
 	include "login.inc.php";
 	include "info.php";
+
+	$sql="SELECT * FROM stage, utilisateur, entreprise
+				WHERE stage.id_utilisateur=$id
+				AND entreprise.id_entreprise=stage.id_entreprise
+				ORDER BY date_debut_stage, date_fin_stage ASC";
+
+	$req = $conn -> query($sql)or die($conn->errorInfo());
+	$req -> execute();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +23,7 @@
 		<meta name="description" content="This is social network html5 template available in themeforest......" />
 		<meta name="keywords" content="Social Network, Social Media, Make Friends, Newsfeed, Profile Page" />
 		<meta name="robots" content="index, follow" />
-		<title>My Timeline | This is My Coolest Profile</title>
+		<title>Chronologie</title>
 
     <!-- Stylesheets
     ================================================= -->
@@ -76,14 +84,14 @@
               </div>
               <div class="col-md-9">
                 <ul class="list-inline profile-menu">
-                  <li><a href="timeline.html" class="active">Timeline</a></li>
-                  <li><a href="timeline-about.html">About</a></li>
-                  <li><a href="timeline-album.html">Album</a></li>
-                  <li><a href="timeline-friends.html">Friends</a></li>
+                  <li><a href="timeline.php" class="active">Chronologie</a></li>
+                  <li><a href="timeline-about.php">A propos</a></li>
+                  <li><a href="timeline-album.php">Album</a></li>
+                  <li><a href="timeline-friends.php">Amis</a></li>
                 </ul>
                 <ul class="follow-me list-inline">
-                  <li>1,299 people following her</li>
-                  <li><button class="btn-primary">Add Friend</button></li>
+                  <li>1,299 pecnots</li>
+                  <li><button class="btn-primary">Ajouter en ami</button></li>
                 </ul>
               </div>
             </div>
@@ -98,12 +106,12 @@
             </div>
             <div class="mobile-menu">
               <ul class="list-inline">
-                <li><a href="timline.html" class="active">Timeline</a></li>
-                <li><a href="timeline-about.html">About</a></li>
-                <li><a href="timeline-album.html">Album</a></li>
-                <li><a href="timeline-friends.html">Friends</a></li>
+                <li><a href="timline.php" class="active">Chronologie</a></li>
+                <li><a href="timeline-about.php">A propos</a></li>
+                <li><a href="timeline-album.php">Album</a></li>
+                <li><a href="timeline-friends.php">Amis</a></li>
               </ul>
-              <button class="btn-primary">Add Friend</button>
+              <button class="btn-primary">Ajouter en ami</button>
             </div>
           </div><!--Timeline Menu for Small Screens End-->
 
@@ -117,22 +125,7 @@
               ================================================= -->
               <div class="create-post">
                 <div class="row">
-                  <div class="col-md-7 col-sm-7">
-                    <div class="form-group">
-                      <img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-md" />
-                      <textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Write what you wish"></textarea>
-                    </div>
-                  </div>
                   <div class="col-md-5 col-sm-5">
-                    <div class="tools">
-                      <ul class="publishing-tools list-inline">
-                        <li><a href="#"><i class="ion-compose"></i></a></li>
-                        <li><a href="#"><i class="ion-images"></i></a></li>
-                        <li><a href="#"><i class="ion-ios-videocam"></i></a></li>
-                        <li><a href="#"><i class="ion-map"></i></a></li>
-                      </ul>
-                      <button class="btn btn-primary pull-right">Publish</button>
-                    </div>
                   </div>
                 </div>
               </div><!-- Post Create Box End-->
@@ -141,160 +134,82 @@
               ================================================= -->
               <div class="post-content">
 
-                <!--Post Date-->
-                <div class="post-date hidden-xs hidden-sm">
-                  <h5>Sarah</h5>
-                  <p class="text-grey">Sometimes ago</p>
-                </div><!--Post Date End-->
+								<?php
+								while ($res=$req->fetch())
+								{
+									$dated =date("d-m-Y", strtotime($res['date_debut_stage']));
+									$datef =date("d-m-Y", strtotime($res['date_fin_stage']));
+								?>
+									<!--Post Date-->
+	                <div class="post-date hidden-xs hidden-sm">
+	                  <h5>Le</h5>
+	                  <p class="text-grey"><?php echo $dated; ?></p>
+	                </div><!--Post Date End-->
 
-                <img src="images/post-images/12.jpg" alt="post-image" class="img-responsive post-image" />
-                <div class="post-container">
-                  <img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="user" class="profile-photo-md pull-left" />
-                  <div class="post-detail">
-                    <div class="user-info">
-                      <h5><a href="timeline.html" class="profile-link"><?php echo $prenom,' ',$nom; ?></a> <span class="following">following</span></h5>
-                      <p class="text-muted">Published a photo about 15 mins ago</p>
-                    </div>
-                    <div class="reaction">
-                      <a class="btn text-green"><i class="icon ion-thumbsup"></i> 13</a>
-                      <a class="btn text-red"><i class="fa fa-thumbs-down"></i> 0</a>
-                    </div>
-                    <div class="line-divider"></div>
-                    <div class="post-text">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <i class="em em-anguished"></i> <i class="em em-anguished"></i> <i class="em em-anguished"></i></p>
-                    </div>
-                    <div class="line-divider"></div>
-                    <div class="post-comment">
-                      <img src="images/users/user-11.jpg" alt="" class="profile-photo-sm" />
-                      <p><a href="timeline.html" class="profile-link">Diana </a><i class="em em-laughing"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
-                    </div>
-                    <div class="post-comment">
-                      <img src="images/users/user-4.jpg" alt="" class="profile-photo-sm" />
-                      <p><a href="timeline.html" class="profile-link">John</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
-                    </div>
-                    <div class="post-comment">
-                      <img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm" />
-                      <input type="text" class="form-control" placeholder="Post a comment">
-                    </div>
-                  </div>
-                </div>
-              </div>
+									<!-- Post Content
+									================================================= -->
+									<div class="post-content">
+										<div class="post-container">
+											<img src="images/users/entreprise/user-<?php echo $res['id_entreprise'];?>.jpg" alt="user" class="profile-photo-md pull-left" />
+											<div class="post-detail">
+												<div class="user-info">
+													<h5><a href="timeline.php" class="profile-link"><?php echo $res['nom_entreprise'];?></a></h5>
+													<p class="text-muted"><?php echo $res['lib_stage'];?></p>
+													<p class="text-muted"><?php echo "Il y a tant de minutes / heures";?></p>
+												</div>
+	                    <div class="line-divider"></div>
+											<div class="post-text">
+												<p><?php echo 'Du ',$dated,' au ',$datef;?></p>
+												<p><?php echo $res['desc_stage'];?></p>
+											</div>
+											<div class="line-divider"></div>
+												<?php if ($res['commentaire']!='')
+												{
+												?>
+													<div class="post-comment">
+														<img src="images/users/utilisateur/user-<?php echo $res['id_utilisateur']; ?>" alt="" class="profile-photo-sm" />
+														<p><a href="timeline.php" class="profile-link"><?php echo $res['prenom_utilisateur'],' ',$res['nom_utilisateur'],' :'; ?> </a><?php echo ' ',$res['commentaire'] ?></i></p>
+													</div>
+												<?php
+												}
+												else
+												{
+												?>
+												<div class="post-comment">
+													<?php
+													///////////////////////////////////////////////////////////////////////////////
+													/*									        	E L E V E																			 */
+													///////////////////////////////////////////////////////////////////////////////
+															if ($_SESSION['profil']=="eleve")
+															{
+															?>
+																<img src="images/users/utilisateur/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm" />
+																<form action="commentaire.php" method="post">
+																	<textarea class="form-control" name="commentaire" rows="8" cols="80" placeholder="Postez un commentaire"></textarea>
+			&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+			&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+			&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+																	<input type="hidden" name="stage" value="<?php echo $res['id_stage']; ?>">
+																	<input type="submit" class="btn-primary" name="envoi" value="Envoyer">
+																</form>
+															<?php
+															}
+															?>
+													</div>
+												<?php
+												}
+												?>
+										</div>
+									</div>
+								</div
+								<?php
+								}
+								?>
 
-              <!-- Post Content
-              ================================================= -->
-              <div class="post-content">
-
-                <!--Post Date-->
-                <div class="post-date hidden-xs hidden-sm">
-                  <h5>Sarah</h5>
-                  <p class="text-grey">10/22/2016</p>
-                </div><!--Post Date End-->
-
-                <img src="images/post-images/13.jpg" alt="post-image" class="img-responsive post-image" />
-                <div class="post-container">
-                  <img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="user" class="profile-photo-md pull-left" />
-                  <div class="post-detail">
-                    <div class="user-info">
-                      <h5><a href="timeline.html" class="profile-link"><?php echo $prenom,' ',$nom; ?></a> <span class="following">following</span></h5>
-                      <p class="text-muted">Yesterday</p>
-                    </div>
-                    <div class="reaction">
-                      <a class="btn text-green"><i class="icon ion-thumbsup"></i> 49</a>
-                      <a class="btn text-red"><i class="fa fa-thumbs-down"></i> 0</a>
-                    </div>
-                    <div class="line-divider"></div>
-                    <div class="post-text">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <i class="em em-anguished"></i> <i class="em em-anguished"></i> <i class="em em-anguished"></i></p>
-                    </div>
-                    <div class="line-divider"></div>
-                    <div class="post-comment">
-                      <img src="images/users/user-11.jpg" alt="" class="profile-photo-sm" />
-                      <p><a href="timeline.html" class="profile-link">Diana </a><i class="em em-laughing"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
-                    </div>
-                    <div class="post-comment">
-                      <img src="images/users/user-4.jpg" alt="" class="profile-photo-sm" />
-                      <p><a href="timeline.html" class="profile-link">John</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
-                    </div>
-                    <div class="post-comment">
-                      <img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm" />
-                      <input type="text" class="form-control" placeholder="Post a comment">
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Post Content
-              ================================================= -->
-              <div class="post-content">
-
-                <!--Post Date-->
-                <div class="post-date hidden-xs hidden-sm">
-                  <h5>Sarah</h5>
-                  <p class="text-grey">10/21/2016</p>
-                </div><!--Post Date End-->
-
-                <div class="post-container">
-                  <img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="user" class="profile-photo-md pull-left" />
-                  <div class="post-detail">
-                    <div class="user-info">
-                      <h5><a href="timeline.html" class="profile-link"><?php echo $prenom,' ',$nom; ?></a> <span class="following">following</span></h5>
-                      <p class="text-muted">2 days ago</p>
-                    </div>
-                    <div class="reaction">
-                      <a class="btn text-green"><i class="icon ion-thumbsup"></i> 49</a>
-                      <a class="btn text-red"><i class="fa fa-thumbs-down"></i> 0</a>
-                    </div>
-                    <div class="line-divider"></div>
-                    <div class="post-text">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <i class="em em-anguished"></i> <i class="em em-anguished"></i> <i class="em em-anguished"></i></p>
-                    </div>
-                    <div class="line-divider"></div>
-                    <div class="post-comment">
-                      <img src="images/users/user-11.jpg" alt="" class="profile-photo-sm" />
-                      <p><a href="timeline.html" class="profile-link">Diana </a><i class="em em-laughing"></i> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
-                    </div>
-                    <div class="post-comment">
-                      <img src="images/users/user-4.jpg" alt="" class="profile-photo-sm" />
-                      <p><a href="timeline.html" class="profile-link">John</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
-                    </div>
-                    <div class="post-comment">
-                      <img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-sm" />
-                      <input type="text" class="form-control" placeholder="Post a comment">
-                    </div>
-                  </div>
-                </div>
               </div>
 
             </div>
-            <div class="col-md-2 static">
-              <div id="sticky-sidebar">
-                <h4 class="grey">Sarah's activity</h4>
-                <div class="feed-item">
-                  <div class="live-activity">
-                    <p><a href="#" class="profile-link">Sarah</a> Commended on a Photo</p>
-                    <p class="text-muted">5 mins ago</p>
-                  </div>
-                </div>
-                <div class="feed-item">
-                  <div class="live-activity">
-                    <p><a href="#" class="profile-link">Sarah</a> Has posted a photo</p>
-                    <p class="text-muted">an hour ago</p>
-                  </div>
-                </div>
-                <div class="feed-item">
-                  <div class="live-activity">
-                    <p><a href="#" class="profile-link">Sarah</a> Liked her friend's post</p>
-                    <p class="text-muted">4 hours ago</p>
-                  </div>
-                </div>
-                <div class="feed-item">
-                  <div class="live-activity">
-                    <p><a href="#" class="profile-link">Sarah</a> has shared an album</p>
-                    <p class="text-muted">a day ago</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+
           </div>
         </div>
       </div>
