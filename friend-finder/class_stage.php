@@ -81,11 +81,6 @@ class stage
 			/* class Stage SET */
 			/* ---------------------- */
 
-			Public function set_id_stage ($id_sta)
-			{
-				 $this-> id_stage = $id_sta;
-			}
-
 			Public function set_lib_stage ($lib_sta)
 			{
 				 $this-> lib_stage = $lib_sta;
@@ -157,7 +152,7 @@ class stage
 					$comm_sta = $objet->get_comm_stage();
 
 
-					print $SQL = " DELETE FROM `stage` WHERE id_stage = '$id_sta'";
+					print $SQL = " DELETE FROM stage WHERE id_stage = '$id_sta'";
           $Req = $conn -> query ($SQL) or die (' Erreur affichage stage ');
 				}
  }
