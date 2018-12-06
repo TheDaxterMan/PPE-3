@@ -1,114 +1,102 @@
 <?php
 
-include "class_utilisateur.php";
+include 'bdd.inc.php';
 
   /* ---------------------- */
-  /* DEBUT class Ami */
+  /* DEBUT class Activite_entreprise */
   /* ---------------------- */
 
-class ami
+class activite_entreprise
 	{
     /* ---------------------- */
-    /* class Ami Variables */
+    /* class Activite_entreprise Variables */
     /* ---------------------- */
-
-		Private $id_utilisateur;
-		Private $id_utilisateur_ami;
-
+		Private $id_activite;
+    Private $lib_activite;
     /* ---------------------- */
-    /* class Ami Constructeur */
+    /* class Activite_entreprise Constructeur */
     /* ---------------------- */
-
-    Public function ami ( $id_util, $id_util_ami)
+    Public function activite_entreprise ( $id_act, $lib_act)
     {
-      $this -> id_utilisateur = $id_util;
-      $this -> id_utilisateur_ami = $id_util_ami;
+      $this -> id_activite = $id_act;
+      $this -> lib_activite = $lib_act;
     }
 
 		/* ---------------------- */
-		/* fonction Ami getalldata */
+		/* fonction Activite_entreprise getalldata */
 		/* ---------------------- */
 
-		Public function getallami()
+		public function getallact()
 		{
-			$data = $this->$id_util;
-			$data = $data.$this->$id_util_act;
+			$data = $this->$id_act;
+			$data = $data.$this->$lib_act;
 			return $data;
 		}
 
     /* ---------------------- */
-    /* class Ami GET */
+    /* class Activite_entreprise GET */
+    /* ---------------------- */
+    Public function get_id_activite ()
+    {
+      return $this-> id_activite;
+    }
+    Public function get_lib_activite ()
+    {
+      return $this-> lib_activite;
+    }
+    /* ---------------------- */
+    /* class Activite_entreprise SET */
     /* ---------------------- */
 
-    Public function get_id_utilisateur ()
+    Public function set_lib_activite ($lib_act)
     {
-      return $this-> id_utilisateur;
+       $this-> lib_activite = $lib_act;
     }
-
-    Public function get_id_utilisateur_ami ()
-    {
-      return $this-> id_utilisateur_ami;
-    }
-
-    /* ---------------------- */
-    /* class Ami SET */
-    /* ---------------------- */
-
-    Public function set_id_utilisateur ($id_util)
-    {
-       $this-> id_utilisateur = $id_util;
-    }
-
-    Public function set_id_utilisateur_ami ($id_util_ami)
-    {
-       $this-> id_utilisateur_ami = $id_util_ami;
-    }
-
 		/* ---------------------- */
- 	 /* class Ami fonctions publiques */
- 	 /* ---------------------- */
+		/* class Activite_entreprise fonctions publiques */
+		/* ---------------------- */
+		Public function ajout_activite ($objet, $conn)
+			{
+				$id_act = $objet->get_id_activite();
+				$lib_act = $objet->get_lib_activite();
 
-	 Public function ajout_ami ($objet, $conn)
-		 {
-			 $id_util = $objet->get_id_utilisateur();
-			 $id_util_act = $objet->get_id_utilisateur_ami();
+				print $SQL = " INSERT INTO activite_entreprise values (NULL, '$lib_act')";
+				$req = $conn -> query ($SQL) or die (' Erreur ajout activite ');
+			}
 
-			 print $SQL = " INSERT INTO ami values (NULL, '$id_util_act')";
-			 $Req = $conn -> query ($SQL) or die (' Erreur ajout ami ');
-		 }
+			Public function modif_activite ($objet, $conn)
+			{
+				$id_act = $objet->get_id_activite();
+				$lib_act = $objet->get_lib_activite();
 
-		 Public function modif_ami ($objet, $conn)
-		 {
-			 $id_util = $objet->get_id_utilisateur();
-			 $id_util_act = $objet->get_id_utilisateur_ami();
+				print $SQL = "UPDATE activite_entreprise SET lib_activite = '$lib_act'
+				WHERE id_activite = '$id_act'";
+				$req = $conn -> query ($SQL) or die (' Erreur modification activite ');
+			}
 
-			 print $SQL = "UPDATE ami SET id_utilisateur_ami = '$id_util_act'
-			 WHERE id_utilisateur = '$id_util'";
-			 $Req = $conn -> query ($SQL) or die (' Erreur modification ami ');
-		 }
+			Public function affiche_activite ($objet, $conn)
+			{
 
-		 Public function affiche_ami ($objet, $conn)
-		 {
+				$id_act = $objet->get_id_activite();
+				$lib_act = $objet->get_lib_activite();
 
-			 $id_util = $objet->get_id_utilisateur();
-			 $id_util_act = $objet->get_id_utilisateur_ami();
+				print $SQL = " SELECT *  From activite_entreprise WHERE id_activite = '$id_act'";
+				$req = $conn -> query ($SQL) or die (' Erreur affichage activite ');
+				Return $res = $req -> fetch ();
+			}
 
-			 print $SQL = " SELECT *  From ami WHERE id_utilisateur = '$id_util'";
-			 $Req = $conn -> query ($SQL) or die (' Erreur affichage ami ');
-			 Return $Res = $Req -> fetch ();
-		 }
+			Public function suppr_activite ($objet, $conn)
+			{
+				$id_act = $objet->get_id_activite();
+				$lib_act = $objet->get_lib_activite();
 
-		 Public function suppr_ami ($objet, $conn)
-		 {
-			 $id_util = $objet->get_id_utilisateur();
-			 $id_util_act = $objet->get_id_utilisateur_ami();
+				print $SQL = " DELETE FROM `activite_entreprise` WHERE id_activite = '$id_act'";
+				$req = $conn -> query ($SQL) or die (' Erreur suppression activite ');
+			}
 
-			 print $SQL = " DELETE FROM `ami` WHERE id_utilisateur = '$id_util'";
-			 $Req = $conn -> query ($SQL) or die (' Erreur suppression ami ');
-		 }
-}
-   /* ---------------------- */
-   /* FIN class Ami */
-   /* ---------------------- */
+  }
+  /* ---------------------- */
+  /* FIN class Activite_entreprise */
+  /* ---------------------- */
 
 ?>
