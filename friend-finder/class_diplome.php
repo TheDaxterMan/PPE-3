@@ -1,12 +1,5 @@
 <?php
 
-include "class_dip.php";
-include "class_dip.php";
-include "class_emploi.php";
-include "class_entreprise.php";
-include "classe_stage.php";
-include "class_diplome.php";
-
   /* ---------------------- */
   /* DEBUT class Diplome */
   /* ---------------------- */
@@ -25,8 +18,7 @@ class diplome
     /* class Diplome Constructeur */
     /* ---------------------- */
 
-
-    Public function diplome ( $id_dip, $nom_dip, $lib_dip)
+    Public function diplome ($id_dip, $nom_dip, $lib_dip)
     {
       $this -> id_diplome = $id_dip;
       $this -> nom_diplome = $nom_dip;
@@ -113,7 +105,7 @@ class diplome
 			 $id_dip = $objet->get_id_diplome();
 		   $nom_dip = $objet->get_nom_diplome();
 			 $lib_dip = $objet->get_lib_diplome();
-			 
+
 			 $SQL = " DELETE FROM diplome WHERE id_diplome = '$id_dip'";
 			 $conn -> query ($SQL);
 		 }
