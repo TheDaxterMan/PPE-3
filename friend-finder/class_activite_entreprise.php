@@ -32,7 +32,7 @@ class activite_entreprise
 			$data = $data.$this->$lib_act;
 			return $data;
 		}
-
+ 
     /* ---------------------- */
     /* class Activite_entreprise GET */
     /* ---------------------- */
