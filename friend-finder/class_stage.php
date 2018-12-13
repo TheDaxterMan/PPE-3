@@ -48,7 +48,7 @@ class stage
 				$data = $data.$this->$comm_sta;
 				return $data;
 			}
-
+ 
 			/* ---------------------- */
 			/* class Stage GET */
 			/* ---------------------- */
