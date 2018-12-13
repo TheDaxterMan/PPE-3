@@ -1,7 +1,6 @@
 <?php
 
 include 'bdd.inc.php';
-include 'class_diplome.php';
 
 	/* ---------------------- */
 	/* DEBUT class Utilisateur */
@@ -235,6 +234,8 @@ class utilisateur
 					$Req = $conn -> query ($SQL) or die (' Erreur affichage utilisateur ');
 					Return $Res = $Req -> fetch ();
 
+				}
+
 					Public function affiche_utilisateur_basic_info($objet, $conn)
 					{
 
@@ -290,6 +291,12 @@ class utilisateur
 					$Req = $conn -> query ($SQL) or die (' Erreur suppression utilisateur ');
 				}
 
+		/*		Public function Possede ()
+				{
+
+						return $annee ->
+				}
+*/
 }
 	/* ---------------------- */
 	/* FIN class Utilisateur */
