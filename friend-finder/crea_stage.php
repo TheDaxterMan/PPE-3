@@ -1,6 +1,8 @@
 <?php
 session_start();
 include "bdd.inc.php";
+include "class_stage.php";
+include "class_emploi.php";
 
   $id=$_SESSION['id'];
   $radio=$_POST['prop'];
@@ -17,18 +19,16 @@ include "bdd.inc.php";
         {
           $dated=$_POST['dated'];
           $datef=$_POST['datef'];
-          $sql= "INSERT INTO stage VALUES (NULL,'$lib','$desc','$dated','$datef','','1','$id','$filiere')";
-          $req = $conn -> query($sql)or die($conn->errorInfo());
-          $res=$req->fetch();
+          $unstageutil = new stage (NULL, $lib, $desc, $dated, $datef, 'comm', NULL, $id, $filiere);
+          $unstageutil -> ajout_stage_util($unstageutil, $conn);
           header('Location: ./newsfeed.php');
         }
         else
         {
           if ($radio=="emploi")
           {
-            $sql= "INSERT INTO emploi VALUES (NULL,'$lib','$desc','1','$id','$filiere')";
-            $req = $conn -> query($sql)or die($conn->errorInfo());
-            $res=$req->fetch();
+            $unemploiutil = new emploi (NULL, $lib, $desc, NULL, $id);
+            $unemploiutil -> ajout_emploi_util($unemploiutil, $conn);
             header('Location: ./newsfeed.php');
           }
         }
@@ -42,20 +42,28 @@ include "bdd.inc.php";
         {
           $dated=$_POST['dated'];
           $datef=$_POST['datef'];
-          $sql= "INSERT INTO stage VALUES (NULL,'$lib','$desc','$dated','$datef','','$id','1','$filiere')";
-          $req = $conn -> query($sql)or die($conn->errorInfo());
-        	$res=$req->fetch();
+          $unstageent = new stage (NULL, $lib, $desc, $dated, $datef, 'comm', $id, NULL, $filiere);
+          $unstageent -> ajout_stage_ent($unstageent, $conn);
           header('Location: ./newsfeed.php');
         }
         else
         {
           if ($radio=="emploi")
           {
-            $sql= "INSERT INTO emploi VALUES (NULL,'$lib','$desc','$id','1','$filiere')";
-            $req = $conn -> query($sql)or die($conn->errorInfo());
-            $res=$req->fetch();
+            $unemploient = new emploi (NULL, $lib, $desc, $id, NULL);
+            $unemploient -> ajout_emploi_ent($unemploient, $conn);
             header('Location: ./newsfeed.php');
           }
         }
       }
+
+
+
+/*
+            $sql= "INSERT INTO stage VALUES (NULL,'$lib','$desc','$dated','$datef','','1','$id','$filiere')";
+            $sql= "INSERT INTO emploi VALUES (NULL,'$lib','$desc','1','$id','$filiere')";
+            $req = $conn -> query($sql)or die($conn->errorInfo());
+            $res=$req->fetch();
+
+*/
 ?>
