@@ -104,7 +104,7 @@ CREATE TABLE Stage(
         desc_stage       Varchar (50) NOT NULL ,
         date_debut_stage Date NOT NULL ,
         date_fin_stage   Date NOT NULL ,
-        commentaire      Date NOT NULL ,
+        commentaire      Varchar (50) NOT NULL ,
         id_entreprise    Int NOT NULL ,
         id_utilisateur   Int ,
         id_filiere       Int NOT NULL

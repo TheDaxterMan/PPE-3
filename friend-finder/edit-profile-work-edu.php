@@ -145,32 +145,38 @@
               ================================================= -->
               <div class="edit-profile-container">
                 <div class="block-title">
-                  <h4 class="grey"><i class="icon ion-ios-book-outline"></i>Mon éducation</h4>
+                  <h4 class="grey"><i class="icon ion-ios-book-outline"></i>Mes diplômes</h4>
                   <div class="line"></div>
-                  <p>blabla blabla mettre un truc ici</p>
+                  <p>Ajouter, modifier ou supprimer un diplôme</p>
                   <div class="line"></div>
                 </div>
                 <div class="edit-block">
-                  <form name="education" id="education" class="form-inline">
+                  <form action="work.php" method="post" class="form-inline">
                     <div class="row">
                       <div class="form-group col-xs-12">
-                        <label for="diplome">Mon diplôme</label>
-                        <input id="diplome" class="form-control input-group-lg" type="text" name="diplome" title="Entrez le diplôme" placeholder="Diplôme" value="" />
+                        <label>Mon diplôme</label>
+												<select class="form-control input-group-lg" id="diplome" name="diplome">
+													<option value="diplome" disabled selected>Choisir un diplôme</option>
+													<?php
+													$sql="SELECT * FROM diplome";
+													$req = $conn -> query($sql)or die($conn->errorInfo());
+													while ($res=$req->fetch())
+													{
+													?>
+														<option value="<?php echo $res['id_diplome'] ?>"><?php echo $res['nom_diplome']?></option>
+													<?php
+													}
+													?>
+												</select>
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-6">
                         <label for="annee">Année d'obtention du diplôme</label>
-                        <input id="annee" class="form-control input-group-lg" type="number" min="1900" step="1" name="annee" title="Entrez une année" placeholder="Année d'obtention" value="" />
+                        <input id="annee" class="form-control input-group-lg" type="number" min="1900" step="1" name="annee" title="Entrez une année" placeholder="Année d'obtention" />
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="form-group col-xs-12">
-                        <label for="edu-description">Description</label>
-                        <textarea id="edu-description" name="description" class="form-control" placeholder="Racontez votre formation" rows="4" cols="400">Blablabla je raconte ma vie</textarea>
-                      </div>
-                    </div>
-                    <button class="btn btn-primary">Sauvegarder les modifications</button>
+										<input type="submit" class="btn btn-primary" name="enregistrerd" value="Enregistrer">
                   </form>
                 </div>
                 <div class="block-title">
@@ -215,7 +221,7 @@
                         <textarea id="work-description" name="description" class="form-control" placeholder="Décrire votre travail" rows="4" cols="400">blabla mon travail</textarea>
                       </div>
                     </div>
-                    <button class="btn btn-primary">Sauvegarder les changements</button>
+                    <button class="btn btn-primary">Enregistrer</button>
                   </form>
                 </div>
               </div>

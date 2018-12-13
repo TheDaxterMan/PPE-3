@@ -1,5 +1,5 @@
 <?php
- 
+
   /* ---------------------- */
   /* DEBUT class Emploi */
   /* ---------------------- */
@@ -94,7 +94,7 @@ class emploi
 			$datec_emp = $objet->get_datec_emploi();
 
 			/* !!!!!!!!!!!!!!! manque encapsulation de entreprise et utilisateur !!!!!!!!!!!!!!!!!! */
-			print $SQL = " INSERT INTO emploi values (NULL, '$lib_emp', '$desc_emp', '$datec_emp', NULL, '1')";
+			print $SQL = " INSERT INTO emploi values (NULL, '$lib_emp', '$desc_emp', '$datec_emp', '1', '1', '1')";
 			$Req = $conn -> query ($SQL) or die (' Erreur ajout emploi ');
 		}
 
@@ -106,7 +106,7 @@ class emploi
 				$datec_emp = $objet->get_datec_emploi();
 
 				/* !!!!!!!!!!!!!!! manque encapsulation de entreprise et utilisateur !!!!!!!!!!!!!!!!!! */
-				print $SQL = " INSERT INTO emploi values (NULL, '$lib_emp', '$desc_emp', '$datec_emp', '3', NULL)";
+				print $SQL = " INSERT INTO emploi values (NULL, '$lib_emp', '$desc_emp', '$datec_emp', '1', '1', '1')";
 				$Req = $conn -> query ($SQL) or die (' Erreur ajout emploi ');
 			}
 

@@ -1,5 +1,5 @@
 <?php
-  
+
 
 	/* ---------------------- */
 	/* DEBUT class Stage */
@@ -48,7 +48,7 @@ class stage
 				$data = $data.$this->$comm_sta;
 				return $data;
 			}
- 
+
 			/* ---------------------- */
 			/* class Stage GET */
 			/* ---------------------- */
@@ -123,7 +123,7 @@ class stage
 					$datef_sta = $objet->get_datef_stage();
 					$comm_sta = $objet->get_commentaire_stage();
 
-					print $SQL = " INSERT INTO stage values (NULL, '$lib_sta', '$desc_sta', '$dated_sta', '$datef_sta', '$comm_sta', NULL, '1', '1')";
+					print $SQL = " INSERT INTO stage values (NULL, '$lib_sta', '$desc_sta', '$dated_sta', '$datef_sta', '$comm_sta', '1', '1', '1')";
 					$Req = $conn -> query ($SQL) or die (' Erreur ajout stage ');
 				}
 
@@ -136,7 +136,7 @@ class stage
     					$datef_sta = $objet->get_datef_stage();
     					$comm_sta = $objet->get_commentaire_stage();
 
-    					print $SQL = " INSERT INTO stage values (NULL, '$lib_sta', '$desc_sta', '$dated_sta', '$datef_sta', '$comm_sta', '3', NULL, '1')";
+    					print $SQL = " INSERT INTO stage values (NULL, '$lib_sta', '$desc_sta', '$dated_sta', '$datef_sta', '$comm_sta', '1', '1', '1')";
     					$Req = $conn -> query ($SQL) or die (' Erreur ajout stage ');
     				}
 
