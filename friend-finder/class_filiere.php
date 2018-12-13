@@ -33,7 +33,7 @@ class filiere
 			$data = $data.$this->$lib_fil;
 			return $data;
 		}
-
+ 
     /* ---------------------- */
     /* class Filiere GET */
     /* ---------------------- */
