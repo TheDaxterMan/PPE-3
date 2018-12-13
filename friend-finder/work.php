@@ -6,5 +6,7 @@ include "bdd.inc.php";
   $diplome=$_POST['diplome'];
   $annee=$_POST['annee'];
 
-  echo $id,' ',$diplome,' ',$annee;
+  $sql="INSERT INTO possede VALUES ('$id','$diplome','$annee')";
+  $req = $conn -> query($sql)or die($conn->errorInfo());
+  $res=$req->fetch();
 ?>

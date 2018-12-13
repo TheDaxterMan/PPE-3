@@ -151,13 +151,8 @@
                   <div class="line"></div>
                 </div>
                 <div class="edit-block">
-
-
-
-
-                  <form action="work.php" class="form-inline">
+                  <form action="work.php" method="post" class="form-inline">
                     <div class="row">
-
                       <div class="form-group col-xs-12">
                         <label>Mon diplôme</label>
 												<select class="form-control input-group-lg" id="diplome" name="diplome">
@@ -174,7 +169,6 @@
 													?>
 												</select>
                       </div>
-
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-6">
@@ -184,11 +178,6 @@
                     </div>
 										<input type="submit" class="btn btn-primary" name="enregistrerd" value="Enregistrer">
                   </form>
-
-
-
-
-
                 </div>
                 <div class="block-title">
                   <h4 class="grey"><i class="icon ion-ios-briefcase-outline"></i>Experience professionelle</h4>
