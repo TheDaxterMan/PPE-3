@@ -1,0 +1,207 @@
+#------------------------------------------------------------
+#        Script MySQL.
+#------------------------------------------------------------
+
+
+#------------------------------------------------------------
+# Table: Activite entreprise
+#------------------------------------------------------------
+
+CREATE TABLE Activite_entreprise(
+        id_activite  Int  Auto_increment  NOT NULL ,
+        lib_activite Varchar (50) NOT NULL
+	,CONSTRAINT Activite_entreprise_PK PRIMARY KEY (id_activite)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Entreprise
+#------------------------------------------------------------
+
+CREATE TABLE Entreprise(
+        id_entreprise      Int  Auto_increment  NOT NULL ,
+        nom_entreprise     Varchar (50) NOT NULL ,
+        nom_responsable    Varchar (50) NOT NULL ,
+        prenom_responsable Varchar (50) NOT NULL ,
+        mail_entreprise    Varchar (50) NOT NULL ,
+        rue_entreprise     Varchar (50) NOT NULL ,
+        ville_entreprise   Varchar (50) NOT NULL ,
+        cp_entreprise      Varchar (50) NOT NULL ,
+        photo_entreprise   Varchar (50) NOT NULL ,
+        login_entreprise   Varchar (50) NOT NULL ,
+        mdp_entreprise     Varchar (50) NOT NULL ,
+        id_activite        Int NOT NULL
+	,CONSTRAINT Entreprise_PK PRIMARY KEY (id_entreprise)
+
+	,CONSTRAINT Entreprise_Activite_entreprise_FK FOREIGN KEY (id_activite) REFERENCES Activite_entreprise(id_activite)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Ami
+#------------------------------------------------------------
+
+CREATE TABLE Ami(
+        id_utilisateur     Int NOT NULL ,
+        id_utilisateur_ami Int NOT NULL
+	,CONSTRAINT Ami_PK PRIMARY KEY (id_utilisateur)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Diplome
+#------------------------------------------------------------
+
+CREATE TABLE Diplome(
+        id_diplome  Int  Auto_increment  NOT NULL ,
+        nom_diplome Varchar (50) NOT NULL ,
+        lib_diplome Varchar (50) NOT NULL
+	,CONSTRAINT Diplome_PK PRIMARY KEY (id_diplome)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Filiere
+#------------------------------------------------------------
+
+CREATE TABLE Filiere(
+        id_filiere  Int  Auto_increment  NOT NULL ,
+        lib_filiere Varchar (50) NOT NULL
+	,CONSTRAINT Filiere_PK PRIMARY KEY (id_filiere)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Utilisateur
+#------------------------------------------------------------
+
+CREATE TABLE Utilisateur(
+        id_utilisateur     Int  Auto_increment  NOT NULL ,
+        nom_utilisateur    Varchar (50) NOT NULL ,
+        prenom_utilisateur Varchar (50) NOT NULL ,
+        tel_utilisateur    Varchar (15) NOT NULL ,
+        email_utilisateur  Varchar (50) NOT NULL ,
+        rue_utilisateur    Varchar (50) NOT NULL ,
+        ville_utilisateur  Varchar (50) NOT NULL ,
+        cp_utilisateur     Varchar (50) NOT NULL ,
+        photo_utilisateur  Varchar (50) NOT NULL ,
+        login_utilisateur  Varchar (50) NOT NULL ,
+        mdp_utilisateur    Varchar (50) NOT NULL ,
+        id_filiere         Int NOT NULL
+	,CONSTRAINT Utilisateur_PK PRIMARY KEY (id_utilisateur)
+
+	,CONSTRAINT Utilisateur_Filiere_FK FOREIGN KEY (id_filiere) REFERENCES Filiere(id_filiere)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Stage
+#------------------------------------------------------------
+
+CREATE TABLE Stage(
+        id_stage         Int  Auto_increment  NOT NULL ,
+        lib_stage        Varchar (50) NOT NULL ,
+        desc_stage       Varchar (50) NOT NULL ,
+        date_debut_stage Date NOT NULL ,
+        date_fin_stage   Date NOT NULL ,
+        commentaire      Date NOT NULL ,
+        id_entreprise    Int NOT NULL ,
+        id_utilisateur   Int ,
+        id_filiere       Int NOT NULL
+	,CONSTRAINT Stage_PK PRIMARY KEY (id_stage)
+
+	,CONSTRAINT Stage_Entreprise_FK FOREIGN KEY (id_entreprise) REFERENCES Entreprise(id_entreprise)
+	,CONSTRAINT Stage_Utilisateur0_FK FOREIGN KEY (id_utilisateur) REFERENCES Utilisateur(id_utilisateur)
+	,CONSTRAINT Stage_Filiere1_FK FOREIGN KEY (id_filiere) REFERENCES Filiere(id_filiere)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Emploi
+#------------------------------------------------------------
+
+CREATE TABLE Emploi(
+        id_emploi      Int  Auto_increment  NOT NULL ,
+        lib_emploi     Varchar (50) NOT NULL ,
+        desc_emploi    Varchar (50) NOT NULL ,
+        date_crea      Date NOT NULL ,
+        id_entreprise  Int NOT NULL ,
+        id_utilisateur Int NOT NULL ,
+        id_filiere     Int NOT NULL
+	,CONSTRAINT Emploi_PK PRIMARY KEY (id_emploi)
+
+	,CONSTRAINT Emploi_Entreprise_FK FOREIGN KEY (id_entreprise) REFERENCES Entreprise(id_entreprise)
+	,CONSTRAINT Emploi_Utilisateur0_FK FOREIGN KEY (id_utilisateur) REFERENCES Utilisateur(id_utilisateur)
+	,CONSTRAINT Emploi_Filiere1_FK FOREIGN KEY (id_filiere) REFERENCES Filiere(id_filiere)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Centres interets
+#------------------------------------------------------------
+
+CREATE TABLE Centres_interets(
+        id_interet  Int  Auto_increment  NOT NULL ,
+        lib_interet Varchar (50) NOT NULL ,
+        img_interet Varchar (50) NOT NULL
+	,CONSTRAINT Centres_interets_PK PRIMARY KEY (id_interet)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Ajouter
+#------------------------------------------------------------
+
+CREATE TABLE Ajouter(
+        id_entreprise  Int NOT NULL ,
+        id_utilisateur Int NOT NULL
+	,CONSTRAINT Ajouter_PK PRIMARY KEY (id_entreprise,id_utilisateur)
+
+	,CONSTRAINT Ajouter_Entreprise_FK FOREIGN KEY (id_entreprise) REFERENCES Entreprise(id_entreprise)
+	,CONSTRAINT Ajouter_Utilisateur0_FK FOREIGN KEY (id_utilisateur) REFERENCES Utilisateur(id_utilisateur)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Ajout
+#------------------------------------------------------------
+
+CREATE TABLE Ajout(
+        id_utilisateur       Int NOT NULL ,
+        id_utilisateur_Ajout Int NOT NULL
+	,CONSTRAINT Ajout_PK PRIMARY KEY (id_utilisateur,id_utilisateur_Ajout)
+
+	,CONSTRAINT Ajout_Ami_FK FOREIGN KEY (id_utilisateur) REFERENCES Ami(id_utilisateur)
+	,CONSTRAINT Ajout_Utilisateur0_FK FOREIGN KEY (id_utilisateur_Ajout) REFERENCES Utilisateur(id_utilisateur)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Possede
+#------------------------------------------------------------
+
+CREATE TABLE Possede(
+        id_utilisateur  Int NOT NULL ,
+        id_diplome      Int NOT NULL ,
+        annee_obtention Year NOT NULL
+	,CONSTRAINT Possede_PK PRIMARY KEY (id_utilisateur,id_diplome)
+
+	,CONSTRAINT Possede_Utilisateur_FK FOREIGN KEY (id_utilisateur) REFERENCES Utilisateur(id_utilisateur)
+	,CONSTRAINT Possede_Diplome0_FK FOREIGN KEY (id_diplome) REFERENCES Diplome(id_diplome)
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Intéréssé
+#------------------------------------------------------------
+
+CREATE TABLE Interesse(
+        id_interet     Int NOT NULL ,
+        id_utilisateur Int NOT NULL
+	,CONSTRAINT Interesse_PK PRIMARY KEY (id_interet,id_utilisateur)
+
+	,CONSTRAINT Interesse_Centres_interets_FK FOREIGN KEY (id_interet) REFERENCES Centres_interets(id_interet)
+	,CONSTRAINT Interesse_Utilisateur0_FK FOREIGN KEY (id_utilisateur) REFERENCES Utilisateur(id_utilisateur)
+)ENGINE=InnoDB;
+
+
