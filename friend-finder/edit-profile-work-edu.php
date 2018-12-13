@@ -190,29 +190,29 @@
                     <div class="row">
                       <div class="form-group col-xs-12">
                         <label for="company">Entreprise</label>
-                        <input id="company" class="form-control input-group-lg" type="text" name="company" title="Entrez une entreprise" placeholder="Nom de l'entreprise" value="Envato Inc" />
+                        <input id="company" class="form-control input-group-lg" type="text" name="company" title="Entrez une entreprise" placeholder="Nom de l'entreprise" />
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-12">
-                        <label for="designation">Designation</label>
-                        <input id="designation" class="form-control input-group-lg" type="text" name="designation" title="Enter designation" placeholder="designation name" value="Exclusive Author" />
+                        <label for="designation">Activité</label>
+                        <input id="designation" class="form-control input-group-lg" type="text" name="activite" title="Enter activite" placeholder="Activité" />
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-6">
                         <label for="from-date">De</label>
-                        <input id="from-date" class="form-control input-group-lg" type="text" name="date" title="Entrez une date" placeholder="de" value="2016" />
+                        <input id="from-date" class="form-control input-group-lg" type="text" name="date" title="Entrez une date" placeholder="de" />
                       </div>
                       <div class="form-group col-xs-6">
                         <label for="to-date" class="">A</label>
-                        <input id="to-date" class="form-control input-group-lg" type="text" name="date" title="Entrez une date" placeholder="a" value="Present" />
+                        <input id="to-date" class="form-control input-group-lg" type="text" name="date" title="Entrez une date" placeholder="a" />
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-12">
                         <label for="work-city">Ville</label>
-                        <input id="work-city" class="form-control input-group-lg" type="text" name="city" title="Entrez une ville" placeholder="Ville" value="Melbourne"/>
+                        <input id="work-city" class="form-control input-group-lg" type="text" name="city" title="Entrez une ville" placeholder="Ville"/>
                       </div>
                     </div>
                     <div class="row">
