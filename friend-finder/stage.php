@@ -143,26 +143,19 @@
 
 											function cacherDate() {
 
-										   	var x = document.getElementById("stage").value;
-										   	if (var x =="stage") {
-										      	x.style.display = "block";
-										   	} 
-										 	}
-
-											function afficheDate(){
-												var z = document.getElementById("emploi").value;
-													if (var z =="emploi"){
-														z.style.display = "none";
-													}
-												}
-
-
+											  var x = document.getElementById("date");
+											  if (x.style.display === "none") {
+											      x.style.display = "block";
+											  } else {
+											      x.style.display = "none";
+											  }
+											}
 
 										  </script>
 
 											<div class="form-group gender">
 												<label class="radio-inline">
-													<input type="radio" name="prop" id="emploi" value="emploi" onclick="afficheDate()" checked="checked"required>Emploi</label>
+													<input type="radio" name="prop" id="emploi" value="emploi" onclick="cacherDate()" checked="checked"required>Emploi</label>
 												<label class="radio-inline">
 													<input type="radio" name="prop" id="stage" value="stage" onclick="cacherDate()" required>Stage</label>
 											</div>
