@@ -1,7 +1,8 @@
 <?php
 
 include 'bdd.inc.php';
-include 'activite_entreprise.php';
+/*include 'activite_entreprise.php';*/
+
 	/* ---------------------- */
 	/* DEBUT class Entreprise */
 	/* ---------------------- */
