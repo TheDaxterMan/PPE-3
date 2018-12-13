@@ -1,133 +1,190 @@
 <?php
 
-  /* ---------------------- */
-  /* DEBUT class Emploi */
-  /* ---------------------- */
-
-class emploi
-	{
-    /* ---------------------- */
-    /* class Emploi Variables */
-    /* ---------------------- */
-
-		Private $id_emploi;
-    Private $lib_emploi;
-    Private $desc_emploi;
-
-    /* ---------------------- */
-    /* class Emploi Constructeur */
-    /* ---------------------- */
-
-    Public function emploi ( $id_emp, $lib_emp, $desc_emp)
-    {
-      $this -> id_emploi = $id_emp;
-      $this -> lib_emploi = $lib_emp;
-      $this -> desc_emploi = $desc_emp;
-    }
-
-		/* ---------------------- */
-		/* fonction Emploi getalldata */
-		/* ---------------------- */
-
-		public function getallemploi()
-		{
-			$data = $this->$id_emp;
-			$data = $data.$this->$lib_emp;
-			$data = $data.$this->$desc_emp;
-			return $data;
-		}
-
-    /* ---------------------- */
-    /* class Emploi GET */
-    /* ---------------------- */
-
-    Public function get_id_emploi ()
-    {
-      return $this-> id_emploi;
-    }
-
-    Public function get_lib_emploi ()
-    {
-      return $this-> lib_emploi;
-    }
-
-    Public function get_desc_emploi ()
-    {
-      return $this-> desc_emploi;
-    }
-
-    /* ---------------------- */
-    /* class Emploi SET */
-    /* ---------------------- */
-
-    Public function set_lib_emploi ($lib_emp)
-    {
-       $this-> lib_emploi = $lib_emp;
-    }
-
-    Public function set__desc_emploi ($desc_emp)
-    {
-       $this-> desc_emploi = $desc_emp;
-    }
 
 	/* ---------------------- */
-	/* class Emploi fonctions publiques */
+	/* DEBUT class Stage */
 	/* ---------------------- */
-	Public function ajout_emploi_util ($objet, $conn)
-		{
-			$id_emp = $objet->get_id_emploi();
-			$lib_emp = $objet->get_lib_emploi();
-			$desc_emp = $objet->get_desc_emploi();
 
-			print $SQL = " INSERT INTO emploi values (NULL, '$lib_emp', '$desc_emp', NULL, '1')";
-			$Req = $conn -> query ($SQL) or die (' Erreur ajout emploi ');
-		}
+class stage
+ {
 
-		Public function ajout_emploi_ent ($objet, $conn)
+		/* ---------------------- */
+		/* class Stage Variables */
+		/* ---------------------- */
+
+		Private $id_stage;
+		Private $lib_stage;
+		Private $desc_stage;
+    Private $dated_stage;
+		Private $datef_stage;
+		Private $commentaire_stage;
+
+		/* ---------------------- */
+		/* class Stage Constructeur */
+		/* ---------------------- */
+
+			Public function stage ( $id_sta, $lib_sta, $desc_sta, $dated_sta, $datef_sta, $comm_sta)
 			{
-				$id_emp = $objet->get_id_emploi();
-				$lib_emp = $objet->get_lib_emploi();
-				$desc_emp = $objet->get_desc_emploi();
+				$this -> id_stage = $id_sta;
+				$this -> lib_stage = $lib_sta;
+				$this -> desc_stage = $desc_sta;
+        $this -> dated_stage = $dated_sta;
+				$this -> datef_stage = $datef_sta;
+				$this -> commentaire_stage = $comm_sta;
 
-				print $SQL = " INSERT INTO emploi values (NULL, '$lib_emp', '$desc_emp', '3', NULL)";
-				$Req = $conn -> query ($SQL) or die (' Erreur ajout emploi ');
 			}
 
-		Public function modif_emploi ($objet, $conn)
-		{
-			$id_emp = $objet->get_id_emploi();
-			$lib_emp = $objet->get_lib_emploi();
-			$desc_emp = $objet->get_desc_emploi();
+      /* ---------------------- */
+			/* fonction Stage getalldata */
+			/* ---------------------- */
 
-			print $SQL = "UPDATE emploi SET lib_emploi = '$lib_emp', desc_emploi = '$desc_emp',
-			WHERE id_emploi = '$id_emp'";
-			$Req = $conn -> query ($SQL) or die (' Erreur modification emploi ');
-		}
+			public function getallstage()
+			{
+				$data = $this->$id_sta;
+				$data = $data.$this->$lib_sta;
+				$data = $data.$this->$desc_sta;
+        $data = $data.$this->$dated_sta;
+				$data = $dataf.$this->$date_sta;
+				$data = $data.$this->$comm_sta;
+				return $data;
+			}
 
-		Public function affiche_emploi ($objet, $conn)
-		{
+			/* ---------------------- */
+			/* class Stage GET */
+			/* ---------------------- */
 
-			$id_emp = $objet->get_id_emploi();
-			$lib_emp = $objet->get_lib_emploi();
-			$desc_emp = $objet->get_desc_emploi();
+			Public function get_id_stage ()
+			{
+				return $this-> id_stage;
+			}
 
-			print $SQL = " SELECT *  From emploi WHERE id_emploi = '$id_emp'";
-			$Req = $conn -> query ($SQL) or die (' Erreur affichage emploi ');
-			Return $Res = $Req -> fetch ();
-		}
+			Public function get_lib_stage ()
+			{
+				return $this-> lib_stage;
+			}
 
-		Public function suppr_emploi ($objet, $conn)
-		{
-			$id_emp = $objet->get_id_emploi();
-			$lib_emp = $objet->get_lib_emploi();
-			$desc_emp = $objet->get_desc_emploi();
+			Public function get_desc_stage ()
+			{
+				return $this-> desc_stage;
+			}
 
-			print $SQL = " DELETE FROM emploi WHERE id_emploi = '$id_emp'";
-			$Req = $conn -> query ($SQL) or die (' Erreur suppression emploi ');
-		}
-}
-  /* ---------------------- */
-  /* FIN class Emploi */
-  /* ---------------------- */
+      Public function  get_dated_stage ()
+			{
+				return $this-> dated_stage;
+			}
+
+      Public function  get_datef_stage ()
+      {
+        return $this-> datef_stage;
+      }
+
+			Public function  get_commentaire_stage ()
+			{
+				return $this-> commentaire_stage;
+			}
+
+			/* ---------------------- */
+			/* class Stage SET */
+			/* ---------------------- */
+
+			Public function set_lib_stage ($lib_sta)
+			{
+				 $this-> lib_stage = $lib_sta;
+			}
+
+			Public function set_desc_stage ($desc_sta)
+			{
+				 $this-> desc_stage = $desc_sta;
+			}
+
+			Public function set_dated_stage ($dated_sta)
+			{
+				 $this-> dated_stage = $dated_sta;
+			}
+
+      Public function set_datef_stage ($datef_sta)
+      {
+         $this-> datef_stage = $datef_sta;
+      }
+
+			Public function set_commentaire_stage ($comm_sta)
+			{
+				 $this-> commentaire_stage = $comm_sta;
+			}
+      /* ---------------------- */
+      /* class Stage fonctions publiques */
+      /* ---------------------- */
+      Public function ajout_stage_util ($objet, $conn)
+				{
+					$id_sta = $objet->get_id_stage();
+					$lib_sta = $objet->get_lib_stage();
+					$desc_sta = $objet->get_desc_stage();
+          $dated_sta = $objet->get_dated_stage();
+					$datef_sta = $objet->get_datef_stage();
+					$comm_sta = $objet->get_commentaire_stage();
+
+					print $SQL = " INSERT INTO stage values (NULL, '$lib_sta', '$desc_sta', '$dated_sta', '$datef_sta', '$comm_sta', NULL, '1', '1')";
+					$Req = $conn -> query ($SQL) or die (' Erreur ajout stage ');
+				}
+
+        Public function ajout_stage_ent ($objet, $conn)
+    				{
+    					$id_sta = $objet->get_id_stage();
+    					$lib_sta = $objet->get_lib_stage();
+    					$desc_sta = $objet->get_desc_stage();
+              $dated_sta = $objet->get_dated_stage();
+    					$datef_sta = $objet->get_datef_stage();
+    					$comm_sta = $objet->get_commentaire_stage();
+
+    					print $SQL = " INSERT INTO stage values (NULL, '$lib_sta', '$desc_sta', '$dated_sta', '$datef_sta', '$comm_sta', '3', NULL, '1')";
+    					$Req = $conn -> query ($SQL) or die (' Erreur ajout stage ');
+    				}
+
+				Public function modif_stage ($objet, $conn)
+				{
+          $id_sta = $objet->get_id_stage();
+					$lib_sta = $objet->get_lib_stage();
+					$desc_sta = $objet->get_desc_stage();
+          $dated_sta = $objet->get_dated_stage();
+					$datef_sta = $objet->get_datef_stage();
+          $comm_sta = $objet->get_commentaire_stage();
+
+					print $SQL = "UPDATE stage SET lib_stage = '$lib_sta', desc_stage = '$desc_sta',
+					dated_stage = '$dated_sta', datef_stage = '$datef_sta', comm_stage = '$comm_sta' WHERE id_stage = '$id_sta'";
+				 	$Req = $conn -> query ($SQL) or die (' Erreur modification stage ');
+				}
+
+				Public function affiche_stage ($objet, $conn)
+				{
+
+          $id_sta = $objet->get_id_stage();
+					$lib_sta = $objet->get_lib_stage();
+					$desc_sta = $objet->get_desc_stage();
+          $dated_sta = $objet->get_dated_stage();
+					$datef_sta = $objet->get_datef_stage();
+          $comm_sta = $objet->get_commentaire_stage();
+
+					print $SQL = " SELECT *  From stage WHERE id_stage = '$id_sta'";
+					$Req = $conn -> query ($SQL) or die (' Erreur affichage stage ');
+					Return $Res = $Req -> fetch ();
+				}
+
+				Public function suppr_stage ($objet, $conn)
+				{
+          $id_sta = $objet->get_id_stage();
+          $lib_sta = $objet->get_lib_stage();
+          $desc_sta = $objet->get_desc_stage();
+          $dated_sta = $objet->get_dated_stage();
+          $datef_sta = $objet->get_datef_stage();
+          $comm_sta = $objet->get_commentaire_stage();
+
+					print $SQL = " DELETE FROM stage WHERE id_stage = '$id_sta'";
+          $Req = $conn -> query ($SQL) or die (' Erreur affichage stage ');
+				}
+ }
+
+	/* ---------------------- */
+	/* FIN class Stage */
+	/* ---------------------- */
 
 ?>
