@@ -29,7 +29,7 @@ class utilisateur
 		/* ---------------------- */
 
 			Public function utilisateur ( $id_util, $nom_util, $prenom_util, $tel_util, $email_util, $rue_util, $ville_util, $cp_util, $photo_util, $login_util, $mdp_util)
-			{
+			{ 
 				$this -> id_utilisateur = $id_util;
 				$this -> nom_utilisateur = $nom_util;
 				$this -> prenom_utilisateur = $prenom_util;
