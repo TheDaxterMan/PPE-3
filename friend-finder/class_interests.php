@@ -4,30 +4,33 @@
   /* DEBUT class Interet */
   /* ---------------------- */
 
-class interests
+class interet
 	{
     /* ---------------------- */
     /* class Interet Variables */
     /* ---------------------- */
 
 		Private $id_int;
-		Private $nom_int;
+		Private $lib_int;
+		Private $img_int;
 
     /* ---------------------- */
     /* class Interet Constructeur */
     /* ---------------------- */
 
 
-    Public function ( $id_int, $nom_int)
+    Public function ( $id_int, $lib_int, $img_int)
     {
-      $this -> id_interests = $id_int;
-      $this -> nom_interests = $nom_int;
+      $this -> id_interet = $id_int;
+			$this -> lib_interet = $lib_int;
+      $this -> img_interet = $img_int;
     }
 
 		public function getallint()
 		{
-			$data = $this->id_interests;
-			$data = $data.$this->nom_interests;
+			$data = $this->id_interet;
+			$data = $data.$this->lib_interet;
+			$data = $data.$this->$img_interet;
 			return $data;
 		}
 
@@ -35,63 +38,77 @@ class interests
     /* class Interet GET */
     /* ---------------------- */
 
-    Public function get_id_interests ()
+    Public function get_id_interet ()
     {
-      return $this-> id_interests;
+      return $this-> id_interet;
     }
 
-    Public function get_nom_interests ()
+    Public function get_lib_interet ()
     {
-      return $this-> nom_interests;
+      return $this-> lib_interet;
     }
+
+	  Public function get_img_interet ()
+		{
+		  return $this-> img_interet;
+		}
 
     /* ---------------------- */
     /* class Interet SET */
     /* ---------------------- */
 
-    Public function set_nom_interests ($nom_int)
+    Public function set_lib_interet ($lib_int)
     {
-       $this-> id_nom_interests = $nom_int;
+       $this-> lib_interet = $lib_int;
     }
+
+		Public function set_img_interet ($img_int)
+		{
+			 $this-> img_interet = $img_int;
+		}
 
 		/* ---------------------- */
  	 /* class Interet fonctions publiques */
  	 /* ---------------------- */
 
-	 Public function ajout_interests ($objet, $conn)
+	 Public function ajout_interet ($objet, $conn)
 		 {
-			 $id_int = $objet->get_id_interests();
-			 $nom_int = $objet->get_nom_interests();
+			 $id_int = $objet->get_id_interet();
+			 $lib_int = $objet->get_lib_interet();
+			 $img_int = $objet->get_img_interet();
 
-			 $SQL = " INSERT INTO interests values ('NULL', '$nom_int', '$conn')";
+			 $SQL = " INSERT INTO interet values ('NULL', '$lib_int', '$img_int', '$conn')";
 			 $conn -> query ($SQL);
 		 }
 
-		 Public function modif_interests ($objet, $conn)
+		 Public function modif_interet ($objet, $conn)
 		 {
-			 $id_int = $objet->get_id_interests();
-			 $nom_int = $objet->get_nom_interests();
+			 $id_int = $objet->get_id_interet();
+			 $lib_int = $objet->get_lib_interet();
+			 $img_int = $objet->get_img_interet();
 
-			 $SQL = "UPDATE interests SET id_interests = '$id_int', nom_interests = '$nom_int')";
+			 $SQL = "UPDATE interet SET id_interet = '$id_int', lib_interet = '$lib_int', img_interet = '$img_int')";
 			 $conn -> query ($SQL);
 		 }
 
-		 Public function affiche_interests ($objet, $conn)
+		 Public function affiche_interet ($objet, $conn)
 		 {
-			 $id_int = $objet->get_id_interests();
-		   $nom_int = $objet->get_nom_interests();
+			 $id_int = $objet->get_id_interet();
+			 $lib_int = $objet->get_lib_interet();
+		   $img_int = $objet->get_img_interet();
 
-			 $SQL = " SELECT * From interests WHERE id_interests = '$id_int'";
+			 $SQL = " SELECT * From interet WHERE id_interet = '$id_int'";
 			 $Req = $conn -> query ($SQL);
 			 Return $Res = $Req -> fetch ();
 		 }
 
-		 Public function suppr_interests ($objet, $conn)
+		 Public function suppr_interet ($objet, $conn)
 		 {
-			 $id_int = $objet->get_id_interests();
-		   $nom_int = $objet->get_nom_interests();
+			 $id_int = $objet->get_id_interet();
+			 $lib_int = $objet->get_lib_interet();
+		   $img_int = $objet->get_img_interet();
 
-			 $SQL = " DELETE FROM interests WHERE id_interests = '$id_int'";
+			 $SQL = " DELETE FROM interet WHERE id_interet = '$id_int'";
 			 $conn -> query ($SQL);
 		 }
 }
