@@ -58,7 +58,7 @@ class diplome
     Public function set_nom_diplome ($nom_dip)
     {
        $this-> id_nom_diplome = $nom_dip;
-    }
+    } 
 
     Public function set_lib_diplome ($lib_dip)
     {
