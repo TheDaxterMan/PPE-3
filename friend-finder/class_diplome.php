@@ -26,7 +26,7 @@ class diplome
     /* ---------------------- */
 
 
-    Public function ( $id_dip, $nom_dip, $lib_dip)
+    Public function diplome ( $id_dip, $nom_dip, $lib_dip)
     {
       $this -> id_diplome = $id_dip;
       $this -> nom_diplome = $nom_dip;
