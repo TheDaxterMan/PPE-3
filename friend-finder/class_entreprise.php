@@ -9,7 +9,7 @@ include 'bdd.inc.php';
 
 class entreprise
 {
-
+ 
 		/* ---------------------- */
 		/* class Entreprise Variables */
 		/* ---------------------- */
