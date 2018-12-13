@@ -1,8 +1,5 @@
 <?php
 
-include "class_entreprise.php";
-include "class_utilisateur.php";
-
   /* ---------------------- */
   /* DEBUT class Emploi */
   /* ---------------------- */
@@ -76,15 +73,25 @@ class emploi
 	/* ---------------------- */
 	/* class Emploi fonctions publiques */
 	/* ---------------------- */
-	Public function ajout_emploi ($objet, $conn)
+	Public function ajout_emploi_util ($objet, $conn)
 		{
 			$id_emp = $objet->get_id_emploi();
 			$lib_emp = $objet->get_lib_emploi();
 			$desc_emp = $objet->get_desc_emploi();
 
-			print $SQL = " INSERT INTO emploi values (NULL, '$lib_emp', '$desc_emp')";
+			print $SQL = " INSERT INTO emploi values (NULL, '$lib_emp', '$desc_emp', NULL, '1')";
 			$Req = $conn -> query ($SQL) or die (' Erreur ajout emploi ');
 		}
+
+		Public function ajout_emploi_ent ($objet, $conn)
+			{
+				$id_emp = $objet->get_id_emploi();
+				$lib_emp = $objet->get_lib_emploi();
+				$desc_emp = $objet->get_desc_emploi();
+
+				print $SQL = " INSERT INTO emploi values (NULL, '$lib_emp', '$desc_emp', '3', NULL)";
+				$Req = $conn -> query ($SQL) or die (' Erreur ajout emploi ');
+			}
 
 		Public function modif_emploi ($objet, $conn)
 		{
