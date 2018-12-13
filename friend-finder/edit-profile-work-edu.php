@@ -154,30 +154,20 @@
                   <form name="education" id="education" class="form-inline">
                     <div class="row">
                       <div class="form-group col-xs-12">
-                        <label for="school">Mon université</label>
-                        <input id="school" class="form-control input-group-lg" type="text" name="school" title="Entrez l'école" placeholder="Mon école" value="Harvard Unversity" />
+                        <label for="diplome">Mon diplôme</label>
+                        <input id="diplome" class="form-control input-group-lg" type="text" name="diplome" title="Entrez le diplôme" placeholder="Diplôme" value="" />
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-6">
-                        <label for="date-from">De</label>
-                        <input id="date-from" class="form-control input-group-lg" type="text" name="date" title="Entrez une date" placeholder="de" value="2012" />
-                      </div>
-                      <div class="form-group col-xs-6">
-                        <label for="date-to" class="">A</label>
-                        <input id="date-to" class="form-control input-group-lg" type="text" name="date" title="Entrez une date" placeholder="a" value="2016" />
+                        <label for="annee">Année d'obtention du diplôme</label>
+                        <input id="annee" class="form-control input-group-lg" type="number" min="1900" step="1" name="annee" title="Entrez une année" placeholder="Année d'obtention" value="" />
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-12">
                         <label for="edu-description">Description</label>
                         <textarea id="edu-description" name="description" class="form-control" placeholder="Racontez votre formation" rows="4" cols="400">Blablabla je raconte ma vie</textarea>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="form-group col-xs-12">
-                        <label for="graduate">Diplômé ? -</label>
-                        <input id="graduate" type="checkbox" name="graduate" value="graduate" checked> Oui!!
                       </div>
                     </div>
                     <button class="btn btn-primary">Sauvegarder les modifications</button>
