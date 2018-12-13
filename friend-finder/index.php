@@ -99,18 +99,18 @@
 												<input id="password2" class="form-control input-group-lg" type="password" name="mdp2" title="Confirmez votre mot de passe" placeholder="Confirmer Mot de passe" required/>
 											</div>
 										</div>
-										<div class="form-group gender">
+										<div class="form-group gender" id="domaine">
 											<label class="radio-inline">
-												<input type="radio" name="radio1" value="Elève">Elève
+												<input type="radio" name="radio1" onclick="cacherDomaine" value="Elève">Elève
 											</label>
 											<label class="radio-inline">
-												<input type="radio" name="radio1" value="Entreprise">Entreprise
+												<input type="radio" name="radio1" onclick="cacherDomaine" value="Entreprise">Entreprise
 											</label>
 										</div>
-										<div class="row">
+										<div class="row" id="domaine">
                       <div>
-                        <select class="form-control" id="entreprise" name="entreprise">
-													<option value="entreprise" disabled selected>Domaine d'activitée</option>
+                        <select class="form-control" name="entreprise">
+													<option value="entreprise" type="domaine" onclick="cacherDomaine" disabled selected>Domaine d'activité</option>
 													<?php
 
 
@@ -119,7 +119,7 @@
 
 													function cacherDomaine() {
 
-													  var x = document.getElementById("Elève");
+													  var x = document.getElementById("domaine");
 													  if (x.style.display === "none") {
 													      x.style.display = "block";
 													  } else {
@@ -167,10 +167,10 @@
                       </div>
                     </div>
 										<div class="form-group gender">
-											<label class="radio-inline">
+											<label class="radio-inline" id="date">
 												<input type="radio" name="radio" value="Elève" required>Elève
 											</label>
-											<label class="radio-inline">
+											<label class="radio-inline" id="date">
 												<input type="radio" name="radio" value="Entreprise" required>Entreprise
 											</label>
 										</div>

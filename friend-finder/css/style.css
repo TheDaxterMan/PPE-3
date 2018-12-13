@@ -2090,7 +2090,7 @@ input:checked + .slider:before{
   padding: 10px 30px;
   border-radius: 100px;
   height: 45px;
-  border: 2px solid #27aae1;
+  border: 2px solid #777;
 }
 
 .faq .page-search .search-form button.btn-primary{
@@ -2156,19 +2156,23 @@ input:checked + .slider:before{
 }
 
 .faq-cat-list.nav-tabs>li:nth-child(1)>a{
-  background: #40ccf2;
+  background: #ff353c;
+  border: 1px solid #111;
 }
 
 .faq-cat-list.nav-tabs>li:nth-child(2)>a{
-  background: #39bcea;
+  background: #ff353c;
+  border: 1px solid #111;
 }
 
 .faq-cat-list.nav-tabs>li:nth-child(3)>a{
-  background: #29abe2;
+  background: #ff353c;
+  border: 1px solid #111;
 }
 
 .faq-cat-list.nav-tabs>li:nth-child(4)>a{
-  background: #1ea2d1;
+  background: #ff353c;
+  border: 1px solid #111;
 }
 
 .faq-cat-list.nav-tabs>li>a>i{
