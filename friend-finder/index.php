@@ -117,6 +117,8 @@
 													?>
 													<script>
 
+													/* fonction qui permet d'afficher/cacher les élements d'un bouton radio */
+
 													function cacherDomaine() {
 
 													  var x = document.getElementById("domaine");

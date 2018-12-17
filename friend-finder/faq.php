@@ -167,7 +167,7 @@
               <!-- FAQ Category Content : Account -->
               <div class="tab-pane" id="faq_cat_2">
                 <div class="faq-headline">
-                	<h3 class="item-title grey"><i class="icon ion-ios-person"></i>Account</h3>
+                	<h3 class="item-title grey"><i class="icon ion-ios-person"></i>Compte</h3>
                 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
                 </div>
                 <div class="panel-group" id="faqAccordion-2">
@@ -242,7 +242,7 @@
               <!-- FAQ Category Content : Other -->
               <div class="tab-pane" id="faq_cat_4">
                 <div class="faq-headline">
-                	<h3 class="item-title grey"><i class="icon ion-ios-plus-outline"></i>Other FAQ</h3>
+                	<h3 class="item-title grey"><i class="icon ion-ios-plus-outline"></i>Autre FAQ</h3>
                 	<p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod</p>
                 </div>
                 <div class="panel-group" id="faqAccordion-4">
@@ -265,14 +265,14 @@
         	<div class="col-sm-3">
             <div class="faq_contact">
               <div class="faq-headline">
-                <h3 class="item-title grey"><i class="icon ion-ios-help-outline"></i>Still Confused?</h3>
-                <p>Contact us if you still have any question.</p>
+                <h3 class="item-title grey"><i class="icon ion-ios-help-outline"></i>Perdu ?</h3>
+                <p>Contactez-nous si vous avez la moindre question.</p>
               </div>
               <div class="reach-out">
-                <div class="method by-forum"><a href="#"><i class="icon ion-chatboxes"></i>Ask in Forum</a></div>
-                <div class="method by-ticket"><a href="#"><i class="icon ion-help-circled"></i>Send Ticket</a></div>
-                <div class="method by-email"><a href="#"><i class="icon ion-email"></i>Email us</a></div>
-                <div class="method by-phone"><a href="#"><i class="icon ion-android-call"></i>Call us</a></div>
+                <div class="method by-forum"><a href="#"><i class="icon ion-chatboxes"></i>Demande sur le forum</a></div>
+                <div class="method by-ticket"><a href="#"><i class="icon ion-help-circled"></i>Envoyer un ticket</a></div>
+                <div class="method by-email"><a href="#"><i class="icon ion-email"></i>Contact par mail</a></div>
+                <div class="method by-phone"><a href="#"><i class="icon ion-android-call"></i>Appeler nous</a></div>
               </div>
             </div>
           </div>
