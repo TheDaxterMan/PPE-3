@@ -40,6 +40,21 @@
           </li>
 
           <li class="dropdown"><a href="contact.php">Contact</a></li>
+          <?php
+          if ($_SESSION['id']==1)
+          {
+            ?>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle pages" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span><img src="images/down-arrow.png" alt="" /></span></a>
+              <ul class="dropdown-menu page-list">
+                <li><a href="modif_diplome.php">Modif Diplôme</a></li>
+                <li><a href="modif_filière.php">Modif Filières</a></li>
+                <li><a href="modif_interet.php">Modif Centres d'intêrets</a></li>
+              </ul>
+            </li>
+            <?php
+          }
+          ?>
 
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">

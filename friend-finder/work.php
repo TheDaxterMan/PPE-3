@@ -10,4 +10,5 @@ include "bdd.inc.php";
   $req=$conn->prepare($sql)or die($conn->errorInfo());
   $req -> execute();
   $res=$req->fetch();
+  header('Location: ./edit-profile-work-edu.php');
 ?>

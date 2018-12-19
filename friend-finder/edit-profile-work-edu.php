@@ -195,32 +195,30 @@
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-12">
-                        <label for="designation">Activité</label>
-                        <input id="designation" class="form-control input-group-lg" type="text" name="activite" title="Enter activite" placeholder="Activité" />
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="form-group col-xs-6">
-                        <label for="from-date">De</label>
-                        <input id="from-date" class="form-control input-group-lg" type="text" name="date" title="Entrez une date" placeholder="de" />
-                      </div>
-                      <div class="form-group col-xs-6">
-                        <label for="to-date" class="">A</label>
-                        <input id="to-date" class="form-control input-group-lg" type="text" name="date" title="Entrez une date" placeholder="a" />
+                        <label for="lib">Libellé</label>
+                        <input id="lib" class="form-control input-group-lg" type="text" name="lib" title="Entrez le libellé" placeholder="Libellé" />
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-12">
-                        <label for="work-city">Ville</label>
-                        <input id="work-city" class="form-control input-group-lg" type="text" name="city" title="Entrez une ville" placeholder="Ville"/>
+                        <label for="desc">Description</label>
+                        <input id="desc" class="form-control input-group-lg" type="text" name="desc" title="Entrez une description" placeholder="Description" />
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="form-group col-xs-12">
-                        <label for="work-description">Description</label>
-                        <textarea id="work-description" name="description" class="form-control" placeholder="Décrire votre travail" rows="4" cols="400">blabla mon travail</textarea>
-                      </div>
-                    </div>
+										<div class="form-group gender">
+											<label class="radio-inline">
+												<input type="radio" name="prop" id="emploi" value="emploi" onclick="cacherDate()" required>Emploi</label>
+											<label class="radio-inline">
+												<input type="radio" name="prop" id="stage" value="stage" onclick="cacherDate()" required>Stage</label>
+										</div>
+										<div class="date" id="date">
+											<div class="form-group col-xs-6">Date début</label>
+												<input id="date1" class="form-control input-group-lg" type="date" name="dated" title="Date début stage" placeholder="Date début stage"/>
+											</div>
+											<div class="form-group col-xs-6">Date fin</label>
+												<input id="date2" class="form-control input-group-lg" type="date" name="datef" title="Date fin stage" placeholder="Date fin stage"/>
+											</div>
+										</div>
                     <button class="btn btn-primary">Enregistrer</button>
                   </form>
                 </div>
