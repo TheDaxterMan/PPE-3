@@ -11,5 +11,5 @@ $sql="INSERT INTO interesse
 $req = $conn -> query($sql)or die($conn->errorInfo());
 $res = $req->fetch();
 
-header('Refresh: 1; URL=./edit-profile-interests.php');
+/* header('Refresh: 1; URL=./edit-profile-interests.php'); */
 ?>

@@ -149,7 +149,7 @@
                 <div class="block-title">
                   <h4 class="grey"><i class="icon ion-ios-heart-outline"></i>Centres d'intérêts</h4>
                   <div class="line"></div>
-                  <p>blabla écrire un truc ici</p>
+                  <p>Vous pouvez ajouter ou supprimer vos centres d'intérêts sur cette page.</p>
                   <div class="line"></div>
                 </div>
                 <div class="edit-block">
