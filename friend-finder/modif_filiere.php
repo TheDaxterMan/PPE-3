@@ -115,61 +115,49 @@
               ================================================= -->
               <div class="edit-profile-container">
                 <div class="block-title">
-                  <h4 class="grey"><i class="icon ion-ios-book-outline"></i>Ajout diplômes</h4>
+                  <h4 class="grey"><i class="icon ion-ios-book-outline"></i>Ajouter filières</h4>
                   <div class="line"></div>
-                  <p>Ajouter un diplôme</p>
+                  <p>Ajouter une filière</p>
                   <div class="line"></div>
                 </div>
                 <div class="edit-block">
-                  <form action="ajout_modif_diplome.php" method="post" class="form-inline">
+                  <form action="ajout_modif_filiere.php" method="post" class="form-inline">
                     <div class="row">
                       <div class="form-group col-xs-12">
-                        <label for="diplome">Diplôme</label>
-												<input type="text" class="form-control input-group-lg" id="diplome" name="diplome" placeholder="Nom du diplôme">
+                        <label for="filiere">Nom de la filière</label>
+												<input type="text" class="form-control input-group-lg" id="filiere" name="filiere" placeholder="Nom de la filière">
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="form-group col-xs-12">
-                        <label for="lib">Libellé du diplôme</label>
-												<textarea id="lib" class="form-control input-group-lg" name="lib" title="Entrez un libellé" placeholder="Libellé du diplôme" rows="8" cols="80"></textarea>
-                      </div>
-                    </div>
-										<input type="submit" class="btn btn-primary" name="enregistrerd" value="Enregistrer">
+										<input type="submit" class="btn btn-primary" name="enregistrerf" value="Enregistrer">
                   </form>
                 </div>
 
 								<?php
 								if (isset($_POST['modif']))
 								{
-									$id_diplome=$_POST['choix_diplome'];
+									$id_filiere=$_POST['choix_filiere'];
 
-									$sql="SELECT * FROM diplome WHERE id_diplome='$id_diplome'";
+									$sql="SELECT * FROM filiere WHERE id_filiere='$id_filiere'";
 									$req = $conn -> prepare($sql)or die($conn->errorInfo());
 									$req -> execute();
 									$res=$req->fetch();
 								?>
 								<div class="block-title">
-									<h4 class="grey"><i class="icon ion-ios-book-outline"></i>Modifier diplômes</h4>
+									<h4 class="grey"><i class="icon ion-ios-book-outline"></i>Modifier filières</h4>
 									<div class="line"></div>
-									<p>Modifier un diplôme</p>
+									<p>Modifier une filière</p>
 									<div class="line"></div>
 								</div>
 								<div class="edit-block">
-									<form action="ajout_modif_diplome.php" method="post" class="form-inline">
+									<form action="ajout_modif_filiere.php" method="post" class="form-inline">
 										<div class="row">
 											<div class="form-group col-xs-12">
-												<label for="diplome">Diplôme</label>
-												<input type="text" class="form-control input-group-lg" id="diplome" name="nom_diplome" placeholder="Nom du diplôme"  value="<?php echo $res['nom_diplome'] ?>">
+												<label for="lib_filiere">Filière</label>
+												<input type="text" class="form-control input-group-lg" id="lib_filiere" name="lib_filiere" placeholder="Nom de la filière"  value="<?php echo $res['lib_filiere'] ?>">
 											</div>
 										</div>
-										<div class="row">
-											<div class="form-group col-xs-12">
-												<label for="lib">Libellé du diplôme</label>
-												<textarea id="lib" class="form-control input-group-lg" name="lib_diplome" title="Entrez un libellé" placeholder="Libellé du diplôme" rows="8" cols="80"><?php echo $res['lib_diplome'] ?></textarea>
-											</div>
-										</div>
-										<input type="hidden" name="id_diplome" value="<?php echo $id_diplome ?>">
-										<input type="submit" class="btn btn-primary" name="modifierd" value="Enregistrer">
+										<input type="hidden" name="id_filiere" value="<?php echo $id_filiere ?>">
+										<input type="submit" class="btn btn-primary" name="modifierf" value="Enregistrer">
 									</form>
 								</div>
 								<?php
@@ -178,25 +166,25 @@
 								{
 								?>
 								<div class="block-title">
-									<h4 class="grey"><i class="icon ion-ios-book-outline"></i>Modifier diplômes</h4>
+									<h4 class="grey"><i class="icon ion-ios-book-outline"></i>Modifier filières</h4>
 									<div class="line"></div>
-									<p>Modifier/Supprimer un diplôme</p>
+									<p>Modifier/Supprimer une filière</p>
 									<div class="line"></div>
 								</div>
 								<div class="edit-block">
-									<form action="modif_diplome.php" method="post" class="form-inline">
+									<form action="modif_filiere.php" method="post" class="form-inline">
 										<div class="row">
 											<div class="form-group col-xs-12">
-												<label>Choisir le diplôme</label>
-												<select class="form-control input-group-lg" id="diplome" name="choix_diplome">
-													<option value="diplome" disabled selected>Choisir un diplôme</option>
+												<label>Choisir la filière</label>
+												<select class="form-control input-group-lg" id="filiere" name="choix_filiere">
+													<option value="filiere" disabled selected>Choisir une filière</option>
 													<?php
-													$sql="SELECT * FROM diplome";
+													$sql="SELECT * FROM filiere";
 													$req = $conn -> query($sql)or die($conn->errorInfo());
 													while ($res=$req->fetch())
 													{
 													?>
-														<option value="<?php echo $res['id_diplome'] ?>"><?php echo $res['nom_diplome']?></option>
+														<option value="<?php echo $res['id_filiere'] ?>"><?php echo $res['lib_filiere']?></option>
 													<?php
 													}
 													?>
