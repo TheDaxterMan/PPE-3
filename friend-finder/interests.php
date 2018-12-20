@@ -1,12 +1,15 @@
-
 <?php
+session_start();
+include "bdd.inc.php";
 
-$nom_int=$_POST['interet'];
 
-$uninterests = new interests (NULL, $nom_int);
+$id_int=$_POST['interet'];
+$id_utilisateur=$_SESSION['id'];
+$sql="INSERT INTO interesse
+      VALUES ('$id_int', '$id_utilisateur')";
 
-$uninterests -> ajout_interets($uninterests, $conn);
+$req = $conn -> query($sql)or die($conn->errorInfo());
+$res = $req->fetch();
 
-var_dump($uninterests);
-
+header('Refresh: 1; URL=./edit-profile-interests.php');
 ?>

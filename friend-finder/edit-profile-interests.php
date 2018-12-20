@@ -163,7 +163,7 @@
                   <div class="line"></div>
                   <div class="row">
                     <p class="custom-label"><strong>Ajouter des intérêts</strong></p>
-										<form class="" action="#" method="post">
+										<form class="" action="interests.php" method="post">
 											<div class="form-group col-sm-8">
 												<select class="form-control input-group-lg" id="interet" name="interet">
 													<option value="interet" disabled selected>Choisir un intérêt</option>

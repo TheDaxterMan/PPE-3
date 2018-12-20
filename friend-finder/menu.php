@@ -47,9 +47,9 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle pages" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span><img src="images/down-arrow.png" alt="" /></span></a>
               <ul class="dropdown-menu page-list">
-                <li><a href="modif_diplome.php">Modif Diplôme</a></li>
-                <li><a href="modif_filière.php">Modif Filières</a></li>
-                <li><a href="modif_interet.php">Modif Centres d'intêrets</a></li>
+                <li><a href="modif_diplome.php">Modification Diplôme</a></li>
+                <li><a href="modif_filiere.php">Modification Filières</a></li>
+                <li><a href="modif_interet.php">Modification Centres d'intêrets</a></li>
               </ul>
             </li>
             <?php
