@@ -172,7 +172,7 @@
 										</div>
 										<div class="row">
 											<ul class="list-inline interests">
-		                  	<li><a href="#"><i class="icon ion-<?php echo $img; ?>"></i><?php echo $res['lib_interet']; ?></a></li>
+		                  	<li><a href="#"><i class="icon <?php echo $img; ?>"></i><?php echo $res['lib_interet']; ?></a></li>
 		                  </ul>
 										</div>
 										<input type="hidden" name="id_interet" value="<?php echo $id_interet ?>">

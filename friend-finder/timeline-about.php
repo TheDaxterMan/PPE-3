@@ -4,6 +4,7 @@
 	include "bdd.inc.php";
 	include "login.inc.php";
 	include "info.php";
+	include "exp_pro.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -122,10 +123,18 @@
                 <div class="about-content-block">
                   <h4 class="grey"><i class="ion-ios-briefcase-outline icon-in-title"></i>Experience professionnelle</h4>
                   <div class="organization">
-                    <img src="images/envato.png" alt="" class="pull-left img-org" />
+                    <img src="images/users/entreprise/user-<?php echo $entreprise?>.jpg" alt="" class="pull-left img-org" />
                     <div class="work-info">
-                      <h5>Envato</h5>
-                      <p>Seller - <span class="text-grey">1 February 2013 to present</span></p>
+                      <h5><?php echo $lib ?></h5>
+                      <p><?php echo $desc ?> - <span class="text-grey">Le <?php echo $date; ?></span></p>
+                    </div>
+                  </div>
+									<h4 class="grey"><i class="ion-ios-briefcase-outline icon-in-title"></i>Stages</h4>
+									<div class="organization">
+                    <img src="images/users/entreprise/user-<?php echo $entreprise?>.jpg" alt="" class="pull-left img-org" />
+                    <div class="work-info">
+                      <h5><?php echo $libs ?></h5>
+                      <p><?php echo $descs ?> - <span class="text-grey">Du <?php echo $dated ?> au <?php echo $datef ?></span></p>
                     </div>
                   </div>
                 </div>
@@ -136,9 +145,6 @@
 							<div class="about-content-block">
 								<h4 class="grey"><i class="ion-ios-location-outline icon-in-title"></i>Adresse</h4>
 								<p><?php echo $rue,' ',$cp,' ',$ville ?></p>
-								<div class="google-maps">
-									<div id="map" class="map"></div>
-								</div>
 							</div>
 							<?php
 							}
