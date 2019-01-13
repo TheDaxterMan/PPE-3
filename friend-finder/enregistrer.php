@@ -3,6 +3,8 @@ include "bdd.inc.php";
 include "class_utilisateur.php";
 include "class_entreprise.php";
 
+/* initialisation des champs */
+
   $prenom=$_POST['prenom'];
   $nom=$_POST['nom'];
   $email=$_POST['email'];
@@ -12,10 +14,13 @@ include "class_entreprise.php";
   $radio=$_POST['radio1'];
 
 
+
   if ($radio=="Entreprise")
   {
     $act=$_POST['entreprise'];
   }
+
+/* vérifie que les mots de passes sont bien les mêmes lors de l'inscription */
 
 if ($mdp!=$mdp2)
 {
@@ -26,6 +31,7 @@ if ($mdp!=$mdp2)
 }
 else
 {
+  /* si les MDP sont équivalents -> on crée un objet utilisateur avec les champs du formulaire d'inscription */
   if ($mdp==$mdp2)
   {
     if ($radio=="Elève")
@@ -45,7 +51,7 @@ else
     }
     else
     {
-
+      /* permet la création d'un objet entreprise */
       if ($radio=="Entreprise")
       {
         if ($act=="entreprise")

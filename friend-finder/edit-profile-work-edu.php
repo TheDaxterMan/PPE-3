@@ -75,13 +75,13 @@
               </div>
               <div class="col-md-9">
                 <ul class="list-inline profile-menu">
-                  <li><a href="timeline.php">Publications</a></li>
+                  <li><a href="timeline.php">Chronologie</a></li>
                   <li><a href="timeline-about.php" class="active">A propos</a></li>
                   <li><a href="timeline-album.php">Album</a></li>
                   <li><a href="timeline-friends.php">Amis</a></li>
                 </ul>
                 <ul class="follow-me list-inline">
-                  <li>1,299 pecnots la suivent</li>
+                  <li>1,299 pecnots</li>
                   <li><button class="btn-primary">Ajouter en ami</button></li>
                 </ul>
               </div>
@@ -91,7 +91,26 @@
           <!--Timeline Menu for Small Screens-->
           <div class="navbar-mobile hidden-lg hidden-md">
             <div class="profile-info">
-              <img src="images/users/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="img-responsive profile-photo" />
+							<?php
+							///////////////////////////////////////////////////////////////////////////////
+							/*									        	E L E V E																			 */
+							///////////////////////////////////////////////////////////////////////////////
+									if ($_SESSION['profil']=="eleve")
+									{
+									?>
+										<img src="images/users/utilisateur/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="img-responsive profile-photo" />
+									<?php
+									}
+							///////////////////////////////////////////////////////////////////////////////
+							/*												E N T R E P R I S E																*/
+							///////////////////////////////////////////////////////////////////////////////
+									if ($_SESSION['profil']=="entreprise")
+									{
+									?>
+										<img src="images/users/entreprise/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="img-responsive profile-photo" />
+									<?php
+									}
+							?>
               <h4>Sarah Cruiz</h4>
               <p class="text-muted">Creative Director</p>
             </div>
@@ -126,42 +145,38 @@
               ================================================= -->
               <div class="edit-profile-container">
                 <div class="block-title">
-                  <h4 class="grey"><i class="icon ion-ios-book-outline"></i>Mon éducation</h4>
+                  <h4 class="grey"><i class="icon ion-ios-book-outline"></i>Mes diplômes</h4>
                   <div class="line"></div>
-                  <p>blabla blabla mettre un truc ici</p>
+                  <p>Ajouter, modifier ou supprimer un diplôme</p>
                   <div class="line"></div>
                 </div>
                 <div class="edit-block">
-                  <form name="education" id="education" class="form-inline">
+                  <form action="work.php" method="post" class="form-inline">
                     <div class="row">
                       <div class="form-group col-xs-12">
-                        <label for="school">Mon université</label>
-                        <input id="school" class="form-control input-group-lg" type="text" name="school" title="Entrez l'école" placeholder="Mon école" value="Harvard Unversity" />
+                        <label>Mon diplôme</label>
+												<select class="form-control input-group-lg" id="diplome" name="diplome">
+													<option value="diplome" disabled selected>Choisir un diplôme</option>
+													<?php
+													$sql="SELECT * FROM diplome";
+													$req = $conn -> query($sql)or die($conn->errorInfo());
+													while ($res=$req->fetch())
+													{
+													?>
+														<option value="<?php echo $res['id_diplome'] ?>"><?php echo $res['nom_diplome']?></option>
+													<?php
+													}
+													?>
+												</select>
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-6">
-                        <label for="date-from">De</label>
-                        <input id="date-from" class="form-control input-group-lg" type="text" name="date" title="Entrez une date" placeholder="de" value="2012" />
-                      </div>
-                      <div class="form-group col-xs-6">
-                        <label for="date-to" class="">A</label>
-                        <input id="date-to" class="form-control input-group-lg" type="text" name="date" title="Entrez une date" placeholder="a" value="2016" />
+                        <label for="annee">Année d'obtention du diplôme</label>
+                        <input id="annee" class="form-control input-group-lg" type="number" min="1900" step="1" name="annee" title="Entrez une année" placeholder="Année d'obtention" />
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="form-group col-xs-12">
-                        <label for="edu-description">Description</label>
-                        <textarea id="edu-description" name="description" class="form-control" placeholder="Racontez votre formation" rows="4" cols="400">Blablabla je raconte ma vie</textarea>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="form-group col-xs-12">
-                        <label for="graduate">Diplômé ? -</label>
-                        <input id="graduate" type="checkbox" name="graduate" value="graduate" checked> Oui!!
-                      </div>
-                    </div>
-                    <button class="btn btn-primary">Sauvegarder les modifications</button>
+										<input type="submit" class="btn btn-primary" name="enregistrerd" value="Enregistrer">
                   </form>
                 </div>
                 <div class="block-title">
@@ -175,38 +190,36 @@
                     <div class="row">
                       <div class="form-group col-xs-12">
                         <label for="company">Entreprise</label>
-                        <input id="company" class="form-control input-group-lg" type="text" name="company" title="Entrez une entreprise" placeholder="Nom de l'entreprise" value="Envato Inc" />
+                        <input id="company" class="form-control input-group-lg" type="text" name="company" title="Entrez une entreprise" placeholder="Nom de l'entreprise" />
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-12">
-                        <label for="designation">Designation</label>
-                        <input id="designation" class="form-control input-group-lg" type="text" name="designation" title="Enter designation" placeholder="designation name" value="Exclusive Author" />
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="form-group col-xs-6">
-                        <label for="from-date">De</label>
-                        <input id="from-date" class="form-control input-group-lg" type="text" name="date" title="Entrez une date" placeholder="de" value="2016" />
-                      </div>
-                      <div class="form-group col-xs-6">
-                        <label for="to-date" class="">A</label>
-                        <input id="to-date" class="form-control input-group-lg" type="text" name="date" title="Entrez une date" placeholder="a" value="Present" />
+                        <label for="lib">Libellé</label>
+                        <input id="lib" class="form-control input-group-lg" type="text" name="lib" title="Entrez le libellé" placeholder="Libellé" />
                       </div>
                     </div>
                     <div class="row">
                       <div class="form-group col-xs-12">
-                        <label for="work-city">Ville</label>
-                        <input id="work-city" class="form-control input-group-lg" type="text" name="city" title="Entrez une ville" placeholder="Ville" value="Melbourne"/>
+                        <label for="desc">Description</label>
+                        <input id="desc" class="form-control input-group-lg" type="text" name="desc" title="Entrez une description" placeholder="Description" />
                       </div>
                     </div>
-                    <div class="row">
-                      <div class="form-group col-xs-12">
-                        <label for="work-description">Description</label>
-                        <textarea id="work-description" name="description" class="form-control" placeholder="Décrire votre travail" rows="4" cols="400">blabla mon travail</textarea>
-                      </div>
-                    </div>
-                    <button class="btn btn-primary">Sauvegarder les changements</button>
+										<div class="form-group gender">
+											<label class="radio-inline">
+												<input type="radio" name="prop" id="emploi" value="emploi" onclick="cacherDate()" required>Emploi</label>
+											<label class="radio-inline">
+												<input type="radio" name="prop" id="stage" value="stage" onclick="cacherDate()" required>Stage</label>
+										</div>
+										<div class="date" id="date">
+											<div class="form-group col-xs-6">Date début</label>
+												<input id="date1" class="form-control input-group-lg" type="date" name="dated" title="Date début stage" placeholder="Date début stage"/>
+											</div>
+											<div class="form-group col-xs-6">Date fin</label>
+												<input id="date2" class="form-control input-group-lg" type="date" name="datef" title="Date fin stage" placeholder="Date fin stage"/>
+											</div>
+										</div>
+                    <button class="btn btn-primary">Enregistrer</button>
                   </form>
                 </div>
               </div>

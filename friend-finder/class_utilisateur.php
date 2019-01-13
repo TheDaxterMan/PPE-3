@@ -29,7 +29,7 @@ class utilisateur
 		/* ---------------------- */
 
 			Public function utilisateur ( $id_util, $nom_util, $prenom_util, $tel_util, $email_util, $rue_util, $ville_util, $cp_util, $photo_util, $login_util, $mdp_util)
-			{
+			{ 
 				$this -> id_utilisateur = $id_util;
 				$this -> nom_utilisateur = $nom_util;
 				$this -> prenom_utilisateur = $prenom_util;
@@ -126,11 +126,6 @@ class utilisateur
 			/* class Utilisateur SET */
 			/* ---------------------- */
 
-			Public function set_id_utilisateur ($id_util)
-			{
-				 $this-> id_utilisateur = $id_util;
-			}
-
 			Public function set_nom_utilisateur ($nom_util)
 			{
 				 $this-> nom_utilisateur = $nom_util;
@@ -221,7 +216,7 @@ class utilisateur
 				 	$Req = $conn -> query ($SQL) or die (' Erreur modification utilisateur ');
 				}
 
-				Public function affiche_utilisateur ($objet, $conn)
+				Public function affiche_utilisateur_total($objet, $conn)
 				{
 
 					$id_util = $objet->get_id_utilisateur();
@@ -238,6 +233,45 @@ class utilisateur
 					print $SQL = " SELECT *  From utilisateur WHERE id_utilisateur = '$id_util'";
 					$Req = $conn -> query ($SQL) or die (' Erreur affichage utilisateur ');
 					Return $Res = $Req -> fetch ();
+
+				}
+
+					Public function affiche_utilisateur_basic_info($objet, $conn)
+					{
+
+						$id_util = $objet->get_id_utilisateur();
+						$nom_util = $objet->get_nom_utilisateur();
+						$prenom_util = $objet->get_prenom_utilisateur();
+						$tel_util = $objet->get_tel_utilisateur();
+						$email_util = $objet->get_email_utilisateur();
+						$rue_util = $objet->get_rue_utilisateur();
+						$ville_util = $objet->get_ville_utilisateur();
+						$cp_util = $objet->get_cp_utilisateur();
+						$login_util = $objet->get_login_utilisateur();
+						$mdp_util = $objet->get_mdp_utilisateur();
+
+						print $SQL = " SELECT *  From utilisateur WHERE id_utilisateur = '$id_util'";
+						$Req = $conn -> query ($SQL) or die (' Erreur affichage utilisateur ');
+						Return $Res = $Req -> fetch ();
+					}
+
+					Public function affiche_utilisateur_diplome($objet, $conn)
+					{
+
+						$id_util = $objet->get_id_utilisateur();
+						$nom_util = $objet->get_nom_utilisateur();
+						$prenom_util = $objet->get_prenom_utilisateur();
+						$tel_util = $objet->get_tel_utilisateur();
+						$email_util = $objet->get_email_utilisateur();
+						$rue_util = $objet->get_rue_utilisateur();
+						$ville_util = $objet->get_ville_utilisateur();
+						$cp_util = $objet->get_cp_utilisateur();
+						$login_util = $objet->get_login_utilisateur();
+						$mdp_util = $objet->get_mdp_utilisateur();
+
+						print $SQL = " SELECT *  From utilisateur WHERE id_utilisateur = '$id_util'";
+						$Req = $conn -> query ($SQL) or die (' Erreur affichage utilisateur ');
+						Return $Res = $Req -> fetch ();
 				}
 
 				Public function suppr_utilisateur ($objet, $conn)
@@ -253,10 +287,16 @@ class utilisateur
 					$login_util = $objet->get_login_utilisateur();
 					$mdp_util = $objet->get_mdp_utilisateur();
 
-					print $SQL = " DELETE FROM `utilisateur` WHERE id_utilisateur ='$id_util'";
+					print $SQL = " DELETE FROM utilisateur WHERE id_utilisateur ='$id_util'";
 					$Req = $conn -> query ($SQL) or die (' Erreur suppression utilisateur ');
 				}
 
+		/*		Public function Possede ()
+				{
+
+						return $annee ->
+				}
+*/
 }
 	/* ---------------------- */
 	/* FIN class Utilisateur */

@@ -1,12 +1,15 @@
 <?php
 
+include 'bdd.inc.php';
+/*include 'activite_entreprise.php';*/
+
 	/* ---------------------- */
 	/* DEBUT class Entreprise */
 	/* ---------------------- */
 
 class entreprise
 {
-
+ 
 		/* ---------------------- */
 		/* class Entreprise Variables */
 		/* ---------------------- */
@@ -15,7 +18,7 @@ class entreprise
 		Private $nom_entreprise;
 		Private $nom_responsable;
 		Private $prenom_responsable;
-		Private $email_entreprise;
+		Private $mail_entreprise;
 		Private $rue_entreprise;
 		Private $ville_entreprise;
 		Private $cp_entreprise;
@@ -27,13 +30,13 @@ class entreprise
 		/* class Entreprise Constructeur */
 		/* ---------------------- */
 
-			Public function entreprise ( $id_ent, $nom_ent, $nom_resp, $prenom_resp, $email_ent, $rue_ent, $ville_ent, $cp_ent, $photo_ent, $login_ent, $mdp_ent)
+			Public function entreprise ( $id_ent, $nom_ent, $nom_resp, $prenom_resp, $mail_ent, $rue_ent, $ville_ent, $cp_ent, $photo_ent, $login_ent, $mdp_ent)
 			{
 				$this -> id_entreprise = $id_ent;
 				$this -> nom_entreprise = $nom_ent;
 				$this -> nom_responsable = $nom_resp;
 				$this -> prenom_responsable = $prenom_resp;
-				$this -> email_entreprise = $email_ent;
+				$this -> mail_entreprise = $mail_ent;
 				$this -> rue_entreprise = $rue_ent;
 				$this -> ville_entreprise = $ville_ent;
 				$this -> cp_entreprise = $cp_ent;
@@ -52,7 +55,7 @@ class entreprise
 				$data = $data.$this->$nom_entreprise;
 				$data = $data.$this->$nom_responsable;
 				$data = $data.$this->$prenom_responsable;
-				$data = $data.$this->$email_entreprise;
+				$data = $data.$this->$mail_entreprise;
 				$data = $data.$this->$rue_entreprise;
 				$data = $data.$this->$ville_entreprise;
 				$data = $data.$this->$cp_entreprise;
@@ -86,9 +89,9 @@ class entreprise
 				return $this-> prenom_responsable;
 			}
 
-			Public function  get_email_entreprise ()
+			Public function  get_mail_entreprise ()
 			{
-				return $this-> email_entreprise;
+				return $this-> mail_entreprise;
 			}
 
 			Public function  get_rue_entreprise ()
@@ -125,11 +128,6 @@ class entreprise
 			/* class Entreprise SET */
 			/* ---------------------- */
 
-			Public function set_id_entreprise ($id_ent)
-			{
-				 $this-> id_entreprise = $id_ent;
-			}
-
 			Public function set_nom_entreprise ($nom_ent)
 			{
 				 $this-> nom_entreprise = $nom_ent;
@@ -145,9 +143,9 @@ class entreprise
 				 $this-> prenom_responsable = $prenom_resp;
 			}
 
-			Public function set_email_entreprise ($email_ent)
+			Public function set_mail_entreprise ($mail_ent)
 			{
-				 $this-> email_entreprise = $email_ent;
+				 $this-> mail_entreprise = $mail_ent;
 			}
 
 			Public function set_rue_entreprise ($rue_ent)
@@ -189,7 +187,7 @@ class entreprise
 					$nom_ent = $objet->get_nom_entreprise();
 					$nom_resp = $objet->get_nom_responsable();
 					$prenom_resp = $objet->get_prenom_responsable();
-					$email_ent = $objet->get_email_entreprise();
+					$mail_ent = $objet->get_mail_entreprise();
 					$rue_ent = $objet->get_rue_entreprise();
 					$ville_ent = $objet->get_ville_entreprise();
 					$cp_ent = $objet->get_cp_entreprise();
@@ -197,7 +195,7 @@ class entreprise
 					$login_ent = $objet->get_login_entreprise();
 					$mdp_ent = $objet->get_mdp_entreprise();
 
-					print $SQL = " INSERT INTO entreprise values (NULL, '$nom_ent', '$nom_resp', '$prenom_resp', '$email_ent', '$rue_ent', '$ville_ent', '$cp_ent', '$photo_ent', '$login_ent', '$mdp_ent','1')";
+					print $SQL = " INSERT INTO entreprise values (NULL, '$nom_ent', '$nom_resp', '$prenom_resp', '$mail_ent', '$rue_ent', '$ville_ent', '$cp_ent', '$photo_ent', '$login_ent', '$mdp_ent','1')";
 					$Req = $conn -> query ($SQL) or die (' Erreur ajout entreprise ');
 				}
 
@@ -207,7 +205,7 @@ class entreprise
 					$nom_ent = $objet->get_nom_entreprise();
 					$nom_resp = $objet->get_nom_responsable();
 					$prenom_resp = $objet->get_prenom_responsable();
-					$email_ent = $objet->get_email_entreprise();
+					$mail_ent = $objet->get_mail_entreprise();
 					$rue_ent = $objet->get_rue_entreprise();
 					$ville_ent = $objet->get_ville_entreprise();
 					$cp_ent = $objet->get_cp_entreprise();
@@ -216,7 +214,7 @@ class entreprise
 					$mdp_ent = $objet->get_mdp_entreprise();
 
 					print $SQL = "UPDATE entreprise SET nom_entreprise = '$nom_ent', nom_responsable  = 'maxime',
-					prenom_responsable = '$prenom_resp', email_entreprise = '$email_ent', rue_entreprise = '$rue_ent', ville_entreprise = '$ville_ent',
+					prenom_responsable = '$prenom_resp', mail_entreprise = '$mail_ent', rue_entreprise = '$rue_ent', ville_entreprise = '$ville_ent',
 					cp_entreprise = '$cp_ent', photo_entreprise = '$photo_ent', mdp_entreprise = '$mdp_ent' WHERE id_entreprise = '$id_ent'";
 				 	$Req = $conn -> query ($SQL) or die (' Erreur modification entreprise ');
 				}
@@ -228,7 +226,7 @@ class entreprise
 					$nom_ent = $objet->get_nom_entreprise();
 					$nom_resp = $objet->get_nom_responsable();
 					$prenom_resp = $objet->get_prenom_responsable();
-					$email_ent = $objet->get_email_entreprise();
+					$mail_ent = $objet->get_mail_entreprise();
 					$rue_ent = $objet->get_rue_entreprise();
 					$ville_ent = $objet->get_ville_entreprise();
 					$cp_ent = $objet->get_cp_entreprise();
@@ -247,7 +245,7 @@ class entreprise
 					$nom_ent = $objet->get_nom_entreprise();
 					$nom_resp = $objet->get_nom_responsable();
 					$prenom_resp = $objet->get_prenom_responsable();
-					$email_ent = $objet->get_email_entreprise();
+					$mail_ent = $objet->get_mail_entreprise();
 					$rue_ent = $objet->get_rue_entreprise();
 					$ville_ent = $objet->get_ville_entreprise();
 					$cp_ent = $objet->get_cp_entreprise();
@@ -255,7 +253,7 @@ class entreprise
 					$login_ent = $objet->get_login_entreprise();
 					$mdp_ent = $objet->get_mdp_entreprise();
 
-					print $SQL = " DELETE FROM `entreprise` WHERE id_entreprise  = '$id_ent'";
+					print $SQL = " DELETE FROM entreprise WHERE id_entreprise  = '$id_ent'";
 					$Req = $conn -> query ($SQL) or die (' Erreur suppression entreprise ');
 				}
 

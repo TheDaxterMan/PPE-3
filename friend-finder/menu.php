@@ -33,20 +33,28 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle pages" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Toutes les Pages <span><img src="images/down-arrow.png" alt="" /></span></a>
             <ul class="dropdown-menu page-list">
-              <?php
-              if ($_SESSION['profil']=="entreprise")
-              {
-                ?>
-                <li><a href="stage.php">Création de stages/emplois</a></li>
-                <?php
-              }
-              ?>
+              <li><a href="stage.php">Création de stages/emplois</a></li>
               <li><a href="faq.php">FAQ Page</a></li>
               <li><a href="404.php">404 Not Found</a></li>
             </ul>
           </li>
 
           <li class="dropdown"><a href="contact.php">Contact</a></li>
+          <?php
+          if ($_SESSION['id']==1)
+          {
+            ?>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle pages" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span><img src="images/down-arrow.png" alt="" /></span></a>
+              <ul class="dropdown-menu page-list">
+                <li><a href="modif_diplome.php">Modification Diplôme</a></li>
+                <li><a href="modif_filiere.php">Modification Filières</a></li>
+                <li><a href="modif_interet.php">Modification Centres d'intêrets</a></li>
+              </ul>
+            </li>
+            <?php
+          }
+          ?>
 
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -87,7 +95,7 @@
         <form class="navbar-form navbar-right hidden-sm">
           <div class="form-group">
             <i class="icon ion-android-search"></i>
-            <input type="text" class="form-control" placeholder="Rechercher des amis">
+            <input id="recherche" type="text" class="form-control" placeholder="Rechercher des amis">
           </div>
         </form>
       </div><!-- /.navbar-collapse -->

@@ -1,31 +1,61 @@
 <?php
 session_start();
 include "bdd.inc.php";
+include "class_stage.php";
+include "class_emploi.php";
 
   $id=$_SESSION['id'];
   $radio=$_POST['prop'];
   $filiere=$_POST['filiere'];
   $lib=$_POST['lib'];
   $desc=$_POST['desc'];
+  $today = date("Y-n-j");
 
-if ($radio=="stage")
-{
-  $dated=$_POST['dated'];
-  $datef=$_POST['datef'];
-  $sql= "INSERT INTO stage VALUES (NULL,'$lib','$desc','$dated','$datef','','$id','1','$filiere')";
-  $req = $conn -> query($sql)or die($conn->errorInfo());
-  $req -> execute();
-  header('Location: ./newsfeed.php');
-}
-else
-{
-  if ($radio=="emploi")
-  {
-    $sql= "INSERT INTO emploi VALUES (NULL,'$lib','$desc','$id','1','$filiere')";
-    $req = $conn -> query($sql)or die($conn->errorInfo());
-    $req -> execute();
-    header('Location: ./newsfeed.php');
-  }
-}
+  ///////////////////////////////////////////////////////////////////////////////
+  /*									        	E L E V E																			 */
+  ///////////////////////////////////////////////////////////////////////////////
+      if ($_SESSION['profil']=="eleve")
+      {
+        if ($radio=="stage")
+        {
+          $dated=$_POST['dated'];
+          $datef=$_POST['datef'];
+          $unstageutil = new stage (NULL, $lib, $desc, $dated, $datef, 'comm', '1', $id, $filiere);
+          $unstageutil -> ajout_stage_util($unstageutil, $conn);
+          header('Location: ./newsfeed.php');
+        }
+        else
+        {
+          if ($radio=="emploi")
+          {
+            $unemploiutil = new emploi (NULL, $lib, $desc, $today, '1', $id, $filiere);
+            $unemploiutil -> ajout_emploi_util($unemploiutil, $conn);
+            header('Location: ./newsfeed.php');
+          }
+        }
+      }
+  ///////////////////////////////////////////////////////////////////////////////
+  /*												E N T R E P R I S E																*/
+  ///////////////////////////////////////////////////////////////////////////////
+      if ($_SESSION['profil']=="entreprise")
+      {
+        if ($radio=="stage")
+        {
+          $dated=$_POST['dated'];
+          $datef=$_POST['datef'];
+          $unstageent = new stage (NULL, $lib, $desc, $dated, $datef, 'comm', $id, '1', $filiere);
+          $unstageent -> ajout_stage_ent($unstageent, $conn);
+          header('Location: ./newsfeed.php');
+        }
+        else
+        {
+          if ($radio=="emploi")
+          {
+            $unemploient = new emploi (NULL, $lib, $desc, $today, $id, '1', $filiere);
+            $unemploient -> ajout_emploi_ent($unemploient, $conn);
+            header('Location: ./newsfeed.php');
+          }
+        }
+      }
 
 ?>

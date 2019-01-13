@@ -141,13 +141,15 @@
             </div>
             <div class="col-md-7">
 
+		    <form name="edit-interest_form" id='registration_form' action="interests.php" method="post">
+
               <!-- Edit Interests
               ================================================= -->
               <div class="edit-profile-container">
                 <div class="block-title">
                   <h4 class="grey"><i class="icon ion-ios-heart-outline"></i>Centres d'intérêts</h4>
                   <div class="line"></div>
-                  <p>blabla écrire un truc ici</p>
+                  <p>Vous pouvez ajouter ou supprimer vos centres d'intérêts sur cette page.</p>
                   <div class="line"></div>
                 </div>
                 <div class="edit-block">
@@ -161,12 +163,26 @@
                   <div class="line"></div>
                   <div class="row">
                     <p class="custom-label"><strong>Ajouter des intérêts</strong></p>
-                    <div class="form-group col-sm-8">
-                      <input id="add-interest" class="form-control input-group-lg" type="text" name="interet" title="Choisir un intérêt" placeholder="Intérêts. Comme par exemple la photography"/>
-                    </div>
-                    <div class="form-group col-sm-4">
-                      <button class="btn btn-primary">Ajouter</button>
-                    </div>
+										<form class="" action="interests.php" method="post">
+											<div class="form-group col-sm-8">
+												<select class="form-control input-group-lg" id="interet" name="interet">
+													<option value="interet" disabled selected>Choisir un intérêt</option>
+													<?php
+													$sql="SELECT * FROM centres_interets";
+													$req = $conn -> query($sql)or die($conn->errorInfo());
+													while ($res=$req->fetch())
+													{
+													?>
+														<option value="<?php echo $res['id_interet'] ?>"><?php echo $res['lib_interet']?></option>
+													<?php
+													}
+													?>
+												</select>
+											</div>
+											<div class="form-group col-sm-4">
+												<input type="submit" class="btn btn-primary" value="Ajouter">
+											</div>
+										</form>
                   </div>
                 </div>
               </div>
