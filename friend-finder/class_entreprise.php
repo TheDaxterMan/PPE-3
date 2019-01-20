@@ -9,7 +9,7 @@ include 'bdd.inc.php';
 
 class entreprise
 {
- 
+
 		/* ---------------------- */
 		/* class Entreprise Variables */
 		/* ---------------------- */
@@ -124,6 +124,11 @@ class entreprise
 				return $this-> mdp_entreprise;
 			}
 
+			Public function  get_code_suppr_utilisateur ()
+			{
+				return $this-> code_suppr_utilisateur;
+			}
+
 			/* ---------------------- */
 			/* class Entreprise SET */
 			/* ---------------------- */
@@ -178,6 +183,11 @@ class entreprise
 				 $this-> mdp_entreprise = $mdp_ent;
 			}
 
+			Public function set_code_suppr_utilisateur($code_suppr_util)
+			{
+				 $this-> code_suppr_utilisateur = $code_suppr_util;
+			}
+
 			/* ---------------------- */
 			/* class Entreprise fonctions publiques */
 			/* ---------------------- */
@@ -194,8 +204,9 @@ class entreprise
 					$photo_ent = $objet->get_photo_entreprise();
 					$login_ent = $objet->get_login_entreprise();
 					$mdp_ent = $objet->get_mdp_entreprise();
+					$code_suppr_ent = $objet->get_code_suppr_entreprise();
 
-					print $SQL = " INSERT INTO entreprise values (NULL, '$nom_ent', '$nom_resp', '$prenom_resp', '$mail_ent', '$rue_ent', '$ville_ent', '$cp_ent', '$photo_ent', '$login_ent', '$mdp_ent','1')";
+					print $SQL = " INSERT INTO entreprise values (NULL, '$nom_ent', '$nom_resp', '$prenom_resp', '$mail_ent', '$rue_ent', '$ville_ent', '$cp_ent', '$photo_ent', '$login_ent', '$mdp_ent', '0','1')";
 					$Req = $conn -> query ($SQL) or die (' Erreur ajout entreprise ');
 				}
 
