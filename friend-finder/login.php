@@ -29,6 +29,10 @@
     {
       // crée le cookie avec le nom d'utilisateur et la session
       session_start();
+      if ($res['id_utilisateur']==1)
+      {
+        $_SESSION['choix'] = "utilisateur";
+      }
       $_SESSION['id'] = $res['id_utilisateur']; // cette ligne crée une variable de session, où l'on sauve l'id de notre utilisateur connecté
       $_SESSION['photo'] = $res['photo_utilisateur'];
       $_SESSION['profil'] = "eleve";
@@ -58,6 +62,10 @@
     {
       // crée le cookie avec le nom d'utilisateur et la session
       session_start();
+      if ($res['id_entreprise']==1)
+      {
+        $_SESSION['choix'] = "entreprise";
+      }
       $_SESSION['id'] = $res['id_entreprise']; // cette ligne crée une variable de session, où l'on sauve l'id de notre utilisateur connecté
       $_SESSION['photo'] = $res['photo_entreprise'];
       $_SESSION['profil'] = "entreprise";

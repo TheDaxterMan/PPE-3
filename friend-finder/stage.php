@@ -139,6 +139,7 @@
                         <label for="fichier">Nouvelle Demande</label>
                       </div>
 
+											<!---
 											<script>
 
 											function cacherDate() {
@@ -152,7 +153,7 @@
 											}
 
 										  </script>
-
+										-->
 											<div class="form-group gender">
 												<label class="radio-inline">
 													<input type="radio" name="prop" id="emploi" value="emploi" onclick="cacherDate()" required>Emploi</label>

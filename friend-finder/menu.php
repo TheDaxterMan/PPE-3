@@ -20,7 +20,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.php"><img src="images/logo.png" alt="logo" /></a>
+        <a class="navbar-brand" href="newsfeed.php"><img src="images/logo.png" alt="logo" /></a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -50,6 +50,7 @@
                 <li><a href="modif_diplome.php">Modification Diplôme</a></li>
                 <li><a href="modif_filiere.php">Modification Filières</a></li>
                 <li><a href="modif_interet.php">Modification Centres d'intêrets</a></li>
+                <li><a href="modif_utilisateur.php">Modification des utilisateurs</a></li>
               </ul>
             </li>
             <?php

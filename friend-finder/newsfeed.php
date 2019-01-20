@@ -84,6 +84,7 @@
               <li><i class="icon ion-ios-people"></i><div><a href="newsfeed-people-nearby.php">Autour de moi</a></div></li>
               <li><i class="icon ion-chatboxes"></i><div><a href="newsfeed-messages.php">Messages</a></div></li>
             </ul><!--news-feed links ends-->
+						<!--
             <div id="chat-block">
               <div class="title">Amis en ligne</div>
               <ul class="online-users list-inline">
@@ -211,16 +212,17 @@
 									</div>
 								</div>
 							</div>
-						</div
+						</div>
 						<?php
 							}
 						}
 						?>
-            >
+
+
 
           <!-- Newsfeed Common Side Bar Right
-          ================================================= -->
-          <?php include "recommendation.php" ?>
+          =================================================
+          <?php include "recommendation.php" ?> -->
 
     <!-- Footer
     ================================================= -->
