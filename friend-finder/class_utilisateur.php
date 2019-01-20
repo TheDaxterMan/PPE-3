@@ -29,7 +29,7 @@ class utilisateur
 		/* ---------------------- */
 
 			Public function utilisateur ( $id_util, $nom_util, $prenom_util, $tel_util, $email_util, $rue_util, $ville_util, $cp_util, $photo_util, $login_util, $mdp_util)
-			{ 
+			{
 				$this -> id_utilisateur = $id_util;
 				$this -> nom_utilisateur = $nom_util;
 				$this -> prenom_utilisateur = $prenom_util;
@@ -122,6 +122,11 @@ class utilisateur
 				return $this-> mdp_utilisateur;
 			}
 
+			Public function  get_code_suppr_utilisateur ()
+			{
+				return $this-> code_suppr_utilisateur;
+			}
+
 			/* ---------------------- */
 			/* class Utilisateur SET */
 			/* ---------------------- */
@@ -176,6 +181,12 @@ class utilisateur
 				 $this-> mdp_utilisateur = $mdp_util;
 			}
 
+			Public function set_code_suppr_utilisateur($code_suppr_util)
+			{
+				 $this-> code_suppr_utilisateur = $code_suppr_util;
+			}
+
+
 			/* ---------------------- */
 			/* class Utilisateur fonctions publiques */
 			/* ---------------------- */
@@ -192,8 +203,9 @@ class utilisateur
 					$photo_util = $objet->get_photo_utilisateur();
 					$login_util = $objet->get_login_utilisateur();
 					$mdp_util = $objet->get_mdp_utilisateur();
+					$code_suppr_util = $objet->get_code_suppr_utilisateur();
 
-					print $SQL = " INSERT INTO utilisateur values (NULL, '$nom_util', '$prenom_util', '$tel_util', '$email_util', '$rue_util', '$ville_util', '$cp_util', '$photo_util', '$login_util', '$mdp_util')";
+					print $SQL = " INSERT INTO utilisateur values (NULL, '$nom_util', '$prenom_util', '$tel_util', '$email_util', '$rue_util', '$ville_util', '$cp_util', '$photo_util', '$login_util', '$mdp_util', '0', '1')";
 					$Req = $conn -> query ($SQL) or die (' Erreur ajout utilisateur ');
 				}
 
