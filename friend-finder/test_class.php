@@ -39,8 +39,7 @@ echo $unutilisateur->getallutil();
 
 <?php
 
-$unutilisateur-> suppr_utilisateur($unutilisateur,$conn); */
-
+$unutilisateur-> suppr_utilisateur($unutilisateur,$conn);
 
 $uneentreprise = new entreprise (NULL, 'noment', 'nomresp',  'prenomresp', 'mail@zefaaezza.com', 'rueent', 'villeent',  6154654, 'photoent', 'loginent',  12354456789);
 
@@ -65,3 +64,4 @@ $uneentreprise -> modif_entreprise($uneentreprise,$conn);
 $uneentreprise -> suppr_entreprise($uneentreprise,$conn);
 
 ?>
+*/
