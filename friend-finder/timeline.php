@@ -6,7 +6,8 @@
 	include "info.php";
 
 	$sql="SELECT * FROM stage, utilisateur, entreprise
-				WHERE stage.id_utilisateur=$id
+				WHERE utilisateur.id_utilisateur=$id
+				AND stage.id_utilisateur=utilisateur.id_utilisateur
 				AND entreprise.id_entreprise=stage.id_entreprise
 				ORDER BY date_debut_stage, date_fin_stage ASC";
 
@@ -106,7 +107,7 @@
             </div>
             <div class="mobile-menu">
               <ul class="list-inline">
-                <li><a href="timline.php" class="active">Chronologie</a></li>
+                <li><a href="timeline.php" class="active">Chronologie</a></li>
                 <li><a href="timeline-about.php">A propos</a></li>
                 <li><a href="timeline-album.php">Album</a></li>
                 <li><a href="timeline-friends.php">Amis</a></li>
@@ -167,7 +168,7 @@
 												{
 												?>
 													<div class="post-comment">
-														<img src="images/users/utilisateur/user-<?php echo $res['id_utilisateur']; ?>" alt="" class="profile-photo-sm" />
+														<img src="images/users/utilisateur/user-<?php echo $res['id_utilisateur'],$res['photo_utilisateur']; ?>" alt="" class="profile-photo-sm" />
 														<p><a href="timeline.php" class="profile-link"><?php echo $res['prenom_utilisateur'],' ',$res['nom_utilisateur'],' :'; ?> </a><?php echo ' ',$res['commentaire'] ?></i></p>
 													</div>
 												<?php
