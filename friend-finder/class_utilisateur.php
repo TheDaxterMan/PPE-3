@@ -126,7 +126,7 @@ class utilisateur
 			}
 
 			Public function  get_etat_utilisateur ()
-f			{
+			{
 				return $this-> etat_utilisateur;
 			}
 	
