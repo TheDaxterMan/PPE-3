@@ -14,6 +14,7 @@ class emploi
     Private $lib_emploi;
 		Private $desc_emploi;
     Private $datec_emploi;
+	Private $etat_emploi;
 
     /* ---------------------- */
     /* class Emploi Constructeur */
@@ -25,6 +26,7 @@ class emploi
       $this -> lib_emploi = $lib_emp;
 			$this -> desc_emploi = $desc_emp;
       $this -> datec_emploi = $datec_emp;
+	$this -> etat_emploi = $etat_emp;    
     }
 
 		/* ---------------------- */
@@ -37,6 +39,7 @@ class emploi
 			$data = $data.$this->$lib_emp;
 			$data = $data.$this->$desc_emp;
 			$data = $data.$this->$datec_emp;
+			$data = $data.$this->$etat_emp;
 			return $data;
 		}
 
@@ -59,11 +62,15 @@ class emploi
       return $this-> desc_emploi;
     }
 
-		Public function get_datec_emploi ()
-		{
-			return $this-> datec_emploi;
-		}
+	Public function get_datec_emploi ()
+	{
+	return $this-> datec_emploi;
+	}
 
+	Public function get_etat_emploi ()
+	{
+	return $this-> etat_emploi;
+	}
     /* ---------------------- */
     /* class Emploi SET */
     /* ---------------------- */
@@ -73,14 +80,19 @@ class emploi
        $this-> lib_emploi = $lib_emp;
     }
 
-    Public function set__desc_emploi ($desc_emp)
+    Public function set_desc_emploi ($desc_emp)
     {
        $this-> desc_emploi = $desc_emp;
     }
 
-		Public function set__datec_emploi ($datec_emp)
+	Public function set_datec_emploi ($datec_emp)
     {
        $this-> desc_emploi = $datec_emp;
+    }
+	
+	Public function set_etat_emploi ($etat_emp)
+    {
+       $this-> etat_emploi = $etat_emp;
     }
 
 	/* ---------------------- */
@@ -92,6 +104,7 @@ class emploi
 			$lib_emp = $objet->get_lib_emploi();
 			$desc_emp = $objet->get_desc_emploi();
 			$datec_emp = $objet->get_datec_emploi();
+			$etat_emp = $objet->get_etat_emploi();
 
 			/* !!!!!!!!!!!!!!! manque encapsulation de entreprise et utilisateur !!!!!!!!!!!!!!!!!! */
 			print $SQL = " INSERT INTO emploi values (NULL, '$lib_emp', '$desc_emp', '$datec_emp', '1', '1', '1')";
