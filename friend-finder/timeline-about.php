@@ -5,6 +5,7 @@
 	include "login.inc.php";
 	include "info.php";
 	include "exp_pro.php";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -148,17 +149,31 @@
 							</div>
 							<?php
 							}
+							if ($_SESSION['profil']=="eleve")
+							{
+								$sql="SELECT * FROM utilisateur, centres_interets, interesse
+								WHERE utilisateur.id_utilisateur=$id
+								AND interesse.id_utilisateur=utilisateur.id_utilisateur
+								AND centres_interets.id_interet=interesse.id_interet";
+								$req = $conn -> query($sql)or die($conn->errorInfo());
+								$req -> execute();
 							?>
                 <div class="about-content-block">
                   <h4 class="grey"><i class="ion-ios-heart-outline icon-in-title"></i>Centre d'intérêts</h4>
                   <ul class="interests list-inline">
-                    <li><span class="int-icons" title="Bycycle riding"><i class="icon ion-android-bicycle"></i></span></li>
-                    <li><span class="int-icons" title="Photography"><i class="icon ion-ios-camera"></i></span></li>
-                    <li><span class="int-icons" title="Shopping"><i class="icon ion-android-cart"></i></span></li>
-                    <li><span class="int-icons" title="Traveling"><i class="icon ion-android-plane"></i></span></li>
-                    <li><span class="int-icons" title="Eating"><i class="icon ion-android-restaurant"></i></span></li>
+										<?php
+										while ($res=$req->fetch())
+										{
+										?>
+                    <li><span class="int-icons" title="<?php echo $res['lib_interet'] ?>"><i class="icon <?php echo $res['img_interet']; ?>"></i></span></li>
+										<?php
+										}
+										?>
                   </ul>
                 </div>
+								<?php
+								}
+								?>
                 <div class="about-content-block">
                   <h4 class="grey"><i class="ion-ios-chatbubble-outline icon-in-title"></i>Langue</h4>
                     <ul>
