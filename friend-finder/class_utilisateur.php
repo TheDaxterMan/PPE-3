@@ -129,7 +129,7 @@ class utilisateur
 			{
 				return $this-> etat_utilisateur;
 			}
-	
+
 
 
 			/* ---------------------- */
@@ -210,7 +210,7 @@ class utilisateur
 					$mdp_util = $objet->get_mdp_utilisateur();
 					$etat_util = $objet->get_etat_utilisateur();
 
-					print $SQL = " INSERT INTO utilisateur values (NULL, '$nom_util', '$prenom_util', '$tel_util', '$email_util', '$rue_util', '$ville_util', '$cp_util', '$photo_util', '$login_util', '$mdp_util', '0', '1', '0')";
+					print $SQL = " INSERT INTO utilisateur values (NULL, '$nom_util', '$prenom_util', '$tel_util', '$email_util', '$rue_util', '$ville_util', '$cp_util', '$photo_util', '$login_util', '$mdp_util', '0', '1')";
 					$Req = $conn -> query ($SQL) or die (' Erreur ajout utilisateur ');
 				}
 
