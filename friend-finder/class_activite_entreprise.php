@@ -7,12 +7,14 @@ include 'bdd.inc.php';
   /* ---------------------- */
 
 class activite_entreprise
-	{
+{
     /* ---------------------- */
     /* class Activite_entreprise Variables */
     /* ---------------------- */
-		Private $id_activite;
-    Private $lib_activite;
+	Private $id_activite;
+    	Private $lib_activite;
+	Private $etat_activite;
+	
     /* ---------------------- */
     /* class Activite_entreprise Constructeur */
     /* ---------------------- */
@@ -20,6 +22,7 @@ class activite_entreprise
     {
       $this -> id_activite = $id_act;
       $this -> lib_activite = $lib_act;
+      $this -> etat_activite = $etat_act;
     }
 
 		/* ---------------------- */
@@ -30,6 +33,7 @@ class activite_entreprise
 		{
 			$data = $this->$id_act;
 			$data = $data.$this->$lib_act;
+			$data = $data.$this->$etat_act;
 			return $data;
 		}
  
@@ -44,6 +48,10 @@ class activite_entreprise
     {
       return $this-> lib_activite;
     }
+    Public function get_etat_activite ()
+    {
+      return $this-> etat_activite;
+    }
     /* ---------------------- */
     /* class Activite_entreprise SET */
     /* ---------------------- */
@@ -52,6 +60,12 @@ class activite_entreprise
     {
        $this-> lib_activite = $lib_act;
     }
+
+    Public function set_etat_activite ($etat_act)
+    {
+	$this-> etat_activite = $etat_act;
+    }
+	
 		/* ---------------------- */
 		/* class Activite_entreprise fonctions publiques */
 		/* ---------------------- */
@@ -59,8 +73,9 @@ class activite_entreprise
 			{
 				$id_act = $objet->get_id_activite();
 				$lib_act = $objet->get_lib_activite();
+				$etat_act = $objet->get_etat_activite();
 
-				print $SQL = " INSERT INTO activite_entreprise values (NULL, '$lib_act')";
+				print $SQL = " INSERT INTO activite_entreprise values (NULL, '$lib_act', '0')";
 				$req = $conn -> query ($SQL) or die (' Erreur ajout activite ');
 			}
 
@@ -68,6 +83,7 @@ class activite_entreprise
 			{
 				$id_act = $objet->get_id_activite();
 				$lib_act = $objet->get_lib_activite();
+				$etat_act = $objet->get_etat_activite();
 
 				print $SQL = "UPDATE activite_entreprise SET lib_activite = '$lib_act'
 				WHERE id_activite = '$id_act'";
@@ -79,7 +95,8 @@ class activite_entreprise
 
 				$id_act = $objet->get_id_activite();
 				$lib_act = $objet->get_lib_activite();
-
+				$etat_act = $objet->get_etat_activite();
+				
 				print $SQL = " SELECT *  From activite_entreprise WHERE id_activite = '$id_act'";
 				$req = $conn -> query ($SQL) or die (' Erreur affichage activite ');
 				Return $res = $req -> fetch ();
@@ -89,7 +106,8 @@ class activite_entreprise
 			{
 				$id_act = $objet->get_id_activite();
 				$lib_act = $objet->get_lib_activite();
-
+				$etat_act = $objet->get_etat_activite();
+				
 				print $SQL = " DELETE FROM activite_entreprise WHERE id_activite = '$id_act'";
 				$req = $conn -> query ($SQL) or die (' Erreur suppression activite ');
 			}
