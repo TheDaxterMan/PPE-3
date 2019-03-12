@@ -23,12 +23,13 @@ class utilisateur
 		Private $photo_utilisateur;
 		Private $login_utilisateur;
 		Private $mdp_utilisateur;
+		Private $etat_utilisateur;
 
 		/* ---------------------- */
 		/* class Utilisateur Constructeur */
 		/* ---------------------- */
 
-			Public function utilisateur ( $id_util, $nom_util, $prenom_util, $tel_util, $email_util, $rue_util, $ville_util, $cp_util, $photo_util, $login_util, $mdp_util)
+			Public function utilisateur ( $id_util, $nom_util, $prenom_util, $tel_util, $email_util, $rue_util, $ville_util, $cp_util, $photo_util, $login_util, $mdp_util, $etat_util)
 			{
 				$this -> id_utilisateur = $id_util;
 				$this -> nom_utilisateur = $nom_util;
@@ -41,6 +42,7 @@ class utilisateur
 				$this -> photo_utilisateur = $photo_util;
 				$this -> login_utilisateur = $login_util;
 				$this -> mdp_utilisateur = $mdp_util;
+				$this -> etat_utilisateur = $etat_util;
 			}
 
 			/* ---------------------- */
@@ -60,6 +62,7 @@ class utilisateur
 				$data = $data.$this->photo_utilisateur;
 				$data = $data.$this->login_utilisateur;
 				$data = $data.$this->mdp_utilisateur;
+				$data = $data.$this->etat_utilisateur;
 				return $data;
 			}
 
@@ -122,10 +125,12 @@ class utilisateur
 				return $this-> mdp_utilisateur;
 			}
 
-			Public function  get_code_suppr_utilisateur ()
-			{
-				return $this-> code_suppr_utilisateur;
+			Public function  get_etat_utilisateur ()
+f			{
+				return $this-> etat_utilisateur;
 			}
+	
+
 
 			/* ---------------------- */
 			/* class Utilisateur SET */
@@ -181,9 +186,9 @@ class utilisateur
 				 $this-> mdp_utilisateur = $mdp_util;
 			}
 
-			Public function set_code_suppr_utilisateur($code_suppr_util)
+			Public function set_etat_utilisateur($etat_util)
 			{
-				 $this-> code_suppr_utilisateur = $code_suppr_util;
+				 $this-> etat_utilisateur = $etat_util;
 			}
 
 
@@ -203,9 +208,9 @@ class utilisateur
 					$photo_util = $objet->get_photo_utilisateur();
 					$login_util = $objet->get_login_utilisateur();
 					$mdp_util = $objet->get_mdp_utilisateur();
-					$code_suppr_util = $objet->get_code_suppr_utilisateur();
+					$etat_util = $objet->get_etat_utilisateur();
 
-					print $SQL = " INSERT INTO utilisateur values (NULL, '$nom_util', '$prenom_util', '$tel_util', '$email_util', '$rue_util', '$ville_util', '$cp_util', '$photo_util', '$login_util', '$mdp_util', '0', '1')";
+					print $SQL = " INSERT INTO utilisateur values (NULL, '$nom_util', '$prenom_util', '$tel_util', '$email_util', '$rue_util', '$ville_util', '$cp_util', '$photo_util', '$login_util', '$mdp_util', '0', '1', '0')";
 					$Req = $conn -> query ($SQL) or die (' Erreur ajout utilisateur ');
 				}
 
