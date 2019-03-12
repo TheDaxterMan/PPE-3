@@ -72,6 +72,20 @@
 									<h3><?php echo $prenom,' ',$nom; ?></h3>
                   <p class="text-muted">Creative Director</p>
                 </div>
+								<script>
+								//fonction pour cacher les emplois/stage (boutons radio) 
+								function cacherDate() {
+
+									var x = document.getElementById("date");
+									if (x.style.display === "none") {
+											x.style.display = "block";
+									} else {
+											x.style.display = "none";
+									}
+								}
+
+								</script>
+
               </div>
               <div class="col-md-9">
                 <ul class="list-inline profile-menu">

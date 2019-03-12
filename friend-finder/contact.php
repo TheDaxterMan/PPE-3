@@ -39,6 +39,7 @@
     <div class="google-maps">
       <div id="map" class="map contact-map"></div>
     </div>
+
     <div id="page-contents">
     	<div class="container">
     		<div class="row">
@@ -46,25 +47,24 @@
             <div class="contact-us">
             	<div class="row">
             		<div class="col-md-8 col-sm-7">
-                  <h4 class="grey">Leave a Message</h4>
+                  <h4 class="grey">Laisser un message</h4>
                   <form class="contact-form">
                     <div class="form-group">
                       <i class="icon ion-person"></i>
-                      <input id="contact-name" type="text" name="name" class="form-control" placeholder="Enter your name *" required="required" data-error="Name is required.">
+                      <input id="contact-name" type="text" name="name" class="form-control" placeholder="Entrez votre nom" required="required" data-error="Votre nom est requis.">
                     </div>
                     <div class="form-group">
                       <i class="icon ion-email"></i>
-                      <input id="contact-email" type="text" name="email" class="form-control" placeholder="Enter your email *" required="required" data-error="Email is required.">
+                      <input id="contact-email" type="text" name="email" class="form-control" placeholder="Entrez votre adresse mail" required="required" data-error="Votre adresse mail est requise.">
                     </div>
                     <div class="form-group">
                       <i class="icon ion-android-call"></i>
-                      <input id="contact-phone" type="text" name="phone" class="form-control" placeholder="Enter your phone *" required="required" data-error="Phone is required.">
+                      <input id="contact-phone" type="text" name="phone" class="form-control" placeholder="Entrez votre numéro de téléphone" required="required" data-error="Votre numéro de téléphone est requis.">
                     </div>
                     <div class="form-group">
-                      <textarea id="form-message" name="message" class="form-control" placeholder="Leave a message for us *" rows="4" required="required" data-error="Please,leave us a message."></textarea>
-                    </div>
-										<div class="g-recaptcha" data-sitekey="6LfQfnwUAAAAAMiTmuUcHcQdPNhcm3V__BFjO_hp">
-
+                      <textarea id="form-message" name="message" class="form-control" placeholder="Décrivez votre message" rows="4" required="required" data-error="Laisser nous un message s'il vous plaît."></textarea>
+										<div class="g-recaptcha" data-sitekey="6LfQfnwUAAAAAMiTmuUcHcQdPNhcm3V__BFjO_hp" required="required" data-error="Vous devez validé le captcha.">
+											</div>
 										<?php
 
 										if(isset($_POST['submit']) && !empty($_POST['submit'])):
@@ -94,7 +94,7 @@
 
                 </div>
             		<div class="col-md-4 col-sm-5">
-                  <h4 class="grey">Reach Us</h4>
+                  <h4 class="grey">Retrouvez-nous</h4>
                   <div class="reach"><span class="phone-icon"><i class="icon ion-android-call"></i></span><p>+1 (234) 222 0754</p></div>
                   <div class="reach"><span class="phone-icon"><i class="icon ion-email"></i></span><p>info@thunder-team.com</p></div>
                   <div class="reach"><span class="phone-icon"><i class="icon ion-ios-location"></i></span><p>228 Park Ave S NY, USA</p></div>
