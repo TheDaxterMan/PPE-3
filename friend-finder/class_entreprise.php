@@ -25,12 +25,13 @@ class entreprise
 		Private $photo_entreprise;
 		Private $login_entreprise;
 		Private $mdp_entreprise;
+		Private $etat_entreprise;
 
 		/* ---------------------- */
 		/* class Entreprise Constructeur */
 		/* ---------------------- */
 
-			Public function entreprise ( $id_ent, $nom_ent, $nom_resp, $prenom_resp, $mail_ent, $rue_ent, $ville_ent, $cp_ent, $photo_ent, $login_ent, $mdp_ent)
+			Public function entreprise ( $id_ent, $nom_ent, $nom_resp, $prenom_resp, $mail_ent, $rue_ent, $ville_ent, $cp_ent, $photo_ent, $login_ent, $mdp_ent, $etat_ent)
 			{
 				$this -> id_entreprise = $id_ent;
 				$this -> nom_entreprise = $nom_ent;
@@ -43,6 +44,7 @@ class entreprise
 				$this -> photo_entreprise = $photo_ent;
 				$this -> login_entreprise = $login_ent;
 				$this -> mdp_entreprise = $mdp_ent;
+				$this -> etat-entreprise = $etat_ent;
 			}
 
 			/* ---------------------- */
@@ -62,6 +64,7 @@ class entreprise
 				$data = $date.$this->$photo_entreprise;
 				$data = $data.$this->$login_entreprise;
 				$data = $data.$this->$mdp_entreprise;
+				$data = $data.$this->$etat_entreprise;
 				return $data;
 			}
 
@@ -124,9 +127,9 @@ class entreprise
 				return $this-> mdp_entreprise;
 			}
 
-			Public function  get_code_suppr_utilisateur ()
+			Public function  get_etat_entreprise ()
 			{
-				return $this-> code_suppr_utilisateur;
+				return $this-> etat_entreprise;
 			}
 
 			/* ---------------------- */
@@ -183,9 +186,9 @@ class entreprise
 				 $this-> mdp_entreprise = $mdp_ent;
 			}
 
-			Public function set_code_suppr_utilisateur($code_suppr_util)
+			Public function set_etat_ent($etat_ent)
 			{
-				 $this-> code_suppr_utilisateur = $code_suppr_util;
+				 $this-> etat_entreprise = $etat_ent;
 			}
 
 			/* ---------------------- */
@@ -204,7 +207,7 @@ class entreprise
 					$photo_ent = $objet->get_photo_entreprise();
 					$login_ent = $objet->get_login_entreprise();
 					$mdp_ent = $objet->get_mdp_entreprise();
-					$code_suppr_ent = $objet->get_code_suppr_entreprise();
+					$etat_ent = $objet->get_etat_entreprise();
 
 					print $SQL = " INSERT INTO entreprise values (NULL, '$nom_ent', '$nom_resp', '$prenom_resp', '$mail_ent', '$rue_ent', '$ville_ent', '$cp_ent', '$photo_ent', '$login_ent', '$mdp_ent', '0','1')";
 					$Req = $conn -> query ($SQL) or die (' Erreur ajout entreprise ');
