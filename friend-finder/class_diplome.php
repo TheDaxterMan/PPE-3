@@ -13,16 +13,18 @@ class diplome
 		Private $id_dip;
 		Private $nom_dip;
 		Private $lib_dip;
+		Private $etat_dip;
 
     /* ---------------------- */
     /* class Diplome Constructeur */
     /* ---------------------- */
 
-    Public function diplome ($id_dip, $nom_dip, $lib_dip)
+    Public function diplome ($id_dip, $nom_dip, $lib_dip, $etat_dip)
     {
       $this -> id_diplome = $id_dip;
       $this -> nom_diplome = $nom_dip;
-			$this -> lib_diplome = $lib_dip;
+	$this -> lib_diplome = $lib_dip;
+     $this -> etat_diplome = $etat_dip;
     }
 
 		public function getalldip()
@@ -30,6 +32,7 @@ class diplome
 			$data = $this->id_diplome;
 			$data = $data.$this->nom_diplome;
 			$data = $data.$this->lib_diplome;
+			$data = $data.$this->etat_diplome;
 			return $data;
 		}
     /* ---------------------- */
@@ -46,11 +49,15 @@ class diplome
       return $this-> nom_diplome;
     }
 
-		Public function get_lib_diplome ()
+	Public function get_lib_diplome ()
     {
       return $this-> lib_diplome;
     }
 
+	Public function get_etat_diplome ()
+	{
+		return $this-> etat_diplome;
+	}
     /* ---------------------- */
     /* class Diplome SET */
     /* ---------------------- */
@@ -65,6 +72,10 @@ class diplome
        $this-> lib_diplome = $lib_dip;
     }
 
+    Public function set_etat_diplome ($etat_dip)
+    {
+       $this-> etat_diplome = $etat_dip;
+    }
 		/* ---------------------- */
  	 /* class Diplome fonctions publiques */
  	 /* ---------------------- */
@@ -74,8 +85,9 @@ class diplome
 			 $id_dip = $objet->get_id_diplome();
 			 $nom_dip = $objet->get_nom_diplome();
 			 $lib_dip = $objet->get_lib_diplome();
+		  	 $etat_dip = $objet->get_etat_diplome();
 
-			 $SQL = " INSERT INTO diplome values ('NULL', '$nom_dip', '$lib_dip', '$conn')";
+			 $SQL = " INSERT INTO diplome values ('NULL', '$nom_dip', '$lib_dip', '$etat_dip', '$conn')";
 			 $conn -> query ($SQL);
 		 }
 
@@ -84,6 +96,7 @@ class diplome
 			 $id_dip = $objet->get_id_diplome();
 			 $nom_dip = $objet->get_nom_diplome();
 			 $lib_dip = $objet->get_lib_diplome();
+		  	 $etat_dip = $objet->get_etat_diplome();
 
 			 $SQL = "UPDATE diplome SET id_diplome = '$id_dip', id_diplome = '$id_dip')";
 			 $conn -> query ($SQL);
@@ -92,9 +105,10 @@ class diplome
 		 Public function affiche_diplome ($objet, $conn)
 		 {
 			 $id_dip = $objet->get_id_diplome();
-		   $nom_dip = $objet->get_nom_diplome();
+		   	$nom_dip = $objet->get_nom_diplome();
 			 $lib_dip = $objet->get_lib_diplome();
-
+			$etat_dip = $objet->get_etat_diplome();
+			
 			 $SQL = " SELECT * From diplome WHERE id_diplome = '$id_dip'";
 			 $Req = $conn -> query ($SQL);
 			 Return $Res = $Req -> fetch ();
@@ -103,9 +117,10 @@ class diplome
 		 Public function suppr_diplome ($objet, $conn)
 		 {
 			 $id_dip = $objet->get_id_diplome();
-		   $nom_dip = $objet->get_nom_diplome();
+		   	$nom_dip = $objet->get_nom_diplome();
 			 $lib_dip = $objet->get_lib_diplome();
-
+			$etat_dip = $objet->get_etat_diplome();
+			 
 			 $SQL = " DELETE FROM diplome WHERE id_diplome = '$id_dip'";
 			 $conn -> query ($SQL);
 		 }
