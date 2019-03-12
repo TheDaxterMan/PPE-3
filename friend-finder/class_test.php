@@ -1,38 +1,32 @@
 <?php
   /* ---------------------- */
-  /* DEBUT class Emploi */
+  /* DEBUT class Test */
   /* ---------------------- */
-class emploi
+class test
 	{
     /* ---------------------- */
-    /* class Emploi Variables */
+    /* class Test Variables */
     /* ---------------------- */
-		Private $id_emploi;
-    Private $lib_emploi;
-		Private $desc_emploi;
-    Private $datec_emploi;
-	Private $etat_emploi;
+	Private $id_test;
+	Private $lib_test;
+	Private $etat_test;
     /* ---------------------- */
     /* class Emploi Constructeur */
     /* ---------------------- */
-    Public function emploi ( $id_emp, $lib_emp, $desc_emp, $datec_emp)
+    Public function test ( $id_t, $lib_t, $etat_t)
     {
-      $this -> id_emploi = $id_emp;
-      $this -> lib_emploi = $lib_emp;
-			$this -> desc_emploi = $desc_emp;
-      $this -> datec_emploi = $datec_emp;
-	$this -> etat_emploi = $etat_emp;    
+      $this -> id_test = $id_t;
+      $this -> lib_test = $lib_t;
+	$this -> etat_test = $etat_t;    
     }
 		/* ---------------------- */
 		/* fonction Emploi getalldata */
 		/* ---------------------- */
 		public function getallemploi()
 		{
-			$data = $this->$id_emp;
-			$data = $data.$this->$lib_emp;
-			$data = $data.$this->$desc_emp;
-			$data = $data.$this->$datec_emp;
-			$data = $data.$this->$etat_emp;
+			$data = $this->$id_t;
+			$data = $data.$this->$lib_t;
+			$data = $data.$this->$etat_t;
 			return $data;
 		}
     /* ---------------------- */
