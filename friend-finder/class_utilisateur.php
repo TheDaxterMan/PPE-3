@@ -224,8 +224,10 @@ f			{
 					$rue_util = $objet->get_rue_utilisateur();
 					$ville_util = $objet->get_ville_utilisateur();
 					$cp_util = $objet->get_cp_utilisateur();
+					$photo_util = $objet->get_photo_utilisateur();
 					$login_util = $objet->get_login_utilisateur();
 					$mdp_util = $objet->get_mdp_utilisateur();
+					$etat_util = $objet->get_etat_utilisateur();
 
 					print $SQL = "UPDATE utilisateur SET nom_utilisateur = '$nom_util', prenom_utilisateur  = '$prenom_util',
 					tel_utilisateur = '$tel_util', email_utilisateur = '$email_util', rue_utilisateur = '$rue_util', ville_utilisateur = '$ville_util',
@@ -244,8 +246,10 @@ f			{
 					$rue_util = $objet->get_rue_utilisateur();
 					$ville_util = $objet->get_ville_utilisateur();
 					$cp_util = $objet->get_cp_utilisateur();
+					$photo_util = $objet->get_photo_utilisateur();
 					$login_util = $objet->get_login_utilisateur();
 					$mdp_util = $objet->get_mdp_utilisateur();
+					$etat_util = $objet->get_etat_utilisateur();
 
 					print $SQL = " SELECT *  From utilisateur WHERE id_utilisateur = '$id_util'";
 					$Req = $conn -> query ($SQL) or die (' Erreur affichage utilisateur ');
