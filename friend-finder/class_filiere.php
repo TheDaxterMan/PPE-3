@@ -10,17 +10,19 @@ class filiere
     /* class Filiere Variables */
     /* ---------------------- */
 
-		Private $id_filiere;
+	Private $id_filiere;
     Private $lib_filiere;
+	Private $etat_filiere;
 
     /* ---------------------- */
     /* class Filiere Constructeur */
     /* ---------------------- */
 
-    Public function filiere ( $id_fil, $lib_fil)
+    Public function filiere ( $id_fil, $lib_fil, $etat_fil)
     {
       $this -> id_filiere = $id_fil;
       $this -> lib_filiere = $lib_fil;
+	$this -> etat_filiere = $etat_fil;
     }
 
 		/* ---------------------- */
@@ -31,6 +33,7 @@ class filiere
 		{
 			$data = $this->$id_fil;
 			$data = $data.$this->$lib_fil;
+			$data = $data.$this->$etat_fil;
 			return $data;
 		}
  
@@ -48,6 +51,10 @@ class filiere
       return $this-> lib_filiere;
     }
 
+    Public function get_etat_filiere ()
+    {
+      return $this-> etat_filiere;
+    }
     /* ---------------------- */
     /* class Filiere SET */
     /* ---------------------- */
@@ -55,6 +62,11 @@ class filiere
     Public function set_lib_filiere ($lib_fil)
     {
        $this-> lib_filiere = $lib_fil;
+    }
+	
+	Public function set_etat_filiere ($etat_fil)
+    {
+       $this-> etat_filiere = $etat_fil;
     }
 
 	/* ---------------------- */
@@ -65,8 +77,9 @@ class filiere
 		{
 			$id_fil = $objet->get_id_filiere();
 			$lib_fil = $objet->get_lib_filiere();
+			$etat_fil = $objet->get_etat_filiere();
 
-			print $SQL = " INSERT INTO filiere values (NULL, '$lib_fil')";
+			print $SQL = " INSERT INTO filiere values (NULL, '$lib_fil','0')";
 			$Req = $conn -> query ($SQL) or die (' Erreur ajout filiere ');
 		}
 
@@ -74,6 +87,7 @@ class filiere
 		{
 			$id_fil = $objet->get_id_filiere();
 			$lib_fil = $objet->get_lib_filiere();
+			$etat_fil = $objet->get_etat_filiere();
 
 			print $SQL = "UPDATE filiere SET lib_filiere = '$lib_fil',
 			WHERE id_filiere = '$id_fil'";
@@ -85,6 +99,7 @@ class filiere
 
 			$id_fil = $objet->get_id_filiere();
 			$lib_fil = $objet->get_lib_filiere();
+			$etat_fil = $objet->get_etat_filiere();
 
 			print $SQL = " SELECT *  From filiere WHERE id_filiere = '$id_fil'";
 			$Req = $conn -> query ($SQL) or die (' Erreur affichage filiere ');
@@ -95,7 +110,8 @@ class filiere
 		{
 			$id_fil = $objet->get_id_filiere();
 			$lib_fil = $objet->get_lib_filiere();
-
+			$etat_fil = $objet->get_etat_filiere();
+			
 			print $SQL = " DELETE FROM filiere WHERE id_filiere = '$id_fil'";
 			$Req = $conn -> query ($SQL) or die (' Erreur suppression filiere ');
 		}
