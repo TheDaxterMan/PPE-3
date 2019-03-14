@@ -312,12 +312,22 @@ class utilisateur
 					$Req = $conn -> query ($SQL) or die (' Erreur suppression utilisateur ');
 				}
 
-		/*		Public function Possede ()
+				Public function suppr_fictive($objet, $conn)
 				{
-
-						return $annee ->
+					$id_util = $objet->get_id_utilisateur();
+					$nom_util = $objet->get_nom_utilisateur();
+					$prenom_util = $objet->get_prenom_utilisateur();
+					$tel_util = $objet->get_tel_utilisateur();
+					$email_util = $objet->get_email_utilisateur();
+					$rue_util = $objet->get_rue_utilisateur();
+					$ville_util = $objet->get_ville_utilisateur();
+					$cp_util = $objet->get_cp_utilisateur();
+					$login_util = $objet->get_login_utilisateur();
+					$mdp_util = $objet->get_mdp_utilisateur();
+					
+					print $SQL = "UPDATE utilisateur SET etat_utilisateur='1' WHERE etat_utilisateur = 'etat_util'";
+				 	$Req = $conn -> query ($SQL) or die (' Erreur modification utilisateur ');
 				}
-*/
 }
 	/* ---------------------- */
 	/* FIN class Utilisateur */
