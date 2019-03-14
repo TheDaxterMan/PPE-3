@@ -4,7 +4,6 @@
 	include "bdd.inc.php";
 	include "login.inc.php";
 	include "info.php";
-	include "exp_pro.php";
 
 ?>
 <!DOCTYPE html>
@@ -83,7 +82,6 @@
                   <li><a href="timeline-friends.php">Amis</a></li>
                 </ul>
                 <ul class="follow-me list-inline">
-                  <li>1,299 people following her</li>
                   <li><button class="btn-primary">Ajouter en ami</button></li>
                 </ul>
               </div>
@@ -119,24 +117,44 @@
               <div class="about-profile">
                 <div class="about-content-block">
                   <h4 class="grey"><i class="ion-ios-information-outline icon-in-title"></i>A propos</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur</p>
+                  <p>Ma description blabla bla</p>
                 </div>
                 <div class="about-content-block">
                   <h4 class="grey"><i class="ion-ios-briefcase-outline icon-in-title"></i>Experience professionnelle</h4>
                   <div class="organization">
+										<?php
+										include "exp_pro_emploi.php";
+										while ($res=$req->fetch())
+										{
+											$lib=$res['lib_emploi'];
+								      $desc=$res['desc_emploi'];
+								      $date=date("d-m-Y", strtotime($res['date_crea']));
+								      $entreprise=$res['id_entreprise'];
+										?>
                     <img src="images/users/entreprise/user-<?php echo $entreprise?>.jpg" alt="" class="pull-left img-org" />
                     <div class="work-info">
                       <h5><?php echo $lib ?></h5>
                       <p><?php echo $desc ?> - <span class="text-grey">Le <?php echo $date; ?></span></p>
                     </div>
+										<?php
+										}
+										?>
                   </div>
 									<h4 class="grey"><i class="ion-ios-briefcase-outline icon-in-title"></i>Stages</h4>
 									<div class="organization">
+										<?php
+										include "exp_pro_stage.php";
+										while ($res=$req->fetch())
+										{
+										?>
                     <img src="images/users/entreprise/user-<?php echo $entreprise?>.jpg" alt="" class="pull-left img-org" />
                     <div class="work-info">
                       <h5><?php echo $libs ?></h5>
                       <p><?php echo $descs ?> - <span class="text-grey">Du <?php echo $dated ?> au <?php echo $datef ?></span></p>
                     </div>
+										<?php
+										}
+										?>
                   </div>
                 </div>
 							<?php
@@ -180,35 +198,6 @@
                       <li><a href="#">Russe</a></li>
                       <li><a href="#">Anglais</a></li>
                     </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-2 static">
-              <div id="sticky-sidebar">
-                <h4 class="grey">Sarah's activity</h4>
-                <div class="feed-item">
-                  <div class="live-activity">
-                    <p><a href="#" class="profile-link">Sarah</a> Commended on a Photo</p>
-                    <p class="text-muted">5 mins ago</p>
-                  </div>
-                </div>
-                <div class="feed-item">
-                  <div class="live-activity">
-                    <p><a href="#" class="profile-link">Sarah</a> Has posted a photo</p>
-                    <p class="text-muted">an hour ago</p>
-                  </div>
-                </div>
-                <div class="feed-item">
-                  <div class="live-activity">
-                    <p><a href="#" class="profile-link">Sarah</a> Liked her friend's post</p>
-                    <p class="text-muted">4 hours ago</p>
-                  </div>
-                </div>
-                <div class="feed-item">
-                  <div class="live-activity">
-                    <p><a href="#" class="profile-link">Sarah</a> has shared an album</p>
-                    <p class="text-muted">a day ago</p>
-                  </div>
                 </div>
               </div>
             </div>
