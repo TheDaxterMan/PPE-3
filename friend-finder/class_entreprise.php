@@ -44,7 +44,7 @@ class entreprise
 				$this -> photo_entreprise = $photo_ent;
 				$this -> login_entreprise = $login_ent;
 				$this -> mdp_entreprise = $mdp_ent;
-				$this -> etat-entreprise = $etat_ent;
+				$this -> etat_entreprise = $etat_ent;
 			}
 
 			/* ---------------------- */
