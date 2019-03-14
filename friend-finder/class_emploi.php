@@ -20,13 +20,13 @@ class emploi
     /* class Emploi Constructeur */
     /* ---------------------- */
 
-    Public function emploi ( $id_emp, $lib_emp, $desc_emp, $datec_emp)
+    Public function emploi ( $id_emp, $lib_emp, $desc_emp, $datec_emp, $etat_emp)
     {
       $this -> id_emploi = $id_emp;
       $this -> lib_emploi = $lib_emp;
 			$this -> desc_emploi = $desc_emp;
       $this -> datec_emploi = $datec_emp;
-	$this -> etat_emploi = $etat_emp;    
+			$this -> etat_emploi = $etat_emp;
     }
 
 		/* ---------------------- */
@@ -89,7 +89,7 @@ class emploi
     {
        $this-> desc_emploi = $datec_emp;
     }
-	
+
 	Public function set_etat_emploi ($etat_emp)
     {
        $this-> etat_emploi = $etat_emp;
@@ -107,7 +107,7 @@ class emploi
 			$etat_emp = $objet->get_etat_emploi();
 
 			/* !!!!!!!!!!!!!!! manque encapsulation de entreprise et utilisateur !!!!!!!!!!!!!!!!!! */
-			print $SQL = " INSERT INTO emploi values (NULL, '$lib_emp', '$desc_emp', '$datec_emp', '1', '1', '1')";
+			print $SQL = " INSERT INTO emploi values (NULL, '$lib_emp', '$desc_emp', '$datec_emp', '0', '1', '1', '1')";
 			$Req = $conn -> query ($SQL) or die (' Erreur ajout emploi ');
 		}
 
@@ -119,7 +119,7 @@ class emploi
 				$datec_emp = $objet->get_datec_emploi();
 
 				/* !!!!!!!!!!!!!!! manque encapsulation de entreprise et utilisateur !!!!!!!!!!!!!!!!!! */
-				print $SQL = " INSERT INTO emploi values (NULL, '$lib_emp', '$desc_emp', '$datec_emp', '1', '1', '1')";
+				print $SQL = " INSERT INTO emploi values (NULL, '$lib_emp', '$desc_emp', '$datec_emp', '0', '1', '1', '1')";
 				$Req = $conn -> query ($SQL) or die (' Erreur ajout emploi ');
 			}
 

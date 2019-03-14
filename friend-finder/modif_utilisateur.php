@@ -189,6 +189,12 @@
 									}
 									else
 									{
+										if (isset($_POST['suppr_entreprise']))
+										{
+											echo "SUPPR ENTREPRISE";
+										}
+										else
+										{
 									?>
 									<div class="block-title">
 										<h4 class="grey"><i class="icon ion-ios-book-outline"></i>Modifier/supprimer une entreprise</h4>
@@ -226,6 +232,7 @@
 										</form>
 									</div>
 									<?php
+										}
 									}
 								}
 								else
@@ -310,6 +317,12 @@
 										}
 										else
 										{
+											if (isset($_POST['suppr']))
+											{
+												echo "SUPPR UTILISATEUR";
+											}
+											else
+											{
 										?>
 										<div class="block-title">
 											<h4 class="grey"><i class="icon ion-ios-book-outline"></i>Modifier/supprimer un utilisateur</h4>
@@ -347,6 +360,7 @@
 											</form>
 										</div>
 										<?php
+											}
 										}
 									}
 								}
