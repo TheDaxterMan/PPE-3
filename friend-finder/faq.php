@@ -269,10 +269,9 @@
                 <p>Contactez-nous si vous avez la moindre question.</p>
               </div>
               <div class="reach-out">
-                <div class="method by-forum"><a href="#"><i class="icon ion-chatboxes"></i>Demande sur le forum</a></div>
-                <div class="method by-ticket"><a href="#"><i class="icon ion-help-circled"></i>Envoyer un ticket</a></div>
-                <div class="method by-email"><a href="#"><i class="icon ion-email"></i>Contact par mail</a></div>
-                <div class="method by-phone"><a href="#"><i class="icon ion-android-call"></i>Appeler nous</a></div>
+                <div class="method by-ticket"><a href="contact.php"><i class="icon ion-help-circled"></i>Envoyer un ticket</a></div>
+                <div class="method by-email"><a href="contact.php"><i class="icon ion-email"></i>Contact par mail</a></div>
+                <div class="method by-phone"><a href="contact.php"><i class="icon ion-android-call"></i>Appeler nous</a></div>
               </div>
             </div>
           </div>
