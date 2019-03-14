@@ -257,44 +257,6 @@ class utilisateur
 
 				}
 
-					Public function affiche_utilisateur_basic_info($objet, $conn)
-					{
-
-						$id_util = $objet->get_id_utilisateur();
-						$nom_util = $objet->get_nom_utilisateur();
-						$prenom_util = $objet->get_prenom_utilisateur();
-						$tel_util = $objet->get_tel_utilisateur();
-						$email_util = $objet->get_email_utilisateur();
-						$rue_util = $objet->get_rue_utilisateur();
-						$ville_util = $objet->get_ville_utilisateur();
-						$cp_util = $objet->get_cp_utilisateur();
-						$login_util = $objet->get_login_utilisateur();
-						$mdp_util = $objet->get_mdp_utilisateur();
-
-						print $SQL = " SELECT *  From utilisateur WHERE id_utilisateur = '$id_util'";
-						$Req = $conn -> query ($SQL) or die (' Erreur affichage utilisateur ');
-						Return $Res = $Req -> fetch ();
-					}
-
-					Public function affiche_utilisateur_diplome($objet, $conn)
-					{
-
-						$id_util = $objet->get_id_utilisateur();
-						$nom_util = $objet->get_nom_utilisateur();
-						$prenom_util = $objet->get_prenom_utilisateur();
-						$tel_util = $objet->get_tel_utilisateur();
-						$email_util = $objet->get_email_utilisateur();
-						$rue_util = $objet->get_rue_utilisateur();
-						$ville_util = $objet->get_ville_utilisateur();
-						$cp_util = $objet->get_cp_utilisateur();
-						$login_util = $objet->get_login_utilisateur();
-						$mdp_util = $objet->get_mdp_utilisateur();
-
-						print $SQL = " SELECT *  From utilisateur WHERE id_utilisateur = '$id_util'";
-						$Req = $conn -> query ($SQL) or die (' Erreur affichage utilisateur ');
-						Return $Res = $Req -> fetch ();
-				}
-
 				Public function suppr_utilisateur ($objet, $conn)
 				{
 					$id_util = $objet->get_id_utilisateur();
@@ -325,8 +287,25 @@ class utilisateur
 					$login_util = $objet->get_login_utilisateur();
 					$mdp_util = $objet->get_mdp_utilisateur();
 					
-					print $SQL = "UPDATE utilisateur SET etat_utilisateur='1' WHERE etat_utilisateur = 'etat_util'";
-				 	$Req = $conn -> query ($SQL) or die (' Erreur modification utilisateur ');
+					print $SQL = "UPDATE utilisateur SET etat_utilisateur=1";
+				 	$Req = $conn -> query ($SQL) or die (' Erreur suppression utilisateur ');
+				}
+				
+				Public function rajout_suppr_fictive($objet, $conn)
+				{
+					$id_util = $objet->get_id_utilisateur();
+					$nom_util = $objet->get_nom_utilisateur();
+					$prenom_util = $objet->get_prenom_utilisateur();
+					$tel_util = $objet->get_tel_utilisateur();
+					$email_util = $objet->get_email_utilisateur();
+					$rue_util = $objet->get_rue_utilisateur();
+					$ville_util = $objet->get_ville_utilisateur();
+					$cp_util = $objet->get_cp_utilisateur();
+					$login_util = $objet->get_login_utilisateur();
+					$mdp_util = $objet->get_mdp_utilisateur();
+					
+					print $SQL = "UPDATE utilisateur SET etat_utilisateur='0'";
+				 	$Req = $conn -> query ($SQL) or die (' Erreur rajout utilisateur ');
 				}
 }
 	/* ---------------------- */
