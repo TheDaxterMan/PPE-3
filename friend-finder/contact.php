@@ -63,7 +63,7 @@
                     </div>
                     <div class="form-group">
                       <textarea id="form-message" name="message" class="form-control" placeholder="Décrivez votre message" rows="4" required="required" data-error="Laisser nous un message s'il vous plaît."></textarea>
-										<div class="g-recaptcha" data-sitekey="6LfQfnwUAAAAAMiTmuUcHcQdPNhcm3V__BFjO_hp" required="required" data-error="Vous devez validé le captcha.">
+										<div class="g-recaptcha" data-sitekey="6LfQfnwUAAAAAMiTmuUcHcQdPNhcm3V__BFjO_hp" data-error="Vous devez validé le captcha.">
 											</div>
 										<?php
 
@@ -95,9 +95,9 @@
                 </div>
             		<div class="col-md-4 col-sm-5">
                   <h4 class="grey">Retrouvez-nous</h4>
-                  <div class="reach"><span class="phone-icon"><i class="icon ion-android-call"></i></span><p>+1 (234) 222 0754</p></div>
-                  <div class="reach"><span class="phone-icon"><i class="icon ion-email"></i></span><p>info@thunder-team.com</p></div>
-                  <div class="reach"><span class="phone-icon"><i class="icon ion-ios-location"></i></span><p>228 Park Ave S NY, USA</p></div>
+                  <div class="reach"><span class="phone-icon"><i class="icon ion-android-call"></i></span><p>0800 820 075</p></div>
+                  <div class="reach"><span class="phone-icon"><i class="icon ion-email"></i></span><p>secretariat@bahuet.org</p></div>
+                  <div class="reach"><span class="phone-icon"><i class="icon ion-ios-location"></i></span><p>41 bis Edmond Michelet <br> Brive-la-Gaillarde <br> 19120 </p></div>
                   <ul class="list-inline social-icons">
                     <li><a href="#"><i class="icon ion-social-facebook"></i></a></li>
                     <li><a href="#"><i class="icon ion-social-twitter"></i></a></li>
