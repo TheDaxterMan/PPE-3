@@ -9,7 +9,7 @@ if (isset($_POST['enregistrerf']))
 {
   $lib_filiere=$_POST['filiere'];
 
-  $sql="INSERT INTO filiere VALUES (NULL,'$lib_filiere')";
+  $sql="INSERT INTO filiere VALUES (NULL,'$lib_filiere','0')";
 
   $req = $conn -> prepare($sql)or die($conn->errorInfo());
   $req -> execute();

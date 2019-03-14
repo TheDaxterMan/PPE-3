@@ -174,6 +174,12 @@
 								</div>
 								<?php
 								}
+								if (isset($_POST['suppr']))
+								{
+									$id_diplome=$_POST['choix_diplome'];
+
+
+								}
 								else
 								{
 								?>

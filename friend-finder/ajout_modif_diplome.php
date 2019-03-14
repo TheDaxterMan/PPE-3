@@ -10,7 +10,7 @@ if (isset($_POST['enregistrerd']))
   $nom_diplome=$_POST['diplome'];
   $lib_diplome=$_POST['lib'];
 
-  $sql="INSERT INTO diplome VALUES (NULL,'$nom_diplome','$lib_diplome')";
+  $sql="INSERT INTO diplome VALUES (NULL,'$nom_diplome','$lib_diplome','0')";
 
   $req = $conn -> prepare($sql)or die($conn->errorInfo());
   $req -> execute();
