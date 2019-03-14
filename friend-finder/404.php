@@ -14,7 +14,7 @@
 		<meta name="description" content="This is social network html5 template available in themeforest......" />
 		<meta name="keywords" content="Social Network, Social Media, Make Friends, Newsfeed, Profile Page" />
 		<meta name="robots" content="index, follow" />
-		<title>404 Error | Nothing found !</title>
+		<title>Erreur 404 | Une erreur est arrivée !</title>
 
     <!-- Stylesheets
     ================================================= -->
@@ -41,19 +41,12 @@
     ================================================= -->
     <div class="error-page">
       <div class="error-content">
-        <div class="container">
-          <img src="images/404.png" alt="" class="img-responsive" />
           <div class="error-message">
-          	<h1 class="error-title">Whoops!</h1>
-          	<p>Looks like you are lost. But don't worry there is plenty to see!!</p>
+          	<h1 class="error-title">Oupsi!</h1>
+          	<p>Vous semblez perdu. Mais ne vous inquiétez pas les maïs !!</p>
+						<div class="container">
+							<img src="images/cri.gif" alt="" class="img-responsive" />
           </div>
-          <form class="search-form">
-            <div class="form-group">
-              <label for="search_content">Search Content!</label>
-              <input id="search_content" type="text" class="form-control" value="" placeholder="Search what you want to find...">
-            </div>
-            <button type="submit" class="btn btn-primary">Search Now!</button>
-          </form>
         </div>
     	</div>
     </div>
@@ -119,6 +112,7 @@
       </div>
       <div class="copyright">
         <p>Thunder Team � 2016. All rights reserved</p>
+				<p>Passemilla Web © 2018-2019. All rights reserved</p>
       </div>
 		</footer>
 
@@ -133,6 +127,9 @@
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
+		<script language=\"javascript\">;
+		alert('Vous allez être redirigé d\'acceuil');
+		</script>
   </body>
 
 <!-- Mirrored from thunder-team.com/friend-finder/404.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 08 Nov 2018 14:00:56 GMT -->
