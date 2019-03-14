@@ -111,18 +111,6 @@ class emploi
 			$Req = $conn -> query ($SQL) or die (' Erreur ajout emploi ');
 		}
 
-		Public function ajout_emploi_ent ($objet, $conn)
-			{
-				$id_emp = $objet->get_id_emploi();
-				$lib_emp = $objet->get_lib_emploi();
-				$desc_emp = $objet->get_desc_emploi();
-				$datec_emp = $objet->get_datec_emploi();
-
-				/* !!!!!!!!!!!!!!! manque encapsulation de entreprise et utilisateur !!!!!!!!!!!!!!!!!! */
-				print $SQL = " INSERT INTO emploi values (NULL, '$lib_emp', '$desc_emp', '$datec_emp', '0', '1', '1', '1')";
-				$Req = $conn -> query ($SQL) or die (' Erreur ajout emploi ');
-			}
-
 		Public function modif_emploi ($objet, $conn)
 		{
 			$id_emp = $objet->get_id_emploi();
