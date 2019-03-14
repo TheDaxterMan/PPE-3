@@ -152,14 +152,31 @@
                   <p>Vous pouvez ajouter ou supprimer vos centres d'intérêts sur cette page.</p>
                   <div class="line"></div>
                 </div>
+								<?php
+								if ($_SESSION['profil']=="eleve")
+								{
+									$sql="SELECT * FROM utilisateur, centres_interets, interesse
+									WHERE utilisateur.id_utilisateur=$id
+									AND interesse.id_utilisateur=utilisateur.id_utilisateur
+									AND centres_interets.id_interet=interesse.id_interet";
+									$req = $conn -> query($sql)or die($conn->errorInfo());
+									$req -> execute();
+								?>
                 <div class="edit-block">
                   <ul class="list-inline interests">
-                  	<li><a href="#"><i class="icon ion-android-bicycle"></i> Vélo</a></li>
-                  	<li><a href="#"><i class="icon ion-ios-camera"></i> Photography</a></li>
-                  	<li><a href="#"><i class="icon ion-android-cart"></i> Shopping</a></li>
-                  	<li><a href="#"><i class="icon ion-android-plane"></i> Voyages</a></li>
-                  	<li><a href="#"><i class="icon ion-android-restaurant"></i> Manger</a></li>
+										<?php
+										while ($res=$req->fetch())
+										{
+										?>
+                  	<li><a href="#"><i class="icon <?php echo $res['img_interet']; ?>"></i> <?php echo $res['lib_interet'] ?></a></li>
+										<?php
+										}
+										?>
                   </ul>
+								</div>
+								<?php
+								}
+								?>
                   <div class="line"></div>
                   <div class="row">
                     <p class="custom-label"><strong>Ajouter des intérêts</strong></p>
