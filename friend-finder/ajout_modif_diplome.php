@@ -18,9 +18,16 @@ if (isset($_POST['enregistrerd']))
 }
 if (isset($_POST['modifierd']))
 {
+
   $id_diplome=$_POST['id_diplome'];
   $nom_diplome=$_POST['nom_diplome'];
   $lib_diplome=$_POST['lib_diplome'];
+  $sql="UPDATE diplome SET nom_diplome = '$nom_diplome',
+                                lib_diplome = '$lib_diplome'
+                                 WHERE id_diplome = $id_diplome";
+
+  $req = $conn -> prepare($sql)or die($conn->errorInfo());
+  $req -> execute();
 
   $sql="UPDATE diplome SET nom_diplome = '$nom_diplome',
                                 lib_diplome = '$lib_diplome'
