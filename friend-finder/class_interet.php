@@ -22,10 +22,10 @@ class interet extends utilisateur
 
     Public function interet ( $id_int, $lib_int, $img_int, $etat_int)
     {
-      $this -> id_interet = $id_int;
-      $this -> lib_interet = $lib_int;
-      $this -> img_interet = $img_int;
-	    $this -> etat
+   	$this -> id_interet = $id_int;
+   	$this -> lib_interet = $lib_int;
+   	$this -> img_interet = $img_int;
+	$this -> etat_interet = $etat_int;
     }
 
 		public function getallint()
