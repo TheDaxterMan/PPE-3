@@ -6,8 +6,6 @@
 <?php
 
   include "bdd.inc.php";
-  include "class_utilisateur.php";
-  include "class_entreprise.php";
 
   $user = $_POST['login'];
   $mdp = $_POST['mdp'];
@@ -20,11 +18,13 @@
 //////////////////////////////////////////////////////////////////////////
   if ($radio=='Elève')
   {
-    $unutil = new utilisateur ('$user','','','','','','','','','','$mdp','');
+    $sql="SELECT * FROM utilisateur
+              WHERE login_utilisateur = '$user'
+              AND mdp_utilisateur = '$mdp'";
 
-    $unutil -> affiche_utilisateur_total_login($unutil, $conn);
-
-
+    $req = $conn -> prepare($sql)or die($conn->errorInfo());
+    $req -> execute();
+    $res=$req->fetch();
     if ($res['etat_utilisateur']==1) {
       echo"<script language=\"javascript\">";
       echo"alert('Votre compte est désactivé, veuillez contactez un administrateur pour le débloquer !')";
@@ -50,7 +50,7 @@
         echo"<script language=\"javascript\">";
         echo"alert('Votre identifiant où votre mot de passe est incorrect, veuillez réessayer !')";
         echo"</script>";
-        header('Refresh: 5; URL=./index.php');
+        header('Refresh: 1; URL=./index.php');
       }
     }
     }
@@ -60,9 +60,9 @@
 //////////////////////////////////////////////////////////////////////////
   if ($radio=='Entreprise')
   {
-    $uneent = new entreprise ('','','','','','','','','','','','');
-
-    $uneent -> affiche_entreprise_login($uneent, $conn);
+    $sql="SELECT * FROM entreprise
+              WHERE login_entreprise = '$user'
+              AND mdp_entreprise = '$mdp'";
 
     $req = $conn -> prepare($sql)or die($conn->errorInfo());
     $req -> execute();
