@@ -327,7 +327,7 @@ class utilisateur
 					Return $Res = $Req -> fetch ();
 				}
 	
-				Public function affiche_mdp($objet, $conn)
+				/*Public function affiche_mdp($objet, $conn)
 				{
 					$id_util = $objet->get_id_utilisateur();
 					$mdp_util = $objet->get_mdp_utilisateur();
@@ -335,7 +335,7 @@ class utilisateur
 					print $SQL = "SELECT mdp_utilisateur From utilisateur";
 					$Req = $conn -> query ($SQL) or die (' Erreur affichage mdp utilisateur ');
 					Return $Res = $Req -> fetch ();
-				}
+				}*/
 
 
 				Public function suppr_utilisateur ($objet, $conn)
