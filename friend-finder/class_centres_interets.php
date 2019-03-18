@@ -102,7 +102,7 @@ class interet
 			 $img_int = $objet->get_img_interet();
 			$etat_int = $objet->get_etat_interet();
 			 
-			 $SQL = "UPDATE interet SET lib_interet = '$lib_int', img_interet = '$img_int' WHERE id_interet = $id_interet)";
+			 $SQL = "UPDATE interet SET lib_interet = '$lib_int', img_interet = '$img_int' WHERE id_interet = $id_int)";
 			 $conn -> query ($SQL);
 		 }
 
@@ -136,7 +136,7 @@ class interet
 			 $img_int = $objet->get_img_interet();
 			 $etat_int = $objet->get_etat_interet();
 			 
-			 $SQL = "UPDATE interet SET  etat_interet = '$etat_int' WHERE id_interet = $id_interet)";
+			 $SQL = "UPDATE interet SET  etat_interet = '$etat_int' WHERE id_interet = $id_int)";
 			 $conn -> query ($SQL);
 		 }
 }
