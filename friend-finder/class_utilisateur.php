@@ -296,7 +296,7 @@ class utilisateur
 
 				}
 	
-				/*Public function affiche_utilisateur_total_login($objet, $conn)
+				Public function affiche_utilisateur_total_login($objet, $conn)
 				{
 					$id_util = $objet->get_id_utilisateur();
 					$nom_util = $objet->get_nom_utilisateur();
@@ -313,7 +313,7 @@ class utilisateur
 					print $SQL = " SELECT *  From utilisateur WHERE id_utilisateur = '$id_util' AND mdp_utilisateur ='$mdp_util'";
 					$Req = $conn -> query ($SQL) or die (' Erreur affichage utilisateur ');
 					Return $Res = $Req -> fetch ();
-				}*/
+				}
 	
 				Public function affiche_utilisateur_partiel($objet, $conn)
 				{
