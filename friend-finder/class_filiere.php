@@ -115,6 +115,16 @@ class filiere
 			print $SQL = " DELETE FROM filiere WHERE id_filiere = '$id_fil'";
 			$Req = $conn -> query ($SQL) or die (' Erreur suppression filiere ');
 		}
+	
+		Public function suppr_fictive_filiere ($objet, $conn)
+		 {
+			 $id_fil = $objet->get_id_filiere();
+			 $lib_fil = $objet->get_lib_filiere();
+			 $etat_fil = $objet->get_etat_filiere();
+			 
+			 $SQL = "UPDATE interet SET etat_filiere = '$etat_fil' WHERE id_filiere = $id_filiere)";
+			 $conn -> query ($SQL);
+		 }
 }
   /* ---------------------- */
   /* FIN class Filiere */
