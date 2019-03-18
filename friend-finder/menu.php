@@ -86,7 +86,7 @@
               <li><a href="edit-profile-basic.php">Modifier mes Informations</a></li>
               <li><a href="edit-profile-work-edu.php">Modifier mon Travail</a></li>
               <li><a href="edit-profile-interests.php">Modifier mes centres d'intérêts</a></li>
-              <li><a href="edit-profile-settings.php">Paramètre du compte</a></li>
+              <li><a href="edit-profile-settings.php">Paramètres du compte</a></li>
               <li><a href="edit-profile-password.php">Changer de Mot de passe</a></li>
               <li><a href="edit-profile-image.php">Changer de photo de profil</a></li>
               <li><a href="newsfeed.php?deconnexion=true">Déconnexion</a></li>
