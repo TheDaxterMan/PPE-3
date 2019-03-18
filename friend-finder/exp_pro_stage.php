@@ -1,5 +1,6 @@
 <?php
 include "bdd.inc.php";
+/*include "class_stage.php';*/
 $id=$_SESSION['id'];
 
     ///////////////////////////////////////////////////////////////////////////////
@@ -7,11 +8,10 @@ $id=$_SESSION['id'];
     ///////////////////////////////////////////////////////////////////////////////
         if ($_SESSION['profil']=="eleve")
         {
-          $sql="SELECT * FROM stage
-                WHERE id_utilisateur=$id";
-          $req = $conn -> query($sql)or die($conn->errorInfo());
-          $req -> execute();
-          $res=$req->fetch();
+            /*$unstage = new stage ('','','','','','','')
+              
+            $unstage -> affiche_stage($unstage, $conn)  */
+         
           $libs=$res['lib_stage'];
           $descs=$res['desc_stage'];
           $dated=date("d-m-Y", strtotime($res['date_debut_stage']));
