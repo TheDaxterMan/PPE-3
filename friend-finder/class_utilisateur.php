@@ -289,7 +289,7 @@ class utilisateur
 					$Req = $conn -> query ($SQL) or die (' Erreur suppression utilisateur ');
 				}
 
-				Public function suppr_fictive($objet, $conn)
+				Public function suppr_fictive_util($objet, $conn)
 				{
 					$id_util = $objet->get_id_utilisateur();
 					$nom_util = $objet->get_nom_utilisateur();
@@ -306,7 +306,7 @@ class utilisateur
 				 	$Req = $conn -> query ($SQL) or die (' Erreur suppression utilisateur ');
 				}
 				
-				Public function rajout_suppr_fictive($objet, $conn)
+				Public function rajout_suppr_fictive_util($objet, $conn)
 				{
 					$id_util = $objet->get_id_utilisateur();
 					$nom_util = $objet->get_nom_utilisateur();
