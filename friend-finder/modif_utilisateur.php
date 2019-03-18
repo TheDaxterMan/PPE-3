@@ -322,13 +322,13 @@
 										}
 										else
 										{
-											if (isset($_POST['suppr']))
+											if ($id=$_POST[$id])
 											{
 												echo "SUPPR UTILISATEUR";
 												
-											$unutil = new entreprise ('','','','','','','','','','','','');
+											$unutil = new utilisateur ($id,'','','','','','','','','','','');
 											
-											$unutil -> suppr_fictive_ent ($unutil, $conn);
+											$unutil -> suppr_fictive_util ($unutil, $conn);
 											
 											}
 											else
