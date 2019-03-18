@@ -254,6 +254,27 @@ class entreprise
 					$Req = $conn -> query ($SQL) or die (' Erreur affichage entreprise ');
 					Return $Res = $Req -> fetch ();
 				}
+	
+				Public function affiche_entreprise_login ($objet, $conn)
+				{
+
+					$id_ent = $objet->get_id_entreprise();
+					$nom_ent = $objet->get_nom_entreprise();
+					$nom_resp = $objet->get_nom_responsable();
+					$prenom_resp = $objet->get_prenom_responsable();
+					$mail_ent = $objet->get_mail_entreprise();
+					$rue_ent = $objet->get_rue_entreprise();
+					$ville_ent = $objet->get_ville_entreprise();
+					$cp_ent = $objet->get_cp_entreprise();
+					$photo_ent = $objet->get_photo_entreprise();
+					$login_ent = $objet->get_login_entreprise();
+					$mdp_ent = $objet->get_mdp_entreprise();
+					$etat_ent = $objet->get_etat_entreprise();
+
+					print $SQL = " SELECT *  From entreprise WHERE id_entreprise = '$id_ent' AND mdp_entreprise = '$mdp_ent'";
+					$Req = $conn -> query ($SQL) or die (' Erreur affichage entreprise ');
+					Return $Res = $Req -> fetch ();
+				}
 
 				Public function suppr_entreprise ($objet, $conn)
 				{
