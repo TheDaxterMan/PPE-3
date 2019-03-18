@@ -21,10 +21,10 @@
   if ($radio=='Elève')
   {
     $unutil = new utilisateur ('$user','','','','','','','','','','$mdp','');
-    
+
     $unutil -> affiche_utilisateur_total_login($unutil, $conn);
-    
-    
+
+
     if ($res['etat_utilisateur']==1) {
       echo"<script language=\"javascript\">";
       echo"alert('Votre compte est désactivé, veuillez contactez un administrateur pour le débloquer !')";
@@ -50,7 +50,7 @@
         echo"<script language=\"javascript\">";
         echo"alert('Votre identifiant où votre mot de passe est incorrect, veuillez réessayer !')";
         echo"</script>";
-        header('Refresh: 1; URL=./index.php');
+        header('Refresh: 5; URL=./index.php');
       }
     }
     }
@@ -61,9 +61,9 @@
   if ($radio=='Entreprise')
   {
     $uneent = new entreprise ('','','','','','','','','','','','');
-    
+
     $uneent -> affiche_entreprise_login($uneent, $conn);
-    
+
     $req = $conn -> prepare($sql)or die($conn->errorInfo());
     $req -> execute();
     $res=$req->fetch();
