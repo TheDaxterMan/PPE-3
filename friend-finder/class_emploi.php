@@ -4,7 +4,7 @@ include "class_utilisateur.php";
   /* DEBUT class Emploi */
   /* ---------------------- */
 
-class emploi extends utilisateur
+class emploi /*extends utilisateur*/
 	{
     /* ---------------------- */
     /* class Emploi Variables */
@@ -134,6 +134,23 @@ class emploi extends utilisateur
 			$Req = $conn -> query ($SQL) or die (' Erreur affichage emploi ');
 			Return $Res = $Req -> fetch ();
 		}
+	
+		/* Public function affiche_exp_pro_emploi ($objet, $conn)
+		{
+
+			$id_emp = $objet->get_id_emploi();
+			$lib_emp = $objet->get_lib_emploi();
+			$desc_emp = $objet->get_desc_emploi();
+			$datec_emp = $objet->get_datec_emploi();
+
+			print $SQL = " SELECT * FROM emploi, entreprise, utilisateur
+            				WHERE utilisateur.id_utilisateur=$id
+          				AND emploi.id_utilisateur=utilisateur.id_utilisateur
+            				AND entreprise.id_entreprise=emploi.id_entreprise
+            				ORDER BY date_crea DESC";
+			$Req = $conn -> query ($SQL) or die (' Erreur affichage emploi ');
+			Return $Res = $Req -> fetch ();
+		} */
 
 		Public function suppr_emploi ($objet, $conn)
 		{
@@ -157,6 +174,7 @@ class emploi extends utilisateur
 			WHERE id_emploi = '$id_emp'";
 			$Req = $conn -> query ($SQL) or die (' Erreur modification emploi ');
 		}
+	
 }
   /* ---------------------- */
   /* FIN class Emploi */
