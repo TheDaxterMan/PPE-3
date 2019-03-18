@@ -256,6 +256,21 @@ class utilisateur
 					Return $Res = $Req -> fetch ();
 
 				}
+	
+				Public function affiche_utilisateur_partiel($objet, $conn)
+				{
+
+					$id_util = $objet->get_id_utilisateur();
+					$nom_util = $objet->get_nom_utilisateur();
+					$prenom_util = $objet->get_prenom_utilisateur();
+
+					print $SQL = "SELECT nom_utilisateur, prenom_utilisateur From utilisateur
+					WHERE id_utilisateur = $_SESSION['id']";
+					$Req = $conn -> query ($SQL) or die (' Erreur affichage utilisateur ');
+					Return $Res = $Req -> fetch ();
+
+				}
+
 
 				Public function suppr_utilisateur ($objet, $conn)
 				{
