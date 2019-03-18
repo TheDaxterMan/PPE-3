@@ -98,7 +98,7 @@ class diplome
 			 $lib_dip = $objet->get_lib_diplome();
 		  	 $etat_dip = $objet->get_etat_diplome();
 
-			 $SQL = "UPDATE diplome SET id_diplome = '$id_dip', id_diplome = '$id_dip')";
+			 $SQL = "UPDATE diplome SET nom_diplome = '$nom_diplome', lib_diplome = '$lib_diplome' WHERE id_diplome = $id_diplome )";
 			 $conn -> query ($SQL);
 		 }
 
