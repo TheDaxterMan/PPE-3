@@ -1,13 +1,7 @@
 <?php
 
 include "bdd.inc.php";
-
-$sql="SELECT nom_utilisateur,prenom_utilisateur FROM id_utilisateur
-      WHERE id_utilisateur = $_SESSION['id']";
-
-      $req = $conn -> prepare($sql)or die($conn->errorInfo());
-      $req -> execute();
-      $res=$req->fetch();
+include "class_utilisateur.php";
 
 $nom=$res['nom_utilisateur'];
 $prenom=$res['prenom_utilisateur']
@@ -15,6 +9,10 @@ $mail=$_POST['email'];
 $objet="Vous avez reçu un mail d'un(e) utilisateur(rice) de ViaBahuet";
 $objet=$_POST['objet'];
 $message=$_POST['message'];
+
+$unutil = new utilisateur ('','','','','','','','','','','','');
+
+$unutil -> affiche_utilisateur_partiel($unutil, $conn);
 
 $header="MIME-Version: 1.0\r\n";
 $header.='From:"'.$nom.'"<virlouvet.maxime@gmail.com>'."\n";
