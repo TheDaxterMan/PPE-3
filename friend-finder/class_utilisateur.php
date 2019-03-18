@@ -287,7 +287,7 @@ class utilisateur
 					$login_util = $objet->get_login_utilisateur();
 					$mdp_util = $objet->get_mdp_utilisateur();
 					
-					print $SQL = "UPDATE utilisateur SET etat_utilisateur=1";
+					print $SQL = "UPDATE utilisateur SET etat_utilisateur=1 WHERE $id_util = '$id'";
 				 	$Req = $conn -> query ($SQL) or die (' Erreur suppression utilisateur ');
 				}
 				
