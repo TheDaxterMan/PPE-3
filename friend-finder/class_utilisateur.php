@@ -2,6 +2,7 @@
 
 include 'bdd.inc.php';
 include "class_filiere.php";
+include "class_photo.php";
 
 	/* ---------------------- */
 	/* DEBUT class Utilisateur */
