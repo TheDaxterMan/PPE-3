@@ -3,7 +3,7 @@ session_start();
 require_once('login.inc.php');
 include "bdd.inc.php";
 include "login.inc.php";
-
+include "class_filiere.php";
 
 if (isset($_POST['enregistrerf']))
 {
