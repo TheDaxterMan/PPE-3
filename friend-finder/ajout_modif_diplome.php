@@ -28,13 +28,6 @@ if (isset($_POST['modifierd']))
 
   $req = $conn -> prepare($sql)or die($conn->errorInfo());
   $req -> execute();
-
-  $sql="UPDATE diplome SET nom_diplome = '$nom_diplome',
-                                lib_diplome = '$lib_diplome'
-                                 WHERE id_diplome = $id_diplome";
-
-  $req = $conn -> prepare($sql)or die($conn->errorInfo());
-  $req -> execute();
   header('Location: ./modif_diplome.php');
 }
 ?>
