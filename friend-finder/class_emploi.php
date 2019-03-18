@@ -1,10 +1,10 @@
 <?php
-
+include "class_utilisateur.php";
   /* ---------------------- */
   /* DEBUT class Emploi */
   /* ---------------------- */
 
-class emploi
+class emploi extends utilisateur
 	{
     /* ---------------------- */
     /* class Emploi Variables */
@@ -106,8 +106,7 @@ class emploi
 			$datec_emp = $objet->get_datec_emploi();
 			$etat_emp = $objet->get_etat_emploi();
 
-			/* !!!!!!!!!!!!!!! manque encapsulation de entreprise et utilisateur !!!!!!!!!!!!!!!!!! */
-			print $SQL = " INSERT INTO emploi values (NULL, '$lib_emp', '$desc_emp', '$datec_emp', '0', '1', '1', '1')";
+		print $SQL = " INSERT INTO emploi values (NULL, '$lib_emp', '$desc_emp', '$datec_emp', '0', '1', '1', '1')";
 			$Req = $conn -> query ($SQL) or die (' Erreur ajout emploi ');
 		}
 
@@ -145,6 +144,18 @@ class emploi
 
 			print $SQL = " DELETE FROM emploi WHERE id_emploi = '$id_emp'";
 			$Req = $conn -> query ($SQL) or die (' Erreur suppression emploi ');
+		}
+	
+		Public function suppr_fictive_emploi ($objet, $conn)
+		{
+			$id_emp = $objet->get_id_emploi();
+			$lib_emp = $objet->get_lib_emploi();
+			$desc_emp = $objet->get_desc_emploi();
+			$datec_emp = $objet->get_datec_emploi();
+
+			print $SQL = "UPDATE emploi SET etat_emploi = 1,
+			WHERE id_emploi = '$id_emp'";
+			$Req = $conn -> query ($SQL) or die (' Erreur modification emploi ');
 		}
 }
   /* ---------------------- */
