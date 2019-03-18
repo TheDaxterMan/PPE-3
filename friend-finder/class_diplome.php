@@ -124,6 +124,17 @@ class diplome
 			 $SQL = " DELETE FROM diplome WHERE id_diplome = '$id_dip'";
 			 $conn -> query ($SQL);
 		 }
+		
+		Public function suppr_fictive_interet ($objet, $conn)
+		 {
+			$id_dip = $objet->get_id_diplome();
+		   	$nom_dip = $objet->get_nom_diplome();
+			 $lib_dip = $objet->get_lib_diplome();
+			$etat_dip = $objet->get_etat_diplome();
+			 
+			 $SQL = "UPDATE interet SET  etat_diplome = '$etat_dip' WHERE id_diplome = $id_diplome)";
+			 $conn -> query ($SQL);
+		 }
 }
    /* ---------------------- */
    /* FIN class Diplome */
