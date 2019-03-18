@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////
   if ($radio=='Elève')
   {
-    $unutil = new utilisateur ('','','','','','','','','','','','');
+    $unutil = new utilisateur ('','','','','','','','','','','$mdp','');
     
     $unutil -> affiche_utilisateur_total_login($unutil, $conn);
     
