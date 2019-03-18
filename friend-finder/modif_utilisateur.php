@@ -5,6 +5,7 @@
 	include "login.inc.php";
 	include "info.php";
 	include "class_entreprise.php";
+	include "class_utilisateur.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
