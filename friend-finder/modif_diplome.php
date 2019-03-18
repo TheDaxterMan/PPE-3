@@ -4,6 +4,7 @@
 	include "bdd.inc.php";
 	include "login.inc.php";
 	include "info.php";
+	include "class_diplome.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
