@@ -1,6 +1,7 @@
 <?php
 
 include 'bdd.inc.php';
+include "class_filiere.php";
 
 	/* ---------------------- */
 	/* DEBUT class Utilisateur */
@@ -23,14 +24,13 @@ class utilisateur
 		Private $photo_utilisateur;
 		Private $login_utilisateur;
 		Private $mdp_utilisateur;
-		Private $new_mdp_utilisateur;
 		Private $etat_utilisateur;
 
 		/* ---------------------- */
 		/* class Utilisateur Constructeur */
 		/* ---------------------- */
 
-			Public function utilisateur ( $id_util, $nom_util, $prenom_util, $tel_util, $email_util, $rue_util, $ville_util, $cp_util, $photo_util, $login_util, $mdp_util, $new_mdp_util, $etat_util)
+			Public function utilisateur ( $id_util, $nom_util, $prenom_util, $tel_util, $email_util, $rue_util, $ville_util, $cp_util, $photo_util, $login_util, $mdp_util, $etat_util)
 			{
 				$this -> id_utilisateur = $id_util;
 				$this -> nom_utilisateur = $nom_util;
@@ -43,7 +43,6 @@ class utilisateur
 				$this -> photo_utilisateur = $photo_util;
 				$this -> login_utilisateur = $login_util;
 				$this -> mdp_utilisateur = $mdp_util;
-				$this -> new_mdp_utilisateur = $new_mdp_util;
 				$this -> etat_utilisateur = $etat_util;
 			}
 
@@ -64,7 +63,6 @@ class utilisateur
 				$data = $data.$this->photo_utilisateur;
 				$data = $data.$this->login_utilisateur;
 				$data = $data.$this->mdp_utilisateur;
-				$data = $data.$this->new_mdp_utilisateur;				
 				$data = $data.$this->etat_utilisateur;
 				return $data;
 			}
@@ -127,12 +125,6 @@ class utilisateur
 			{
 				return $this-> mdp_utilisateur;
 			}
-	
-			Public function  get_new_mdp_utilisateur ()
-			{
-				return $this-> new_mdp_utilisateur;
-			}
-
 
 			Public function  get_etat_utilisateur ()
 			{
@@ -195,11 +187,6 @@ class utilisateur
 				 $this-> mdp_utilisateur = $mdp_util;
 			}
 	
-			Public function set_new_mdp_utilisateur($new_mdp_util)
-			{
-				 $this-> new_mdp_utilisateur = $new_mdp_util;
-			}
-
 			Public function set_etat_utilisateur($etat_util)
 			{
 				 $this-> etat_utilisateur = $etat_util;
@@ -222,10 +209,9 @@ class utilisateur
 					$photo_util = $objet->get_photo_utilisateur();
 					$login_util = $objet->get_login_utilisateur();
 					$mdp_util = $objet->get_mdp_utilisateur();
-					$new_mdp_util = $objet->get_new_mdp_utilisateur();
 					$etat_util = $objet->get_etat_utilisateur();
 
-					print $SQL = " INSERT INTO utilisateur values (NULL, '$nom_util', '$prenom_util', '$tel_util', '$email_util', '$rue_util', '$ville_util', '$cp_util', '$photo_util', '$login_util', '$mdp_util','new_mdp_util', '0', '1')";
+					print $SQL = " INSERT INTO utilisateur values (NULL, '$nom_util', '$prenom_util', '$tel_util', '$email_util', '$rue_util', '$ville_util', '$cp_util', '$photo_util', '$login_util', '$mdp_util', '0', '1')";
 					$Req = $conn -> query ($SQL) or die (' Erreur ajout utilisateur ');
 				}
 
@@ -242,23 +228,29 @@ class utilisateur
 					$photo_util = $objet->get_photo_utilisateur();
 					$login_util = $objet->get_login_utilisateur();
 					$mdp_util = $objet->get_mdp_utilisateur();
-					$etat_util = $objet->get_etat_utilisateur();
 
 					print $SQL = "UPDATE utilisateur SET nom_utilisateur = '$nom_util', prenom_utilisateur  = '$prenom_util',
 					tel_utilisateur = '$tel_util', email_utilisateur = '$email_util', rue_utilisateur = '$rue_util', ville_utilisateur = '$ville_util',
 					cp_utilisateur = '$cp_util', mdp_utilisateur = '$mdp_util' WHERE id_utilisateur = '$id_util'";
 				 	$Req = $conn -> query ($SQL) or die (' Erreur modification utilisateur ');
 				}
-	
-				Public function modif_new_mdp($objet, $conn)
+				
+				Public function modif_utilisateur_partiel ($objet, $conn)
 				{
 					$id_util = $objet->get_id_utilisateur();
-					$mdp_util = $objet->get_mdp_utilisateur();
-					$new_mdp_util = $objet->get_new_mdp_utilisateur();
+					$nom_util = $objet->get_nom_utilisateur();
+					$prenom_util = $objet->get_prenom_utilisateur();
+					$tel_util = $objet->get_tel_utilisateur();
+					$email_util = $objet->get_email_utilisateur();
+					$rue_util = $objet->get_rue_utilisateur();
+					$ville_util = $objet->get_ville_utilisateur();
+					$cp_util = $objet->get_cp_utilisateur();
+					$id_filiere = $objet->get_id_filiere();
 					
-					print $SQL = "UPDATE utilisateur SET new_mdp_utilisateur = '$new_mdp_util' WHERE id_utilisateur = $id_util";
-					$Req = $conn -> query ($SQL) or die (' Erreur affichage mdp utilisateur ');
-					Return $Res = $Req -> fetch ();
+					print $SQL = "UPDATE utilisateur SET nom_utilisateur = '$nom',prenom_utilisateur = '$prenom', tel_utilisateur = '$tel',
+ 					email_utilisateur = '$mail', rue_utilisateur = '$rue', ville_utilisateur = '$ville', 
+ 					cp_utilisateur = '$cp', id_filiere = '$filiere' WHERE id_utilisateur = $id_util";
+					$Req = $conn -> query ($SQL) or die (' Erreur modification utilisateur ');
 				}
 	
 				Public function modif_old_mdp($objet, $conn)
@@ -267,7 +259,7 @@ class utilisateur
 					$mdp_util = $objet->get_mdp_utilisateur();
 					
 					print $SQL = "UPDATE utilisateur SET mdp_utilisateur = '$mdp_util' WHERE id_utilisateur = $id_util";
-					$Req = $conn -> query ($SQL) or die (' Erreur affichage mdp utilisateur ');
+					$Req = $conn -> query ($SQL) or die (' Erreur modif mdp utilisateur ');
 					Return $Res = $Req -> fetch ();
 				}
 	
