@@ -233,6 +233,23 @@ class entreprise
 					cp_entreprise = '$cp_ent', photo_entreprise = '$photo_ent', mdp_entreprise = '$mdp_ent' WHERE id_entreprise = '$id_ent'";
 				 	$Req = $conn -> query ($SQL) or die (' Erreur modification entreprise ');
 				}
+	
+				Public function modif_entreprise_partiel ($objet, $conn)
+				{
+					$id_ent = $objet->get_id_entreprise();
+					$nom_ent = $objet->get_nom_entreprise();
+					$nom_resp = $objet->get_nom_responsable();
+					$prenom_resp = $objet->get_prenom_responsable();
+					$mail_ent = $objet->get_mail_entreprise();
+					$rue_ent = $objet->get_rue_entreprise();
+					$ville_ent = $objet->get_ville_entreprise();
+					$cp_ent = $objet->get_cp_entreprise();					
+
+					print $SQL = "UPDATE entreprise SET  nom_entreprise = '$entreprise',nom_responsable = '$nom',
+					prenom_responsable = '$prenom', mail_entreprise = '$mail', rue_entreprise = '$rue', 
+					ville_entreprise = '$ville', cp_entreprise = '$cp' WHERE id_entreprise = '$id_ent'";
+				 	$Req = $conn -> query ($SQL) or die (' Erreur modification entreprise ');
+				}
 
 				Public function affiche_entreprise ($objet, $conn)
 				{
