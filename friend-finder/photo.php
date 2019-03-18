@@ -2,8 +2,6 @@
 	session_start();
 	include "bdd.inc.php";
 	include "login.inc.php";
-	include "class_utilisateur.php";
-	include "class_entreprise.php";
 
   $id = $_SESSION['id'];
 
@@ -34,10 +32,6 @@
 
 			$sql = "UPDATE utilisateur SET photo_utilisateur = '$type'
 	                                   WHERE id_utilisateur = $id";
-			
-			$unutil = new utilisateur ('','','','','','','','','','','','');
-			
-			$unutil -> modif_utilisateur_photo ($unutil, $conn);
 	    $req = $conn -> prepare($sql);
 	    $req -> execute();
 		}

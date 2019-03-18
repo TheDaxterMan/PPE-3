@@ -1,14 +1,14 @@
 <?php
   include "bdd.inc.php";
-  include "class_utilisateur.php";
+
   $old = $_POST['mdp'];
   $new = $_POST['newmdp'];
   $new2 = $_POST['newmdp2'];
   $iduti = $_POST['id'];
 
-$unutil = new utilisateur ('','','','','','','','','','','','');
-
-$unutil -> affiche_mdp($unutil, $conn);
+  $sql="SELECT mdp_utilisateur FROM utilisateur";
+	$req = $conn -> query($sql)or die($conn->errorInfo());
+	$res=$req->fetch();
 
   $mdpbase = $res['mdp_utilisateur'];
 
@@ -16,15 +16,11 @@ $unutil -> affiche_mdp($unutil, $conn);
   {
     if ($new==$new2)
     {
-	    
-      /*$sql = "UPDATE utilisateur SET mdp_utilisateur = '$new'
+      $sql = "UPDATE utilisateur SET mdp_utilisateur = '$new'
                                      WHERE id_utilisateur = $iduti";
-
-*/      
-	$autreutil = new utilisateur ('','','','','','','','','',$new,'', '');
-
-	$autreutil -> modif_old_mpd($autreutil, $conn);
-	    
+      $req = $conn -> prepare($sql);
+      $req -> execute();
+      
     }
     else
     {
