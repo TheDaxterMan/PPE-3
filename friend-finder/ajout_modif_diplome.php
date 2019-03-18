@@ -22,7 +22,7 @@ if (isset($_POST['modifierd']))
   $nom_diplome=$_POST['nom_diplome'];
   $lib_diplome=$_POST['lib_diplome'];
   
-  $autrediplome = ('','','','');
+  $autrediplome = new diplome ('','','','');
   
   $autrediplome -> modif_diplome($autrediplome, $conn);
 
