@@ -142,11 +142,11 @@
 								if (isset($_POST['modif']))
 								{
 									$id_diplome=$_POST['choix_diplome'];
-
-									$sql="SELECT * FROM diplome WHERE id_diplome='$id_diplome'";
-									$req = $conn -> prepare($sql)or die($conn->errorInfo());
-									$req -> execute();
-									$res=$req->fetch();
+									
+									$undiplome = new diplome ('','','','');
+									
+									$undiplome -> affiche_diplome($undiplome, $conn);
+									
 								?>
 								<div class="block-title">
 									<h4 class="grey"><i class="icon ion-ios-book-outline"></i>Modifier diplômes</h4>
