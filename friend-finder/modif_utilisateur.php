@@ -192,6 +192,11 @@
 										if (isset($_POST['suppr_entreprise']))
 										{
 											echo "SUPPR ENTREPRISE";
+											
+											$uneent = new entreprise ('','','','','','','','','','','','');
+											
+											$uneent -> suppr_fictive_ent ($uneent, $conn);
+											
 										}
 										else
 										{
@@ -320,6 +325,11 @@
 											if (isset($_POST['suppr']))
 											{
 												echo "SUPPR UTILISATEUR";
+												
+											$unutil = new entreprise ('','','','','','','','','','','','');
+											
+											$unutil -> suppr_fictive_ent ($unutil, $conn);
+											
 											}
 											else
 											{
