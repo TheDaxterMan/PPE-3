@@ -322,11 +322,11 @@
 										}
 										else
 										{
-											if ($id=$_POST[$id])
+											if (id=$_POST[$id])
 											{
 												echo "SUPPR UTILISATEUR";
 												
-											$unutil = new utilisateur ($id,'','','','','','','','','','','');
+											$unutil = new utilisateur (id,'','','','','','','','','','','');
 											
 											$unutil -> suppr_fictive_util ($unutil, $conn);
 											
