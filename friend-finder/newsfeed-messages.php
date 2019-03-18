@@ -3,12 +3,14 @@
 	require_once('login.inc.php');
 	include "bdd.inc.php";
 	include "login.inc.php";
-
-	$sql="SELECT * FROM utilisateur";
-	$req = $conn -> query($sql)or die($conn->errorInfo());
-	$res=$req->fetch();
+	include "class_utilisateur";
+	
 	$nom=$res['nom_utilisateur'];
 	$prenom=$res['prenom_utilisateur'];
+
+	$unutil = new utilisateur ('','','','','','','','','','','','');
+
+	$unutil -> affiche_utilisateur_total ($unutil, $conn);
 ?>
 <!DOCTYPE html>
 <html lang="en">

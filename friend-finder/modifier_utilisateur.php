@@ -1,6 +1,8 @@
 <?php
 session_start();
 include "bdd.inc.php";
+include "class_utilisateur.php";
+include "class_entreprise.php";
 
   $choix= $_SESSION['choix'];
   $iduti= $_POST['id'];
@@ -17,15 +19,11 @@ include "bdd.inc.php";
       {
         $filiere = $_POST['choix_filiere'];
         $tel = $_POST['tel'];
-        $sql = "UPDATE utilisateur SET nom_utilisateur = '$nom',
-                                       prenom_utilisateur = '$prenom',
-                                       tel_utilisateur = '$tel',
-                                       email_utilisateur = '$mail',
-                                       rue_utilisateur = '$rue',
-                                       ville_utilisateur = '$ville',
-                                       cp_utilisateur = '$cp',
-                                       id_filiere = '$filiere'
-                                       WHERE id_utilisateur = $iduti";
+        
+        $unutil = new utilisateur ('','','','','','','','','','','','');
+        
+        $unutil -> affiche_utilisateur_partiel ($unuil, $conn);
+        
       }
   ///////////////////////////////////////////////////////////////////////////////
   /*												E N T R E P R I S E																*/
@@ -33,14 +31,11 @@ include "bdd.inc.php";
       if ($choix=="entreprise")
       {
         $entreprise = $_POST['entr'];
-        $sql = "UPDATE entreprise SET  nom_entreprise = '$entreprise',
-                                       nom_responsable = '$nom',
-                                       prenom_responsable = '$prenom',
-                                       mail_entreprise = '$mail',
-                                       rue_entreprise = '$rue',
-                                       ville_entreprise = '$ville',
-                                       cp_entreprise = '$cp'
-                                       WHERE id_entreprise = $iduti";
+        
+        $unent = new entreprise ('','','','','','','','','','','','');
+        
+        $unent -> affiche_utilisateur_partiel ($unent, $conn);
+        
       }
 
 

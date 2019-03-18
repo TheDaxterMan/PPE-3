@@ -1,6 +1,7 @@
 <?php
 
 include 'bdd.inc.php';
+include "class_filiere.php";
 
 	/* ---------------------- */
 	/* DEBUT class Utilisateur */
@@ -185,7 +186,7 @@ class utilisateur
 			{
 				 $this-> mdp_utilisateur = $mdp_util;
 			}
-
+	
 			Public function set_etat_utilisateur($etat_util)
 			{
 				 $this-> etat_utilisateur = $etat_util;
@@ -227,12 +228,49 @@ class utilisateur
 					$photo_util = $objet->get_photo_utilisateur();
 					$login_util = $objet->get_login_utilisateur();
 					$mdp_util = $objet->get_mdp_utilisateur();
-					$etat_util = $objet->get_etat_utilisateur();
 
 					print $SQL = "UPDATE utilisateur SET nom_utilisateur = '$nom_util', prenom_utilisateur  = '$prenom_util',
 					tel_utilisateur = '$tel_util', email_utilisateur = '$email_util', rue_utilisateur = '$rue_util', ville_utilisateur = '$ville_util',
 					cp_utilisateur = '$cp_util', mdp_utilisateur = '$mdp_util' WHERE id_utilisateur = '$id_util'";
 				 	$Req = $conn -> query ($SQL) or die (' Erreur modification utilisateur ');
+				}
+				
+				Public function modif_utilisateur_partiel ($objet, $conn)
+				{
+					$id_util = $objet->get_id_utilisateur();
+					$nom_util = $objet->get_nom_utilisateur();
+					$prenom_util = $objet->get_prenom_utilisateur();
+					$tel_util = $objet->get_tel_utilisateur();
+					$email_util = $objet->get_email_utilisateur();
+					$rue_util = $objet->get_rue_utilisateur();
+					$ville_util = $objet->get_ville_utilisateur();
+					$cp_util = $objet->get_cp_utilisateur();
+					$id_filiere = $objet->get_id_filiere();
+					
+					print $SQL = "UPDATE utilisateur SET nom_utilisateur = '$nom',prenom_utilisateur = '$prenom', tel_utilisateur = '$tel',
+ 					email_utilisateur = '$mail', rue_utilisateur = '$rue', ville_utilisateur = '$ville', 
+ 					cp_utilisateur = '$cp', id_filiere = '$filiere' WHERE id_utilisateur = $id_util";
+					$Req = $conn -> query ($SQL) or die (' Erreur modification utilisateur ');
+				}
+	
+				Public function modif_old_mdp($objet, $conn)
+				{
+					$id_util = $objet->get_id_utilisateur();
+					$mdp_util = $objet->get_mdp_utilisateur();
+					
+					print $SQL = "UPDATE utilisateur SET mdp_utilisateur = '$mdp_util' WHERE id_utilisateur = $id_util";
+					$Req = $conn -> query ($SQL) or die (' Erreur modif mdp utilisateur ');
+					Return $Res = $Req -> fetch ();
+				}
+	
+				Public function affiche_mdp($objet, $conn)
+				{
+					$id_util = $objet->get_id_utilisateur();
+					$mdp_util = $objet->get_mdp_utilisateur();
+
+					print $SQL = "SELECT mdp_utilisateur From utilisateur";
+					$Req = $conn -> query ($SQL) or die (' Erreur affichage mdp utilisateur ');
+					Return $Res = $Req -> fetch ();
 				}
 
 				Public function affiche_utilisateur_total($objet, $conn)
@@ -256,6 +294,48 @@ class utilisateur
 					Return $Res = $Req -> fetch ();
 
 				}
+	
+				Public function affiche_utilisateur_total_login($objet, $conn)
+				{
+					$id_util = $objet->get_id_utilisateur();
+					$nom_util = $objet->get_nom_utilisateur();
+					$prenom_util = $objet->get_prenom_utilisateur();
+					$tel_util = $objet->get_tel_utilisateur();
+					$email_util = $objet->get_email_utilisateur();
+					$rue_util = $objet->get_rue_utilisateur();
+					$ville_util = $objet->get_ville_utilisateur();
+					$cp_util = $objet->get_cp_utilisateur();
+					$photo_util = $objet->get_photo_utilisateur();
+					$login_util = $objet->get_login_utilisateur();
+					$mdp_util = $objet->get_mdp_utilisateur();
+					$etat_util = $objet->get_etat_utilisateur();
+					print $SQL = " SELECT *  From utilisateur WHERE id_utilisateur = '$id_util' AND mdp_utilisateur ='$mdp_util'";
+					$Req = $conn -> query ($SQL) or die (' Erreur affichage utilisateur ');
+					Return $Res = $Req -> fetch ();
+				}
+	
+				Public function affiche_utilisateur_partiel($objet, $conn)
+				{
+					$id_util = $objet->get_id_utilisateur();
+					$nom_util = $objet->get_nom_utilisateur();
+					$prenom_util = $objet->get_prenom_utilisateur();
+
+					print $SQL = "SELECT nom_utilisateur, prenom_utilisateur From utilisateur
+					WHERE id_utilisateur = $_SESSION['id']";
+					$Req = $conn -> query ($SQL) or die (' Erreur affichage utilisateur ');
+					Return $Res = $Req -> fetch ();
+				}
+	
+				Public function affiche_mdp($objet, $conn)
+				{
+					$id_util = $objet->get_id_utilisateur();
+					$mdp_util = $objet->get_mdp_utilisateur();
+
+					print $SQL = "SELECT mdp_utilisateur From utilisateur";
+					$Req = $conn -> query ($SQL) or die (' Erreur affichage mdp utilisateur ');
+					Return $Res = $Req -> fetch ();
+				}
+
 
 				Public function suppr_utilisateur ($objet, $conn)
 				{
@@ -274,7 +354,7 @@ class utilisateur
 					$Req = $conn -> query ($SQL) or die (' Erreur suppression utilisateur ');
 				}
 
-				Public function suppr_fictive($objet, $conn)
+				Public function suppr_fictive_util($objet, $conn)
 				{
 					$id_util = $objet->get_id_utilisateur();
 					$nom_util = $objet->get_nom_utilisateur();
@@ -291,7 +371,7 @@ class utilisateur
 				 	$Req = $conn -> query ($SQL) or die (' Erreur suppression utilisateur ');
 				}
 				
-				Public function rajout_suppr_fictive($objet, $conn)
+				Public function rajout_suppr_fictive_util($objet, $conn)
 				{
 					$id_util = $objet->get_id_utilisateur();
 					$nom_util = $objet->get_nom_utilisateur();

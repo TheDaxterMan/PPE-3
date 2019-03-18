@@ -1,10 +1,10 @@
 <?php
-
+include "class_utilisateur.php";
   /* ---------------------- */
   /* DEBUT class Emploi */
   /* ---------------------- */
 
-class emploi
+class emploi /*extends utilisateur*/
 	{
     /* ---------------------- */
     /* class Emploi Variables */
@@ -106,8 +106,7 @@ class emploi
 			$datec_emp = $objet->get_datec_emploi();
 			$etat_emp = $objet->get_etat_emploi();
 
-			/* !!!!!!!!!!!!!!! manque encapsulation de entreprise et utilisateur !!!!!!!!!!!!!!!!!! */
-			print $SQL = " INSERT INTO emploi values (NULL, '$lib_emp', '$desc_emp', '$datec_emp', '0', '1', '1', '1')";
+		print $SQL = " INSERT INTO emploi values (NULL, '$lib_emp', '$desc_emp', '$datec_emp', '0', '1', '1', '1')";
 			$Req = $conn -> query ($SQL) or die (' Erreur ajout emploi ');
 		}
 
@@ -135,6 +134,23 @@ class emploi
 			$Req = $conn -> query ($SQL) or die (' Erreur affichage emploi ');
 			Return $Res = $Req -> fetch ();
 		}
+	
+		/* Public function affiche_exp_pro_emploi ($objet, $conn)
+		{
+
+			$id_emp = $objet->get_id_emploi();
+			$lib_emp = $objet->get_lib_emploi();
+			$desc_emp = $objet->get_desc_emploi();
+			$datec_emp = $objet->get_datec_emploi();
+
+			print $SQL = " SELECT * FROM emploi, entreprise, utilisateur
+            				WHERE utilisateur.id_utilisateur=$id
+          				AND emploi.id_utilisateur=utilisateur.id_utilisateur
+            				AND entreprise.id_entreprise=emploi.id_entreprise
+            				ORDER BY date_crea DESC";
+			$Req = $conn -> query ($SQL) or die (' Erreur affichage emploi ');
+			Return $Res = $Req -> fetch ();
+		} */
 
 		Public function suppr_emploi ($objet, $conn)
 		{
@@ -146,6 +162,19 @@ class emploi
 			print $SQL = " DELETE FROM emploi WHERE id_emploi = '$id_emp'";
 			$Req = $conn -> query ($SQL) or die (' Erreur suppression emploi ');
 		}
+	
+		Public function suppr_fictive_emploi ($objet, $conn)
+		{
+			$id_emp = $objet->get_id_emploi();
+			$lib_emp = $objet->get_lib_emploi();
+			$desc_emp = $objet->get_desc_emploi();
+			$datec_emp = $objet->get_datec_emploi();
+
+			print $SQL = "UPDATE emploi SET etat_emploi = 1,
+			WHERE id_emploi = '$id_emp'";
+			$Req = $conn -> query ($SQL) or die (' Erreur modification emploi ');
+		}
+	
 }
   /* ---------------------- */
   /* FIN class Emploi */

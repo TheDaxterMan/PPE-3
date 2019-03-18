@@ -1,5 +1,6 @@
 <?php
 include "bdd.inc.php";
+/*include "class_emploi.php";*/
 $id=$_SESSION['id'];
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -7,6 +8,12 @@ $id=$_SESSION['id'];
 ///////////////////////////////////////////////////////////////////////////////
     if ($_SESSION['profil']=="eleve")
     {
+        /* 
+        $unemploi = new emploi('','','','','');
+        
+        $unemploi -> affiche_exp_pro_emploi($unemploi, $conn);
+        */
+        
       $sql="SELECT * FROM emploi, entreprise, utilisateur
             WHERE utilisateur.id_utilisateur=$id
             AND emploi.id_utilisateur=utilisateur.id_utilisateur

@@ -4,7 +4,7 @@
   /* DEBUT class Interet */
   /* ---------------------- */
  
-class interet
+class interet extends utilisateur
 	{
     /* ---------------------- */
     /* class Interet Variables */
@@ -22,10 +22,10 @@ class interet
 
     Public function interet ( $id_int, $lib_int, $img_int, $etat_int)
     {
-      $this -> id_interet = $id_int;
-      $this -> lib_interet = $lib_int;
-      $this -> img_interet = $img_int;
-	    $this -> etat
+   	$this -> id_interet = $id_int;
+   	$this -> lib_interet = $lib_int;
+   	$this -> img_interet = $img_int;
+	$this -> etat_interet = $etat_int;
     }
 
 		public function getallint()
@@ -89,9 +89,10 @@ class interet
 			 $id_int = $objet->get_id_interet();
 			 $lib_int = $objet->get_lib_interet();
 			 $img_int = $objet->get_img_interet();
-			$etat_int = $objet->get_etat_interet();
+			 $etat_int = $objet->get_etat_interet();
+		 	 $id_util = $objet->get_id_utilisateur();
 		 
-			 $SQL = " INSERT INTO interet values ('NULL', '$lib_int', '$img_int', '$conn')";
+			 $SQL = " INSERT INTO interet values ('NULL', '$lib_int', '$img_int', '$etat_int', '$id_util', '$conn')";
 			 $conn -> query ($SQL);
 		 }
 
@@ -100,9 +101,10 @@ class interet
 			 $id_int = $objet->get_id_interet();
 			 $lib_int = $objet->get_lib_interet();
 			 $img_int = $objet->get_img_interet();
-			$etat_int = $objet->get_etat_interet();
-			 
-			 $SQL = "UPDATE interet SET id_interet = '$id_int', lib_interet = '$lib_int', img_interet = '$img_int')";
+			 $etat_int = $objet->get_etat_interet();
+		 	 $id_util = $objet->get_id_utilisateur();
+
+			 $SQL = "UPDATE interet SET lib_interet = '$lib_int', img_interet = '$img_int' WHERE id_interet = $id_int)";
 			 $conn -> query ($SQL);
 		 }
 
@@ -110,8 +112,8 @@ class interet
 		 {
 			 $id_int = $objet->get_id_interet();
 			 $lib_int = $objet->get_lib_interet();
-		   	$img_int = $objet->get_img_interet();
-			$etat_int = $objet->get_etat_interet();
+		   	 $img_int = $objet->get_img_interet();
+			 $etat_int = $objet->get_etat_interet();
 			 
 			 $SQL = " SELECT * From interet WHERE id_interet = '$id_int'";
 			 $Req = $conn -> query ($SQL);
@@ -126,6 +128,17 @@ class interet
 			$etat_int = $objet->get_etat_interet();
 			 
 			 $SQL = " DELETE FROM interet WHERE id_interet = '$id_int'";
+			 $conn -> query ($SQL);
+		 }
+	
+		Public function suppr_fictive_interet ($objet, $conn)
+		 {
+			 $id_int = $objet->get_id_interet();
+			 $lib_int = $objet->get_lib_interet();
+			 $img_int = $objet->get_img_interet();
+			 $etat_int = $objet->get_etat_interet();
+			 
+			 $SQL = "UPDATE interet SET  etat_interet = '$etat_int' WHERE id_interet = $id_int)";
 			 $conn -> query ($SQL);
 		 }
 }
