@@ -136,11 +136,11 @@
 								if (isset($_POST['modif']))
 								{
 									$id_filiere=$_POST['choix_filiere'];
+									
+									$unefiliere = new filiere ('','','');
+									
+									$unefiliere -> affiche_filiere ( $unefiliere, $conn);
 
-									$sql="SELECT * FROM filiere WHERE id_filiere='$id_filiere'";
-									$req = $conn -> prepare($sql)or die($conn->errorInfo());
-									$req -> execute();
-									$res=$req->fetch();
 								?>
 								<div class="block-title">
 									<h4 class="grey"><i class="icon ion-ios-book-outline"></i>Modifier filières</h4>
