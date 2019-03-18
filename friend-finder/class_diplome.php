@@ -132,7 +132,7 @@ class diplome
 			 $lib_dip = $objet->get_lib_diplome();
 			$etat_dip = $objet->get_etat_diplome();
 			 
-			 $SQL = "UPDATE interet SET  etat_diplome = '$etat_dip' WHERE id_diplome = $id_diplome)";
+			 $SQL = "UPDATE interet SET  etat_diplome = '$etat_dip' WHERE id_diplome = $id_dip)";
 			 $conn -> query ($SQL);
 		 }
 }
