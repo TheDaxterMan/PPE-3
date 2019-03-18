@@ -257,6 +257,25 @@ class utilisateur
 
 				}
 	
+				Public function affiche_utilisateur_total_login($objet, $conn)
+				{
+					$id_util = $objet->get_id_utilisateur();
+					$nom_util = $objet->get_nom_utilisateur();
+					$prenom_util = $objet->get_prenom_utilisateur();
+					$tel_util = $objet->get_tel_utilisateur();
+					$email_util = $objet->get_email_utilisateur();
+					$rue_util = $objet->get_rue_utilisateur();
+					$ville_util = $objet->get_ville_utilisateur();
+					$cp_util = $objet->get_cp_utilisateur();
+					$photo_util = $objet->get_photo_utilisateur();
+					$login_util = $objet->get_login_utilisateur();
+					$mdp_util = $objet->get_mdp_utilisateur();
+					$etat_util = $objet->get_etat_utilisateur();
+					print $SQL = " SELECT *  From utilisateur WHERE id_utilisateur = '$id_util' AND mdp_utilisateur ='$mdp_util'";
+					$Req = $conn -> query ($SQL) or die (' Erreur affichage utilisateur ');
+					Return $Res = $Req -> fetch ();
+				}
+	
 				Public function affiche_utilisateur_partiel($objet, $conn)
 				{
 
