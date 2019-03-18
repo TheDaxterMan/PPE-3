@@ -4,8 +4,6 @@
 	include "bdd.inc.php";
 	include "login.inc.php";
 	include "info.php";
-	include "class_entreprise.php";
-	include "class_utilisateur.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -132,11 +130,11 @@
 									if (isset($_POST['modif_entreprise']))
 									{
 										$id=$_POST['choix_entreprise'];
-										
-										$uneent = new entreprise ( '','','','','','','','','','','','')
-	
-										$uneent -> affiche_entreprise($uneent, $conn);
-											
+
+										$sql="SELECT * FROM entreprise WHERE id_entreprise='$id'";
+										$req = $conn -> prepare($sql)or die($conn->errorInfo());
+										$req -> execute();
+										$res=$req->fetch();
 									?>
 									<div class="block-title">
 										<h4 class="grey"><i class="icon ion-ios-book-outline"></i>Modifier/supprimer une entreprise</h4>
@@ -193,11 +191,7 @@
 									{
 										if (isset($_POST['suppr_entreprise']))
 										{
-											/*echo "SUPPR ENTREPRISE";*/
-											
-											$uneautreent = new entreprise ('','','','','','','','','','','','');
-											
-											$uneautreent -> suppr_fictive_ent($uneautreent, $conn);
+											echo "SUPPR ENTREPRISE";
 										}
 										else
 										{
@@ -248,11 +242,11 @@
 										if (isset($_POST['modif']))
 										{
 											$id=$_POST['choix_utilisateur'];
-											
-											$unutil = new utilisateur ('','','','','','','','','','','','');
-											
-											$unutil -> affiche_utilisateur_total ($unutil, $conn);
 
+											$sql="SELECT * FROM utilisateur WHERE id_utilisateur='$id'";
+											$req = $conn -> prepare($sql)or die($conn->errorInfo());
+											$req -> execute();
+											$res=$req->fetch();
 										?>
 										<div class="block-title">
 											<h4 class="grey"><i class="icon ion-ios-book-outline"></i>Modifier/supprimer un utilisateur</h4>
@@ -325,11 +319,7 @@
 										{
 											if (isset($_POST['suppr']))
 											{
-												/*echo "SUPPR UTILISATEUR";*/
-												
-												$unautreutil = new utilisateur ('','','','','','','','','','','','');
-												
-												$unautreutil -> suppr_fictive_util ( $unautreutil, $conn);
+												echo "SUPPR UTILISATEUR";
 											}
 											else
 											{
@@ -348,7 +338,6 @@
 														<select class="form-control input-group-lg" id="utilisateur" name="choix_utilisateur">
 															<option value="utilisateur" disabled selected>Choisir un utilisateur</option>
 															<?php
-																							
 															$sql="SELECT * FROM utilisateur";
 															$req = $conn -> query($sql)or die($conn->errorInfo());
 															while ($res=$req->fetch())

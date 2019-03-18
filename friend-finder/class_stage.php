@@ -5,7 +5,7 @@
 	/* DEBUT class Stage */
 	/* ---------------------- */
 
-class stage /*extends utilisateur*/
+class stage
  {
 
 		/* ---------------------- */
@@ -147,7 +147,7 @@ class stage /*extends utilisateur*/
     					$id_sta = $objet->get_id_stage();
     					$lib_sta = $objet->get_lib_stage();
     					$desc_sta = $objet->get_desc_stage();
-              				$dated_sta = $objet->get_dated_stage();
+              $dated_sta = $objet->get_dated_stage();
     					$datef_sta = $objet->get_datef_stage();
     					$comm_sta = $objet->get_commentaire_stage();
 
@@ -157,12 +157,12 @@ class stage /*extends utilisateur*/
 
 				Public function modif_stage ($objet, $conn)
 				{
-         				$id_sta = $objet->get_id_stage();
+          $id_sta = $objet->get_id_stage();
 					$lib_sta = $objet->get_lib_stage();
 					$desc_sta = $objet->get_desc_stage();
-          				$dated_sta = $objet->get_dated_stage();
+          $dated_sta = $objet->get_dated_stage();
 					$datef_sta = $objet->get_datef_stage();
-          				$comm_sta = $objet->get_commentaire_stage();
+          $comm_sta = $objet->get_commentaire_stage();
 
 					print $SQL = "UPDATE stage SET lib_stage = '$lib_sta', desc_stage = '$desc_sta',
 					dated_stage = '$dated_sta', datef_stage = '$datef_sta', comm_stage = '$comm_sta' WHERE id_stage = '$id_sta'";
@@ -172,44 +172,29 @@ class stage /*extends utilisateur*/
 				Public function affiche_stage ($objet, $conn)
 				{
 
-          				$id_sta = $objet->get_id_stage();
+          $id_sta = $objet->get_id_stage();
 					$lib_sta = $objet->get_lib_stage();
 					$desc_sta = $objet->get_desc_stage();
-         				$dated_sta = $objet->get_dated_stage();
+          $dated_sta = $objet->get_dated_stage();
 					$datef_sta = $objet->get_datef_stage();
-          				$comm_sta = $objet->get_commentaire_stage();
+          $comm_sta = $objet->get_commentaire_stage();
 
 					print $SQL = " SELECT *  From stage WHERE id_stage = '$id_sta'";
 					$Req = $conn -> query ($SQL) or die (' Erreur affichage stage ');
 					Return $Res = $Req -> fetch ();
 				}
-	
-				/*Public function affiche_stage_util ($objet, $conn)
-				{
-
-          				$id_sta = $objet->get_id_stage();
-					$lib_sta = $objet->get_lib_stage();
-					$desc_sta = $objet->get_desc_stage();
-         				$dated_sta = $objet->get_dated_stage();
-					$datef_sta = $objet->get_datef_stage();
-          				$comm_sta = $objet->get_commentaire_stage();
-
-					print $SQL = " SELECT * FROM stage WHERE id_utilisateur=$id'";
-					$Req = $conn -> query ($SQL) or die (' Erreur affichage stage ');
-					Return $Res = $Req -> fetch ();*/
-				}
 
 				Public function suppr_stage ($objet, $conn)
 				{
-          				$id_sta = $objet->get_id_stage();
-          				$lib_sta = $objet->get_lib_stage();
-          				$desc_sta = $objet->get_desc_stage();
-          				$dated_sta = $objet->get_dated_stage();
-          				$datef_sta = $objet->get_datef_stage();
-          				$comm_sta = $objet->get_commentaire_stage();
+          $id_sta = $objet->get_id_stage();
+          $lib_sta = $objet->get_lib_stage();
+          $desc_sta = $objet->get_desc_stage();
+          $dated_sta = $objet->get_dated_stage();
+          $datef_sta = $objet->get_datef_stage();
+          $comm_sta = $objet->get_commentaire_stage();
 
 					print $SQL = " DELETE FROM stage WHERE id_stage = '$id_sta'";
-          				$Req = $conn -> query ($SQL) or die (' Erreur affichage stage ');
+          $Req = $conn -> query ($SQL) or die (' Erreur affichage stage ');
 				}
  }
 

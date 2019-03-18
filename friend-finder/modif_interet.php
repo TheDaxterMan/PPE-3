@@ -4,7 +4,6 @@
 	include "bdd.inc.php";
 	include "login.inc.php";
 	include "info.php";
-	include "class_interet.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -143,10 +142,11 @@
 								if (isset($_POST['modif']))
 								{
 									$id_interet=$_POST['choix_interet'];
-									
-									$uninteret = new interet ('','','','');
-									
-									$uninteret -> affiche_interet( $uninteret, $conn);
+
+									$sql="SELECT * FROM centres_interets WHERE id_interet='$id_interet'";
+									$req = $conn -> prepare($sql)or die($conn->errorInfo());
+									$req -> execute();
+									$res=$req->fetch();
 
 									$img=$res['img_interet'];
 								?>
