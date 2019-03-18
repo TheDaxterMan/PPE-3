@@ -99,8 +99,8 @@
 									<?php
 									}
 							?>
-              <h4>Sarah Cruiz</h4>
-              <p class="text-muted">Creative Director</p>
+              <h4>Profile</h4>
+              <p class="text-muted"></p>
             </div>
           </div><!--Timeline Menu for Small Screens End-->
 
