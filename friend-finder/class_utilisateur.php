@@ -320,8 +320,7 @@ class utilisateur
 					$nom_util = $objet->get_nom_utilisateur();
 					$prenom_util = $objet->get_prenom_utilisateur();
 
-					print $SQL = "SELECT nom_utilisateur, prenom_utilisateur From utilisateur
-					WHERE id_utilisateur ='$id_util'";
+					print $SQL = "SELECT nom_utilisateur, prenom_utilisateur From utilisateur WHERE id_utilisateur ='$id_util'";
 					$Req = $conn -> query ($SQL) or die (' Erreur affichage utilisateur ');
 					Return $Res = $Req -> fetch ();
 				}
