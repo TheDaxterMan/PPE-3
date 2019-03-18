@@ -122,7 +122,7 @@ class filiere
 			 $lib_fil = $objet->get_lib_filiere();
 			 $etat_fil = $objet->get_etat_filiere();
 			 
-			 $SQL = "UPDATE interet SET etat_filiere = '$etat_fil' WHERE id_filiere = $id_filiere)";
+			 $SQL = "UPDATE interet SET etat_filiere = '$etat_fil' WHERE id_filiere = $id_fil)";
 			 $conn -> query ($SQL);
 		 }
 }
