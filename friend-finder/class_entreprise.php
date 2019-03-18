@@ -228,7 +228,7 @@ class entreprise
 					$mdp_ent = $objet->get_mdp_entreprise();
 					$etat_ent = $objet->get_etat_entreprise();
 
-					print $SQL = "UPDATE entreprise SET nom_entreprise = '$nom_ent', nom_responsable  = 'maxime',
+					print $SQL = "UPDATE entreprise SET nom_entreprise = '$nom_ent', nom_responsable  = '$nom_resp',
 					prenom_responsable = '$prenom_resp', mail_entreprise = '$mail_ent', rue_entreprise = '$rue_ent', ville_entreprise = '$ville_ent',
 					cp_entreprise = '$cp_ent', photo_entreprise = '$photo_ent', mdp_entreprise = '$mdp_ent' WHERE id_entreprise = '$id_ent'";
 				 	$Req = $conn -> query ($SQL) or die (' Erreur modification entreprise ');
