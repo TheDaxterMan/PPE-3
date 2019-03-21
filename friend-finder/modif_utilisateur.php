@@ -99,8 +99,8 @@
 									<?php
 									}
 							?>
-              <h4>Sarah Cruiz</h4>
-              <p class="text-muted">Creative Director</p>
+              <h4>Profile</h4>
+              <p class="text-muted"></p>
             </div>
           </div><!--Timeline Menu for Small Screens End-->
 
@@ -192,6 +192,11 @@
 										if (isset($_POST['suppr_entreprise']))
 										{
 											echo "SUPPR ENTREPRISE";
+											
+											$uneent = new entreprise ('','','','','','','','','','','','');
+											
+											$uneent -> suppr_fictive_ent ($uneent, $conn);
+											
 										}
 										else
 										{
@@ -317,9 +322,14 @@
 										}
 										else
 										{
-											if (isset($_POST['suppr']))
+											if (id=$_POST[$id])
 											{
 												echo "SUPPR UTILISATEUR";
+												
+											$unutil = new utilisateur (id,'','','','','','','','','','','');
+											
+											$unutil -> suppr_fictive_util ($unutil, $conn);
+											
 											}
 											else
 											{

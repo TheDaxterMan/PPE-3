@@ -86,9 +86,9 @@ class diplome
 			 $nom_dip = $objet->get_nom_diplome();
 			 $lib_dip = $objet->get_lib_diplome();
 		  	 $etat_dip = $objet->get_etat_diplome();
+			 print $SQL = " INSERT INTO diplome values (NULL, '$nom_dip', '$lib_dip', '$etat_dip')";
+			 $Req = $conn -> query ($SQL) or die (' Erreur ajout diplome ');
 
-			 $SQL = " INSERT INTO diplome values ('NULL', '$nom_dip', '$lib_dip', '$etat_dip', '$conn')";
-			 $conn -> query ($SQL);
 		 }
 
 		 Public function modif_diplome ($objet, $conn)
@@ -98,7 +98,7 @@ class diplome
 			 $lib_dip = $objet->get_lib_diplome();
 		  	 $etat_dip = $objet->get_etat_diplome();
 
-			 $SQL = "UPDATE diplome SET nom_diplome = '$nom_diplome', lib_diplome = '$lib_diplome' WHERE id_diplome = $id_diplome )";
+			 $SQL = "UPDATE diplome SET id_diplome = '$id_dip', id_diplome = '$id_dip')";
 			 $conn -> query ($SQL);
 		 }
 

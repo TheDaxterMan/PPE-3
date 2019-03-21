@@ -274,7 +274,7 @@ class utilisateur
 					$Req = $conn -> query ($SQL) or die (' Erreur suppression utilisateur ');
 				}
 
-				Public function suppr_fictive($objet, $conn)
+				Public function suppr_fictive_util($objet, $conn)
 				{
 					$id_util = $objet->get_id_utilisateur();
 					$nom_util = $objet->get_nom_utilisateur();
@@ -287,7 +287,7 @@ class utilisateur
 					$login_util = $objet->get_login_utilisateur();
 					$mdp_util = $objet->get_mdp_utilisateur();
 					
-					print $SQL = "UPDATE utilisateur SET etat_utilisateur=1";
+					print $SQL = "UPDATE utilisateur SET etat_utilisateur=1 WHERE $id_util = '$id'";
 				 	$Req = $conn -> query ($SQL) or die (' Erreur suppression utilisateur ');
 				}
 				

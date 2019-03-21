@@ -208,11 +208,9 @@ class entreprise
 					$login_ent = $objet->get_login_entreprise();
 					$mdp_ent = $objet->get_mdp_entreprise();
 					$etat_ent = $objet->get_etat_entreprise();
-
 					print $SQL = " INSERT INTO entreprise values (NULL, '$nom_ent', '$nom_resp', '$prenom_resp', '$mail_ent', '$rue_ent', '$ville_ent', '$cp_ent', '$photo_ent', '$login_ent', '$mdp_ent', '0','1')";
 					$Req = $conn -> query ($SQL) or die (' Erreur ajout entreprise ');
 				}
-
 				Public function modif_entreprise ($objet, $conn)
 				{
 					$id_ent = $objet->get_id_entreprise();
@@ -226,16 +224,30 @@ class entreprise
 					$photo_ent = $objet->get_photo_entreprise();
 					$login_ent = $objet->get_login_entreprise();
 					$mdp_ent = $objet->get_mdp_entreprise();
-
-					print $SQL = "UPDATE entreprise SET nom_entreprise = '$nom_ent', nom_responsable  = 'maxime',
+					$etat_ent = $objet->get_etat_entreprise();
+					print $SQL = "UPDATE entreprise SET nom_entreprise = '$nom_ent', nom_responsable  = '$nom_resp',
 					prenom_responsable = '$prenom_resp', mail_entreprise = '$mail_ent', rue_entreprise = '$rue_ent', ville_entreprise = '$ville_ent',
 					cp_entreprise = '$cp_ent', photo_entreprise = '$photo_ent', mdp_entreprise = '$mdp_ent' WHERE id_entreprise = '$id_ent'";
 				 	$Req = $conn -> query ($SQL) or die (' Erreur modification entreprise ');
 				}
-
+	
+				Public function modif_entreprise_partiel ($objet, $conn)
+				{
+					$id_ent = $objet->get_id_entreprise();
+					$nom_ent = $objet->get_nom_entreprise();
+					$nom_resp = $objet->get_nom_responsable();
+					$prenom_resp = $objet->get_prenom_responsable();
+					$mail_ent = $objet->get_mail_entreprise();
+					$rue_ent = $objet->get_rue_entreprise();
+					$ville_ent = $objet->get_ville_entreprise();
+					$cp_ent = $objet->get_cp_entreprise();					
+					print $SQL = "UPDATE entreprise SET  nom_entreprise = '$entreprise',nom_responsable = '$nom',
+					prenom_responsable = '$prenom', mail_entreprise = '$mail', rue_entreprise = '$rue', 
+					ville_entreprise = '$ville', cp_entreprise = '$cp' WHERE id_entreprise = '$id_ent'";
+				 	$Req = $conn -> query ($SQL) or die (' Erreur modification entreprise ');
+				}
 				Public function affiche_entreprise ($objet, $conn)
 				{
-
 					$id_ent = $objet->get_id_entreprise();
 					$nom_ent = $objet->get_nom_entreprise();
 					$nom_resp = $objet->get_nom_responsable();
@@ -247,12 +259,30 @@ class entreprise
 					$photo_ent = $objet->get_photo_entreprise();
 					$login_ent = $objet->get_login_entreprise();
 					$mdp_ent = $objet->get_mdp_entreprise();
-
+					$etat_ent = $objet->get_etat_entreprise();
 					print $SQL = " SELECT *  From entreprise WHERE id_entreprise = '$id_ent'";
 					$Req = $conn -> query ($SQL) or die (' Erreur affichage entreprise ');
 					Return $Res = $Req -> fetch ();
 				}
-
+	
+				Public function affiche_entreprise_login ($objet, $conn)
+				{
+					$id_ent = $objet->get_id_entreprise();
+					$nom_ent = $objet->get_nom_entreprise();
+					$nom_resp = $objet->get_nom_responsable();
+					$prenom_resp = $objet->get_prenom_responsable();
+					$mail_ent = $objet->get_mail_entreprise();
+					$rue_ent = $objet->get_rue_entreprise();
+					$ville_ent = $objet->get_ville_entreprise();
+					$cp_ent = $objet->get_cp_entreprise();
+					$photo_ent = $objet->get_photo_entreprise();
+					$login_ent = $objet->get_login_entreprise();
+					$mdp_ent = $objet->get_mdp_entreprise();
+					$etat_ent = $objet->get_etat_entreprise();
+					print $SQL = " SELECT *  From entreprise WHERE id_entreprise = '$id_ent' AND mdp_entreprise = '$mdp_ent'";
+					$Req = $conn -> query ($SQL) or die (' Erreur affichage entreprise ');
+					Return $Res = $Req -> fetch ();
+				}
 				Public function suppr_entreprise ($objet, $conn)
 				{
 					$id_ent = $objet->get_id_entreprise();
@@ -266,15 +296,50 @@ class entreprise
 					$photo_ent = $objet->get_photo_entreprise();
 					$login_ent = $objet->get_login_entreprise();
 					$mdp_ent = $objet->get_mdp_entreprise();
-
+					$etat_ent = $objet->get_etat_entreprise();
 					print $SQL = " DELETE FROM entreprise WHERE id_entreprise  = '$id_ent'";
 					$Req = $conn -> query ($SQL) or die (' Erreur suppression entreprise ');
 				}
-
+	
+				Public function suppr_fictive_ent($objet, $conn)
+				{
+					$id_ent = $objet->get_id_entreprise();
+					$nom_ent = $objet->get_nom_entreprise();
+					$nom_resp = $objet->get_nom_responsable();
+					$prenom_resp = $objet->get_prenom_responsable();
+					$mail_ent = $objet->get_mail_entreprise();
+					$rue_ent = $objet->get_rue_entreprise();
+					$ville_ent = $objet->get_ville_entreprise();
+					$cp_ent = $objet->get_cp_entreprise();
+					$photo_ent = $objet->get_photo_entreprise();
+					$login_ent = $objet->get_login_entreprise();
+					$mdp_ent = $objet->get_mdp_entreprise();
+					$etat_ent = $objet->get_etat_entreprise();
+					
+					print $SQL = "UPDATE entreprise SET etat_entreprise=1";
+				 	$Req = $conn -> query ($SQL) or die (' Erreur suppression entreprise ');
+				}
+				
+				Public function rajout_suppr_fictive_ent($objet, $conn)
+				{
+					$id_ent = $objet->get_id_entreprise();
+					$nom_ent = $objet->get_nom_entreprise();
+					$nom_resp = $objet->get_nom_responsable();
+					$prenom_resp = $objet->get_prenom_responsable();
+					$mail_ent = $objet->get_mail_entreprise();
+					$rue_ent = $objet->get_rue_entreprise();
+					$ville_ent = $objet->get_ville_entreprise();
+					$cp_ent = $objet->get_cp_entreprise();
+					$photo_ent = $objet->get_photo_entreprise();
+					$login_ent = $objet->get_login_entreprise();
+					$mdp_ent = $objet->get_mdp_entreprise();
+					$etat_ent = $objet->get_etat_entreprise();
+					
+					print $SQL = "UPDATE entreprise SET etat_entreprise=0";
+				 	$Req = $conn -> query ($SQL) or die (' Erreur rajout entreprise ');
+				}
 }
-
 	/* ---------------------- */
 	/* FIN class Entreprise */
 	/* ---------------------- */
-
 ?>
