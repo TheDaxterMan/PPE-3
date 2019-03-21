@@ -73,18 +73,6 @@
                   <p class="text-muted">Creative Director</p>
                 </div>
               </div>
-              <div class="col-md-9">
-                <ul class="list-inline profile-menu">
-                  <li><a href="timeline.php">Timeline</a></li>
-                  <li><a href="timeline-about.php" class="active">About</a></li>
-                  <li><a href="timeline-album.php">Album</a></li>
-                  <li><a href="timeline-friends.php">Friends</a></li>
-                </ul>
-                <ul class="follow-me list-inline">
-                  <li>1,299 people following her</li>
-                  <li><button class="btn-primary">Add Friend</button></li>
-                </ul>
-              </div>
             </div>
           </div><!--Timeline Menu for Large Screens End-->
 
@@ -114,31 +102,11 @@
 							<h3><?php echo $prenom,' ',$nom; ?></h3>
               <p class="text-muted">Creative Director</p>
             </div>
-            <div class="mobile-menu">
-              <ul class="list-inline">
-                <li><a href="timline.php">Timeline</a></li>
-                <li><a href="timeline-about.php" class="active">About</a></li>
-                <li><a href="timeline-album.php">Album</a></li>
-                <li><a href="timeline-friends.php">Friends</a></li>
-              </ul>
-              <button class="btn-primary">Add Friend</button>
-            </div>
           </div><!--Timeline Menu for Small Screens End-->
 
         </div>
         <div id="page-contents">
           <div class="row">
-            <div class="col-md-3">
-
-              <!--Edit Profile Menu-->
-              <ul class="edit-menu">
-              	<li><i class="icon ion-ios-information-outline"></i><a href="edit-profile-basic.php">Informations basiques</a></li>
-              	<li><i class="icon ion-ios-briefcase-outline"></i><a href="edit-profile-work-edu.php">Education et Travail</a></li>
-              	<li><i class="icon ion-ios-heart-outline"></i><a href="edit-profile-interests.php">Centres d'intérêts</a></li>
-                <li class="active"><i class="icon ion-ios-settings"></i><a href="edit-profile-settings.php">Paramètres du compte</a></li>
-              	<li><i class="icon ion-ios-locked-outline"></i><a href="edit-profile-password.php">Changer de Mot de passe</a></li>
-              </ul>
-            </div>
             <div class="col-md-7">
 
               <!-- Profile Settings
@@ -253,9 +221,12 @@
       </div>
     </div>
 
-		<?php
-		include "footer.php";
-		 ?>
+		<footer id="footer">
+		  <div class="copyright">
+		    <p>Thunder Team © 2016. All rights reserved</p>
+		    <p>Passemilla Web © 2018-2019. All rights reserved</p>
+		  </div>
+		</footer>
 
   </body>
 
