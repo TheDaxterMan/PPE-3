@@ -102,11 +102,15 @@
 							<h3><?php echo $prenom,' ',$nom; ?></h3>
               <p class="text-muted">Creative Director</p>
             </div>
+            <div class="mobile-menu">
+            </div>
           </div><!--Timeline Menu for Small Screens End-->
 
         </div>
         <div id="page-contents">
           <div class="row">
+            <div class="col-md-3">
+            </div>
             <div class="col-md-7">
 
               <!-- Profile Settings
