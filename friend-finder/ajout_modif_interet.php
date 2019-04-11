@@ -5,7 +5,7 @@ include "bdd.inc.php";
 include "login.inc.php";
 
 
-if (isset($_POST['enregistreri']))
+if (isset($_POST['enregistrer']))
 {
   $lib_interet=$_POST['interet'];
   $img_interet=$_POST['img'];
@@ -16,7 +16,7 @@ if (isset($_POST['enregistreri']))
   $req -> execute();
   header('Location: ./modif_interet.php');
 }
-if (isset($_POST['modifieri']))
+if (isset($_POST['modifier']))
 {
   $id_interet=$_POST['id_interet'];
   $lib_interet=$_POST['lib_interet'];
