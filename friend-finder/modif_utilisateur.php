@@ -322,17 +322,6 @@
 										}
 										else
 										{
-											if ($id=$_POST[$id])
-											{
-												echo "SUPPR UTILISATEUR";
-
-											$unutil = new utilisateur (id,'','','','','','','','','','','');
-
-											$unutil -> suppr_fictive_util ($unutil, $conn);
-
-											}
-											else
-											{
 										?>
 										<div class="block-title">
 											<h4 class="grey"><i class="icon ion-ios-book-outline"></i>Modifier/supprimer un utilisateur</h4>
@@ -370,7 +359,6 @@
 											</form>
 										</div>
 										<?php
-											}
 										}
 									}
 								}
