@@ -84,21 +84,6 @@
               <li><i class="icon ion-ios-people"></i><div><a href="newsfeed-people-nearby.php">Autour de moi</a></div></li>
               <li><i class="icon ion-chatboxes"></i><div><a href="newsfeed-messages.php">Messages</a></div></li>
             </ul><!--news-feed links ends-->
-						<!--
-            <div id="chat-block">
-              <div class="title">Amis en ligne</div>
-              <ul class="online-users list-inline">
-                <li><a href="newsfeed-messages.php" title="Linda Lohan"><img src="images/users/user-2.jpg" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="newsfeed-messages.php" title="Sophia Lee"><img src="images/users/user-3.jpg" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="newsfeed-messages.php" title="John Doe"><img src="images/users/user-4.jpg" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="newsfeed-messages.php" title="Alexis Clark"><img src="images/users/user-5.jpg" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="newsfeed-messages.php" title="James Carter"><img src="images/users/user-6.jpg" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="newsfeed-messages.php" title="Robert Cook"><img src="images/users/user-7.jpg" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="newsfeed-messages.php" title="Richard Bell"><img src="images/users/user-8.jpg" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="newsfeed-messages.php" title="Anna Young"><img src="images/users/user-9.jpg" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-                <li><a href="newsfeed-messages.php" title="Julia Cox"><img src="images/users/user-10.jpg" alt="user" class="img-responsive profile-photo" /><span class="online-dot"></span></a></li>
-              </ul>
-            </div><!--chat block ends-->
           </div>
     			<div class="col-md-7">
 
@@ -108,40 +93,9 @@
             	<div class="row">
             		<div class="col-md-7 col-sm-7">
                   <div class="form-group">
-										<?php
-										///////////////////////////////////////////////////////////////////////////////
-										/*									        	E L E V E																			 */
-										///////////////////////////////////////////////////////////////////////////////
-												if ($_SESSION['profil']=="eleve")
-												{
-												?>
-													<img src="images/users/utilisateur/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-md" />
-													<textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Ecrivez quelque chose"></textarea>
-												<?php
-												}
-										///////////////////////////////////////////////////////////////////////////////
-										/*												E N T R E P R I S E																*/
-										///////////////////////////////////////////////////////////////////////////////
-												if ($_SESSION['profil']=="entreprise")
-												{
-												?>
-													<img src="images/users/entreprise/user-<?php echo $_SESSION['id'],$_SESSION['photo']; ?>" alt="" class="profile-photo-md" />
-													<textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="MDR T UNE ENTREPRISE"></textarea>
-												<?php
-												}
-										?>
                   </div>
                 </div>
             		<div class="col-md-5 col-sm-5">
-                  <div class="tools">
-                    <ul class="publishing-tools list-inline">
-                      <li><a href="#"><i class="ion-compose"></i></a></li>
-                      <li><a href="#"><i class="ion-images"></i></a></li>
-                      <li><a href="#"><i class="ion-ios-videocam"></i></a></li>
-                      <li><a href="#"><i class="ion-map"></i></a></li>
-                    </ul>
-                    <button class="btn btn-primary pull-right">Publier</button>
-                  </div>
                 </div>
             	</div>
             </div><!-- Post Create Box End-->
