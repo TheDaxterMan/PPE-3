@@ -20,7 +20,7 @@ include "class_emploi.php";
         {
           $dated=$_POST['dated'];
           $datef=$_POST['datef'];
-          $unstageutil = new stage (NULL, $lib, $desc, $dated, $datef, 'comm', '1', $id, $filiere);
+          $unstageutil = new stage (NULL, $lib, $desc, $dated, $datef, 'comm', '0', '1', $id, $filiere);
           $unstageutil -> ajout_stage_util($unstageutil, $conn);
           header('Location: ./newsfeed.php');
         }

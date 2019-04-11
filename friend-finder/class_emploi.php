@@ -139,11 +139,9 @@ class emploi
 		Public function suppr_emploi ($objet, $conn)
 		{
 			$id_emp = $objet->get_id_emploi();
-			$lib_emp = $objet->get_lib_emploi();
-			$desc_emp = $objet->get_desc_emploi();
-			$datec_emp = $objet->get_datec_emploi();
 
-			print $SQL = " DELETE FROM emploi WHERE id_emploi = '$id_emp'";
+			print $SQL = "UPDATE emploi SET etat_emploi = '1',
+			WHERE id_emploi = '$id_emp'";
 			$Req = $conn -> query ($SQL) or die (' Erreur suppression emploi ');
 		}
 }

@@ -19,12 +19,13 @@ class stage
 		Private $datef_stage;
 		Private $commentaire_stage;
 		Private $etat_stage;
+    Private $fil_stage;
 
 		/* ---------------------- */
 		/* class Stage Constructeur */
 		/* ---------------------- */
 
-			Public function stage ( $id_sta, $lib_sta, $desc_sta, $dated_sta, $datef_sta, $comm_sta, $etat_sta)
+			Public function stage ( $id_sta, $lib_sta, $desc_sta, $dated_sta, $datef_sta, $comm_sta, $etat_sta, $fil_sta)
 			{
 				$this -> id_stage = $id_sta;
 				$this -> lib_stage = $lib_sta;
@@ -33,6 +34,7 @@ class stage
 				$this -> datef_stage = $datef_sta;
 				$this -> commentaire_stage = $comm_sta;
 				$this -> etat_stage = $etat_sta;
+        $this -> fil_stage = $fil_sta;
 
 			}
 
@@ -49,6 +51,7 @@ class stage
 				$data = $dataf.$this->$date_sta;
 				$data = $data.$this->$comm_sta;
 				$data = $data.$this->$etat_sta;
+        $data = $data.$this->$fil_sta;
 				return $data;
 			}
 
@@ -85,10 +88,15 @@ class stage
 			{
 				return $this-> commentaire_stage;
 			}
-	
+
 			Public function  get_etat_stage ()
 			{
 				return $this-> etat_stage;
+			}
+
+      Public function  get_fil_stage ()
+			{
+				return $this-> fil_stage;
 			}
 
 			/* ---------------------- */
@@ -119,11 +127,17 @@ class stage
 			{
 				 $this-> commentaire_stage = $comm_sta;
 			}
-	
-	
+
+
 			Public function set_etat_stage ($etat_sta)
 			{
 				 $this-> etat_stage = $etat_sta;
+			}
+
+
+      Public function set_fil_stage ($fil_sta)
+			{
+				 $this-> fil_stage = $fil_sta;
 			}
       /* ---------------------- */
       /* class Stage fonctions publiques */
@@ -137,8 +151,11 @@ class stage
 					$datef_sta = $objet->get_datef_stage();
 					$comm_sta = $objet->get_commentaire_stage();
 					$etat_sta = $objet->get_etat_stage();
-	      
-					print $SQL = " INSERT INTO stage values (NULL, '$lib_sta', '$desc_sta', '$dated_sta', '$datef_sta', '$comm_sta', '1', '1', '1', '0')";
+          $fil_sta = $objet->get_fil_stage();
+
+					print $SQL = " INSERT INTO stage values (NULL, '$lib_sta', '$desc_sta', '$dated_sta', '$datef_sta', '$comm_sta', '0', '1', '1', '$fil_sta')";
+          echo $fil_sta;
+          die();
 					$Req = $conn -> query ($SQL) or die (' Erreur ajout stage ');
 				}
 
