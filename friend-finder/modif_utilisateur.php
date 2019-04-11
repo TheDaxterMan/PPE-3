@@ -189,17 +189,6 @@
 									}
 									else
 									{
-										if (isset($_POST['suppr_entreprise']))
-										{
-											echo "SUPPR ENTREPRISE";
-
-											$uneent = new entreprise ('','','','','','','','','','','','');
-
-											$uneent -> suppr_fictive_ent ($uneent, $conn);
-
-										}
-										else
-										{
 									?>
 									<div class="block-title">
 										<h4 class="grey"><i class="icon ion-ios-book-outline"></i>Modifier/supprimer une entreprise</h4>
@@ -238,7 +227,6 @@
 									</div>
 									<?php
 										}
-									}
 								}
 								else
 								{
