@@ -91,7 +91,7 @@
                   <li><a href="timeline-friends.php">Amis</a></li>
                 </ul>
                 <ul class="follow-me list-inline">
-                  <li>1,299 pecnots</li>
+                  <li>1,299 amis</li>
                   <li><button class="btn-primary">Ajouter en ami</button></li>
                 </ul>
               </div>
