@@ -36,7 +36,7 @@ class filiere
 			$data = $data.$this->$etat_fil;
 			return $data;
 		}
- 
+
     /* ---------------------- */
     /* class Filiere GET */
     /* ---------------------- */
@@ -63,7 +63,7 @@ class filiere
     {
        $this-> lib_filiere = $lib_fil;
     }
-	
+
 	Public function set_etat_filiere ($etat_fil)
     {
        $this-> etat_filiere = $etat_fil;
@@ -109,15 +109,14 @@ class filiere
 		Public function suppr_filiere ($objet, $conn)
 		{
 			$id_fil = $objet->get_id_filiere();
-			$lib_fil = $objet->get_lib_filiere();
-			$etat_fil = $objet->get_etat_filiere();
-			
-			print $SQL = " DELETE FROM filiere WHERE id_filiere = '$id_fil'";
+
+			print $SQL = "UPDATE filiere SET etat_filiere = '1',
+			WHERE id_filiere = '$id_fil'";
 			$Req = $conn -> query ($SQL) or die (' Erreur suppression filiere ');
 		}
 }
   /* ---------------------- */
   /* FIN class Filiere */
   /* ---------------------- */
- 
+
 ?>

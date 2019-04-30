@@ -65,7 +65,7 @@ class diplome
     Public function set_nom_diplome ($nom_dip)
     {
        $this-> id_nom_diplome = $nom_dip;
-    } 
+    }
 
     Public function set_lib_diplome ($lib_dip)
     {
@@ -108,7 +108,7 @@ class diplome
 		   	$nom_dip = $objet->get_nom_diplome();
 			 $lib_dip = $objet->get_lib_diplome();
 			$etat_dip = $objet->get_etat_diplome();
-			
+
 			 $SQL = " SELECT * From diplome WHERE id_diplome = '$id_dip'";
 			 $Req = $conn -> query ($SQL);
 			 Return $Res = $Req -> fetch ();
@@ -117,12 +117,12 @@ class diplome
 		 Public function suppr_diplome ($objet, $conn)
 		 {
 			 $id_dip = $objet->get_id_diplome();
-		   	$nom_dip = $objet->get_nom_diplome();
+		   $nom_dip = $objet->get_nom_diplome();
 			 $lib_dip = $objet->get_lib_diplome();
 			$etat_dip = $objet->get_etat_diplome();
-			 
-			 $SQL = " DELETE FROM diplome WHERE id_diplome = '$id_dip'";
-			 $conn -> query ($SQL);
+
+			$SQL = "UPDATE diplome SET etat_diplome = '1' WHERE id_diplome = '$id_dip')";
+			$Req = $conn -> query ($SQL) or die (' Erreur suppression filiere ');
 		 }
 }
    /* ---------------------- */
