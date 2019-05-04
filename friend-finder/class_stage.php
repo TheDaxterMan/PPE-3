@@ -19,7 +19,7 @@ class stage
 		Private $datef_stage;
 		Private $commentaire_stage;
 		Private $etat_stage;
-    Private $fil_stage;
+    		Private $fil_stage;
 
 		/* ---------------------- */
 		/* class Stage Constructeur */
