@@ -25,7 +25,7 @@ class interet
       $this -> id_interet = $id_int;
       $this -> lib_interet = $lib_int;
       $this -> img_interet = $img_int;
-	$this -> etat_int = $etat_img;
+	$this -> etat_interet = $etat_int;
     }
 
 		public function getallint()
@@ -70,10 +70,10 @@ class interet
        $this-> lib_interet = $lib_int;
     }
 
-		Public function set_etat_interet ($etat_int)
-		{
-			 $this-> etat_interet = $etat_int;
-		}
+	Public function set_etat_interet ($etat_int)
+	{
+	$this-> etat_interet = $etat_int;
+	}
 
 		/* ---------------------- */
  	 /* class Interet fonctions publiques */
@@ -84,9 +84,9 @@ class interet
 			 $id_int = $objet->get_id_interet();
 			 $lib_int = $objet->get_lib_interet();
 			 $img_int = $objet->get_img_interet();
-			$etat_int = $objet->get_etat_interet();
+			 $etat_int = $objet->get_etat_interet();
 
-			 $SQL = " INSERT INTO interet values ('NULL', '$lib_int', '$img_int', '$etat_int', '$conn')";
+			 $SQL = " INSERT INTO interet values ('NULL', '$lib_int', '$img_int', '$etat_int')";
 			 $conn -> query ($SQL);
 		 }
 
