@@ -82,7 +82,6 @@ class test
 			$desc_emp = $objet->get_desc_emploi();
 			$datec_emp = $objet->get_datec_emploi();
 			$etat_emp = $objet->get_etat_emploi();
-			/* !!!!!!!!!!!!!!! manque encapsulation de entreprise et utilisateur !!!!!!!!!!!!!!!!!! */
 			print $SQL = " INSERT INTO emploi values (NULL, '$lib_emp', '$desc_emp', '$datec_emp', '1', '1', '1')";
 			$Req = $conn -> query ($SQL) or die (' Erreur ajout emploi ');
 		}
@@ -92,7 +91,6 @@ class test
 				$lib_emp = $objet->get_lib_emploi();
 				$desc_emp = $objet->get_desc_emploi();
 				$datec_emp = $objet->get_datec_emploi();
-				/* !!!!!!!!!!!!!!! manque encapsulation de entreprise et utilisateur !!!!!!!!!!!!!!!!!! */
 				print $SQL = " INSERT INTO emploi values (NULL, '$lib_emp', '$desc_emp', '$datec_emp', '1', '1', '1')";
 				$Req = $conn -> query ($SQL) or die (' Erreur ajout emploi ');
 			}
