@@ -3,7 +3,7 @@
   /* ---------------------- */
   /* DEBUT class Interet */
   /* ---------------------- */
- 
+
 class interet
 	{
     /* ---------------------- */
@@ -70,11 +70,6 @@ class interet
        $this-> lib_interet = $lib_int;
     }
 
-	Public function set_lib_interet ($lib_int)
-    {
-       $this-> lib_interet = $lib_int;
-    }
-
 		Public function set_etat_interet ($etat_int)
 		{
 			 $this-> etat_interet = $etat_int;
@@ -90,7 +85,7 @@ class interet
 			 $lib_int = $objet->get_lib_interet();
 			 $img_int = $objet->get_img_interet();
 			$etat_int = $objet->get_etat_interet();
-		 
+
 			 $SQL = " INSERT INTO interet values ('NULL', '$lib_int', '$img_int', '$etat_int', '$conn')";
 			 $conn -> query ($SQL);
 		 }
@@ -101,7 +96,7 @@ class interet
 			 $lib_int = $objet->get_lib_interet();
 			 $img_int = $objet->get_img_interet();
 			$etat_int = $objet->get_etat_interet();
-			 
+
 			 $SQL = "UPDATE interet SET id_interet = '$id_int', lib_interet = '$lib_int', img_interet = '$img_int')";
 			 $conn -> query ($SQL);
 		 }
@@ -112,7 +107,7 @@ class interet
 			 $lib_int = $objet->get_lib_interet();
 		   	$img_int = $objet->get_img_interet();
 			$etat_int = $objet->get_etat_interet();
-			 
+
 			 $SQL = " SELECT * From interet WHERE id_interet = '$id_int'";
 			 $Req = $conn -> query ($SQL);
 			 Return $Res = $Req -> fetch ();
@@ -124,7 +119,7 @@ class interet
 			 $lib_int = $objet->get_lib_interet();
 		   	$img_int = $objet->get_img_interet();
 			$etat_int = $objet->get_etat_interet();
-			 
+
 			 $SQL = " DELETE FROM interet WHERE id_interet = '$id_int'";
 			 $conn -> query ($SQL);
 		 }
