@@ -10,8 +10,9 @@ if (isset($_POST['enregistrer']))
   $lib_interet=$_POST['interet'];
   $img_interet=$_POST['img'];
 
-  $sql="INSERT INTO centres_interets VALUES (NULL,'$lib_interet','$img_interet','0')";
-
+  $uneinteret = new interet (NULL,'$lib_interet','$img_interet','0')
+  $uneinteret -> ajout_interet($uneinteret, $conn);
+  
   $req = $conn -> prepare($sql)or die($conn->errorInfo());
   $req -> execute();
   header('Location: ./modif_interet.php');
