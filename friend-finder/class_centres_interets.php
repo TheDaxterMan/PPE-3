@@ -70,6 +70,11 @@ class interet
        $this-> lib_interet = $lib_int;
     }
 
+	Public function set_img_interet ($img_int)
+	{
+	$this-> img_interet = $img_int;
+	}
+	
 	Public function set_etat_interet ($etat_int)
 	{
 	$this-> etat_interet = $etat_int;
