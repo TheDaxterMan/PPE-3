@@ -13,8 +13,7 @@ if (isset($_POST['enregistrer']))
   $uneinteret = new interet (NULL,'$lib_interet','$img_interet','0');
   $uneinteret -> ajout_interet($uneinteret, $conn);
   
-  $req = $conn -> prepare($sql)or die($conn->errorInfo());
-  $req -> execute();
+
   header('Location: ./modif_interet.php');
 }
 if (isset($_POST['modifier']))
