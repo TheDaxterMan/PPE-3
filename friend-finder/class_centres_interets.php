@@ -86,8 +86,8 @@ class interet
 			 $img_int = $objet->get_img_interet();
 			 $etat_int = $objet->get_etat_interet();
 
-			 $SQL = " INSERT INTO interet values ('NULL', '$lib_int', '$img_int', '$etat_int')";
-			 $conn -> query ($SQL);
+			 print $SQL = " INSERT INTO interet values ('NULL', '$lib_int', '$img_int', '$etat_int')";
+			$Req = $conn -> query ($SQL) or die (' Erreur ajout utilisateur ');
 		 }
 
 		 Public function modif_interet ($objet, $conn)
