@@ -5,14 +5,14 @@ include "bdd.inc.php";
 include "login.inc.php";
 include "class_centres_interets.php";
 
-if (isset($_POST['enregistrer']))
+if (isset($_POST['enregistreri']))
 {
   $lib_interet=$_POST['interet'];
   $img_interet=$_POST['img'];
 
-  $uneinteret = new interet (NULL,'$lib_interet','$img_interet','0');
+  $uneinteret = new interet (NULL,$lib_interet,$img_interet,'0');
   $uneinteret -> ajout_interet($uneinteret, $conn);
-  
+
 
   header('Location: ./modif_interet.php');
 }
