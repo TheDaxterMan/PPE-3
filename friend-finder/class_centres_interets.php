@@ -91,7 +91,7 @@ class interet
 			 $img_int = $objet->get_img_interet();
 			$etat_int = $objet->get_etat_interet();
 		 
-			 $SQL = " INSERT INTO interet values ('NULL', '$lib_int', '$img_int', '$conn')";
+			 $SQL = " INSERT INTO interet values ('NULL', '$lib_int', '$img_int', '$etat_int', '$conn')";
 			 $conn -> query ($SQL);
 		 }
 
