@@ -25,7 +25,7 @@ class interet
       $this -> id_interet = $id_int;
       $this -> lib_interet = $lib_int;
       $this -> img_interet = $img_int;
-	    $this -> etat
+	$this -> etat_int = $etat_img;
     }
 
 		public function getallint()
