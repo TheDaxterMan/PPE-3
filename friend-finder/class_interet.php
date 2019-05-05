@@ -90,11 +90,10 @@ class interet extends utilisateur
 			 $lib_int = $objet->get_lib_interet();
 			 $img_int = $objet->get_img_interet();
 			 $etat_int = $objet->get_etat_interet();
-		 	 $id_util = $objet->get_id_utilisateur();
 		 
-			 $SQL = " INSERT INTO interet values ('NULL', '$lib_int', '$img_int', '$etat_int', '$id_util', '$conn')";
-			 $conn -> query ($SQL);
-		 }
+			 print $SQL = " INSERT INTO centres_interets values (NULL, '$lib_int', '$img_int', '$etat_int')";
+		$Req = $conn -> query ($SQL) or die (' Erreur ajout utilisateur ');
+	 }
 
 		 Public function modif_interet ($objet, $conn)
 		 {
@@ -104,7 +103,7 @@ class interet extends utilisateur
 			 $etat_int = $objet->get_etat_interet();
 		 	 $id_util = $objet->get_id_utilisateur();
 
-			 $SQL = "UPDATE interet SET lib_interet = '$lib_int', img_interet = '$img_int' WHERE id_interet = $id_int)";
+			 $SQL = "UPDATE centres_interets SET lib_interet = '$lib_int', img_interet = '$img_int' WHERE id_interet = $id_int)";
 			 $conn -> query ($SQL);
 		 }
 
@@ -115,7 +114,7 @@ class interet extends utilisateur
 		   	 $img_int = $objet->get_img_interet();
 			 $etat_int = $objet->get_etat_interet();
 			 
-			 $SQL = " SELECT * From interet WHERE id_interet = '$id_int'";
+			 $SQL = " SELECT * From centres_interets WHERE id_interet = '$id_int'";
 			 $Req = $conn -> query ($SQL);
 			 Return $Res = $Req -> fetch ();
 		 }
@@ -127,7 +126,7 @@ class interet extends utilisateur
 		   	$img_int = $objet->get_img_interet();
 			$etat_int = $objet->get_etat_interet();
 			 
-			 $SQL = " DELETE FROM interet WHERE id_interet = '$id_int'";
+			 $SQL = " DELETE FROM centres_interets WHERE id_interet = '$id_int'";
 			 $conn -> query ($SQL);
 		 }
 	
@@ -138,7 +137,7 @@ class interet extends utilisateur
 			 $img_int = $objet->get_img_interet();
 			 $etat_int = $objet->get_etat_interet();
 			 
-			 $SQL = "UPDATE interet SET  etat_interet = '$etat_int' WHERE id_interet = $id_int)";
+			 $SQL = "UPDATE centres_interets SET  etat_interet = '$etat_int' WHERE id_interet = $id_int)";
 			 $conn -> query ($SQL);
 		 }
 }
