@@ -102,20 +102,21 @@ class interet
 			 $img_int = $objet->get_img_interet();
 			$etat_int = $objet->get_etat_interet();
 
-			 $SQL = "UPDATE interet SET id_interet = '$id_int', lib_interet = '$lib_int', img_interet = '$img_int')";
-			 $conn -> query ($SQL);
+			 $SQL = "UPDATE centres_interets SET lib_interet = '$lib_int', img_interet = '$img_int' WHERE id_interet = $id_int";
+			 $Req = $conn -> query ($SQL) or die (' Erreur modif interet ');
 		 }
 
 		 Public function affiche_interet ($objet, $conn)
 		 {
 			 $id_int = $objet->get_id_interet();
 			 $lib_int = $objet->get_lib_interet();
-		   	$img_int = $objet->get_img_interet();
+		   $img_int = $objet->get_img_interet();
 			$etat_int = $objet->get_etat_interet();
 
-			 $SQL = " SELECT * From interet WHERE id_interet = '$id_int'";
+			 $SQL = " SELECT * From centres_interets WHERE id_interet = '$id_int'";
 			 $Req = $conn -> query ($SQL);
-			 Return $Res = $Req -> fetch ();
+			 $Res = $Req -> fetch ();
+			 return $Res;
 		 }
 
 		 Public function suppr_interet ($objet, $conn)
@@ -125,8 +126,9 @@ class interet
 		   	$img_int = $objet->get_img_interet();
 			$etat_int = $objet->get_etat_interet();
 
-			 $SQL = " DELETE FROM interet WHERE id_interet = '$id_int'";
-			 $conn -> query ($SQL);
+			$SQL = "UPDATE centres_interets SET etat_interet = '1'
+			WHERE id_interet = '$id_int'";
+			$Req = $conn -> query ($SQL) or die (' Erreur suppression interet ');
 		 }
 }
    /* ---------------------- */

@@ -144,12 +144,8 @@
 								{
 									$id_diplome=$_POST['choix_diplome'];
 
-									/*$undiplome = new diplome ($id_diplome,'','','');
-								  $undiplome -> affiche_diplome($undiplome, $conn);*/
-									$sql="SELECT * FROM diplome WHERE id_diplome='$id_diplome'";
-									$req = $conn -> prepare($sql)or die($conn->errorInfo());
-									$req -> execute();
-									$res=$req->fetch();
+									$undiplome = new diplome ($id_diplome,'','','');
+								  $undiplome -> affiche_diplome($undiplome, $conn);
 								?>
 								<div class="block-title">
 									<h4 class="grey"><i class="icon ion-ios-book-outline"></i>Modifier diplômes</h4>
@@ -162,13 +158,13 @@
 										<div class="row">
 											<div class="form-group col-xs-12">
 												<label for="diplome">Diplôme</label>
-												<input type="text" class="form-control input-group-lg" id="diplome" name="nom_diplome" placeholder="Nom du diplôme"  value="<?php echo $Res['nom_diplome'] ?>">
+												<input type="text" class="form-control input-group-lg" id="diplome" name="nom_diplome" placeholder="Nom du diplôme"  value="<?php echo $undiplome -> affiche_diplome($undiplome, $conn)['nom_diplome']; ?>">
 											</div>
 										</div>
 										<div class="row">
 											<div class="form-group col-xs-12">
 												<label for="lib">Libellé du diplôme</label>
-												<textarea id="lib" class="form-control input-group-lg" name="lib_diplome" title="Entrez un libellé" placeholder="Libellé du diplôme" rows="8" cols="80"><?php echo $Res['lib_diplome'] ?></textarea>
+												<textarea id="lib" class="form-control input-group-lg" name="lib_diplome" title="Entrez un libellé" placeholder="Libellé du diplôme" rows="8" cols="80"><?php echo $undiplome -> affiche_diplome($undiplome, $conn)['lib_diplome']; ?></textarea>
 											</div>
 										</div>
 										<input type="hidden" name="id_diplome" value="<?php echo $id_diplome ?>">
@@ -221,7 +217,7 @@
 													while ($res=$req->fetch())
 													{
 													?>
-														<option value="<?php echo $res['id_diplome'] ?>"><?php echo $res['nom_diplome']?></option>
+														<option value="<?php echo $res['id_diplome'] ?>"><?php echo $res['lib_diplome']?></option>
 													<?php
 													}
 													?>

@@ -89,8 +89,8 @@ class filiere
 			$lib_fil = $objet->get_lib_filiere();
 			$etat_fil = $objet->get_etat_filiere();
 
-			print $SQL = "UPDATE filiere SET lib_filiere = '$lib_fil',
-			WHERE id_filiere = '$id_fil'";
+			$SQL="UPDATE filiere SET lib_filiere = '$lib_fil'
+		                                 WHERE id_filiere = $id_fil";
 			$Req = $conn -> query ($SQL) or die (' Erreur modification filiere ');
 		}
 
@@ -101,7 +101,7 @@ class filiere
 			$lib_fil = $objet->get_lib_filiere();
 			$etat_fil = $objet->get_etat_filiere();
 
-			print $SQL = " SELECT *  From filiere WHERE id_filiere = '$id_fil'";
+			$SQL = " SELECT *  From filiere WHERE id_filiere = '$id_fil'";
 			$Req = $conn -> query ($SQL) or die (' Erreur affichage filiere ');
 			Return $Res = $Req -> fetch ();
 		}
@@ -110,7 +110,7 @@ class filiere
 		{
 			$id_fil = $objet->get_id_filiere();
 
-			print $SQL = "UPDATE filiere SET etat_filiere = '1',
+			print $SQL = "UPDATE filiere SET etat_filiere = '1'
 			WHERE id_filiere = '$id_fil'";
 			$Req = $conn -> query ($SQL) or die (' Erreur suppression filiere ');
 		}

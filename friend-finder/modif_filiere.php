@@ -4,6 +4,7 @@
 	include "bdd.inc.php";
 	include "login.inc.php";
 	include "info.php";
+	include "class_filiere.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -137,10 +138,8 @@
 								{
 									$id_filiere=$_POST['choix_filiere'];
 
-									$sql="SELECT * FROM filiere WHERE id_filiere='$id_filiere'";
-									$req = $conn -> prepare($sql)or die($conn->errorInfo());
-									$req -> execute();
-									$res=$req->fetch();
+									$unefiliere = new filiere ($id_filiere,'','','');
+								  $unefiliere -> affiche_filiere($unefiliere, $conn);
 								?>
 								<div class="block-title">
 									<h4 class="grey"><i class="icon ion-ios-book-outline"></i>Modifier filières</h4>
@@ -153,7 +152,7 @@
 										<div class="row">
 											<div class="form-group col-xs-12">
 												<label for="lib_filiere">Filière</label>
-												<input type="text" class="form-control input-group-lg" id="lib_filiere" name="lib_filiere" placeholder="Nom de la filière"  value="<?php echo $res['lib_filiere'] ?>">
+												<input type="text" class="form-control input-group-lg" id="lib_filiere" name="lib_filiere" placeholder="Nom de la filière"  value="<?php echo $unefiliere -> affiche_filiere($unefiliere, $conn)['lib_filiere']; ?>">
 											</div>
 										</div>
 										<input type="hidden" name="id_filiere" value="<?php echo $id_filiere ?>">
@@ -161,6 +160,28 @@
 									</form>
 								</div>
 								<?php
+								}
+								if (isset($_POST['suppr']))
+								{
+									$id_filiere=$_POST['choix_filiere'];
+									?>
+									<div class="block-title">
+										<h4 class="grey"><i class="icon ion-ios-book-outline"></i>Supprimer filière</h4>
+										<div class="line"></div>
+										<p>Voulez vous vraiment supprimer cette filière ?</p>
+										<div class="line"></div>
+									</div>
+									<div class="edit-block">
+										<form action="ajout_modif_filiere.php" method="post" class="form-inline">
+											<input type="hidden" name="id_filiere" value="<?php echo $id_filiere ?>">
+											<input type="submit" class="btn btn-primary" name="suppr" value="Supprimer">
+										</form>
+										<br><br>
+										<form action="modif_filiere.php" method="post" class="form-inline">
+											<input type="submit" class="btn btn-primary" name="nop" value="Retour">
+										</form>
+									</div>
+									<?php
 								}
 								else
 								{

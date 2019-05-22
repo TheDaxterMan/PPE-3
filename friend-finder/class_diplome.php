@@ -113,7 +113,22 @@ class diplome
 
 			 $SQL = " SELECT * From diplome WHERE id_diplome = '$id_dip'";
 			 $Req = $conn -> query ($SQL);
-			 $Res = $Req -> fetch ();
+			 $Res = $Req -> fetch();
+			 return $Res;
+
+
+		 }
+
+		 Public function select_diplome ($objet, $conn)
+		 {
+			 $id_dip = $objet->get_id_diplome();
+		   	$nom_dip = $objet->get_nom_diplome();
+			 $lib_dip = $objet->get_lib_diplome();
+			$etat_dip = $objet->get_etat_diplome();
+
+			 $SQL = " SELECT * From diplome WHERE etat_diplome = '0'";
+			 $Req = $conn->query ($SQL);
+			 $Res = $Req->fetch();
 			 return $Res;
 
 

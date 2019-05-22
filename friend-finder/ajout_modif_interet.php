@@ -16,18 +16,27 @@ if (isset($_POST['enregistreri']))
 
   header('Location: ./modif_interet.php');
 }
-if (isset($_POST['modifier']))
+if (isset($_POST['modifieri']))
 {
   $id_interet=$_POST['id_interet'];
   $lib_interet=$_POST['lib_interet'];
   $img_interet=$_POST['img'];
 
-  $sql="UPDATE centres_interets SET lib_interet = '$lib_interet',
-                                    img_interet = '$img_interet'
-                                 WHERE id_interet = $id_interet";
+  $uneinteret = new interet ($id_interet,$lib_interet,$img_interet,'');
+  $uneinteret -> modif_interet($uneinteret, $conn);
 
   $req = $conn -> prepare($sql)or die($conn->errorInfo());
   $req -> execute();
+  header('Location: ./modif_interet.php');
+}
+if (isset($_POST['suppr']))
+{
+
+  $id_interet=$_POST['id_interet'];
+
+  $uneinteret = new interet ($id_interet,'','','');
+  $uneinteret -> suppr_interet($uneinteret, $conn);
+
   header('Location: ./modif_interet.php');
 }
 ?>

@@ -4,6 +4,7 @@
 	include "bdd.inc.php";
 	include "login.inc.php";
 	include "info.php";
+	include "class_centres_interets.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -143,12 +144,10 @@
 								{
 									$id_interet=$_POST['choix_interet'];
 
-									$sql="SELECT * FROM centres_interets WHERE id_interet='$id_interet'";
-									$req = $conn -> prepare($sql)or die($conn->errorInfo());
-									$req -> execute();
-									$res=$req->fetch();
+									$uninteret = new interet ($id_interet,'','','');
+									$uninteret -> affiche_interet($uninteret, $conn);
 
-									$img=$res['img_interet'];
+									$img=$uninteret -> affiche_interet($uninteret, $conn)['img_interet'];
 								?>
 								<div class="block-title">
 									<h4 class="grey"><i class="icon ion-ios-book-outline"></i>Modifier intérêts</h4>
@@ -161,18 +160,18 @@
 										<div class="row">
 											<div class="form-group col-xs-12">
 												<label for="lib">Libellé de l'intérêt</label>
-												<input type="text" class="form-control input-group-lg" id="lib" name="lib_interet" title="Entrez un libellé" placeholder="Libellé de l'intérêt"  value="<?php echo $res['lib_interet'] ?>">
+												<input type="text" class="form-control input-group-lg" id="lib" name="lib_interet" title="Entrez un libellé" placeholder="Libellé de l'intérêt"  value="<?php echo $uninteret -> affiche_interet($uninteret, $conn)['lib_interet']; ?>">
 											</div>
 										</div>
 										<div class="row">
 											<div class="form-group col-xs-12">
 												<label for="img">Code Image de l'intérêt</label>
-												<input type="text" class="form-control input-group-lg" id="img" name="img" placeholder="Code image interet"  value="<?php echo $res['img_interet'] ?>">
+												<input type="text" class="form-control input-group-lg" id="img" name="img" placeholder="Code image interet"  value="<?php echo $uninteret -> affiche_interet($uninteret, $conn)['img_interet']; ?>">
 											</div>
 										</div>
 										<div class="row">
 											<ul class="list-inline interests">
-		                  	<li><a href="#"><i class="icon <?php echo $img; ?>"></i><?php echo $res['lib_interet']; ?></a></li>
+		                  	<li><a href="#"><i class="icon <?php echo $img; ?>"></i><?php echo $uninteret -> affiche_interet($uninteret, $conn)['lib_interet']; ?></a></li>
 		                  </ul>
 										</div>
 										<input type="hidden" name="id_interet" value="<?php echo $id_interet ?>">
@@ -181,11 +180,33 @@
 								</div>
 								<?php
 								}
+								if (isset($_POST['suppr']))
+								{
+									$id_interet=$_POST['choix_interet'];
+									?>
+									<div class="block-title">
+										<h4 class="grey"><i class="icon ion-ios-book-outline"></i>Supprimer intêret</h4>
+										<div class="line"></div>
+										<p>Voulez vous vraiment supprimer cet intêret ?</p>
+										<div class="line"></div>
+									</div>
+									<div class="edit-block">
+										<form action="ajout_modif_interet.php" method="post" class="form-inline">
+											<input type="hidden" name="id_interet" value="<?php echo $id_interet ?>">
+											<input type="submit" class="btn btn-primary" name="suppr" value="Supprimer">
+										</form>
+										<br><br>
+										<form action="modif_interet.php" method="post" class="form-inline">
+											<input type="submit" class="btn btn-primary" name="nop" value="Retour">
+										</form>
+									</div>
+									<?php
+								}
 								else
 								{
 								?>
 								<div class="block-title">
-									<h4 class="grey"><i class="icon ion-ios-book-outline"></i>Modifier diplômes</h4>
+									<h4 class="grey"><i class="icon ion-ios-book-outline"></i>Modifier intêrets</h4>
 									<div class="line"></div>
 									<p>Modifier/Supprimer un intêret</p>
 									<div class="line"></div>
