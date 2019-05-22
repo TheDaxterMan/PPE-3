@@ -73,16 +73,16 @@
                   <p class="text-muted">Creative Director</p>
                 </div>
 								<script>
-								//fonction pour cacher les emplois/stage (boutons radio) 
-								function cacherDate() {
+								//fonction pour cacher les emplois/stage (boutons radio)
+								//function cacherDate() {
 
-									var x = document.getElementById("date");
-									if (x.style.display === "none") {
-											x.style.display = "block";
-									} else {
-											x.style.display = "none";
-									}
-								}
+								//	var x = document.getElementById("date");
+								//	if (x.style.display === "none") {
+											//x.style.display = "none";
+								//	} else {
+										//	x.style.display = "block";
+								//	}
+							//	}
 
 								</script>
 
