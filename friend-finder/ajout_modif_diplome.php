@@ -33,4 +33,14 @@ if (isset($_POST['modifierd']))
   $req -> execute();*/
   header('Location: ./modif_diplome.php');
 }
+if (isset($_POST['suppr']))
+{
+
+  $id_diplome=$_POST['id_diplome'];
+
+  $undiplome = new diplome ($id_diplome,'','','');
+  $undiplome -> suppr_diplome($undiplome, $conn);
+
+  header('Location: ./modif_diplome.php');
+}
 ?>

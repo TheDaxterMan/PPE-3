@@ -126,8 +126,8 @@ class diplome
 			 $lib_dip = $objet->get_lib_diplome();
 			$etat_dip = $objet->get_etat_diplome();
 
-			$SQL = "UPDATE diplome SET etat_diplome = '1' WHERE id_diplome = '$id_dip')";
-			$Req = $conn -> query ($SQL) or die (' Erreur suppression filiere ');
+			$SQL = "UPDATE diplome SET etat_diplome = '1' WHERE id_diplome = $id_dip";
+			$Req = $conn -> query ($SQL) or die (' Erreur suppression diplome ');
 		 }
 }
    /* ---------------------- */

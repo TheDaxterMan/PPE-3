@@ -144,12 +144,12 @@
 								{
 									$id_diplome=$_POST['choix_diplome'];
 
-									$undiplome = new diplome ($id_diplome,'','','');
-								  $undiplome -> affiche_diplome($undiplome, $conn);
-									/*$sql="SELECT * FROM diplome WHERE id_diplome='$id_diplome'";
+									/*$undiplome = new diplome ($id_diplome,'','','');
+								  $undiplome -> affiche_diplome($undiplome, $conn);*/
+									$sql="SELECT * FROM diplome WHERE id_diplome='$id_diplome'";
 									$req = $conn -> prepare($sql)or die($conn->errorInfo());
 									$req -> execute();
-									$res=$req->fetch();*/
+									$res=$req->fetch();
 								?>
 								<div class="block-title">
 									<h4 class="grey"><i class="icon ion-ios-book-outline"></i>Modifier diplômes</h4>
@@ -180,8 +180,24 @@
 								if (isset($_POST['suppr']))
 								{
 									$id_diplome=$_POST['choix_diplome'];
-
-
+									?>
+									<div class="block-title">
+										<h4 class="grey"><i class="icon ion-ios-book-outline"></i>Supprimer diplômes</h4>
+										<div class="line"></div>
+										<p>Voulez vous vraiment supprimer ce diplôme ?</p>
+										<div class="line"></div>
+									</div>
+									<div class="edit-block">
+										<form action="ajout_modif_diplome.php" method="post" class="form-inline">
+											<input type="hidden" name="id_diplome" value="<?php echo $id_diplome ?>">
+											<input type="submit" class="btn btn-primary" name="suppr" value="Supprimer">
+										</form>
+										<br><br>
+										<form action="modif_diplome.php" method="post" class="form-inline">
+											<input type="submit" class="btn btn-primary" name="nop" value="Retour">
+										</form>
+									</div>
+									<?php
 								}
 								else
 								{
@@ -200,7 +216,7 @@
 												<select class="form-control input-group-lg" id="diplome" name="choix_diplome">
 													<option value="diplome" disabled selected>Choisir un diplôme</option>
 													<?php
-													$sql="SELECT * FROM diplome";
+													$sql="SELECT * FROM diplome WHERE etat_diplome='0'";
 													$req = $conn -> query($sql)or die($conn->errorInfo());
 													while ($res=$req->fetch())
 													{
