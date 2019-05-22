@@ -8,7 +8,7 @@ $id=$_SESSION['id'];
     if ($_SESSION['profil']=="eleve")
     {
       $unutilisateur = new utilisateur ($id,'','','','','','','','','');
-      $unutilisateur -> exp_pro($unutilisateur, $conn);
+      $unutilisateur -> exp_pro_emploi($unutilisateur, $conn);
 
     }
 

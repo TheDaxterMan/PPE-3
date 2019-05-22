@@ -300,7 +300,30 @@ class utilisateur
 				 	$Req = $conn -> query ($SQL) or die (' Erreur rajout utilisateur ');
 				}
 
-				Public function exp_pro($objet, $conn)
+				Public function exp_pro_emploi($objet, $conn)
+				{
+					$id_util = $objet->get_id_utilisateur();
+					$nom_util = $objet->get_nom_utilisateur();
+					$prenom_util = $objet->get_prenom_utilisateur();
+					$tel_util = $objet->get_tel_utilisateur();
+					$email_util = $objet->get_email_utilisateur();
+					$rue_util = $objet->get_rue_utilisateur();
+					$ville_util = $objet->get_ville_utilisateur();
+					$cp_util = $objet->get_cp_utilisateur();
+					$login_util = $objet->get_login_utilisateur();
+					$mdp_util = $objet->get_mdp_utilisateur();
+
+					print $SQL = "SELECT * FROM emploi, entreprise, utilisateur
+		            WHERE utilisateur.id_utilisateur=$id_util
+		            AND emploi.id_utilisateur=utilisateur.id_utilisateur
+		            AND entreprise.id_entreprise=emploi.id_entreprise
+		            ORDER BY date_crea DESC";
+				 	$Req = $conn -> query ($SQL) or die (' Erreur affichage ');
+					$Res = $Req -> fetch ();
+					return $Res
+				}
+
+				Public function exp_pro_stage($objet, $conn)
 				{
 					$id_util = $objet->get_id_utilisateur();
 					$nom_util = $objet->get_nom_utilisateur();
