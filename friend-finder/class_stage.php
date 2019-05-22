@@ -19,13 +19,15 @@ class stage
 		Private $datef_stage;
 		Private $commentaire_stage;
 		Private $etat_stage;
+    Private $id_ent;
+    Private $id_uti;
     		Private $fil_stage;
 
 		/* ---------------------- */
 		/* class Stage Constructeur */
 		/* ---------------------- */
 
-			Public function stage ( $id_sta, $lib_sta, $desc_sta, $dated_sta, $datef_sta, $comm_sta, $etat_sta, $fil_sta)
+			Public function stage ( $id_sta, $lib_sta, $desc_sta, $dated_sta, $datef_sta, $comm_sta, $etat_sta, $id_ent, $id_uti, $fil_sta)
 			{
 				$this -> id_stage = $id_sta;
 				$this -> lib_stage = $lib_sta;
@@ -34,6 +36,8 @@ class stage
 				$this -> datef_stage = $datef_sta;
 				$this -> commentaire_stage = $comm_sta;
 				$this -> etat_stage = $etat_sta;
+        $this -> id_ent = $id_ent;
+        $this -> id_uti = $id_uti;
         $this -> fil_stage = $fil_sta;
 
 			}
@@ -51,6 +55,8 @@ class stage
 				$data = $dataf.$this->$date_sta;
 				$data = $data.$this->$comm_sta;
 				$data = $data.$this->$etat_sta;
+        $data = $data.$this->$id_ent;
+        $data = $data.$this->$id_uti;
         $data = $data.$this->$fil_sta;
 				return $data;
 			}
@@ -94,6 +100,16 @@ class stage
 				return $this-> etat_stage;
 			}
 
+      Public function  get_id_ent ()
+			{
+				return $this-> id_ent;
+			}
+
+      Public function  get_id_uti ()
+			{
+				return $this-> id_uti;
+			}
+
       Public function  get_fil_stage ()
 			{
 				return $this-> fil_stage;
@@ -134,6 +150,15 @@ class stage
 				 $this-> etat_stage = $etat_sta;
 			}
 
+      Public function set_id_ent ($id_ent)
+			{
+				 $this-> id_ent = $id_ent;
+			}
+
+      Public function set_id_uti ($id_uti)
+			{
+				 $this-> id_uti = $id_uti;
+			}
 
       Public function set_fil_stage ($fil_sta)
 			{
@@ -147,28 +172,32 @@ class stage
 					$id_sta = $objet->get_id_stage();
 					$lib_sta = $objet->get_lib_stage();
 					$desc_sta = $objet->get_desc_stage();
-          				$dated_sta = $objet->get_dated_stage();
+          $dated_sta = $objet->get_dated_stage();
 					$datef_sta = $objet->get_datef_stage();
 					$comm_sta = $objet->get_commentaire_stage();
 					$etat_sta = $objet->get_etat_stage();
+          $id_ent = $objet->get_id_ent();
+          $id_uti = $objet->get_id_uti();
           $fil_sta = $objet->get_fil_stage();
 
-					print $SQL = " INSERT INTO stage values (NULL, '$lib_sta', '$desc_sta', '$dated_sta', '$datef_sta', '$comm_sta', '0', '1', '1', '$fil_sta')";
-          echo $fil_sta;
-          die();
+					print $SQL = " INSERT INTO stage values (NULL, '$lib_sta', '$desc_sta', '$dated_sta', '$datef_sta', '$comm_sta', '0', '1', '$id_uti', '$fil_sta')";
 					$Req = $conn -> query ($SQL) or die (' Erreur ajout stage ');
 				}
 
         Public function ajout_stage_ent ($objet, $conn)
     				{
-    					$id_sta = $objet->get_id_stage();
+              $id_sta = $objet->get_id_stage();
     					$lib_sta = $objet->get_lib_stage();
     					$desc_sta = $objet->get_desc_stage();
               $dated_sta = $objet->get_dated_stage();
     					$datef_sta = $objet->get_datef_stage();
     					$comm_sta = $objet->get_commentaire_stage();
+    					$etat_sta = $objet->get_etat_stage();
+              $id_ent = $objet->get_id_ent();
+              $id_uti = $objet->get_id_uti();
+              $fil_sta = $objet->get_fil_stage();
 
-    					print $SQL = " INSERT INTO stage values (NULL, '$lib_sta', '$desc_sta', '$dated_sta', '$datef_sta', '$comm_sta', '1', '1', '1')";
+    					print $SQL = " INSERT INTO stage values (NULL, '$lib_sta', '$desc_sta', '$dated_sta', '$datef_sta', '$comm_sta', '0', '$id_ent', '1', '$fil_sta')";
     					$Req = $conn -> query ($SQL) or die (' Erreur ajout stage ');
     				}
 
@@ -179,7 +208,11 @@ class stage
 					$desc_sta = $objet->get_desc_stage();
           $dated_sta = $objet->get_dated_stage();
 					$datef_sta = $objet->get_datef_stage();
-          $comm_sta = $objet->get_commentaire_stage();
+					$comm_sta = $objet->get_commentaire_stage();
+					$etat_sta = $objet->get_etat_stage();
+          $id_ent = $objet->get_id_ent();
+          $id_uti = $objet->get_id_uti();
+          $fil_sta = $objet->get_fil_stage();
 
 					print $SQL = "UPDATE stage SET lib_stage = '$lib_sta', desc_stage = '$desc_sta',
 					dated_stage = '$dated_sta', datef_stage = '$datef_sta', comm_stage = '$comm_sta' WHERE id_stage = '$id_sta'";
@@ -194,7 +227,11 @@ class stage
 					$desc_sta = $objet->get_desc_stage();
           $dated_sta = $objet->get_dated_stage();
 					$datef_sta = $objet->get_datef_stage();
-          $comm_sta = $objet->get_commentaire_stage();
+					$comm_sta = $objet->get_commentaire_stage();
+					$etat_sta = $objet->get_etat_stage();
+          $id_ent = $objet->get_id_ent();
+          $id_uti = $objet->get_id_uti();
+          $fil_sta = $objet->get_fil_stage();
 
 					print $SQL = " SELECT *  From stage WHERE id_stage = '$id_sta'";
 					$Req = $conn -> query ($SQL) or die (' Erreur affichage stage ');
@@ -204,14 +241,37 @@ class stage
 				Public function suppr_stage ($objet, $conn)
 				{
           $id_sta = $objet->get_id_stage();
-          $lib_sta = $objet->get_lib_stage();
-          $desc_sta = $objet->get_desc_stage();
+					$lib_sta = $objet->get_lib_stage();
+					$desc_sta = $objet->get_desc_stage();
           $dated_sta = $objet->get_dated_stage();
-          $datef_sta = $objet->get_datef_stage();
-          $comm_sta = $objet->get_commentaire_stage();
+					$datef_sta = $objet->get_datef_stage();
+					$comm_sta = $objet->get_commentaire_stage();
+					$etat_sta = $objet->get_etat_stage();
+          $id_ent = $objet->get_id_ent();
+          $id_uti = $objet->get_id_uti();
+          $fil_sta = $objet->get_fil_stage();
 
 					print $SQL = " DELETE FROM stage WHERE id_stage = '$id_sta'";
           $Req = $conn -> query ($SQL) or die (' Erreur affichage stage ');
+				}
+
+        Public function commentaire_stage ($objet, $conn)
+				{
+          $id_sta = $objet->get_id_stage();
+					$lib_sta = $objet->get_lib_stage();
+					$desc_sta = $objet->get_desc_stage();
+          $dated_sta = $objet->get_dated_stage();
+					$datef_sta = $objet->get_datef_stage();
+					$comm_sta = $objet->get_commentaire_stage();
+					$etat_sta = $objet->get_etat_stage();
+          $id_ent = $objet->get_id_ent();
+          $id_uti = $objet->get_id_uti();
+          $fil_sta = $objet->get_fil_stage();
+
+          $SQL = "UPDATE stage SET commentaire = '$comm_sta',
+																	 id_utilisateur = '$id_uti'
+				                        WHERE id_stage = $id_sta";
+					$Req = $conn -> query ($SQL) or die (' Erreur ajout commentaire ');
 				}
  }
 
