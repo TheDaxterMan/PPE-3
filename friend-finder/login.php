@@ -7,10 +7,10 @@
 
   include "bdd.inc.php";
 
-  $user = $_POST['login'];
+  $util = $_POST['login'];
   $mdp = $_POST['mdp'];
   $radio = $_POST['radio'];
-  //echo $user,' ',$mdp,' ',$radio;
+  //echo $util,' ',$mdp,' ',$radio;
   //die();
 
 //////////////////////////////////////////////////////////////////////////
@@ -18,30 +18,28 @@
 //////////////////////////////////////////////////////////////////////////
   if ($radio=='Elève')
   {
-    $sql="SELECT * FROM utilisateur
-              WHERE login_utilisateur = '$user'
-              AND mdp_utilisateur = '$mdp'";
+    include "class_utilisateur.php";
 
-    $req = $conn -> prepare($sql)or die($conn->errorInfo());
-    $req -> execute();
-    $res=$req->fetch();
-    if ($res['etat_utilisateur']==1) {
+    $unutilisateur = new utilisateur (NULL,'','','','','','','','',$util,$mdp,'','');
+    $unutilisateur -> login_utilisateur($unutilisateur, $conn);
+
+    if ($unutilisateur -> login_utilisateur($unutilisateur, $conn)['etat_utilisateur']==1) {
       echo"<script language=\"javascript\">";
       echo"alert('Votre compte est désactivé, veuillez contactez un administrateur pour le débloquer !')";
       echo"</script>";
         header('Refresh: 1; URL=./index.php');
     }
     else {
-      if ($res['login_utilisateur'] == $user || $res['mdp_utilisateur'] == $mdp)
+      if ($unutilisateur -> login_utilisateur($unutilisateur, $conn)['login_utilisateur'] == $util || $unutilisateur -> login_utilisateur($unutilisateur, $conn)['mdp_utilisateur'] == $mdp)
       {
         // crée le cookie avec le nom d'utilisateur et la session
         session_start();
-        if ($res['id_utilisateur']==1)
+        if ($unutilisateur -> login_utilisateur($unutilisateur, $conn)['id_utilisateur']==1)
         {
           $_SESSION['choix'] = "utilisateur";
         }
-        $_SESSION['id'] = $res['id_utilisateur']; // cette ligne crée une variable de session, où l'on sauve l'id de notre utilisateur connecté
-        $_SESSION['photo'] = $res['photo_utilisateur'];
+        $_SESSION['id'] = $unutilisateur -> login_utilisateur($unutilisateur, $conn)['id_utilisateur']; // cette ligne crée une variable de session, où l'on sauve l'id de notre utilisateur connecté
+        $_SESSION['photo'] = $unutilisateur -> login_utilisateur($unutilisateur, $conn)['photo_utilisateur'];
         $_SESSION['profil'] = "eleve";
         header('Location: ./newsfeed.php');
       }
@@ -60,30 +58,27 @@
 //////////////////////////////////////////////////////////////////////////
   if ($radio=='Entreprise')
   {
-    $sql="SELECT * FROM entreprise
-              WHERE login_entreprise = '$user'
-              AND mdp_entreprise = '$mdp'";
+    include "class_entreprise.php";
+    $uneentreprise = new entreprise (NULL,'','','','','','','','',$util,$mdp,'','');
+    $uneentreprise -> login_entreprise($uneentreprise, $conn);
 
-    $req = $conn -> prepare($sql)or die($conn->errorInfo());
-    $req -> execute();
-    $res=$req->fetch();
-    if ($res['etat_entreprise']==1) {
+    if ($uneentreprise -> login_entreprise($uneentreprise, $conn)['etat_entreprise']==1) {
       echo"<script language=\"javascript\">";
       echo"alert('Votre compte est désactivé, veuillez contactez un administrateur pour le débloquer !')";
       echo"</script>";
       header('Refresh: 1; URL=./index.php');
     }
     else {
-      if ($res['login_entreprise'] == $user || $res['mdp_entreprise'] == $mdp)
+      if ($uneentreprise -> login_entreprise($uneentreprise, $conn)['login_entreprise'] == $util || $uneentreprise -> login_entreprise($uneentreprise, $conn)['mdp_entreprise'] == $mdp)
       {
       // crée le cookie avec le nom d'utilisateur et la session
       session_start();
-      if ($res['id_entreprise']==1)
+      if ($uneentreprise -> login_entreprise($uneentreprise, $conn)['id_entreprise']==1)
       {
         $_SESSION['choix'] = "entreprise";
       }
-      $_SESSION['id'] = $res['id_entreprise']; // cette ligne crée une variable de session, où l'on sauve l'id de notre utilisateur connecté
-      $_SESSION['photo'] = $res['photo_entreprise'];
+      $_SESSION['id'] =$uneentreprise -> login_entreprise($uneentreprise, $conn)['id_entreprise']; // cette ligne crée une variable de session, où l'on sauve l'id de notre utilisateur connecté
+      $_SESSION['photo'] = $uneentreprise -> login_entreprise($uneentreprise, $conn)['photo_entreprise'];
       $_SESSION['profil'] = "entreprise";
       header('Location: ./newsfeed.php');
     }

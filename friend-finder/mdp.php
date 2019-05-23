@@ -1,26 +1,24 @@
 <?php
   include "bdd.inc.php";
+  include "class_utilisateur.php";
 
   $old = $_POST['mdp'];
   $new = $_POST['newmdp'];
   $new2 = $_POST['newmdp2'];
   $iduti = $_POST['id'];
 
-  $sql="SELECT mdp_utilisateur FROM utilisateur";
-	$req = $conn -> query($sql)or die($conn->errorInfo());
-	$res=$req->fetch();
+  $unutilisateur = new utilisateur ($iduti,'','','','','','','','','','','','');
+  $unutilisateur -> select_mdp_utilisateur($unutilisateur, $conn);
 
-  $mdpbase = $res['mdp_utilisateur'];
+  $mdpbase = $unutilisateur -> select_mdp_utilisateur($unutilisateur, $conn)['mdp_utilisateur'];
 
   if ($old==$mdpbase)
   {
     if ($new==$new2)
     {
-      $sql = "UPDATE utilisateur SET mdp_utilisateur = '$new'
-                                     WHERE id_utilisateur = $iduti";
-      $req = $conn -> prepare($sql);
-      $req -> execute();
-      
+      $unutilisateur = new utilisateur ($iduti,'','','','','','','','','',$new,'','');
+      $unutilisateur -> new_mdp_utilisateur($unutilisateur, $conn);
+
     }
     else
     {
@@ -31,4 +29,5 @@
   {
     echo "c'est pas bon (vieux mdp pas bon)";
   }
+  header('Refresh: 0; URL=./edit-profile-password.php');
 ?>

@@ -131,10 +131,10 @@
 									{
 										$id=$_POST['choix_entreprise'];
 
-										$sql="SELECT * FROM entreprise WHERE id_entreprise='$id'";
-										$req = $conn -> prepare($sql)or die($conn->errorInfo());
-										$req -> execute();
-										$res=$req->fetch();
+										include "class_entreprise.php";
+							      $uneentreprise = new entreprise ($id,'','','','','','','','','','','','');
+							      $uneentreprise -> affiche_entreprise($uneentreprise, $conn);
+
 									?>
 									<div class="block-title">
 										<h4 class="grey"><i class="icon ion-ios-book-outline"></i>Modifier/supprimer une entreprise</h4>
@@ -147,41 +147,41 @@
 	                    <div class="row">
 	                      <div class="form-group col-xs-6">
 	                        <label for="prenom">Prénom</label>
-	                        <input id="prenom" class="form-control input-group-lg" type="text" name="prenom" title="Entrez votre prénom" placeholder="Prénom" value="<?php echo $res['prenom_responsable'];  ?>" />
+	                        <input id="prenom" class="form-control input-group-lg" type="text" name="prenom" title="Entrez votre prénom" placeholder="Prénom" value="<?php echo $uneentreprise -> affiche_entreprise($uneentreprise, $conn)['prenom_responsable'];  ?>" />
 	                      </div>
 	                      <div class="form-group col-xs-6">
 	                        <label for="nome" class="">Nom</label>
-	                        <input id="nom" class="form-control input-group-lg" type="text" name="nom" title="Entrez votre nom de famille" placeholder="Nom de famille" value="<?php echo $res['nom_responsable']; ?>" />
+	                        <input id="nom" class="form-control input-group-lg" type="text" name="nom" title="Entrez votre nom de famille" placeholder="Nom de famille" value="<?php echo $uneentreprise -> affiche_entreprise($uneentreprise, $conn)['nom_responsable']; ?>" />
 	                      </div>
 	                    </div>
 	                    <div class="row">
 	                      <div class="form-group col-xs-12">
 	                        <label for="email">Email</label>
-	                        <input id="email" class="form-control input-group-lg" type="text" name="mail" title="Entrez votre Email" placeholder="Mon Email" value="<?php echo $res['mail_entreprise']; ?>" />
+	                        <input id="email" class="form-control input-group-lg" type="text" name="mail" title="Entrez votre Email" placeholder="Mon Email" value="<?php echo $uneentreprise -> affiche_entreprise($uneentreprise, $conn)['mail_entreprise']; ?>" />
 	                      </div>
 	                    </div>
 											<div class="row">
 												<div class="form-group col-xs-12">
 													<label for="entr">Nom entreprise</label>
-													<input id="entr" class="form-control input-group-lg" type="text" name="entr" title="Entrez votre nom d'entreprise" placeholder="Mon entreprise" value="<?php echo $res['nom_entreprise']; ?>" />
+													<input id="entr" class="form-control input-group-lg" type="text" name="entr" title="Entrez votre nom d'entreprise" placeholder="Mon entreprise" value="<?php echo $uneentreprise -> affiche_entreprise($uneentreprise, $conn)['nom_entreprise']; ?>" />
 												</div>
 											</div>
 											<div class="row">
 	                      <p class="custom-label"><strong>Adresse</strong></p>
 	                      <div class="form-group col-sm-6 col-xs-12">
 	                        <label for="rue" class="sr-only">Rue</label>
-	                        <input id="rue" class="form-control" type="text" name="rue" title="Entrez votre rue" placeholder="Ma rue" value="<?php echo $res['rue_entreprise'];  ?>">
+	                        <input id="rue" class="form-control" type="text" name="rue" title="Entrez votre rue" placeholder="Ma rue" value="<?php echo $uneentreprise -> affiche_entreprise($uneentreprise, $conn)['rue_entreprise'];  ?>">
 	                      </div>
 												<div class="form-group col-sm-6 col-xs-12">
 	                        <label for="ville" class="sr-only">Ville</label>
-	                        <input id="ville" class="form-control" type="text" name="ville" title="Entrez votre ville" placeholder="Ma ville" value="<?php echo $res['ville_entreprise'];  ?>">
+	                        <input id="ville" class="form-control" type="text" name="ville" title="Entrez votre ville" placeholder="Ma ville" value="<?php echo $uneentreprise -> affiche_entreprise($uneentreprise, $conn)['ville_entreprise'];  ?>">
 	                      </div>
 												<div class="form-group col-sm-6 col-xs-12">
 	                        <label for="cp" class="sr-only">Code Postal</label>
-	                        <input id="cp" class="form-control" type="text" name="cp" title="Entrez votre Code Postal" placeholder="Mon Code Postal" value="<?php echo $res['cp_entreprise']; ?>">
+	                        <input id="cp" class="form-control" type="text" name="cp" title="Entrez votre Code Postal" placeholder="Mon Code Postal" value="<?php echo $uneentreprise -> affiche_entreprise($uneentreprise, $conn)['cp_entreprise']; ?>">
 	                      </div>
 	                    </div>
-											<input type="hidden" name="id" value="<?php echo $res['id_entreprise']; ?>">
+											<input type="hidden" name="id" value="<?php echo $uneentreprise -> affiche_entreprise($uneentreprise, $conn)['id_entreprise']; ?>">
 											<input class="btn btn-primary" type="submit" name="valider_entreprise" value="Sauvegarder les modifications">
 	                  </form>
 	                </div>
@@ -236,10 +236,9 @@
 										{
 											$id=$_POST['choix_utilisateur'];
 
-											$sql="SELECT * FROM utilisateur WHERE id_utilisateur='$id'";
-											$req = $conn -> prepare($sql)or die($conn->errorInfo());
-											$req -> execute();
-											$res=$req->fetch();
+											include "class_utilisateur.php";
+								      $unutilisateur = new utilisateur ($id,'','','','','','','','','','','','');
+								      $unutilisateur -> affiche_utilisateur_total($unutilisateur, $conn);
 										?>
 										<div class="block-title">
 											<h4 class="grey"><i class="icon ion-ios-book-outline"></i>Modifier/supprimer un utilisateur</h4>
@@ -252,38 +251,38 @@
 												<div class="row">
 													<div class="form-group col-xs-6">
 														<label for="prenom">Prénom</label>
-														<input id="prenom" class="form-control input-group-lg" type="text" name="prenom" title="Entrez votre prénom" placeholder="Prénom" value="<?php echo $res['prenom_utilisateur'];  ?>" />
+														<input id="prenom" class="form-control input-group-lg" type="text" name="prenom" title="Entrez votre prénom" placeholder="Prénom" value="<?php echo $unutilisateur -> affiche_utilisateur_total($unutilisateur, $conn)['prenom_utilisateur'];  ?>" />
 													</div>
 													<div class="form-group col-xs-6">
 														<label for="nome" class="">Nom</label>
-														<input id="nom" class="form-control input-group-lg" type="text" name="nom" title="Entrez votre nom de famille" placeholder="Nom de famille" value="<?php echo $res['nom_utilisateur']; ?>" />
+														<input id="nom" class="form-control input-group-lg" type="text" name="nom" title="Entrez votre nom de famille" placeholder="Nom de famille" value="<?php echo $unutilisateur -> affiche_utilisateur_total($unutilisateur, $conn)['nom_utilisateur']; ?>" />
 													</div>
 												</div>
 												<div class="row">
 													<div class="form-group col-xs-12">
 														<label for="email">Email</label>
-														<input id="email" class="form-control input-group-lg" type="text" name="mail" title="Entrez votre Email" placeholder="Mon Email" value="<?php echo $res['email_utilisateur']; ?>" />
+														<input id="email" class="form-control input-group-lg" type="text" name="mail" title="Entrez votre Email" placeholder="Mon Email" value="<?php echo $unutilisateur -> affiche_utilisateur_total($unutilisateur, $conn)['email_utilisateur']; ?>" />
 													</div>
 												</div>
 												<div class="row">
 													<div class="form-group col-xs-12">
 														<label for="tel">Téléphone</label>
-														<input id="tel" class="form-control input-group-lg" type="text" name="tel" title="Entrez votre numéro de téléphone" placeholder="Mon téléphone" value="<?php echo $res['tel_utilisateur']; ?>" />
+														<input id="tel" class="form-control input-group-lg" type="text" name="tel" title="Entrez votre numéro de téléphone" placeholder="Mon téléphone" value="<?php echo $unutilisateur -> affiche_utilisateur_total($unutilisateur, $conn)['tel_utilisateur']; ?>" />
 													</div>
 												</div>
 												<div class="row">
 													<p class="custom-label"><strong>Adresse</strong></p>
 													<div class="form-group col-sm-6 col-xs-12">
 														<label for="rue" class="sr-only">Rue</label>
-														<input id="rue" class="form-control" type="text" name="rue" title="Entrez votre rue" placeholder="Ma rue" value="<?php echo $res['rue_utilisateur'];  ?>">
+														<input id="rue" class="form-control" type="text" name="rue" title="Entrez votre rue" placeholder="Ma rue" value="<?php echo $unutilisateur -> affiche_utilisateur_total($unutilisateur, $conn)['rue_utilisateur'];  ?>">
 													</div>
 													<div class="form-group col-sm-6 col-xs-12">
 														<label for="ville" class="sr-only">Ville</label>
-														<input id="ville" class="form-control" type="text" name="ville" title="Entrez votre ville" placeholder="Ma ville" value="<?php echo $res['ville_utilisateur'];  ?>">
+														<input id="ville" class="form-control" type="text" name="ville" title="Entrez votre ville" placeholder="Ma ville" value="<?php echo $unutilisateur -> affiche_utilisateur_total($unutilisateur, $conn)['ville_utilisateur'];  ?>">
 													</div>
 													<div class="form-group col-sm-6 col-xs-12">
 														<label for="cp" class="sr-only">Code Postal</label>
-														<input id="cp" class="form-control" type="text" name="cp" title="Entrez votre Code Postal" placeholder="Mon Code Postal" value="<?php echo $res['cp_utilisateur']; ?>">
+														<input id="cp" class="form-control" type="text" name="cp" title="Entrez votre Code Postal" placeholder="Mon Code Postal" value="<?php echo $unutilisateur -> affiche_utilisateur_total($unutilisateur, $conn)['cp_utilisateur']; ?>">
 													</div>
 													<div class="form-group col-xs-12">
 														<label>Choisir une filière</label>

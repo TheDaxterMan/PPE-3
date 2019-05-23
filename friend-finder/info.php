@@ -1,40 +1,39 @@
 <?php
 include "bdd.inc.php";
+
 $id=$_SESSION['id'];
 ///////////////////////////////////////////////////////////////////////////////
 /*									        	E L E V E																			 */
 ///////////////////////////////////////////////////////////////////////////////
     if ($_SESSION['profil']=="eleve")
     {
-      $sql="SELECT * FROM utilisateur
-            WHERE id_utilisateur=$id";
-      $req = $conn -> query($sql)or die($conn->errorInfo());
-      $req -> execute();
-      $res=$req->fetch();
-      $nom=$res['nom_utilisateur'];
-      $prenom=$res['prenom_utilisateur'];
-      $mail=$res['email_utilisateur'];
-      $tel=$res['tel_utilisateur'];
-      $rue=$res['rue_utilisateur'];
-      $ville=$res['ville_utilisateur'];
-      $cp=$res['cp_utilisateur'];
+      include "class_utilisateur.php";
+      $unutilisateur = new utilisateur ($id,'','','','','','','','','','','','');
+      $unutilisateur -> affiche_utilisateur_total($unutilisateur, $conn);
+
+      $nom=$unutilisateur -> affiche_utilisateur_total($unutilisateur, $conn)['nom_utilisateur'];
+      $prenom=$unutilisateur -> affiche_utilisateur_total($unutilisateur, $conn)['prenom_utilisateur'];
+      $mail=$unutilisateur -> affiche_utilisateur_total($unutilisateur, $conn)['email_utilisateur'];
+      $tel=$unutilisateur -> affiche_utilisateur_total($unutilisateur, $conn)['tel_utilisateur'];
+      $rue=$unutilisateur -> affiche_utilisateur_total($unutilisateur, $conn)['rue_utilisateur'];
+      $ville=$unutilisateur -> affiche_utilisateur_total($unutilisateur, $conn)['ville_utilisateur'];
+      $cp=$unutilisateur -> affiche_utilisateur_total($unutilisateur, $conn)['cp_utilisateur'];
     }
 ///////////////////////////////////////////////////////////////////////////////
 /*												E N T R E P R I S E																*/
 ///////////////////////////////////////////////////////////////////////////////
     if ($_SESSION['profil']=="entreprise")
     {
-      $sql="SELECT * FROM entreprise
-            WHERE id_entreprise=$id";
-      $req = $conn -> query($sql)or die($conn->errorInfo());
-      $req -> execute();
-      $res=$req->fetch();
-      $entreprise=$res['nom_entreprise'];
-  		$nom=$res['nom_responsable'];
-  		$prenom=$res['prenom_responsable'];
-  		$mail=$res['mail_entreprise'];
-  		$rue=$res['rue_entreprise'];
-  		$ville=$res['ville_entreprise'];
-  		$cp=$res['cp_entreprise'];
+      include "class_entreprise.php";
+      $uneentreprise = new entreprise ($id,'','','','','','','','','','','','');
+      $uneentreprise -> affiche_entreprise($uneentreprise, $conn);
+
+      $entreprise=$uneentreprise -> affiche_entreprise($uneentreprise, $conn)['nom_entreprise'];
+  		$nom=$uneentreprise -> affiche_entreprise($uneentreprise, $conn)['nom_responsable'];
+  		$prenom=$uneentreprise -> affiche_entreprise($uneentreprise, $conn)['prenom_responsable'];
+  		$mail=$uneentreprise -> affiche_entreprise($uneentreprise, $conn)['mail_entreprise'];
+  		$rue=$uneentreprise -> affiche_entreprise($uneentreprise, $conn)['rue_entreprise'];
+  		$ville=$uneentreprise -> affiche_entreprise($uneentreprise, $conn)['ville_entreprise'];
+  		$cp=$uneentreprise -> affiche_entreprise($uneentreprise, $conn)['cp_entreprise'];
     }
 ?>
